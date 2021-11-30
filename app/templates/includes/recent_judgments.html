@@ -1,0 +1,17 @@
+<h2>Recent judgments</h2>
+<p>The most recent judgments are shown below.</p>
+<ul class="recent-judgments">
+    {% for item in recent_judgments %}
+        <li class="recent-judgments__judgment">
+            <a href="#">
+                <span class="recent-judgments__title">
+                {{ item.title }}
+                </span>
+                <span class="recent-judgments__neutralcitation">
+                {{ item.neutral_citation }}
+                </span>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+<p><a href="#">See all recent judgments</a></p>
