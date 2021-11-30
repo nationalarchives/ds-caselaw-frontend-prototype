@@ -1,0 +1,17 @@
+<h2>Judgments by collection</h2>
+<p>Use these links to see judgments by collection</p>
+<ul class="collections">
+    {% for item in collections %}
+        <li class="collections__collection">
+            <a href="{{ url_for('search') }}?collection={{ item.code }}&query=''">
+            <span class="collection__code">
+                {{ item.code | upper }}
+            </span>
+            <span class="collections__title">
+                {{ item.name }}
+            </a>
+        </li>
+        </span>
+    {% endfor %}
+</ul>
+
