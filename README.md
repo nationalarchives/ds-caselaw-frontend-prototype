@@ -7,6 +7,7 @@ Use this contents list to navigate the page.
 * [Development approach](#development-approach)
 * [Local development setup](#local-development)
 * User flow iterations
+    * [1.1](#iteration-11)
     * [1.0](#iteration-10)
 
 ## Introduction
@@ -56,6 +57,10 @@ In a _new terminal_ run these commands
 9. Install Gulp CLI globally with `npm install --global gulp-cli` (Note: you only need to do this once)
 10. Install Node dependencies with `npm install`
 11. Start Gulp (a run-through of tasks followed by a watch) with `npm start`
+
+## Iteration 1.1
+
+Iteration [1.1](user_flows/Iterations/1.1/1.1.drawio.pdf) is updated to reflect advice (from SB) that there will a Terms of Use page _and_ an Open Justice License page. 
 
 ## Iteration 1.0 
 
