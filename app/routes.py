@@ -20,10 +20,16 @@ def search():
     return request.args['collection']
 
 
-@app.route('/terms-of-use')
-def terms_of_use():
-    return render_template('terms-of-use.html')
-
 @app.route('/browse')
 def browse():
     return render_template('browse.html')
+
+
+@app.route('/terms-of-use')
+def terms_of_use():
+    return render_template('terms_of_use.html')
+
+
+@app.route('/open-justice-licence')
+def terms_of_use():
+    return render_template('open_justice_licence.html')
