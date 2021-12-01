@@ -23,3 +23,7 @@ def search():
 @app.route('/terms-and-conditions')
 def terms_and_conditions():
     return render_template('terms-and-conditions.html')
+
+@app.route('/browse')
+def browse():
+    return render_template('browse.html')
