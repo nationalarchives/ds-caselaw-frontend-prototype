@@ -18,3 +18,8 @@ def home():
 @app.route('/search', methods=['GET'])
 def search():
     return request.args['collection']
+
+
+@app.route('/terms-and-conditions')
+def terms_and_conditions():
+    return render_template('terms-and-conditions.html')
