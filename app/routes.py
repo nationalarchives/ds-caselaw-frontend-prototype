@@ -31,5 +31,5 @@ def terms_of_use():
 
 
 @app.route('/open-justice-licence')
-def terms_of_use():
+def open_justice_licence():
     return render_template('open_justice_licence.html')
