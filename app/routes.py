@@ -22,14 +22,23 @@ def search():
 
 @app.route('/browse')
 def browse():
-    return render_template('browse.html')
+    return render_template(
+        'browse.html',
+        service=service,
+    )
 
 
 @app.route('/terms-of-use')
 def terms_of_use():
-    return render_template('terms_of_use.html')
+    return render_template(
+        'terms_of_use.html',
+        service=service,
+    )
 
 
 @app.route('/open-justice-licence')
 def open_justice_licence():
-    return render_template('open_justice_licence.html')
+    return render_template(
+        'open_justice_licence.html',
+        service=service,
+    )

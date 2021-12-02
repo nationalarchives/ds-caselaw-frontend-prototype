@@ -1,5 +1,8 @@
-<form action="{{ url_for('search') }}">
-    <label for="query">Search for a judgment</label>
-    <input required type="text" name="query" id="query">
-    <input type="submit" value="Search">
-</form>
+<div class="search">
+    <h2>Search</h2>
+    <form action="{{ url_for('search') }}" role="search" aria-label="Search for a judgment">
+        <label for="query">Search for a judgment</label>
+        <input required type="text" name="query" id="query">
+        <input type="submit" value="Search">
+    </form>
+</div>

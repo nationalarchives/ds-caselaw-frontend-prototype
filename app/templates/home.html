@@ -1,12 +1,10 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <main>
-        <h1>{{ service.name }}</h1>
-        {% include 'includes/basic_search_form.html' %}
-        {% include 'includes/neutral_citation_form.html' %}
-        {% include 'includes/recent_judgments.html' %}
-        {% include 'includes/collections.html' %}
-        {% include 'includes/browse_widget.html' %}
-    </main>
+    <h1>{{ service.name }}</h1>
+    {% include 'includes/basic_search_form.html' %}
+    {% include 'includes/neutral_citation_form.html' %}
+    {% include 'includes/recent_judgments.html' %}
+    {% include 'includes/collections.html' %}
+    {% include 'includes/browse_widget.html' %}
 {% endblock %}
