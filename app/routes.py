@@ -3,6 +3,7 @@ from flask import render_template, request
 from content.recent_judgments import recent_judgments
 from content.service_wide import service
 from content.collections import collections
+from content.search_results import search_results
 
 
 @app.route('/')
@@ -17,7 +18,11 @@ def home():
 
 @app.route('/search', methods=['GET'])
 def search():
-    return request.args['collection']
+    return render_template(
+        'results.html',
+        service=service,
+        search_results=search_results
+    )
 
 
 @app.route('/browse')

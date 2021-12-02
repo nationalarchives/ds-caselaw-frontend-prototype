@@ -1,0 +1,11 @@
+<h2>Results list</h2>
+<ul>
+    {% for result in search_results %}
+        <li>
+            <a href="#">{{ result.title }}</a>
+            <div>{{ result.neutral_citation }}</div>
+            <div>{{ result.date }}</div>
+            <div>{{ result.snippet | safe }}</div>
+        </li>
+    {% endfor %}
+</ul>
