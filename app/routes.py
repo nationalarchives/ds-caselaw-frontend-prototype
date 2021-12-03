@@ -1,5 +1,6 @@
 from app import app
-from flask import render_template, request
+import re
+from flask import render_template, request, redirect, url_for
 from content.recent_judgments import recent_judgments
 from content.service_wide import service
 from content.collections import collections
@@ -38,6 +39,40 @@ def terms_of_use():
     return render_template(
         'terms_of_use.html',
         service=service,
+    )
+
+
+@app.route('/neutral-citation/')
+def neutral_citation():
+    neutral_citation = request.args['neutral_citation']
+
+    if re.match(r'^\[\d{4}\]\s?\w{3,4}\s?\w{3}\s?\d{4}$', neutral_citation):
+        return render_template(
+            'judgment.html',
+            service=service
+        )
+
+    if re.match(r'(?=.*\[\d{4}\])(?=.*\w).{8,25}', neutral_citation):
+        return redirect(url_for('disambiguation', neutral_citation=neutral_citation))
+
+    return redirect(url_for('no_results', search_term=neutral_citation))
+
+
+@app.route('/disambiguation/')
+def disambiguation():
+    return render_template(
+        'disambiguation.html',
+        service=service,
+        neutral_citation=request.args['neutral_citation']
+    )
+
+
+@app.route('/no-results/')
+def no_results():
+    return render_template(
+        'no_results.html',
+        service=service,
+        search_term=request.args['search_term']
     )
 
 
