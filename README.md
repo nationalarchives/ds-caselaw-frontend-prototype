@@ -7,6 +7,7 @@ Use this contents list to navigate the page.
 * [Development approach](#development-approach)
 * [Local development setup](#local-development)
 * User flow iterations
+    * [1.2](#iteration-12)
     * [1.1](#iteration-11)
     * [1.0](#iteration-10)
 
@@ -57,6 +58,13 @@ In a _new terminal_ run these commands
 9. Install Gulp CLI globally with `npm install --global gulp-cli` (Note: you only need to do this once)
 10. Install Node dependencies with `npm install`
 11. Start Gulp (a run-through of tasks followed by a watch) with `npm start`
+
+## Iteration 1.2 
+
+Iteration [1.2](user_flows/Iterations/1.2/1.2.drawio.pdf) is updated to include:
+
+* A disambiguation page where the neutral citation does not have an exact match
+* A no results page (that will serve for both search results and neutral citation results)
 
 ## Iteration 1.1
 
