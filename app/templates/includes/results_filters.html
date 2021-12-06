@@ -1,71 +1,50 @@
 <h2>Results filters</h2>
 <form action="/search">
-    <label for="search">Search</label>
-    <input id="search" name="q" value="testing" placeholder="Search">
+    <div>
+        <label for="search">Search</label>
+        <input id="search" name="q" value="testing" placeholder="Search">
+    </div>
 
-    <label for="party">Party:</label>
-    <input id="party" name="party" value="" placeholder="Party name">
+    <div>
+        <label for="party">Party:</label>
+        <input id="party" name="party" value="" placeholder="Party name">
+    </div>
 
-    <label for="collection">Collection:</label>
-    <select name="collection" id="collection"">
-    <option value="">any</option>
-    <option value="ewca/civ">ewca/civ</option>
-    <option value="ewca/crim">ewca/crim</option>
-    <option value="ewcop">ewcop</option>
-    <option value="ewfc">ewfc</option>
-    <option value="ewhc/admin">ewhc/admin</option>
-    <option value="ewhc/admlty">ewhc/admlty</option>
-    <option value="ewhc/ch">ewhc/ch</option>
-    <option value="ewhc/comm">ewhc/comm</option>
-    <option value="ewhc/costs">ewhc/costs</option>
-    <option value="ewhc/fam">ewhc/fam</option>
-    <option value="ewhc/ipec">ewhc/ipec</option>
-    <option value="ewhc/pat">ewhc/pat</option>
-    <option value="ewhc/qb">ewhc/qb</option>
-    <option value="ewhc/tcc">ewhc/tcc</option>
-    </select>
 
-    <label for="court">Court:</label>
-    <select name="court" id="court">
-        <option value="">Any</option>
-        <optgroup label="Court of Appeal">
-            <option value="EWCA-Criminal">Court of Appeal (Crim)</option>
-            <option value="EWCA-Civil">Court of Appeal (Civil)</option>
-        </optgroup>
-        <optgroup label="High Court">
-            <option value="EWHC">High Court of Justice</option>
-        </optgroup>
-        <optgroup label="Queen's Bench Division">
-            <option value="EWHC-QBD">Queen's Bench Division</option>
-            <option value="EWHC-QBD-Admin">Administrative Court</option>
-            <option value="EWHC-QBD-Planning">Planning Court</option>
-            <option value="EWHC-QBD-BusinessAndProperty">Business &amp; Propty Cts</option>
-            <option value="EWHC-QBD-Commercial">Commercial Court</option>
-            <option value="EWHC-QBD-Admiralty">Admiralty Court</option>
-            <option value="EWHC-QBD-TCC">Tech &amp; Construction</option>
-            <option value="EWHC-QBD-Commercial-Financial">Financial List</option>
-            <option value="EWHC-QBD-Commercial-Circuit">Circuit Commercial Ct</option>
-        </optgroup>
-        <optgroup label="Chancery Division">
-            <option value="EWHC-Chancery">Chancery Division</option>
-            <option value="EWHC-Chancery-Business">Business List</option>
-            <option value="EWHC-Chancery-InsolvencyAndCompanies">Insolvency &amp; Companies</option>
-            <option value="EWHC-Chancery-Patents">Patents Court</option>
-            <option value="EWHC-Chancery-IPEC">Intellectual Propty Ent.</option>
-            <option value="EWHC-Chancery-Appeals">Chancery Appeals</option>
-        </optgroup>
-        <optgroup label="Family Division">
-            <option value="EWHC-Family">Family Division</option>
-        </optgroup>
-        <option value="EWHC-SeniorCourtsCosts">Snr Courts Costs Office</option>
-        <option value="EWCOP">Court of Protection</option>
-        <option value="EWFC">Family Court</option>
-    </select>
-    <label for="judge">Judge:</label>
-    <input id="judge" name="judge" value="" placeholder="Judge name">
-    <label for="from_date">From date:</label>
-    <input id="from_date" type="date" name="from" value="" placeholder="Date from">
-    <label for="to_date">To date:</label>
-    <input id="to_date" type="date" name="to" value="" placeholder="Date to">
+    <fieldset>
+        <legend>Courts</legend>
+        {% for court in courts %}
+            <input type="checkbox" name="{{ court.code }}" id="{{ court.code }}">
+            <label for="{{ court.code }}">{{ court.name }}
+                {% if court.years_range_start or court.years_range_end %}
+                    ({{ court.years_range_start }}
+                    - {{ court.years_range_end }})
+                {% endif %}
+            </label>
+            <br>
+            {% for subdivision in court.subdivisions %}
+                <input type="checkbox" name="{{ subdivision.code }}" id="{{ subdivision.code }}">
+                <label for="{{ subdivision.code }}">{{ subdivision.name }}
+                    {% if subdivision.years_range_start or subdivision.years_range_end %}
+                        ({{ subdivision.years_range_start }}
+                        - {{ subdivision.years_range_end }})
+                    {% endif %}
+                </label>
+                <br>
+            {% endfor %}
+        {% endfor %}
+    </fieldset>
+    <div>
+        <label for="judge">Judge:</label>
+        <input id="judge" name="judge" value="" placeholder="Judge name">
+    </div>
+    <div>
+        <label for="from_date">From date:</label>
+        <input id="from_date" type="date" name="from" value="" placeholder="Date from">
+    </div>
+    <div>
+        <label for="to_date">To date:</label>
+        <input id="to_date" type="date" name="to" value="" placeholder="Date to">
+    </div>
     <input type="submit" value="Search">
 </form>

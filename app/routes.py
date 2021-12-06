@@ -5,6 +5,7 @@ from content.recent_judgments import recent_judgments
 from content.service_wide import service
 from content.collections import collections
 from content.search_results import search_results
+from content.courts import courts
 
 
 @app.route('/')
@@ -13,7 +14,7 @@ def home():
         'home.html',
         service=service,
         recent_judgments=recent_judgments,
-        collections=collections
+        courts=courts
     )
 
 
@@ -22,6 +23,7 @@ def search():
     return render_template(
         'results.html',
         service=service,
+        courts=courts,
         search_results=search_results
     )
 

@@ -2,17 +2,30 @@
     <h2>Judgments by collection</h2>
     <p>Use these links to see judgments by collection</p>
     <ul>
-        {% for item in collections %}
+        {% for court in courts %}
             <li class="collections__collection">
-                <a href="{{ url_for('search') }}?collection={{ item.code }}&query=''">
-            <span class="collection__code">
-                {{ item.code | upper }}
-            </span>
+                <a href="{{ url_for('search') }}?collection={{ court.code }}&query=''">
                     <span class="collections__title">
-                {{ item.name }}
+                        {{ court.name }}
+                    </span>
                 </a>
+                {% if court.subdivisions %}
+                    <ul>
+                        {% for subdivision in court.subdivisions %}
+                            <li>
+                                <a href="{{ url_for('search') }}?collection={{ subdivision.code }}&query=''">
+                                    {{ subdivision.name }}
+                                    {% if subdivision.years_range_start or subdivision.years_range_end %}
+                                        ({{ subdivision.years_range_start }}
+                                        - {{ subdivision.years_range_end }})
+                                    {% endif %}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </li>
-            </span>
         {% endfor %}
+
     </ul>
 </div>
