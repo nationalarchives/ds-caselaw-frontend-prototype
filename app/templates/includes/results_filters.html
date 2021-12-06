@@ -2,14 +2,13 @@
 <form action="/search">
     <div>
         <label for="search">Search</label>
-        <input id="search" name="q" value="testing" placeholder="Search">
+        <input type="text" id="search" name="q" value="testing" placeholder="Search">
     </div>
 
     <div>
         <label for="party">Party:</label>
-        <input id="party" name="party" value="" placeholder="Party name">
+        <input type="text" id="party" name="party" value="" placeholder="Party name">
     </div>
-
 
     <fieldset>
         <legend>Courts</legend>
@@ -34,17 +33,21 @@
             {% endfor %}
         {% endfor %}
     </fieldset>
+
     <div>
         <label for="judge">Judge:</label>
-        <input id="judge" name="judge" value="" placeholder="Judge name">
+        <input type="text" id="judge" name="judge" value="" placeholder="Judge name">
     </div>
+
     <div>
         <label for="from_date">From date:</label>
-        <input id="from_date" type="date" name="from" value="" placeholder="Date from">
+        <input type="text" id="from_date" name="from" value="" placeholder="Date from">
     </div>
+
     <div>
         <label for="to_date">To date:</label>
-        <input id="to_date" type="date" name="to" value="" placeholder="Date to">
+        <input type="text" id="to_date" name="to" value="" placeholder="Date to">
     </div>
+
     <input type="submit" value="Search">
 </form>
