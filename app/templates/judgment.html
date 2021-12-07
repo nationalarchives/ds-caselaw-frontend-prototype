@@ -1,448 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>United Trade Action Group Ltd (R on the application of) v Transport for London</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <style>
-    :root {
-        --color: lavender;
-        --font: 'Open Sans', sans-serif
-    }
+{% extends "layout_judgment_html.html" %}
 
-    body {
-        margin: 0
-    }
-
-    body > header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 100;
-        padding: 0 1in 12pt 1in;
-        background-color: var(--color);
-        font-family: var(--font)
-    }
-
-    body > header > div {
-        display: flex;
-        width: calc(100% - 2in);
-        justify-content: space-between;
-        align-items: baseline
-    }
-
-    body > header h1 {
-        margin-bottom: 0.25em
-    }
-
-    #search-form, #lookup-form {
-        margin-bottom: 0
-    }
-
-    #search-form > input[name='q'] {
-        width: 40ch
-    }
-
-    #middle-header {
-        width: 50%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis
-    }
-
-    #lookup-form > input[name='cite'] {
-        width: 30ch
-    }
-
-    body > #content {
-        margin-top: 128px;
-        padding: 0 1in 12pt 1in
-    }
-
-    #left-column {
-        font-family: var(--font)
-    }
-
-    #middle-column {
-        padding-left: 2em;
-        font-family: var(--font)
-    }
-
-    #right-column {
-        padding-left: 2em;
-        flex: 1;
-        font-family: var(--font)
-    }
-
-    #left-column > h2, #middle-column > h2, #right-column > h2 {
-        margin-top: 0
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none
-    }
-
-    a:hover {
-        text-decoration: underline
-    }
-
-    body > header > div > h1 > a:hover {
-        text-decoration: none
-    }
-
-    ul.collections, ul.years, ul.judgments {
-        padding: 0;
-        list-style-type: none
-    }
-
-    .collections > li > a, .years > li > a {
-        display: inline-block;
-        padding: 2pt 6pt
-    }
-
-    .years > li {
-        text-align: center
-    }
-
-    .judgments > li > a {
-        display: inline-block;
-        padding: 3pt 6pt
-    }
-
-    .collections > li:hover, .years > li:hover, .judgments > li:hover {
-        background-color: var(--color)
-    }
-
-    .collections > li.highlight, .years > li.highlight, .judgments > li.highlight {
-        background-color: var(--color)
-    }
-
-    .collections > li > a:hover, .years > li > a:hover, .judgments > li > a:hover {
-        text-decoration: none
-    }
-
-    .total {
-        margin-top: 2em;
-        margin-left: 6pt;
-        font-size: smaller
-    }
-
-    .pills {
-        margin-top: 6pt
-    }
-
-    .pill {
-        margin-left: 1ch;
-        margin-right: 1ch;
-        border-radius: 25px;
-        padding: 3pt 9pt;
-        background-color: var(--color);
-        font-size: smaller
-    }
-
-    .pill > span, .pill > a {
-        display: inline-block;
-        margin-left: 3pt
-    }
-
-    .search-result > div > a {
-        display: inline-block;
-        padding: 3pt 6pt
-    }
-
-    .search-result > div > a:hover {
-        text-decoration: none;
-        background-color: var(--color)
-    }
-
-    ul.snippets {
-        margin-top: 3pt;
-        margin-bottom: 9pt
-    }
-
-    mark {
-        padding: 0 2pt;
-        background-color: var(--color)
-    }
-
-    article + article {
-        margin-top: 1in
-    }
-
-    #judgment {
-        font-size: 12pt;
-        font-family: 'Times New Roman';
-    }
-
-    #judgment .Normal {
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .CoverDesc {
-        text-align: center;
-        font-weight: bold;
-        font-family: 'Times New Roman';
-        font-size: 18pt;
-    }
-
-    #judgment .CoverMain {
-        font-weight: bold;
-        text-decoration: underline;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .CoverText {
-        text-align: right;
-        text-decoration: underline;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .ParaHeading {
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .ParaLevel1 {
-        text-align: justify;
-        margin-left: 0.50in;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .ParaLevel2 {
-        text-align: justify;
-        margin-left: 0.98in;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .ParaLevel3 {
-        text-align: justify;
-        margin-left: 1.48in;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .ParaLevel4 {
-        text-align: justify;
-        margin-left: 1.97in;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .ParaLevel5 {
-        text-align: justify;
-        margin-left: 2.46in;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .ParaLevel6 {
-        text-align: justify;
-        margin-left: 2.95in;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .ParaLevel7 {
-        text-align: justify;
-        margin-left: 3.45in;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .ParaLevel8 {
-        text-align: justify;
-        margin-left: 3.94in;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .ParaLevel9 {
-        text-align: justify;
-        margin-left: 4.43in;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .Quote {
-        text-align: justify;
-        margin-left: 1.00in;
-        margin-right: 0.50in;
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .Header {
-        font-family: Univers;
-        font-size: 12pt;
-    }
-
-    #judgment .Footer {
-        font-family: Univers;
-        font-size: 12pt;
-    }
-
-    #judgment .eMailBlock {
-        text-align: center;
-        font-weight: bold;
-        font-family: 'Times New Roman';
-        font-size: 13pt;
-    }
-
-    #judgment .Title {
-        font-size: 28pt;
-    }
-
-    #judgment .CommentText {
-        font-family: 'Times New Roman';
-        font-size: 10pt;
-    }
-
-    #judgment .CommentSubject {
-        font-weight: bold;
-        font-family: 'Times New Roman';
-        font-size: 10pt;
-    }
-
-    #judgment .Revision {
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .BalloonText {
-        font-family: 'Segoe UI';
-        font-size: 9pt;
-    }
-
-    #judgment .ListParagraph {
-        margin-left: 0.50in;
-        font-size: 11pt;
-    }
-
-    #judgment .EndnoteText {
-        font-family: 'Times New Roman';
-        font-size: 10pt;
-    }
-
-    #judgment .FootnoteText {
-        font-family: 'Times New Roman';
-        font-size: 10pt;
-    }
-
-    #judgment .QuoteChar {
-        font-family: 'Times New Roman';
-        font-size: 12pt;
-    }
-
-    #judgment .HeaderChar {
-        font-family: Univers;
-        font-size: 12pt;
-    }
-
-    #judgment .FooterChar {
-        font-family: Univers;
-        font-size: 12pt;
-    }
-
-    #judgment .TitleChar {
-        font-size: 28pt;
-    }
-
-    #judgment .CommentReference {
-        font-size: 8pt;
-    }
-
-    #judgment .CommentTextChar {
-        font-family: 'Times New Roman';
-        font-size: 10pt;
-    }
-
-    #judgment .CommentSubjectChar {
-        font-weight: bold;
-        font-family: 'Times New Roman';
-        font-size: 10pt;
-    }
-
-    #judgment .BalloonTextChar {
-        font-family: 'Segoe UI';
-        font-size: 9pt;
-    }
-
-    #judgment .EndnoteTextChar {
-        font-family: 'Times New Roman';
-        font-size: 10pt;
-    }
-
-    #judgment .EndnoteReference {
-        vertical-align: super;
-    }
-
-    #judgment .FootnoteTextChar {
-        font-family: 'Times New Roman';
-        font-size: 10pt;
-    }
-
-    #judgment .FootnoteReference {
-        vertical-align: super;
-    }
-
-    #judgment .tab {
-        display: inline-block;
-        width: 0.25in
-    }
-
-    #judgment section {
-        position: relative
-    }
-
-    #judgment h2 {
-        font-size: inherit;
-        font-weight: normal
-    }
-
-    #judgment h2.floating {
-        position: absolute;
-        margin-top: 0
-    }
-
-    #judgment .num {
-        display: inline-block;
-        padding-right: 1em
-    }
-
-    #judgment td {
-        position: relative;
-        min-width: 2em;
-        padding-left: 1em;
-        padding-right: 1em
-    }
-
-    #judgment td > .num {
-        left: -2em
-    }
-
-    #judgment table {
-        margin: 0 auto
-    }
-
-    #judgment .fn {
-        vertical-align: super;
-        font-size: small
-    }
-
-    #judgment .footnote > p > .marker {
-        vertical-align: super;
-        font-size: small
-    }
-    </style>
-</head>
-<body>
+{% block content %}
     <div id="content">
         <div style="position:absolute;left:1em">
             <span style="display:inline-block;padding:3pt;background-color:var(--color);color:gray">
@@ -452,28 +10,32 @@
         <article id="judgment">
             <div class="header">
                 <p class="CoverText" style="text-align:center">
-                    <img src="https://judgment-images.s3.eu-west-2.amazonaws.com/ewhc/admin/2021/3290/image1.png" style="width:1.0597222222222222in;height:1.05in;">
+                    <img src="https://judgment-images.s3.eu-west-2.amazonaws.com/ewhc/admin/2021/3290/image1.png"
+                         style="width:1.0597222222222222in;height:1.05in;">
                 </p>
                 <p class="CoverText" style="text-align:left">
                     Neutral Citation Number:
-                    <span class="neutralCitation" style="font-weight:bold;font-family:Arial;font-size:9.5pt;color:#000000">[2021] EWHC 3290 (Admin)</span>
+                    <span class="neutralCitation"
+                          style="font-weight:bold;font-family:Arial;font-size:9.5pt;color:#000000">[2021] EWHC 3290 (Admin)</span>
                     <span style="font-weight:bold;font-family:Arial;font-size:9.5pt;color:#000000"></span>
                     <br>
                 </p>
                 <p class="CoverText">
                     Case No:
                     <span class="docketNumber">C0/4087/2020</span>
-                     &amp;
+                    &amp;
                     <span class="docketNumber">CO/3046/2021</span>
                 </p>
                 <p class="CoverMain">
                     <span class="courtType">IN THE HIGH COURT OF JUSTICE</span>
                 </p>
                 <p>
-                    <span class="courtType" style="font-weight:bold;text-decoration:underline">QUEEN'S BENCH DIVISION</span>
+                    <span class="courtType"
+                          style="font-weight:bold;text-decoration:underline">QUEEN'S BENCH DIVISION</span>
                 </p>
                 <p>
-                    <span class="courtType" style="font-weight:bold;text-decoration:underline">ADMINISTRATIVE COURT</span>
+                    <span class="courtType"
+                          style="font-weight:bold;text-decoration:underline">ADMINISTRATIVE COURT</span>
                 </p>
                 <p class="CoverText">Royal Courts of Justice</p>
                 <p class="CoverText">Strand, London, WC2A 2LL</p>
@@ -613,28 +175,28 @@
                 </p>
                 <p style="text-align:center">
                     <span style="font-weight:bold">Jason Galbraith-Marten QC</span>
-                     (instructed by
+                    (instructed by
                     <span style="font-weight:bold">ITN Solicitors</span>
                     ) for the
                     <span style="font-weight:bold">App Drivers and Couriers Union</span>
                 </p>
                 <p style="text-align:center">
                     <span style="font-weight:bold">Maya Lester QC and Tim Johnston</span>
-                     (instructed by
+                    (instructed by
                     <span style="font-weight:bold">Transport for London Legal</span>
                     ) for
                     <span style="font-weight:bold">Transport for London</span>
                 </p>
                 <p style="text-align:center">
                     <span style="font-weight:bold">Ranjit Bhose QC and Josef Cannon</span>
-                     (instructed by
+                    (instructed by
                     <span style="font-weight:bold">Hogan Lovells International LLP</span>
                     ) for
                     <span style="font-weight:bold">Uber London Ltd</span>
                 </p>
                 <p style="text-align:center">
                     <span style="font-weight:bold">Philip Kolvin QC and Ronnie Dennis</span>
-                     (instructed by
+                    (instructed by
                     <span style="font-weight:bold">EMW Law LLP</span>
                     ) for
                     <span style="font-weight:bold">Free Now</span>
@@ -642,9 +204,9 @@
                 <p style="text-align:center">
                     Hearing dates: 23
                     <span style="vertical-align:super;font-size:smaller">rd</span>
-                     and 24
+                    and 24
                     <span style="vertical-align:super;font-size:smaller">th</span>
-                     November 2021
+                    November 2021
                 </p>
                 <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
                 <p class="CoverDesc">Approved Judgment</p>
@@ -662,59 +224,114 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">1.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">1.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        Uber London Ltd (“Uber”) and Transopco (UK) Ltd (the latter trading as “Free Now”) are each operators licensed under the Private Hire Vehicles (London) Act 1998 (“the 1998 Act”). Users of their services are able to book a private hire vehicle using a smartphone app. As is well known, an issue arose whether private hire vehicle drivers providing services to passengers through the Uber app were to be regarded as “workers” within the meaning of various provisions of employment protection legislation. The case,
+                        Uber London Ltd (“Uber”) and Transopco (UK) Ltd (the latter trading as “Free Now”) are each
+                        operators licensed under the Private Hire Vehicles (London) Act 1998 (“the 1998 Act”). Users of
+                        their services are able to book a private hire vehicle using a smartphone app. As is well known,
+                        an issue arose whether private hire vehicle drivers providing services to passengers through the
+                        Uber app were to be regarded as “workers” within the meaning of various provisions of employment
+                        protection legislation. The case,
                         <span style="font-style:italic">Uber BV v Aslam</span>
-                         [2021] UKSC 5, [2021] ICR 657, went to the Supreme Court which held that they were.
+                        [2021] UKSC 5, [2021] ICR 657, went to the Supreme Court which held that they were.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">2.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">2.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">In the course of his judgment, with which the other members of the Court agreed, Lord Leggatt considered an argument advanced by Uber that it was acting as agent of the driver. He suggested, albeit without finally deciding the point, that in order to comply with the provisions of the 1998 Act, Uber would have to accept a contractual obligation to the passenger as a principal to carry out the booking. That suggestion has given rise to the first issue in these proceedings.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">In the course of his judgment,
+                        with which the other members of the Court agreed, Lord Leggatt considered an argument advanced
+                        by Uber that it was acting as agent of the driver. He suggested, albeit without finally deciding
+                        the point, that in order to comply with the provisions of the 1998 Act, Uber would have to
+                        accept a contractual obligation to the passenger as a principal to carry out the booking. That
+                        suggestion has given rise to the first issue in these proceedings.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">3.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">3.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        There are two claims before the court, which have been heard together. First, in Part 8 proceedings Uber, supported by Free Now, claims a declaration that an operator licensed under the 1998 Act who accepts a booking from a passenger is
+                        There are two claims before the court, which have been heard together. First, in Part 8
+                        proceedings Uber, supported by Free Now, claims a declaration that an operator licensed under
+                        the 1998 Act who accepts a booking from a passenger is
                         <span style="font-style:italic">not</span>
-                         required by the Act to enter as principal into a contractual obligation with the passenger to provide the journey in respect of that booking. In other words, Uber and Free Now say that Lord Leggatt’s suggestion in
+                        required by the Act to enter as principal into a contractual obligation with the passenger to
+                        provide the journey in respect of that booking. In other words, Uber and Free Now say that Lord
+                        Leggatt’s suggestion in
                         <span style="font-style:italic">Uber v Aslam </span>
                         is wrong.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">4.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">4.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        Second, in judicial review proceedings the United Trade Action Group Ltd (“UTAG”), the trade association for (among others) hackney carriage (or black cab) drivers, seeks to quash the decision made on 9
+                        Second, in judicial review proceedings the United Trade Action Group Ltd (“UTAG”), the trade
+                        association for (among others) hackney carriage (or black cab) drivers, seeks to quash the
+                        decision made on 9
                         <span style="vertical-align:super;font-size:smaller">th</span>
-                         August 2020 by Transport for London (“TfL”) as the regulator to renew Free Now’s operator’s licence under the 1998 Act. It does so on two grounds, (1) that according to Free Now’s own terms and conditions, bookings are accepted by private hire vehicle drivers and not by Free Now itself, which is unlawful because, under the 1998 Act, the booking must be accepted by Free Now as the licensed operator; and (2) that private hire vehicles ply for hire in London using the Free Now app, which is unlawful as only licensed hackney carriage drivers can lawfully ply for hire. UTAG’s position is that the renewal of the licence by TfL was therefore unlawful because (in judicial review terms) (1) TfL failed to have regard to the unlawful way in which Free Now conducts its business by encouraging drivers to break the law, and (2) Free Now’s encouragement to its drivers to break the law means that TfL could not rationally conclude that Free Now is a fit and proper person to hold a licence. There is no equivalent judicial review challenge to Uber’s licence because, as Mr David Matthias QC for UTAG frankly acknowledged, any such challenge would be out of time. However there appears to be no material difference for the purpose of this case between the way in which Uber and Free Now conduct their business.
+                        August 2020 by Transport for London (“TfL”) as the regulator to renew Free Now’s operator’s
+                        licence under the 1998 Act. It does so on two grounds, (1) that according to Free Now’s own
+                        terms and conditions, bookings are accepted by private hire vehicle drivers and not by Free Now
+                        itself, which is unlawful because, under the 1998 Act, the booking must be accepted by Free Now
+                        as the licensed operator; and (2) that private hire vehicles ply for hire in London using the
+                        Free Now app, which is unlawful as only licensed hackney carriage drivers can lawfully ply for
+                        hire. UTAG’s position is that the renewal of the licence by TfL was therefore unlawful because
+                        (in judicial review terms) (1) TfL failed to have regard to the unlawful way in which Free Now
+                        conducts its business by encouraging drivers to break the law, and (2) Free Now’s encouragement
+                        to its drivers to break the law means that TfL could not rationally conclude that Free Now is a
+                        fit and proper person to hold a licence. There is no equivalent judicial review challenge to
+                        Uber’s licence because, as Mr David Matthias QC for UTAG frankly acknowledged, any such
+                        challenge would be out of time. However there appears to be no material difference for the
+                        purpose of this case between the way in which Uber and Free Now conduct their business.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">5.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">5.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Accordingly there are two issues to be decided.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Accordingly there are two issues
+                        to be decided.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">6.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">6.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The first issue is whether, in order to comply with the provisions of the 1998 Act, a licensed operator must accept a contractual obligation to the passenger as a principal to carry out the booking (“the Operator issue”). On this issue Uber and Free Now say that this is not necessary, while UTAG and the App Drivers and Couriers Union (“ADCU”) say that it is. TfL is neutral. Uber, Free Now and TfL say that this issue needs to be decided and this court should grant a declaration to decide the point one way or the other. UTAG says that Free Now’s terms and conditions mean that it is encouraging drivers to operate unlawfully and that the decision to grant it a licence should be quashed.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The first issue is whether, in
+                        order to comply with the provisions of the 1998 Act, a licensed operator must accept a
+                        contractual obligation to the passenger as a principal to carry out the booking (“the Operator
+                        issue”). On this issue Uber and Free Now say that this is not necessary, while UTAG and the App
+                        Drivers and Couriers Union (“ADCU”) say that it is. TfL is neutral. Uber, Free Now and TfL say
+                        that this issue needs to be decided and this court should grant a declaration to decide the
+                        point one way or the other. UTAG says that Free Now’s terms and conditions mean that it is
+                        encouraging drivers to operate unlawfully and that the decision to grant it a licence should be
+                        quashed.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">7.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">7.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The second issue is whether a driver soliciting passengers by means of the Free Now app (which is in all material respects identical to the Uber app) is “plying for hire” within the meaning of the Metropolitan Public Carriage Act 1869 (“the 1869 Act”) (“the Plying for Hire issue”). UTAG says that the answer is yes. Free Now and TfL deny this. If we accept UTAG’s position, there is a further issue as to remedy. UTAG says that we should quash the decision to grant Free Now an operator’s licence, either immediately or after a period of time, which would mean that Free Now had no licence and drivers using the app would have to cease to do so. Free Now, supported by TfL, says that it would be sufficient to grant a declaration, having regard in particular to the large number of licensed drivers whose livelihoods depend on obtaining business through apps such as Free Now’s.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The second issue is whether a
+                        driver soliciting passengers by means of the Free Now app (which is in all material respects
+                        identical to the Uber app) is “plying for hire” within the meaning of the Metropolitan Public
+                        Carriage Act 1869 (“the 1869 Act”) (“the Plying for Hire issue”). UTAG says that the answer is
+                        yes. Free Now and TfL deny this. If we accept UTAG’s position, there is a further issue as to
+                        remedy. UTAG says that we should quash the decision to grant Free Now an operator’s licence,
+                        either immediately or after a period of time, which would mean that Free Now had no licence and
+                        drivers using the app would have to cease to do so. Free Now, supported by TfL, says that it
+                        would be sufficient to grant a declaration, having regard in particular to the large number of
+                        licensed drivers whose livelihoods depend on obtaining business through apps such as Free
+                        Now’s.</p>
                 </section>
                 <section class="level">
                     <p class="ParaLevel1">
@@ -723,53 +340,110 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">8.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">8.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Until the passing of the 1998 Act private hire vehicles in London (then generally known as “minicabs”) were unregulated. At that time, of course, the possibility of booking a vehicle using a smartphone app was not in contemplation. Booking was done either by telephone, or by going personally to a minicab office. Since the use of smartphone apps became possible, the private hire vehicle industry in London has grown significantly. The number of licensed private hire drivers in London has increased from about 65,000 such drivers in 2013 to 104,000 in 2021. </p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Until the passing of the 1998 Act
+                        private hire vehicles in London (then generally known as “minicabs”) were unregulated. At that
+                        time, of course, the possibility of booking a vehicle using a smartphone app was not in
+                        contemplation. Booking was done either by telephone, or by going personally to a minicab office.
+                        Since the use of smartphone apps became possible, the private hire vehicle industry in London
+                        has grown significantly. The number of licensed private hire drivers in London has increased
+                        from about 65,000 such drivers in 2013 to 104,000 in 2021. </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">9.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">9.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        According to the evidence of TfL, there were 1,919 licensed private hire vehicle operators in London as at 13
+                        According to the evidence of TfL, there were 1,919 licensed private hire vehicle operators in
+                        London as at 13
                         <span style="vertical-align:super;font-size:smaller">th</span>
-                         June 2021. They vary in their size and type, from single driver-operators, traditional telephone or walk-in minicab offices, through to operators with tens of thousands of drivers registered to their app-only booking platforms. As a result TfL’s approach to licensing and regulation must accommodate a wide range of situations, modes of providing services and levels of technical sophistication in each operating model.
+                        June 2021. They vary in their size and type, from single driver-operators, traditional telephone
+                        or walk-in minicab offices, through to operators with tens of thousands of drivers registered to
+                        their app-only booking platforms. As a result TfL’s approach to licensing and regulation must
+                        accommodate a wide range of situations, modes of providing services and levels of technical
+                        sophistication in each operating model.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">10.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">10.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">While there continue to be many minicab offices where a customer can make a booking either in person or by telephone, either for an immediate journey or for a future time, the introduction of smart phones and app-based services has significantly changed the way many private hire vehicle services are delivered, both in and outside London. In London there are a number of private hire vehicle operators, including Uber and Free Now, which only accept bookings by means of an app, generally known as a “ride hailing app”. </p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">While there continue to be many
+                        minicab offices where a customer can make a booking either in person or by telephone, either for
+                        an immediate journey or for a future time, the introduction of smart phones and app-based
+                        services has significantly changed the way many private hire vehicle services are delivered,
+                        both in and outside London. In London there are a number of private hire vehicle operators,
+                        including Uber and Free Now, which only accept bookings by means of an app, generally known as a
+                        “ride hailing app”. </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">11.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">11.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">There are two versions of the Free Now smartphone app. One is made available to passengers, the other to drivers. The passenger’s use of the app is governed by “General Terms and Conditions for Users of the Free Now Platform” (“the User Terms”). When a passenger first installs the app on their smartphone, they are required to indicate their acceptance of these terms, although it is questionable how many passengers would read them. Separate agreements between Free Now and drivers are contained in “General Terms and Conditions for Drivers using the Free Now Platform” (“the Driver Terms”). No doubt Uber has a broadly similar contractual structure, although the terms of its agreements are not in evidence.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">There are two versions of the
+                        Free Now smartphone app. One is made available to passengers, the other to drivers. The
+                        passenger’s use of the app is governed by “General Terms and Conditions for Users of the Free
+                        Now Platform” (“the User Terms”). When a passenger first installs the app on their smartphone,
+                        they are required to indicate their acceptance of these terms, although it is questionable how
+                        many passengers would read them. Separate agreements between Free Now and drivers are contained
+                        in “General Terms and Conditions for Drivers using the Free Now Platform” (“the Driver Terms”).
+                        No doubt Uber has a broadly similar contractual structure, although the terms of its agreements
+                        are not in evidence.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">12.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">12.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        TfL’s approach when considering an application for a private hire vehicle operator’s licence is to focus on the mechanics of the booking process, that is to say the various steps which make up that process: who accepts the booking, when it is accepted, how it might be cancelled, and so on. More often than not, TfL does not review the contractual terms of the operator when considering a licence application. This is deliberate. TfL’s view is that (in the words of Ms Helen Chapman, the Director of Licensing, Regulation and Charging) “a common sense approach should be taken to the question of whether there has been provision made for the invitation and acceptance of bookings, rather than seeking to answer that question by reference to the technicalities and complexities of the law of contract”. Ms Chapman refers to the case of
+                        TfL’s approach when considering an application for a private hire vehicle operator’s licence is
+                        to focus on the mechanics of the booking process, that is to say the various steps which make up
+                        that process: who accepts the booking, when it is accepted, how it might be cancelled, and so
+                        on. More often than not, TfL does not review the contractual terms of the operator when
+                        considering a licence application. This is deliberate. TfL’s view is that (in the words of Ms
+                        Helen Chapman, the Director of Licensing, Regulation and Charging) “a common sense approach
+                        should be taken to the question of whether there has been provision made for the invitation and
+                        acceptance of bookings, rather than seeking to answer that question by reference to the
+                        technicalities and complexities of the law of contract”. Ms Chapman refers to the case of
                         <span style="font-style:italic">Kingston upon Hull City Council v Wilson</span>
-                         [1995] 6 WLUK 360 as supporting this approach.
+                        [1995] 6 WLUK 360 as supporting this approach.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">13.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">13.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">A customer wishing to book a private hire vehicle using the Free Now app will log on to the app on their smartphone (it is also possible to use the app to order a hackney carriage but we are not concerned with that). The app will determine their current location via GPS and will show, by means of an icon on the screen, which vehicles are in the vicinity of that customer. The customer enters their destination and a price is quoted. If the customer wishes to proceed, they press “Order Ride now”. The screen will show a message saying, “We are looking for a driver – FREE NOW has accepted your booking”. Drivers in the vicinity will be alerted to the booking by the app and can choose whether to carry it out. Once a driver agrees to carry out the booking, the passenger receives confirmation, including details of the vehicle and driver, and also an estimated arrival time. If there are no drivers available to carry out the booking, the passenger will receive a message “No driver found. Unfortunately, all drivers are busy at the moment. Hit retry if you still need a ride”. Payment is made by the customer to the company operating the app, here Uber or Free Now. That company will pay the driver the amount of the trip, less charges for using the app.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">A customer wishing to book a
+                        private hire vehicle using the Free Now app will log on to the app on their smartphone (it is
+                        also possible to use the app to order a hackney carriage but we are not concerned with that).
+                        The app will determine their current location via GPS and will show, by means of an icon on the
+                        screen, which vehicles are in the vicinity of that customer. The customer enters their
+                        destination and a price is quoted. If the customer wishes to proceed, they press “Order Ride
+                        now”. The screen will show a message saying, “We are looking for a driver – FREE NOW has
+                        accepted your booking”. Drivers in the vicinity will be alerted to the booking by the app and
+                        can choose whether to carry it out. Once a driver agrees to carry out the booking, the passenger
+                        receives confirmation, including details of the vehicle and driver, and also an estimated
+                        arrival time. If there are no drivers available to carry out the booking, the passenger will
+                        receive a message “No driver found. Unfortunately, all drivers are busy at the moment. Hit retry
+                        if you still need a ride”. Payment is made by the customer to the company operating the app,
+                        here Uber or Free Now. That company will pay the driver the amount of the trip, less charges for
+                        using the app.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">14.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">14.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">This type of booking is well known to many thousands of customers. It is the legal framework within which that everyday activity sits, both statutorily and also contractually, that is central to these proceedings.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">This type of booking is well
+                        known to many thousands of customers. It is the legal framework within which that everyday
+                        activity sits, both statutorily and also contractually, that is central to these
+                        proceedings.</p>
                 </section>
                 <section class="level">
                     <p class="ParaLevel1">
@@ -783,15 +457,22 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">15.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">15.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The 1998 Act established three kinds of licence which must exist in order for a private hire vehicle journey in London to be lawful. This was described in argument as a “triple lock”. There must be a licence for an operator (the requirements for which are dealt with in sections 2 to 5), the vehicle (sections 6 to 11) and the driver (sections 12 to 14).</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The 1998 Act established three
+                        kinds of licence which must exist in order for a private hire vehicle journey in London to be
+                        lawful. This was described in argument as a “triple lock”. There must be a licence for an
+                        operator (the requirements for which are dealt with in sections 2 to 5), the vehicle (sections 6
+                        to 11) and the driver (sections 12 to 14).</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">16.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">16.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 1 contains definitions:</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 1 contains
+                        definitions:</p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.00in">“(1) In this Act— </p>
@@ -800,31 +481,40 @@
                     <p class="Quote" style="margin-left:1.18in">
                         (a) ‘
                         <span style="font-style:italic">private hire vehicle’ </span>
-                        means a vehicle constructed or adapted to seat fewer than nine passengers which is made available with a driver for hire for the purpose of carrying passengers, other than a licensed taxi or a public service vehicle;
+                        means a vehicle constructed or adapted to seat fewer than nine passengers which is made
+                        available with a driver for hire for the purpose of carrying passengers, other than a licensed
+                        taxi or a public service vehicle;
                     </p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.18in">
                         (b)
                         <span style="font-style:italic">‘operator’</span>
-                         means a person who makes provision for the invitation or acceptance of, or who accepts, private hire bookings; and
+                        means a person who makes provision for the invitation or acceptance of, or who accepts, private
+                        hire bookings; and
                     </p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.18in">
                         (c)
                         <span style="font-style:italic">‘operate’</span>
-                        , in relation to a private hire vehicle, means to make provision for the invitation or acceptance of, or to accept, private hire bookings in relation to the vehicle. …
+                        , in relation to a private hire vehicle, means to make provision for the invitation or
+                        acceptance of, or to accept, private hire bookings in relation to the vehicle. …
                     </p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.00in">(3) Any reference in this Act to the operator of a vehicle which is being used as a private hire vehicle is a reference to the operator who accepted the booking for hiring or to whom the vehicle is immediately available, as the case may be. </p>
+                    <p class="Quote" style="margin-left:1.00in">(3) Any reference in this Act to the operator of a
+                        vehicle which is being used as a private hire vehicle is a reference to the operator who
+                        accepted the booking for hiring or to whom the vehicle is immediately available, as the case may
+                        be. </p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.00in">
                         (4) In this Act
                         <span style="font-style:italic">‘private hire booking’</span>
-                         means a booking for the hire of a private hire vehicle for the purpose of carrying one or more passengers (including a booking to carry out as sub-contractor a private hire booking accepted by another operator).
+                        means a booking for the hire of a private hire vehicle for the purpose of carrying one or more
+                        passengers (including a booking to carry out as sub-contractor a private hire booking accepted
+                        by another operator).
                     </p>
                 </section>
                 <section class="level">
@@ -836,49 +526,80 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">17.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">17.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 2 provides that no person shall make provision for the invitation or acceptance of, or accept, private hire bookings without an operator’s licence. To do so is an offence.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 2 provides that no person
+                        shall make provision for the invitation or acceptance of, or accept, private hire bookings
+                        without an operator’s licence. To do so is an offence.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">18.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">18.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 3 deals with applications for an operator’s licence. It requires an applicant to identify the address of any premises to be used as an operating centre. It requires TfL as the licensing authority to satisfy itself that the applicant is “a fit and proper person to hold a London PHV operator’s licence” and empowers TfL to prescribe conditions on any licence granted. A licence must specify the address of the licence holder’s operating centre. For a minicab office, the operating centre will obviously be the address of that office. We were told that for a company such as Free Now, the operating centre is the location of the servers.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 3 deals with applications
+                        for an operator’s licence. It requires an applicant to identify the address of any premises to
+                        be used as an operating centre. It requires TfL as the licensing authority to satisfy itself
+                        that the applicant is “a fit and proper person to hold a London PHV operator’s licence” and
+                        empowers TfL to prescribe conditions on any licence granted. A licence must specify the address
+                        of the licence holder’s operating centre. For a minicab office, the operating centre will
+                        obviously be the address of that office. We were told that for a company such as Free Now, the
+                        operating centre is the location of the servers.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">19.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">19.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 4 deals with the obligations of operators. An operator must not accept a booking other than at an operating centre specified in the licence and must secure that any private hire vehicle “which is provided by him for carrying out a private hire booking accepted by him in London” is licensed and is driven by a licensed driver. An operator must also keep prescribed records at the operating centre of each booking accepted and of the vehicles and drivers “available to him for carrying out booking accepted by him at that centre”.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 4 deals with the
+                        obligations of operators. An operator must not accept a booking other than at an operating
+                        centre specified in the licence and must secure that any private hire vehicle “which is provided
+                        by him for carrying out a private hire booking accepted by him in London” is licensed and is
+                        driven by a licensed driver. An operator must also keep prescribed records at the operating
+                        centre of each booking accepted and of the vehicles and drivers “available to him for carrying
+                        out booking accepted by him at that centre”.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">20.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">20.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 5 enables an operator to sub-contract a booking subject to certain conditions. It provides:</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 5 enables an operator to
+                        sub-contract a booking subject to certain conditions. It provides:</p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.00in">“(1) A London PHV operator (‘the first operator’) who has in London accepted a private hire booking may not arrange for another operator to provide a vehicle to carry out that booking as sub-contractor unless— </p>
+                    <p class="Quote" style="margin-left:1.00in">“(1) A London PHV operator (‘the first operator’) who
+                        has in London accepted a private hire booking may not arrange for another operator to provide a
+                        vehicle to carry out that booking as sub-contractor unless— </p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.18in">(a) the other operator is a London PHV operator and the sub-contracted booking is accepted at an operating centre in London; </p>
+                    <p class="Quote" style="margin-left:1.18in">(a) the other operator is a London PHV operator and the
+                        sub-contracted booking is accepted at an operating centre in London; </p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.18in">
-                        (b) the other operator is licensed under section 55 of the Local Government (Miscellaneous Provisions) Act 1976 (in this Act referred to as
+                        (b) the other operator is licensed under section 55 of the Local Government (Miscellaneous
+                        Provisions) Act 1976 (in this Act referred to as
                         <span style="font-style:italic">‘the 1976 Act’</span>
                         ) by the council of a district and the sub-contracted booking is accepted in that district; or
                     </p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.18in">(c) the other operator accepts the sub-contracted booking in Scotland. …</p>
+                    <p class="Quote" style="margin-left:1.18in">(c) the other operator accepts the sub-contracted
+                        booking in Scotland. …</p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.00in">(4) It is immaterial for the purposes of subsection (1) whether or not sub-contracting is permitted by the contract between the first operator and the person who made the booking. </p>
+                    <p class="Quote" style="margin-left:1.00in">(4) It is immaterial for the purposes of subsection (1)
+                        whether or not sub-contracting is permitted by the contract between the first operator and the
+                        person who made the booking. </p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.00in">(5) For the avoidance of doubt (and subject to any relevant contract terms), a contract of hire between a person who made a private hire booking at an operating centre in London and the London PHV operator who accepted the booking remains in force despite the making of arrangements by that operator for another contractor to provide a vehicle to carry out that booking as sub-contractor.”</p>
+                    <p class="Quote" style="margin-left:1.00in">(5) For the avoidance of doubt (and subject to any
+                        relevant contract terms), a contract of hire between a person who made a private hire booking at
+                        an operating centre in London and the London PHV operator who accepted the booking remains in
+                        force despite the making of arrangements by that operator for another contractor to provide a
+                        vehicle to carry out that booking as sub-contractor.”</p>
                 </section>
                 <section class="level">
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in">
@@ -887,12 +608,20 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">21.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">21.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 5(1)(b) of the 1998 Act refers to section 55 of the Local Government (Miscellaneous Provisions) Act 1976 (“the 1976 Act”). That is the Act which regulates the provision of private hire vehicle services outside London, where a similar licensing scheme existed for some 20 years before the licensing of such services within London. Section 56(1) of the 1976 Act is of interest. It provides:</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 5(1)(b) of the 1998 Act
+                        refers to section 55 of the Local Government (Miscellaneous Provisions) Act 1976 (“the 1976
+                        Act”). That is the Act which regulates the provision of private hire vehicle services outside
+                        London, where a similar licensing scheme existed for some 20 years before the licensing of such
+                        services within London. Section 56(1) of the 1976 Act is of interest. It provides:</p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.00in">“(1) For the purpose of this Part of this Act every contract for the hire of a private hire vehicle licensed under this Part of this Act shall be deemed to be made with the operator who accepted the booking for that vehicle whether or not he himself provided the vehicle.”</p>
+                    <p class="Quote" style="margin-left:1.00in">“(1) For the purpose of this Part of this Act every
+                        contract for the hire of a private hire vehicle licensed under this Part of this Act shall be
+                        deemed to be made with the operator who accepted the booking for that vehicle whether or not he
+                        himself provided the vehicle.”</p>
                 </section>
                 <section class="level">
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in">
@@ -901,42 +630,100 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">22.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">22.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        It was by reference to the statutory provisions in the 1998 Act that Lord Leggatt made his observations in
+                        It was by reference to the statutory provisions in the 1998 Act that Lord Leggatt made his
+                        observations in
                         <span style="font-style:italic">Uber v Aslam</span>
-                        . The context was an argument by Uber that a driver should not be regarded as a “worker” because there was no contract whereby the driver undertook to perform work or services for Uber; rather, drivers were performing services solely for, and under, contracts made with passengers through the agency of Uber. Uber’s case was that the starting point for considering this argument should be to interpret the terms of the written agreements between Uber and drivers on the one hand, and between Uber and passengers on the other; and that the effect of these was that acceptance of a booking constituted a contract between the passenger and the driver to which Uber was not a party. It maintained that its only role was to act as a booking agent providing technology services and collecting payment as agent for the drivers.
+                        . The context was an argument by Uber that a driver should not be regarded as a “worker” because
+                        there was no contract whereby the driver undertook to perform work or services for Uber; rather,
+                        drivers were performing services solely for, and under, contracts made with passengers through
+                        the agency of Uber. Uber’s case was that the starting point for considering this argument should
+                        be to interpret the terms of the written agreements between Uber and drivers on the one hand,
+                        and between Uber and passengers on the other; and that the effect of these was that acceptance
+                        of a booking constituted a contract between the passenger and the driver to which Uber was not a
+                        party. It maintained that its only role was to act as a booking agent providing technology
+                        services and collecting payment as agent for the drivers.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">23.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">23.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">In Lord Leggatt’s view there were two fatal objections to this argument. The first was that it was not the correct approach to deciding whether drivers were working under workers’ contracts with Uber simply to apply ordinary principles of the law of contract and agency. The second was that there was in evidence no written agreement between Uber and drivers, nor was there any mechanism whereby a driver gave authority to Uber to act as his or her agent. However, Lord Leggatt went on to say that there was a third objection, which was that if the contractual scheme was as described by Uber, it would be unlawful because the 1998 Act requires acceptance by the operator of a contractual obligation owed to the passenger to carry out the booking and to provide a vehicle for that purpose. He said:</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">In Lord Leggatt’s view there were
+                        two fatal objections to this argument. The first was that it was not the correct approach to
+                        deciding whether drivers were working under workers’ contracts with Uber simply to apply
+                        ordinary principles of the law of contract and agency. The second was that there was in evidence
+                        no written agreement between Uber and drivers, nor was there any mechanism whereby a driver gave
+                        authority to Uber to act as his or her agent. However, Lord Leggatt went on to say that there
+                        was a third objection, which was that if the contractual scheme was as described by Uber, it
+                        would be unlawful because the 1998 Act requires acceptance by the operator of a contractual
+                        obligation owed to the passenger to carry out the booking and to provide a vehicle for that
+                        purpose. He said:</p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.00in">“46. It is an important feature of the context in which, as the employment tribunal found, Uber London recruits and communicates on a day to day basis with drivers that, as mentioned earlier: (1) it is unlawful for anyone in London to accept a private hire booking unless that person is the holder of a private hire vehicle operator’s licence for London; and (2) the only natural or legal person involved in the acceptance of bookings and provision of private hire vehicles booked through the Uber app which holds such a licence is Uber London. It is reasonable to assume, at least unless the contrary is demonstrated, that the parties intended to comply with the law in the way they dealt with each other.</p>
+                    <p class="Quote" style="margin-left:1.00in">“46. It is an important feature of the context in which,
+                        as the employment tribunal found, Uber London recruits and communicates on a day to day basis
+                        with drivers that, as mentioned earlier: (1) it is unlawful for anyone in London to accept a
+                        private hire booking unless that person is the holder of a private hire vehicle operator’s
+                        licence for London; and (2) the only natural or legal person involved in the acceptance of
+                        bookings and provision of private hire vehicles booked through the Uber app which holds such a
+                        licence is Uber London. It is reasonable to assume, at least unless the contrary is
+                        demonstrated, that the parties intended to comply with the law in the way they dealt with each
+                        other.</p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.00in">
                         47.
                         <span style="font-size:7pt"></span>
-                        Uber maintains that the acceptance of private hire bookings by a licensed London PHV operator acting as agent for drivers would comply with the regulatory regime. I am not convinced by this. References in the Private Hire Vehicles (London) Act 1998 to ‘acceptance’ of a private hire booking are reasonably understood to connote acceptance (personally and not merely for someone else) of a contractual obligation to carry out the booking and provide a vehicle for that purpose. This is implicit, for example, in section 4(2) of the Act quoted at para 31 above. It would in principle be possible for Uber London both to accept such an obligation itself and also to contract on behalf of the driver of the vehicle. However, if this were the arrangement made, it would seem hard to avoid the conclusion that the driver, as well as Uber London, would be a person who accepts the booking by undertaking a contractual obligation owed directly to the passenger to carry it out. If so, the driver would be in contravention of section 2(1) of the Private Hire Vehicles (London) Act 1998 by accepting a private hire booking without holding a private hire vehicle operator’s licence for London. This suggests that the only contractual arrangement compatible with the licensing regime is one whereby Uber London as the licensed operator accepts private hire bookings as a principal (only) and, to fulfil its obligation to the passenger, enters into a contract with a transportation provider (be that an individual driver or a firm which in turn provides a driver) who agrees to carry out the booking for Uber London.
+                        Uber maintains that the acceptance of private hire bookings by a licensed London PHV operator
+                        acting as agent for drivers would comply with the regulatory regime. I am not convinced by this.
+                        References in the Private Hire Vehicles (London) Act 1998 to ‘acceptance’ of a private hire
+                        booking are reasonably understood to connote acceptance (personally and not merely for someone
+                        else) of a contractual obligation to carry out the booking and provide a vehicle for that
+                        purpose. This is implicit, for example, in section 4(2) of the Act quoted at para 31 above. It
+                        would in principle be possible for Uber London both to accept such an obligation itself and also
+                        to contract on behalf of the driver of the vehicle. However, if this were the arrangement made,
+                        it would seem hard to avoid the conclusion that the driver, as well as Uber London, would be a
+                        person who accepts the booking by undertaking a contractual obligation owed directly to the
+                        passenger to carry it out. If so, the driver would be in contravention of section 2(1) of the
+                        Private Hire Vehicles (London) Act 1998 by accepting a private hire booking without holding a
+                        private hire vehicle operator’s licence for London. This suggests that the only contractual
+                        arrangement compatible with the licensing regime is one whereby Uber London as the licensed
+                        operator accepts private hire bookings as a principal (only) and, to fulfil its obligation to
+                        the passenger, enters into a contract with a transportation provider (be that an individual
+                        driver or a firm which in turn provides a driver) who agrees to carry out the booking for Uber
+                        London.
                     </p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.00in">
                         48.
                         <span style="font-size:7pt"></span>
-                        Counsel for Uber sought to resist this interpretation of the legislation on the basis that the legislation was enacted in the context of ‘a long-established industry practice’ under which PHV operators may merely act as agents for drivers who contract directly with passengers. Uber has adduced no evidence, however, of any such established practice which the Private Hire Vehicles (London) Act 1998 may be taken to have been intended to preserve. I will consider later two cases involving minicab firms which were said by counsel for Uber to show that the courts have endorsed such an agency model. But it is sufficient to say now that in neither case was any consideration given to whether such an arrangement would comply with the licensing regime. The same is true of cases also relied on by Uber (along with a notice published by HMRC in 2002) which are concerned with how VAT applies to the supply of private hire vehicles. That material in my view has no bearing on the issues raised in these proceedings.
+                        Counsel for Uber sought to resist this interpretation of the legislation on the basis that the
+                        legislation was enacted in the context of ‘a long-established industry practice’ under which PHV
+                        operators may merely act as agents for drivers who contract directly with passengers. Uber has
+                        adduced no evidence, however, of any such established practice which the Private Hire Vehicles
+                        (London) Act 1998 may be taken to have been intended to preserve. I will consider later two
+                        cases involving minicab firms which were said by counsel for Uber to show that the courts have
+                        endorsed such an agency model. But it is sufficient to say now that in neither case was any
+                        consideration given to whether such an arrangement would comply with the licensing regime. The
+                        same is true of cases also relied on by Uber (along with a notice published by HMRC in 2002)
+                        which are concerned with how VAT applies to the supply of private hire vehicles. That material
+                        in my view has no bearing on the issues raised in these proceedings.
                     </p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.00in">
                         49.
                         <span style="font-size:7pt"></span>
-                        It is unnecessary, however, to express any concluded view on whether an agency model of operation would be compatible with the PHV licensing regime because there appears to be no factual basis for Uber’s contention that Uber London acts as an agent for drivers when accepting private hire bookings.”
+                        It is unnecessary, however, to express any concluded view on whether an agency model of
+                        operation would be compatible with the PHV licensing regime because there appears to be no
+                        factual basis for Uber’s contention that Uber London acts as an agent for drivers when accepting
+                        private hire bookings.”
                     </p>
                 </section>
                 <section class="level">
@@ -946,34 +733,68 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">24.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">24.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        Mr Ranjit Bhose QC for Uber submitted that the issue was a pure question of statutory interpretation, to which the precise terms of Uber’s contractual arrangements with drivers and passengers are irrelevant. If the court were to hold that, in order to comply with the 1998 Act, an operator is required to undertake a contractual obligation to passengers to provide the journey, Uber would be required to - and would - change its operating model in order to comply. But that is not how Uber currently operates. Mr Bhose submitted that it is not necessary for Uber to do so. The 1998 Act does not seek to regulate any private law relationships which may arise between those engaged in providing and using private hire vehicles, save in relation to sub-contracting. Its provisions are regulatory in nature and do not require any particular contractual relationships. Operators are therefore free to choose whatever contractual model they wish. They may choose to contract as principal with a passenger to provide transportation services, but may equally choose not to do so, as Uber has done. References in the 1998 Act to “acceptance” of a booking refer only to acceptance of the regulatory responsibilities set out in the Act and in the operator’s licence.
+                        Mr Ranjit Bhose QC for Uber submitted that the issue was a pure question of statutory
+                        interpretation, to which the precise terms of Uber’s contractual arrangements with drivers and
+                        passengers are irrelevant. If the court were to hold that, in order to comply with the 1998 Act,
+                        an operator is required to undertake a contractual obligation to passengers to provide the
+                        journey, Uber would be required to - and would - change its operating model in order to comply.
+                        But that is not how Uber currently operates. Mr Bhose submitted that it is not necessary for
+                        Uber to do so. The 1998 Act does not seek to regulate any private law relationships which may
+                        arise between those engaged in providing and using private hire vehicles, save in relation to
+                        sub-contracting. Its provisions are regulatory in nature and do not require any particular
+                        contractual relationships. Operators are therefore free to choose whatever contractual model
+                        they wish. They may choose to contract as principal with a passenger to provide transportation
+                        services, but may equally choose not to do so, as Uber has done. References in the 1998 Act to
+                        “acceptance” of a booking refer only to acceptance of the regulatory responsibilities set out in
+                        the Act and in the operator’s licence.
                         <span style="font-style:italic">Kingston upon Hull City Council v Wilson</span>
-                         shows that concepts of contract law should not be introduced into the 1998 Act which is concerned with regulation in order to ensure public safety.
+                        shows that concepts of contract law should not be introduced into the 1998 Act which is
+                        concerned with regulation in order to ensure public safety.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">25.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">25.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Mr Philip Kolvin QC for Free Now supported Uber’s submissions. He submitted in addition that there is a distinction between acceptance of a booking (which is what the operator is required by the Act to do and is what Free Now does) and the undertaking of an obligation to carry out the journey (which is what the driver does). Acceptance of an obligation to carry out the journey by the operator is unnecessary in order to ensure public safety, which is ensured by the fact that regulatory obligations are also imposed on the driver and the vehicle, both of which have to be licensed, together with the obligation on the operator to keep records at its operating centre.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Mr Philip Kolvin QC for Free Now
+                        supported Uber’s submissions. He submitted in addition that there is a distinction between
+                        acceptance of a booking (which is what the operator is required by the Act to do and is what
+                        Free Now does) and the undertaking of an obligation to carry out the journey (which is what the
+                        driver does). Acceptance of an obligation to carry out the journey by the operator is
+                        unnecessary in order to ensure public safety, which is ensured by the fact that regulatory
+                        obligations are also imposed on the driver and the vehicle, both of which have to be licensed,
+                        together with the obligation on the operator to keep records at its operating centre.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">26.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">26.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        Mr David Matthias QC for UTAG, supported by Mr Jason Galbraith-Marten QC for the ADCU, submitted that Lord Leggatt’s analysis in
+                        Mr David Matthias QC for UTAG, supported by Mr Jason Galbraith-Marten QC for the ADCU, submitted
+                        that Lord Leggatt’s analysis in
                         <span style="font-style:italic">Uber v Aslam</span>
-                         was in accordance with the language and purpose of the 1998 Act. He drew attention to some of the terms in Free Now’s Users’ Terms (valid from 30
+                        was in accordance with the language and purpose of the 1998 Act. He drew attention to some of
+                        the terms in Free Now’s Users’ Terms (valid from 30
                         <span style="vertical-align:super;font-size:smaller">th</span>
-                         June 2020 to 7
+                        June 2020 to 7
                         <span style="vertical-align:super;font-size:smaller">th</span>
-                         July 2021
+                        July 2021
                         <span class="fn">1</span>
-                        ) which, he submitted, are inconsistent with the requirements of the Act. Such terms state that Free Now acts as an intermediary between the passenger and the driver and does not provide transportation services (clause 2.2); that acceptance of an “Allocation” by a driver creates a direct contract between the passenger and the driver (clause 2.7); that Free Now is not liable for legal issues arising from the passenger’s contract with a driver, such as claims regarding breach of the contract or negligence on the part of the driver (clause 2.10); that Free Now is not jointly or severally liable for the services provided by the drivers because it is only an intermediary (clause 8.3); and that Free Now does not even guarantee that a driver is who they claim to be, or that a vehicle matches any description provided by it (clause 8.4).
+                        ) which, he submitted, are inconsistent with the requirements of the Act. Such terms state that
+                        Free Now acts as an intermediary between the passenger and the driver and does not provide
+                        transportation services (clause 2.2); that acceptance of an “Allocation” by a driver creates a
+                        direct contract between the passenger and the driver (clause 2.7); that Free Now is not liable
+                        for legal issues arising from the passenger’s contract with a driver, such as claims regarding
+                        breach of the contract or negligence on the part of the driver (clause 2.10); that Free Now is
+                        not jointly or severally liable for the services provided by the drivers because it is only an
+                        intermediary (clause 8.3); and that Free Now does not even guarantee that a driver is who they
+                        claim to be, or that a vehicle matches any description provided by it (clause 8.4).
                     </p>
                 </section>
                 <section class="level">
@@ -983,72 +804,146 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">27.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">27.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
                         We begin with three points of common ground. The first, summarised by Lord Leggatt in
                         <span style="font-style:italic">Uber v Aslam</span>
-                         at [70] but also stated in a number of other Supreme Court cases, is that “the modern approach to statutory interpretation is to have regard to the purpose of a particular provision and to interpret its language, so far as possible, in the way which best gives effect to that purpose”. Second, the purpose of the 1998 Act was accurately summarised by Mr Justice Ouseley in
+                        at [70] but also stated in a number of other Supreme Court cases, is that “the modern approach
+                        to statutory interpretation is to have regard to the purpose of a particular provision and to
+                        interpret its language, so far as possible, in the way which best gives effect to that purpose”.
+                        Second, the purpose of the 1998 Act was accurately summarised by Mr Justice Ouseley in
                         <span style="font-style:italic">Transport for London v Uber London Ltd</span>
-                         [2015] EWHC 2918 (Admin) at [28]. It “was to bring the hitherto unlicensed mini-cab trade in London within a licensed framework, to protect the public using the services of mini-cabs from a variety of mischiefs including unfitness of the driver, the safety of the vehicle, and the absence of insurance”, as well as to preserve a visible and regulatory distinction between private hire vehicles and black cabs. Third, it does not matter that at the time of the 1998 Act the concept of ride-hailing apps using smartphones was not within Parliament’s contemplation. In order to give effect to a plain parliamentary purpose a statute may sometimes be held to cover a scientific development not known when the statute was passed (
+                        [2015] EWHC 2918 (Admin) at [28]. It “was to bring the hitherto unlicensed mini-cab trade in
+                        London within a licensed framework, to protect the public using the services of mini-cabs from a
+                        variety of mischiefs including unfitness of the driver, the safety of the vehicle, and the
+                        absence of insurance”, as well as to preserve a visible and regulatory distinction between
+                        private hire vehicles and black cabs. Third, it does not matter that at the time of the 1998 Act
+                        the concept of ride-hailing apps using smartphones was not within Parliament’s contemplation. In
+                        order to give effect to a plain parliamentary purpose a statute may sometimes be held to cover a
+                        scientific development not known when the statute was passed (
                         <span style="font-style:italic">R (Quintavalle) v Secretary of State for Health</span>
-                         [2003] UKHL 13, [2003] 2 AC 687 at [24] and [25]).
+                        [2003] UKHL 13, [2003] 2 AC 687 at [24] and [25]).
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">28.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">28.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">In our judgment the 1998 Act plainly contemplates that acceptance of a booking by the operator will create a contract between the operator and the passenger and, furthermore, that this will be a contract by which the operator undertakes an obligation as principal to provide the transportation service, that is to say to provide a vehicle and driver to convey the passenger to the agreed destination. That is what is meant by a “private hire booking”. The language of section 4, “private hire vehicles and drivers which are available to him for carrying out [a] booking accepted by him” indicates that it is the operator which carries out the booking (i.e. performs the contractual obligation to convey the passenger) and that it does so by means of the licensed vehicles and drivers available to it. The distinction proposed by Mr Kolvin between acceptance of a booking and the undertaking of an obligation to carry out the journey is illusory.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">In our judgment the 1998 Act
+                        plainly contemplates that acceptance of a booking by the operator will create a contract between
+                        the operator and the passenger and, furthermore, that this will be a contract by which the
+                        operator undertakes an obligation as principal to provide the transportation service, that is to
+                        say to provide a vehicle and driver to convey the passenger to the agreed destination. That is
+                        what is meant by a “private hire booking”. The language of section 4, “private hire vehicles and
+                        drivers which are available to him for carrying out [a] booking accepted by him” indicates that
+                        it is the operator which carries out the booking (i.e. performs the contractual obligation to
+                        convey the passenger) and that it does so by means of the licensed vehicles and drivers
+                        available to it. The distinction proposed by Mr Kolvin between acceptance of a booking and the
+                        undertaking of an obligation to carry out the journey is illusory.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">29.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">29.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The position is even clearer when the terms of section 5, set out above, are considered. Mr Bhose and Mr Kolvin had to accept that section 5 is concerned with sub-contracting by the operator and refers expressly to “the contract between the first operator and the person who made the booking” (subsection (4)) and to “a contract of hire between a person who made a private hire booking at an operating centre in London and the London PHV operator who accepted the booking”. Thus the contract between the operator and the passenger is a contract for the hire of a vehicle to undertake a journey. Mr Bhose and Mr Kolvin were driven to submit that section 5 applies when there is such a contract between an operator and a passenger, in which case sub-contracting is permitted; but that the Act permits an operator to accept a booking without creating such a contract; in the latter case, however, there is no scope for the operator to arrange for another operator to provide a vehicle to carry out the booking. They were unable, however, to suggest any reason why Parliament should have wished to legislate for only a sub-set of the ways in which an operator may offer its services to passengers. We can see none. </p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The position is even clearer when
+                        the terms of section 5, set out above, are considered. Mr Bhose and Mr Kolvin had to accept that
+                        section 5 is concerned with sub-contracting by the operator and refers expressly to “the
+                        contract between the first operator and the person who made the booking” (subsection (4)) and to
+                        “a contract of hire between a person who made a private hire booking at an operating centre in
+                        London and the London PHV operator who accepted the booking”. Thus the contract between the
+                        operator and the passenger is a contract for the hire of a vehicle to undertake a journey. Mr
+                        Bhose and Mr Kolvin were driven to submit that section 5 applies when there is such a contract
+                        between an operator and a passenger, in which case sub-contracting is permitted; but that the
+                        Act permits an operator to accept a booking without creating such a contract; in the latter
+                        case, however, there is no scope for the operator to arrange for another operator to provide a
+                        vehicle to carry out the booking. They were unable, however, to suggest any reason why
+                        Parliament should have wished to legislate for only a sub-set of the ways in which an operator
+                        may offer its services to passengers. We can see none. </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">30.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">30.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
                         To say that the 1998 Act
                         <span style="font-style:italic">contemplates</span>
-                         that there will be a contractual obligation on the operator does not necessarily mean that the Act
+                        that there will be a contractual obligation on the operator does not necessarily mean that the
+                        Act
                         <span style="font-style:italic">requires</span>
-                         that there will be. In our judgment, however, the Act does so require. To interpret the Act in this way gives effect to the statutory purpose of ensuring public safety. As Mr Galbraith-Marten pointed out, passengers booking journeys on these apps may be vulnerable; the journeys may be booked late at night; the consequences of a driver failing to turn up may be serious. If the passenger’s only contractual relationship is with a driver he or she has never heard of and who is in any event unlikely to be worth claiming against, any claim is likely to be practically worthless. Conversely, if the obligation must be undertaken by the operator, the operator will have a powerful incentive to ensure that the drivers it uses are reliable and, if something does go wrong, a remedy against the operator is likely to be worthwhile.
+                        that there will be. In our judgment, however, the Act does so require. To interpret the Act in
+                        this way gives effect to the statutory purpose of ensuring public safety. As Mr Galbraith-Marten
+                        pointed out, passengers booking journeys on these apps may be vulnerable; the journeys may be
+                        booked late at night; the consequences of a driver failing to turn up may be serious. If the
+                        passenger’s only contractual relationship is with a driver he or she has never heard of and who
+                        is in any event unlikely to be worth claiming against, any claim is likely to be practically
+                        worthless. Conversely, if the obligation must be undertaken by the operator, the operator will
+                        have a powerful incentive to ensure that the drivers it uses are reliable and, if something does
+                        go wrong, a remedy against the operator is likely to be worthwhile.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">31.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">31.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 56 of the 1976 Act, set out above, supports this view. It provides that every contract for the hire of a licensed private hire vehicle outside London shall be deemed to be made with the operator who accepted the booking for that vehicle whether or not he himself provided the vehicle. That demonstrates a clear parliamentary intention that the operator should undertake contractual responsibility. The language of the 1998 Act is different, but there is no reason for any different parliamentary intention in relation to private hire vehicle services in London.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 56 of the 1976 Act, set
+                        out above, supports this view. It provides that every contract for the hire of a licensed
+                        private hire vehicle outside London shall be deemed to be made with the operator who accepted
+                        the booking for that vehicle whether or not he himself provided the vehicle. That demonstrates a
+                        clear parliamentary intention that the operator should undertake contractual responsibility. The
+                        language of the 1998 Act is different, but there is no reason for any different parliamentary
+                        intention in relation to private hire vehicle services in London.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">32.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">32.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
                         <span style="font-style:italic">Kingston upon Hull City Council v Wilson</span>
-                         does not stand in the way of this analysis. It was a case under the 1976 Act. Mr Wilson held an operator’s licence to operate from premises in Hull, while his wife held an operator’s licence to operate from premises in Beverley. A passenger telephoned the Hull office to make a booking for a journey in Hull, which was accepted, but it turned out that the Hull office had passed on the request to the Beverley office, who had then telephoned Mr Wilson (who was also the driver) to carry out the booking. The issue was whether the booking had been accepted in Hull (which would have been lawful) or in Beverley (which would not). The argument appears to have been concerned with an analysis, by reference to principles of offer and acceptance, of where the contract was concluded. Giving the judgment of this court on a case stated by the magistrates, Mr Justice Buxton said that he “was careful to eschew, as this Court in its judgment in the case of
+                        does not stand in the way of this analysis. It was a case under the 1976 Act. Mr Wilson held an
+                        operator’s licence to operate from premises in Hull, while his wife held an operator’s licence
+                        to operate from premises in Beverley. A passenger telephoned the Hull office to make a booking
+                        for a journey in Hull, which was accepted, but it turned out that the Hull office had passed on
+                        the request to the Beverley office, who had then telephoned Mr Wilson (who was also the driver)
+                        to carry out the booking. The issue was whether the booking had been accepted in Hull (which
+                        would have been lawful) or in Beverley (which would not). The argument appears to have been
+                        concerned with an analysis, by reference to principles of offer and acceptance, of where the
+                        contract was concluded. Giving the judgment of this court on a case stated by the magistrates,
+                        Mr Justice Buxton said that he “was careful to eschew, as this Court in its judgment in the case
+                        of
                         <span style="font-style:italic">Windsor and Maidenhead Royal Borough Council v Khan</span>
-                         was careful to eschew, any attempt to introduce the complications or, indeed, even the simpler parts of the law of contract into this matter. It is simply a question of asking, in common sense terms, whether there has been provision made in the controlled district for invitation or acceptance of bookings”.
+                        was careful to eschew, any attempt to introduce the complications or, indeed, even the simpler
+                        parts of the law of contract into this matter. It is simply a question of asking, in common
+                        sense terms, whether there has been provision made in the controlled district for invitation or
+                        acceptance of bookings”.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">33.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">33.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        The case was not about whether there was a contract between the operator and the passenger. That issue could not have arisen in view of the terms of section 56 of the 1976 Act, which made clear that there was, due to the deeming provisions. Rather, the court was concerned to avoid technical arguments about where a contract is concluded when a series of telephone conversations take place between persons in different areas: jurisdictional issues aside, such questions are only rarely of any practical significance.
+                        The case was not about whether there was a contract between the operator and the passenger. That
+                        issue could not have arisen in view of the terms of section 56 of the 1976 Act, which made clear
+                        that there was, due to the deeming provisions. Rather, the court was concerned to avoid
+                        technical arguments about where a contract is concluded when a series of telephone conversations
+                        take place between persons in different areas: jurisdictional issues aside, such questions are
+                        only rarely of any practical significance.
                         <span style="font-style:italic"> Windsor and Maidenhead Royal Borough Council v Khan</span>
-                         [1994] RTR 87 was to the same effect.
+                        [1994] RTR 87 was to the same effect.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">34.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">34.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
                         In short, therefore, we agree with the analysis of Lord Leggatt in
@@ -1063,27 +958,52 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">35.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">35.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">As we have concluded that, in order to operate lawfully, an operator must undertake a contractual obligation to passengers, and as both Uber and Free Now acknowledge that they do not at present do so, they will need to amend the basis on which they provide their services. Both companies have indicated that they will do so if that is what the court concludes.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">As we have concluded that, in
+                        order to operate lawfully, an operator must undertake a contractual obligation to passengers,
+                        and as both Uber and Free Now acknowledge that they do not at present do so, they will need to
+                        amend the basis on which they provide their services. Both companies have indicated that they
+                        will do so if that is what the court concludes.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">36.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">36.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">It follows also that TfL will need to reconsider its current practice which is that it does not review the contractual terms of an operator when considering a licence application. Since an operator which does not undertake the required contractual obligation is not operating lawfully, TfL will need to consider how best to ensure that the basis on which Uber, Free Now and perhaps other similar operators conduct their operations is in accordance with the requirements of the 1998 Act.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">It follows also that TfL will
+                        need to reconsider its current practice which is that it does not review the contractual terms
+                        of an operator when considering a licence application. Since an operator which does not
+                        undertake the required contractual obligation is not operating lawfully, TfL will need to
+                        consider how best to ensure that the basis on which Uber, Free Now and perhaps other similar
+                        operators conduct their operations is in accordance with the requirements of the 1998 Act.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">37.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">37.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">We do not consider, however, that it is necessary or appropriate to quash the decision to grant a licence to Free Now. Free Now has made clear that it will, if necessary, amend its terms to comply with the outcome of these proceedings and has acknowledged that, if it were to fail to do so, that would provide grounds for TfL to take action. In these circumstances to quash the licence would be disproportionate, as well as having a potentially very significant impact on drivers using the Free Now app, who have no reason currently to believe that they are engaged in any unlawful activity, and a great many of whom make their livelihoods in this way.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">We do not consider, however, that
+                        it is necessary or appropriate to quash the decision to grant a licence to Free Now. Free Now
+                        has made clear that it will, if necessary, amend its terms to comply with the outcome of these
+                        proceedings and has acknowledged that, if it were to fail to do so, that would provide grounds
+                        for TfL to take action. In these circumstances to quash the licence would be disproportionate,
+                        as well as having a potentially very significant impact on drivers using the Free Now app, who
+                        have no reason currently to believe that they are engaged in any unlawful activity, and a great
+                        many of whom make their livelihoods in this way.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">38.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">38.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">We have not been directly concerned in these proceedings with whether it is open to an operator who accepts a contractual obligation to a passenger to carry out a booking to exclude in effect all liability to the passenger in the way which Free Now’s Users’ Terms current at the date of the licence appear to do. That too, however, is a matter which TfL will need to consider. At first sight it appears hard to reconcile with the purpose of the legislation as we have described it.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">We have not been directly
+                        concerned in these proceedings with whether it is open to an operator who accepts a contractual
+                        obligation to a passenger to carry out a booking to exclude in effect all liability to the
+                        passenger in the way which Free Now’s Users’ Terms current at the date of the licence appear to
+                        do. That too, however, is a matter which TfL will need to consider. At first sight it appears
+                        hard to reconcile with the purpose of the legislation as we have described it.</p>
                 </section>
                 <section class="level">
                     <p class="ParaLevel1">
@@ -1097,40 +1017,61 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">39.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">39.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The concept of “plying for hire” goes back to the era of the horse and carriage when not only the internet and smartphones, but even the motorcar, could not have been imagined. The earliest legislation to which we were referred in which this concept was used was section 35 of the London Hackney Carriage Act 1831. The current law is contained in the 1869 Act, section 4 of which contains definitions as follows:</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The concept of “plying for hire”
+                        goes back to the era of the horse and carriage when not only the internet and smartphones, but
+                        even the motorcar, could not have been imagined. The earliest legislation to which we were
+                        referred in which this concept was used was section 35 of the London Hackney Carriage Act 1831.
+                        The current law is contained in the 1869 Act, section 4 of which contains definitions as
+                        follows:</p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.00in">
                         “In this Act
                         <span style="font-style:italic">‘Stage carriage’</span>
-                         shall mean any carriage for the conveyance of passengers which plies for hire in any public street, road, or place within the limits of this Act, and in which the passengers or any of them are charged to pay separate and distinct or at the rate of separate and distinct fares for their respective places and seats therein.
+                        shall mean any carriage for the conveyance of passengers which plies for hire in any public
+                        street, road, or place within the limits of this Act, and in which the passengers or any of them
+                        are charged to pay separate and distinct or at the rate of separate and distinct fares for their
+                        respective places and seats therein.
                     </p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.00in">
                         <span style="font-style:italic">‘Hackney carriage’</span>
-                         shall mean any carriage for the conveyance of passengers which plies for hire within the limits of this Act, and is neither a stage carriage nor a tramcar.”
+                        shall mean any carriage for the conveyance of passengers which plies for hire within the limits
+                        of this Act, and is neither a stage carriage nor a tramcar.”
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">40.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">40.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">There was, however, no definition of “plying for hire”. Parliament must have considered that no definition was needed.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">There was, however, no definition
+                        of “plying for hire”. Parliament must have considered that no definition was needed.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">41.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">41.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 7 of the 1869 Act provides that if any unlicensed hackney carriage plies for hire, the owner shall be liable to a fine, as will the driver unless the driver proves their ignorance of the fact of the carriage being unlicensed.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Section 7 of the 1869 Act
+                        provides that if any unlicensed hackney carriage plies for hire, the owner shall be liable to a
+                        fine, as will the driver unless the driver proves their ignorance of the fact of the carriage
+                        being unlicensed.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">42.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">42.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The Act has been amended from time to time, not only to include the reference to a tramcar in the definition of “hackney carriage”, but more recently by the Greater London Authority Act 1999 to provide for TfL to be the licensing authority for hackney carriages. However, “plying for hire” has remained without a statutory definition. </p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">The Act has been amended from
+                        time to time, not only to include the reference to a tramcar in the definition of “hackney
+                        carriage”, but more recently by the Greater London Authority Act 1999 to provide for TfL to be
+                        the licensing authority for hackney carriages. However, “plying for hire” has remained without a
+                        statutory definition. </p>
                 </section>
                 <section class="level">
                     <p class="ParaLevel1">
@@ -1139,56 +1080,92 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">43.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">43.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">As the Law Commission recognised in its May 2014 Report “Taxi and Private Hire Services” (Law Com No. 347), para 1.19:</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">As the Law Commission recognised
+                        in its May 2014 Report “Taxi and Private Hire Services” (Law Com No. 347), para 1.19:</p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.00in">“The current (two tier) system relies heavily on the imprecise concept of ‘plying for hire’, which performs the very important function of defining what taxis alone are allowed to do in undertaking rank and hail work. However, the meaning of the concept is not set out in statute and has become the subject of a body of case law that is not wholly consistent.”</p>
+                    <p class="Quote" style="margin-left:1.00in">“The current (two tier) system relies heavily on the
+                        imprecise concept of ‘plying for hire’, which performs the very important function of defining
+                        what taxis alone are allowed to do in undertaking rank and hail work. However, the meaning of
+                        the concept is not set out in statute and has become the subject of a body of case law that is
+                        not wholly consistent.”</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">44.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">44.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
                         Nevertheless some themes have emerged. We need refer to only three of the cases. First, in
                         <span style="font-style:italic">Sales v Lake</span>
-                         [1922] 1 KB 553 Lord Trevethin CJ described plying for hire in the following terms:
+                        [1922] 1 KB 553 Lord Trevethin CJ described plying for hire in the following terms:
                     </p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.00in">“In my judgment a carriage cannot accurately be said to ply for hire unless two conditions are satisfied. (1) There must be a soliciting or waiting to secure passengers by the driver or other person in control without any previous contract with them, and (2) the owner or person in control who is engaged in or authorizes the soliciting or waiting must be in possession of a carriage for which he is soliciting or waiting to obtain passengers. If I may so express myself he must have appropriated, or be able at the time to appropriate, a carriage to the soliciting or waiting.”</p>
+                    <p class="Quote" style="margin-left:1.00in">“In my judgment a carriage cannot accurately be said to
+                        ply for hire unless two conditions are satisfied. (1) There must be a soliciting or waiting to
+                        secure passengers by the driver or other person in control without any previous contract with
+                        them, and (2) the owner or person in control who is engaged in or authorizes the soliciting or
+                        waiting must be in possession of a carriage for which he is soliciting or waiting to obtain
+                        passengers. If I may so express myself he must have appropriated, or be able at the time to
+                        appropriate, a carriage to the soliciting or waiting.”</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">45.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">45.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Thus plying for hire consists of soliciting or waiting for passengers without any previous contract with them. In the case of a black cab, which is hailed in the street, there is no such prior contract or arrangement.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Thus plying for hire consists of
+                        soliciting or waiting for passengers without any previous contract with them. In the case of a
+                        black cab, which is hailed in the street, there is no such prior contract or arrangement.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">46.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">46.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
                         Second, in
                         <span style="font-style:italic">Cogley v Sherwood</span>
-                         [1959] 2 QB 311 it was held that there must be some “exhibition” of the vehicle to the public in order for the vehicle to be plying for hire. Lord Parker CJ noted that the cases were not easy to reconcile and that there was no authoritative definition (we would note that, although not referred to in the judgment,
+                        [1959] 2 QB 311 it was held that there must be some “exhibition” of the vehicle to the public in
+                        order for the vehicle to be plying for hire. Lord Parker CJ noted that the cases were not easy
+                        to reconcile and that there was no authoritative definition (we would note that, although not
+                        referred to in the judgment,
                         <span style="font-style:italic">Sales v Lake</span>
-                         was cited), and suggested that it was unnecessary and inadvisable to attempt to lay down an exhaustive definition. Nevertheless, included within the concept of plying for hire was that the particular vehicle in question should be exhibited in some way:
+                        was cited), and suggested that it was unnecessary and inadvisable to attempt to lay down an
+                        exhaustive definition. Nevertheless, included within the concept of plying for hire was that the
+                        particular vehicle in question should be exhibited in some way:
                     </p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.00in">
-                        “In the ordinary way, therefore, I should, apart from authority, have felt that it was of the essence of plying for hire that the vehicle in question should be on view, that the owner or driver should expressly or impliedly invite the public to use it, and that the member of the public should be able to use that vehicle if he wanted to. Looked at in that way, it would matter not that the driver said: ‘Before you hire my vehicle, you must take a ticket at the office’,
+                        “In the ordinary way, therefore, I should, apart from authority, have felt that it was of the
+                        essence of plying for hire that the vehicle in question should be on view, that the owner or
+                        driver should expressly or impliedly invite the public to use it, and that the member of the
+                        public should be able to use that vehicle if he wanted to. Looked at in that way, it would
+                        matter not that the driver said: ‘Before you hire my vehicle, you must take a ticket at the
+                        office’,
                         <span style="font-style:italic">aliter</span>
-                        , if he said: ‘You cannot have my vehicle but if you go to the office you will be able to get a vehicle, not necessarily mine.”
+                        , if he said: ‘You cannot have my vehicle but if you go to the office you will be able to get a
+                        vehicle, not necessarily mine.”
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">47.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">47.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Lord Parker recognised, however, that there were cases where a vehicle had been held to be plying for hire without being on view. Mr Justice Donovan agreed that the term connotes “some exhibition of the vehicle to potential hirers as a vehicle which may be hired”, although this does not necessarily require that the vehicle must be on view. Mr Justice Salmon also said that “a vehicle plies for hire if the person in control of the vehicle exhibits the vehicle and makes a present open offer to the public, an offer which can be accepted, for example, by the member of the public stepping into the vehicle”.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">Lord Parker recognised, however,
+                        that there were cases where a vehicle had been held to be plying for hire without being on view.
+                        Mr Justice Donovan agreed that the term connotes “some exhibition of the vehicle to potential
+                        hirers as a vehicle which may be hired”, although this does not necessarily require that the
+                        vehicle must be on view. Mr Justice Salmon also said that “a vehicle plies for hire if the
+                        person in control of the vehicle exhibits the vehicle and makes a present open offer to the
+                        public, an offer which can be accepted, for example, by the member of the public stepping into
+                        the vehicle”.</p>
                 </section>
                 <section class="level">
                     <p class="ParaLevel1">
@@ -1197,63 +1174,100 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">48.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">48.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        The question is how the concept of plying for hire, including the requirements of soliciting, exhibiting and the absence of a prior contract, should be applied to the process of booking a private hire vehicle for an almost immediate journey by means of a smartphone app – in effect, how to apply concepts developed in an analogue world to digital technology. That was the question addressed in the third case which we refer to here,
+                        The question is how the concept of plying for hire, including the requirements of soliciting,
+                        exhibiting and the absence of a prior contract, should be applied to the process of booking a
+                        private hire vehicle for an almost immediate journey by means of a smartphone app – in effect,
+                        how to apply concepts developed in an analogue world to digital technology. That was the
+                        question addressed in the third case which we refer to here,
                         <span style="font-style:italic">Reading Borough Council v Ali</span>
-                         [2019] EWHC 200 (Admin), [2019] 1 WLR 2635, which concerned an Uber driver. The Council prosecuted the driver for an offence under the Act as it maintained he was “plying for hire”. This failed, and the Council appealed by way of case stated to the Divisional Court. The facts found by the Chief Magistrate included the following:
+                        [2019] EWHC 200 (Admin), [2019] 1 WLR 2635, which concerned an Uber driver. The Council
+                        prosecuted the driver for an offence under the Act as it maintained he was “plying for hire”.
+                        This failed, and the Council appealed by way of case stated to the Divisional Court. The facts
+                        found by the Chief Magistrate included the following:
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-family:'Times New Roman';font-size:12pt;margin-left:0.75in;text-indent:-0.25in">(1)</span>
+                        <span class="num"
+                              style="font-family:'Times New Roman';font-size:12pt;margin-left:0.75in;text-indent:-0.25in">(1)</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.75in;text-indent:0.5in">The vehicle in question had no markings indicating that it was for hire; it did not advertise any telephone number to contact in order to hire the car.</p>
+                    <p class="ParaLevel1" style="margin-left:0.75in;text-indent:0.5in">The vehicle in question had no
+                        markings indicating that it was for hire; it did not advertise any telephone number to contact
+                        in order to hire the car.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-family:'Times New Roman';font-size:12pt;margin-left:0.75in;text-indent:-0.25in">(2)</span>
+                        <span class="num"
+                              style="font-family:'Times New Roman';font-size:12pt;margin-left:0.75in;text-indent:-0.25in">(2)</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.75in;text-indent:0.5in">The vehicle was parked lawfully, not waiting in a taxi stand or next to a bus stop.</p>
+                    <p class="ParaLevel1" style="margin-left:0.75in;text-indent:0.5in">The vehicle was parked lawfully,
+                        not waiting in a taxi stand or next to a bus stop.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-family:'Times New Roman';font-size:12pt;margin-left:0.75in;text-indent:-0.25in">(3)</span>
+                        <span class="num"
+                              style="font-family:'Times New Roman';font-size:12pt;margin-left:0.75in;text-indent:-0.25in">(3)</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.75in;text-indent:0.5in">The vehicle was not available to a person hailing it on the street, but could only be booked by means of the Uber app.</p>
+                    <p class="ParaLevel1" style="margin-left:0.75in;text-indent:0.5in">The vehicle was not available to
+                        a person hailing it on the street, but could only be booked by means of the Uber app.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-family:'Times New Roman';font-size:12pt;margin-left:0.75in;text-indent:-0.25in">(4)</span>
+                        <span class="num"
+                              style="font-family:'Times New Roman';font-size:12pt;margin-left:0.75in;text-indent:-0.25in">(4)</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.75in;text-indent:0.5in">The vehicle was one of a number shown on the Uber app, where it was visible to any Uber customer; it was depicted by an icon showing the outline of a car.</p>
+                    <p class="ParaLevel1" style="margin-left:0.75in;text-indent:0.5in">The vehicle was one of a number
+                        shown on the Uber app, where it was visible to any Uber customer; it was depicted by an icon
+                        showing the outline of a car.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-family:'Times New Roman';font-size:12pt;margin-left:0.75in;text-indent:-0.25in">(5)</span>
+                        <span class="num"
+                              style="font-family:'Times New Roman';font-size:12pt;margin-left:0.75in;text-indent:-0.25in">(5)</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.75in;text-indent:0.5in">The app did not show any features which might identify a particular driver or a particular car.</p>
+                    <p class="ParaLevel1" style="margin-left:0.75in;text-indent:0.5in">The app did not show any features
+                        which might identify a particular driver or a particular car.</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">49.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">49.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">On these facts the Divisional Court, agreeing with the Chief Magistrate, held that there was no plying for hire. Lord Justice Flaux, with whom Mr Justice Holgate agreed, held that this was for three reasons:</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">On these facts the Divisional
+                        Court, agreeing with the Chief Magistrate, held that there was no plying for hire. Lord Justice
+                        Flaux, with whom Mr Justice Holgate agreed, held that this was for three reasons:</p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.00in">
-                        “33. In my judgment, there was no unlawful plying for hire in this case for a number of reasons. First, the mere depiction of the defendant's vehicle on the Uber app, without either the vehicle or the driver being specifically identified or the customer using the app being able to select that vehicle, is insufficient to establish exhibition of the vehicle in the sense in which that phrase is used by Lord Parker CJ in formulating the two-stage test for plying for hire in the 
+                        “33. In my judgment, there was no unlawful plying for hire in this case for a number of reasons.
+                        First, the mere depiction of the defendant's vehicle on the Uber app, without either the vehicle
+                        or the driver being specifically identified or the customer using the app being able to select
+                        that vehicle, is insufficient to establish exhibition of the vehicle in the sense in which that
+                        phrase is used by Lord Parker CJ in formulating the two-stage test for plying for hire in the 
                         <span style="font-style:italic">Cogley</span>
                          and
                         <span style="font-style:italic">Rose</span>
-                         cases [
+                        cases [
                         <span style="font-style:italic">Rose v Welbeck Motors Ltd</span>
-                         [1962] 1 WLR 1010]. That requires not just exhibition of the vehicle but its exhibition expressly or implicitly soliciting custom, inviting members of the public to hire the vehicle.
+                        [1962] 1 WLR 1010]. That requires not just exhibition of the vehicle but its exhibition
+                        expressly or implicitly soliciting custom, inviting members of the public to hire the vehicle.
                     </p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.00in">34. It seems to me that depiction of the vehicle on the app does not involve any exhibition of that kind, but is for the assistance of the Uber customer using the app, who can see that there are vehicles in the vicinity of the type he or she wishes to hire. I agree with Mr Kolvin QC that the app is simply the use of modern technology to effect a similar transaction to those which have been carried out by PHV operators over the telephone for many years. If I ring a minicab firm and ask for a car to come to my house within five minutes and the operator says ‘I've got five cars round the corner from you. One of them will be with you in five minutes,’ there is nothing in that transaction which amounts to plying for hire. As a matter of principle, I do not consider that the position should be different because the use of internet technology avoids the need for the phone call.</p>
+                    <p class="Quote" style="margin-left:1.00in">34. It seems to me that depiction of the vehicle on the
+                        app does not involve any exhibition of that kind, but is for the assistance of the Uber customer
+                        using the app, who can see that there are vehicles in the vicinity of the type he or she wishes
+                        to hire. I agree with Mr Kolvin QC that the app is simply the use of modern technology to effect
+                        a similar transaction to those which have been carried out by PHV operators over the telephone
+                        for many years. If I ring a minicab firm and ask for a car to come to my house within five
+                        minutes and the operator says ‘I've got five cars round the corner from you. One of them will be
+                        with you in five minutes,’ there is nothing in that transaction which amounts to plying for
+                        hire. As a matter of principle, I do not consider that the position should be different because
+                        the use of internet technology avoids the need for the phone call.</p>
                 </section>
                 <section class="level">
                     <p class="Quote" style="margin-left:1.00in">
@@ -1289,39 +1303,70 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">50.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">50.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        In his written and to some extent in his oral submissions Mr Matthias for UTAG submitted that the decision in
+                        In his written and to some extent in his oral submissions Mr Matthias for UTAG submitted that
+                        the decision in
                         <span style="font-style:italic">Reading v Ali</span>
-                         was wrong. As a matter of ordinary language, a vehicle plies for hire if it drives around or parks in a public place waiting for someone who wants to hire it. That is what a driver using the Free Now app does from the moment when he logs on to the app as available to carry out bookings. The requirements set out in the cases should be applied to the development of new technology. A vehicle whose location is shown on the customer’s smartphone screen is for all practical purposes exhibited as available for hire. He submitted that the booking via the app for a vehicle which may be less than a minute away is in effect instantaneous rather than a prior booking – hence the trading name “Free Now” and the fact that the services are described as “ride hailing apps” in a way which treats them as equivalent to hailing a black cab. He cited an extract from a 2015 press article by a former Mayor of London:
+                        was wrong. As a matter of ordinary language, a vehicle plies for hire if it drives around or
+                        parks in a public place waiting for someone who wants to hire it. That is what a driver using
+                        the Free Now app does from the moment when he logs on to the app as available to carry out
+                        bookings. The requirements set out in the cases should be applied to the development of new
+                        technology. A vehicle whose location is shown on the customer’s smartphone screen is for all
+                        practical purposes exhibited as available for hire. He submitted that the booking via the app
+                        for a vehicle which may be less than a minute away is in effect instantaneous rather than a
+                        prior booking – hence the trading name “Free Now” and the fact that the services are described
+                        as “ride hailing apps” in a way which treats them as equivalent to hailing a black cab. He cited
+                        an extract from a 2015 press article by a former Mayor of London:
                     </p>
                 </section>
                 <section class="level">
-                    <p class="Quote" style="margin-left:1.00in">“You no longer need to see a vehicle to hail it. Your phone will see it for you. It will see round corners; it will see in the dark. You no longer need to hail a taxi by sticking your arm out or shouting; you just press a button and within minutes – seconds – the car will be at your side. The car can be parked up at a petrol station, or down a side street, or just dawdling in traffic, and – ping – it will be there. In other words the app is allowing private hire vehicles to behave like black taxis: to be hailed, to ply for hire in the streets, to do exactly what the law says they are not supposed to do. You have the instant (or virtually instant) accessibility of the black cab, with none of the extra costs entailed by the vehicle regulations or the Knowledge, and the growth of the business is huge.”</p>
+                    <p class="Quote" style="margin-left:1.00in">“You no longer need to see a vehicle to hail it. Your
+                        phone will see it for you. It will see round corners; it will see in the dark. You no longer
+                        need to hail a taxi by sticking your arm out or shouting; you just press a button and within
+                        minutes – seconds – the car will be at your side. The car can be parked up at a petrol station,
+                        or down a side street, or just dawdling in traffic, and – ping – it will be there. In other
+                        words the app is allowing private hire vehicles to behave like black taxis: to be hailed, to ply
+                        for hire in the streets, to do exactly what the law says they are not supposed to do. You have
+                        the instant (or virtually instant) accessibility of the black cab, with none of the extra costs
+                        entailed by the vehicle regulations or the Knowledge, and the growth of the business is
+                        huge.”</p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">51.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">51.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        Ultimately, however, Mr Matthias recognised that this court must follow a previous decision of the Divisional Court unless convinced that the decision is wrong (see
+                        Ultimately, however, Mr Matthias recognised that this court must follow a previous decision of
+                        the Divisional Court unless convinced that the decision is wrong (see
                         <span style="font-style:italic">R v Greater Manchester Coroner, Ex parte Tal</span>
-                         [1985] 1 QB 67). This is a demanding test. Mr Matthias therefore submitted that the decision in
+                        [1985] 1 QB 67). This is a demanding test. Mr Matthias therefore submitted that the decision in
                         <span style="font-style:italic">Reading v Ali</span>
-                         should be distinguished, primarily (as we understood his submissions) because, unlike Uber in
+                        should be distinguished, primarily (as we understood his submissions) because, unlike Uber in
                         <span style="font-style:italic">Reading v Ali</span>
-                        , Free Now’s User Terms state that the booking is made between the customer and the driver, and not with Free Now as the operator.
+                        , Free Now’s User Terms state that the booking is made between the customer and the driver, and
+                        not with Free Now as the operator.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">52.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">52.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
-                        Ms Maya Lester QC for TfL and Mr Kolvin for Free Now submitted that the case before us was on all fours with
+                        Ms Maya Lester QC for TfL and Mr Kolvin for Free Now submitted that the case before us was on
+                        all fours with
                         <span style="font-style:italic">Reading v Ali</span>
-                        . There was no material difference in the way that the drivers using the Uber app behaved, compared to those using Free Now, in the same way that there was no material difference in the operation of the two apps. A driver would wait, parked, or perhaps driving, until the app offered a hire to that driver, which would be accepted by use of the app. There was no plying for hire, and this point has already been decided by a court of like jurisdiction. Not only were there no proper grounds for distinguishing this most recent decision, it was in any event correctly decided.
+                        . There was no material difference in the way that the drivers using the Uber app behaved,
+                        compared to those using Free Now, in the same way that there was no material difference in the
+                        operation of the two apps. A driver would wait, parked, or perhaps driving, until the app
+                        offered a hire to that driver, which would be accepted by use of the app. There was no plying
+                        for hire, and this point has already been decided by a court of like jurisdiction. Not only were
+                        there no proper grounds for distinguishing this most recent decision, it was in any event
+                        correctly decided.
                     </p>
                 </section>
                 <section class="level">
@@ -1331,26 +1376,37 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">53.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">53.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
                         While
                         <span style="font-style:italic">Reading v Ali</span>
-                         was concerned with specific facts – Mr Ali, parked in his car in Reading, waiting for a booking – we are concerned with the Free Now business model, the issue being whether Free Now facilitates or encourages its drivers to break the law by plying for hire. As we understand it, the way in which drivers using the Free Now app typically operate corresponds in all respects to the findings of fact made by the Chief Magistrate in
+                        was concerned with specific facts – Mr Ali, parked in his car in Reading, waiting for a booking
+                        – we are concerned with the Free Now business model, the issue being whether Free Now
+                        facilitates or encourages its drivers to break the law by plying for hire. As we understand it,
+                        the way in which drivers using the Free Now app typically operate corresponds in all respects to
+                        the findings of fact made by the Chief Magistrate in
                         <span style="font-style:italic">Reading v Ali,</span>
-                         which we have set out above. The contrary was not argued and we proceed on that assumption. Accordingly we are not concerned with the position which might arise if an individual driver chose to operate differently.
+                        which we have set out above. The contrary was not argued and we proceed on that assumption.
+                        Accordingly we are not concerned with the position which might arise if an individual driver
+                        chose to operate differently.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">54.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">54.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
                         On that basis, in our judgment
                         <span style="font-style:italic">Reading v Ali</span>
-                         is in all respects indistinguishable from the present case. As demonstrated by Ms Lester and Mr Kolvin, the arguments advanced on behalf of the Council in
+                        is in all respects indistinguishable from the present case. As demonstrated by Ms Lester and Mr
+                        Kolvin, the arguments advanced on behalf of the Council in
                         <span style="font-style:italic"> Reading v Ali</span>
-                         and rejected by the court were the same as those advanced on behalf of UTAG in this case. In particular, the court addressed the contractual position which comprises Mr Matthias’s principal ground of distinction, but stated in terms at [37] that “w
+                        and rejected by the court were the same as those advanced on behalf of UTAG in this case. In
+                        particular, the court addressed the contractual position which comprises Mr Matthias’s principal
+                        ground of distinction, but stated in terms at [37] that “w
                         <span style="color:#000000">hatever the correct contractual analysis, … it has no impact on the question we have to decide”. We respectfully agree with that conclusion. Since the question whether a vehicle is plying for hire necessarily focuses on what it is doing </span>
                         <span style="font-style:italic;color:#000000">before</span>
                         <span style="color:#000000"> any contract is concluded, it can make no difference whether any contract of hire which may result is made with the operator or the driver.</span>
@@ -1358,7 +1414,8 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">55.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">55.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
                         <span style="color:#000000">It is therefore our duty to follow </span>
@@ -1373,9 +1430,14 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">56.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">56.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">It is therefore unnecessary to consider whether, if our decision had been otherwise, it would have been appropriate to quash the licence granted to Free Now. We note, however, that if private hire vehicle drivers using the Free Now app are plying for hire, there would need to be a significant change in the way that such drivers operate.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">It is therefore unnecessary to
+                        consider whether, if our decision had been otherwise, it would have been appropriate to quash
+                        the licence granted to Free Now. We note, however, that if private hire vehicle drivers using
+                        the Free Now app are plying for hire, there would need to be a significant change in the way
+                        that such drivers operate.</p>
                 </section>
                 <section class="level">
                     <p class="ParaLevel1">
@@ -1384,21 +1446,29 @@
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">57.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">57.</span>
                     </h2>
                     <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">
                         We have concluded, perhaps not surprisingly, that the Supreme Court meant what it said in
                         <span style="font-style:italic">Uber v Aslam</span>
-                         and that we must follow the decision of this court in
+                        and that we must follow the decision of this court in
                         <span style="font-style:italic">Reading v Ali</span>
-                        . Accordingly we grant a declaration in both proceedings that in order to operate lawfully under the Private Hire Vehicles (London) Act 1998 a licensed operator who accepts a booking from a passenger is required to enter as principal into a contractual obligation with the passenger to provide the journey which is the subject of the booking. Otherwise we dismiss the claim for judicial review.
+                        . Accordingly we grant a declaration in both proceedings that in order to operate lawfully under
+                        the Private Hire Vehicles (London) Act 1998 a licensed operator who accepts a booking from a
+                        passenger is required to enter as principal into a contractual obligation with the passenger to
+                        provide the journey which is the subject of the booking. Otherwise we dismiss the claim for
+                        judicial review.
                     </p>
                 </section>
                 <section class="paragraph">
                     <h2 class="floating">
-                        <span class="num" style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">58.</span>
+                        <span class="num"
+                              style="font-style:normal;font-weight:normal;text-decoration:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">58.</span>
                     </h2>
-                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">We are grateful to all counsel for the clarity and succinctness of their submissions, which enabled a case set down for three days to be dealt with in half that time.</p>
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:0.5in">We are grateful to all counsel
+                        for the clarity and succinctness of their submissions, which enabled a case set down for three
+                        days to be dealt with in half that time.</p>
                 </section>
             </div>
             <footer>
@@ -1407,14 +1477,15 @@
                     <p class="FootnoteText">
                         <span class="marker">1</span>
                         <span></span>
-                        These terms were current at the date when the Free Now licence was renewed. We are told that the Users' Terms are updated from time to time, that the current version was valid from 8
+                        These terms were current at the date when the Free Now licence was renewed. We are told that the
+                        Users' Terms are updated from time to time, that the current version was valid from 8
                         <span style="vertical-align:super;font-size:smaller">th</span>
-                         November 2021, and that it contains no equivalent to clause 8.4 of the version current at the date of the licence
+                        November 2021, and that it contains no equivalent to clause 8.4 of the version current at the
+                        date of the licence
                     </p>
                 </div>
             </footer>
         </article>
     </div>
-</body>
-</html>
+{% endblock %}
 
