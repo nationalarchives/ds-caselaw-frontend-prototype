@@ -3,7 +3,6 @@ import re
 from flask import render_template, request, redirect, url_for
 from content.recent_judgments import recent_judgments
 from content.service_wide import service
-from content.collections import collections
 from content.search_results import search_results
 from content.courts import courts
 
