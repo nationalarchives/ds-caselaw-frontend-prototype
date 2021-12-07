@@ -83,3 +83,9 @@ def open_justice_licence():
         'open_justice_licence.html',
         service=service,
     )
+
+@app.route('/ewhc/admin/2021/3290')
+def judgment():
+    return render_template(
+        'judgment.html'
+    )
