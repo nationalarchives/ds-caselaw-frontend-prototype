@@ -84,6 +84,10 @@ def open_justice_licence():
         service=service,
     )
 
+@app.route('/judgment')
+def judgment_quick_route():
+    return redirect(url_for('judgment'))
+
 @app.route('/ewhc/admin/2021/3290')
 def judgment():
     resp = make_response(render_template('judgment.html'))
