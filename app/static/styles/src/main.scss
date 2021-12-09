@@ -1,4 +1,4 @@
-.logo {
-  margin-top: 2em;
-  width: 4em;
-}
+@import "includes/variables";
+@import "includes/utilites";
+@import "includes/mixins";
+@import "includes/judgement_text";

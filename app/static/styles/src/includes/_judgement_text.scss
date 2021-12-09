@@ -1,0 +1,124 @@
+.judgment {
+  max-width: 48rem;
+  margin: auto;
+}
+
+.judgment-header {
+
+  &__logo {
+    padding-top: $spacer_unit * 3;
+
+    img {
+      display: block;
+      margin: auto;
+    }
+  }
+
+  &__neutral-citation {
+    padding-top: $spacer_unit;
+    text-decoration: underline;
+
+    span {
+      font-weight: bolder;
+      display: inline-block;
+      text-decoration: underline;
+    }
+  }
+
+  &__case-number {
+    padding-top: $spacer_unit;
+    text-decoration: underline;
+    text-align: right;
+
+    h1 {
+      font-size: 1rem;
+    }
+  }
+
+  &__court {
+    padding-top: $spacer_unit;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  &__address {
+    padding-top: $spacer_unit;
+    font-style: normal;
+    text-decoration: underline;
+    text-align: right;
+  }
+
+  &__date {
+    padding-top: $spacer_unit;
+    font-style: normal;
+    text-decoration: underline;
+    text-align: right;
+  }
+
+  &__before {
+    padding-top: $spacer_unit;
+    text-align: center;
+    font-weight: bold;
+
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
+  &__between {
+
+    h2 {
+      font-size: $spacer_unit;
+      text-align: center;
+    }
+  }
+
+  &__party {
+    @include three-columns;
+    font-weight: bold;
+  }
+
+  &__and-separator {
+    text-align: center;
+    font-weight: bold;
+
+    &--between {
+      text-align: center;
+      font-weight: bold;
+      margin-top: $spacer_unit;
+      margin-bottom: $spacer_unit;
+    }
+  }
+
+  &__line-separator {
+    text-align: center;
+  }
+
+  &__queens-counsel {
+    h2 {
+      @include sr-only;
+    }
+
+    li {
+      list-style: none;
+      text-align: center;
+
+      span {
+        font-weight: bold;
+      }
+
+    }
+  }
+
+  &__hearing-dates {
+    text-align: center;
+
+    h2 {
+      @include sr-only;
+    }
+  }
+
+  &__approved-judgment {
+    text-align: center;
+  }
+}
