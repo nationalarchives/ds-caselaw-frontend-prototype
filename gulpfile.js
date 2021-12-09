@@ -22,6 +22,6 @@ function scripts(cb) {
 exports.run = parallel(scripts, styles);
 
 exports.default = function () {
-    watch('./app/static/styles/src/*.scss', styles);
+    watch('./app/static/styles/src/**/*.scss', styles);
     watch('./app/static/scripts/src/*.js', scripts);
 };
