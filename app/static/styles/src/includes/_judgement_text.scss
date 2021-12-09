@@ -122,3 +122,42 @@
     text-align: center;
   }
 }
+
+.judgment-body {
+  h2 {
+    @include sr-only;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  &__section {
+    display: grid;
+    grid-template-columns: 1fr 15fr;
+    grid-template-rows: 1fr;
+    gap: 0 $spacer_unit * 0.5;
+    grid-template-areas: ". .";
+  }
+
+  &__nested-section {
+    display: grid;
+    grid-template-columns: 1fr 24fr;
+    grid-template-rows: 1fr;
+    gap: 0 $spacer_unit * 0.5;
+    grid-template-areas: ". .";
+  }
+
+  &__indent {
+    margin-left: $spacer_unit;
+  }
+
+  &__no-margin-top {
+    margin-top: 0;
+  }
+}
