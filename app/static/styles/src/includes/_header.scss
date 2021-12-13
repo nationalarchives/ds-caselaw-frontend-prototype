@@ -1,0 +1,8 @@
+.page-header {
+  background-color: $almost_black;
+  padding: $spacer_unit 0;
+
+  &__container {
+    @include container;
+  }
+}

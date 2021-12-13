@@ -1,6 +1,9 @@
-<header>
-    <a href="{{ url_for('home') }}">
-        <img src="{{ url_for('static', filename='tna_logo.jpg') }}" alt="The National Archives home" width="100"
-             height="100">
-    </a>
+<header class="page-header">
+    <div class="page-header__container">
+        <a href="{{ url_for('home') }}">
+            <img class="page-header__logo" src="{{ url_for('static', filename='tna_logo.png') }}"
+                 alt="The National Archives home" width="320"
+                 height="44">
+        </a>
+    </div>
 </header>
