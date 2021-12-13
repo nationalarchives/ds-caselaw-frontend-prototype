@@ -53,11 +53,24 @@ Use these steps to get up and running
 
 For front end assets:
 
-In a _new terminal_ run these commands
+In a _new terminal_ run these commands:
 
-9. Install Gulp CLI globally with `npm install --global gulp-cli` (Note: you only need to do this once)
-10. Install Node dependencies with `npm install`
-11. Start Gulp (a run-through of tasks followed by a watch) with `npm start`
+* `npm install -g sass` will install Sass as a global dependency
+* `npm start` will kick off a Sass watch task
+
+
+
+## Iteration 1.3
+
+Introduces a home page
+
+### Recent judgments display
+
+* Variable content length suggests a single column layout is more app
+
+Questions: 
+* How often are new judgments made 
+* How much of a problem is it if people miss a recent judgment?
 
 ## Iteration 1.2 
 

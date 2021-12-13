@@ -1,22 +1,21 @@
 {
-  "name": "alpha-prototype-starter",
+  "name": "ds-judgments-frontend",
   "version": "1.0.0",
-  "description": "This is the starting point for front end prototypes in project Alpha.",
+  "description": "Use this contents list to navigate the page.",
   "main": "index.js",
-  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp run && gulp"
+    "start": "sass --watch app/static/styles/src:app/static/styles/dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nationalarchives/ds-judgments-frontend.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.0"
-  }
+  "bugs": {
+    "url": "https://github.com/nationalarchives/ds-judgments-frontend/issues"
+  },
+  "homepage": "https://github.com/nationalarchives/ds-judgments-frontend#readme"
 }
