@@ -5,7 +5,7 @@
   gap: 6px 6px;
 
   div {
-    padding: $spacer_unit / 4;
+    padding: calc($spacer_unit / 4);
 
     &:first-child {
       grid-column: 3 / 4;
