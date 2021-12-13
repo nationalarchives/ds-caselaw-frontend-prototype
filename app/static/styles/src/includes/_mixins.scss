@@ -1,11 +1,11 @@
-@mixin three-columns {
+@mixin three-columns($unit) {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: 1fr;
   gap: 6px 6px;
 
   div {
-    padding: calc($spacer_unit / 4);
+    padding: calc($unit / 4);
 
     &:first-child {
       grid-column: 3 / 4;

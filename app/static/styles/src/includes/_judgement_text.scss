@@ -74,7 +74,7 @@
   }
 
   &__party {
-    @include three-columns;
+    @include three-columns($spacer_unit);
     font-weight: bold;
   }
 
