@@ -6,6 +6,11 @@
     @include container;
   }
 
+  &__logo {
+    max-width: 70%;
+    height: auto;
+  }
+
   &__logo-link {
 
     &:focus {

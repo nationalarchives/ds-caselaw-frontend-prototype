@@ -1,0 +1,10 @@
+.service-introduction {
+  &__container {
+    @include container
+  }
+
+  &__further-information {
+    display: inline-block;
+    margin-top: $spacer__unit;
+  }
+}
