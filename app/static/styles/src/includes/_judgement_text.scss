@@ -6,7 +6,7 @@
 .judgment-header {
 
   &__logo {
-    padding-top: $spacer_unit * 3;
+    padding-top: $spacer__unit * 3;
 
     img {
       display: block;
@@ -15,7 +15,7 @@
   }
 
   &__neutral-citation {
-    padding-top: $spacer_unit;
+    padding-top: $spacer__unit;
     text-decoration: underline;
 
     span {
@@ -26,7 +26,7 @@
   }
 
   &__case-number {
-    padding-top: $spacer_unit;
+    padding-top: $spacer__unit;
     text-decoration: underline;
     text-align: right;
 
@@ -36,27 +36,27 @@
   }
 
   &__court {
-    padding-top: $spacer_unit;
+    padding-top: $spacer__unit;
     font-weight: bold;
     text-decoration: underline;
   }
 
   &__address {
-    padding-top: $spacer_unit;
+    padding-top: $spacer__unit;
     font-style: normal;
     text-decoration: underline;
     text-align: right;
   }
 
   &__date {
-    padding-top: $spacer_unit;
+    padding-top: $spacer__unit;
     font-style: normal;
     text-decoration: underline;
     text-align: right;
   }
 
   &__before {
-    padding-top: $spacer_unit;
+    padding-top: $spacer__unit;
     text-align: center;
     font-weight: bold;
 
@@ -68,13 +68,13 @@
   &__between {
 
     h2 {
-      font-size: $spacer_unit;
+      font-size: $spacer__unit;
       text-align: center;
     }
   }
 
   &__party {
-    @include three-columns($spacer_unit);
+    @include three-columns($spacer__unit);
     font-weight: bold;
   }
 
@@ -85,8 +85,8 @@
     &--between {
       text-align: center;
       font-weight: bold;
-      margin-top: $spacer_unit;
-      margin-bottom: $spacer_unit;
+      margin-top: $spacer__unit;
+      margin-bottom: $spacer__unit;
     }
   }
 
@@ -141,7 +141,7 @@
     display: grid;
     grid-template-columns: 1fr 15fr;
     grid-template-rows: 1fr;
-    gap: 0 $spacer_unit * 0.5;
+    gap: 0 $spacer__unit * 0.5;
     grid-template-areas: ". .";
   }
 
@@ -149,12 +149,12 @@
     display: grid;
     grid-template-columns: 1fr 24fr;
     grid-template-rows: 1fr;
-    gap: 0 $spacer_unit * 0.5;
+    gap: 0 $spacer__unit * 0.5;
     grid-template-areas: ". .";
   }
 
   &__indent {
-    margin-left: $spacer_unit;
+    margin-left: $spacer__unit;
   }
 
   &__no-margin-top {

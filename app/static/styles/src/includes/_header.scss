@@ -1,8 +1,20 @@
 .page-header {
-  background-color: $almost_black;
-  padding: $spacer_unit 0;
+  background-color: $color__almost-black;
+  padding: $spacer__unit 0;
 
   &__container {
     @include container;
+  }
+
+  &__logo-link {
+
+    &:focus {
+      outline: 0;
+
+      img {
+        outline: 0.19rem solid $color__white;
+        outline-offset: 0.19rem;
+      }
+    }
   }
 }
