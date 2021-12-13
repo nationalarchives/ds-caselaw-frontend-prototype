@@ -1,8 +1,10 @@
-<div class="search">
-    <h2>Search</h2>
-    <form action="{{ url_for('search') }}" role="search" aria-label="Search for a judgment">
-        <label for="query">Search for a judgment</label>
-        <input required type="text" name="query" id="query">
-        <input type="submit" value="Search">
+<div class="search-component">
+    <form action="{{ url_for('search') }}" role="search" aria-label="Find by keyword">
+        <label class="search-component__label" for="query">Find by keyword</label>
+        <p class="search-component__helper-text">
+            Explainer of how to search the text of judgments
+        </p>
+        <input class="search-component__search-field" required type="text" name="query" id="query">
+        <input type="submit" value="Search" class="search-component__submit-button">
     </form>
 </div>

@@ -14,12 +14,20 @@
             <h1>{{ service.name }}</h1>
             <p>
                 You can use this service to find and view a court judgment.<br>
-                <a class="service-introduction__further-information" href="#">Find out more about this service and what to expect</a>
+                <a class="service-introduction__further-information" href="#">Find out more about this service and what
+                    to expect</a>
             </p>
         </div>
     </div>
-    {% include 'includes/basic_search_form.html' %}
-    {% include 'includes/neutral_citation_form.html' %}
+    <div class="search">
+        <div class="search__container">
+            <h2>Search</h2>
+            <div class="search__components">
+                {% include 'includes/basic_search_form.html' %}
+                {% include 'includes/neutral_citation_form.html' %}
+            </div>
+        </div>
+    </div>
     {% include 'includes/recent_judgments.html' %}
     {% include 'includes/collections.html' %}
     {% include 'includes/browse_widget.html' %}

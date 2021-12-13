@@ -1,8 +1,11 @@
-<div class="neutral-citation">
-    <form action="{{ url_for('neutral_citation') }}" aria-label="Search by neutral citation">
-        <label for="neutral_citation">Search by neutral citation</label>
-        <input required type="text" name="neutral_citation" id="neutral_citation"
+<div class="search-component">
+    <form action="{{ url_for('neutral_citation') }}" aria-label="Find by neutral citation">
+        <label class="search-component__label" for="neutral_citation">Find by neutral citation</label>
+        <p class="search-component__helper-text">
+            For example [2021] EWCA Civ 1828
+        </p>
+        <input class="search-component__search-field" required type="text" name="neutral_citation" id="neutral_citation"
                placeholder="[2021] EWCA Civ 1828 or [2021] EWCA Civ">
-        <input type="submit" value="Search">
+        <input type="submit" value="Search" class="search-component__submit-button">
     </form>
 </div>
