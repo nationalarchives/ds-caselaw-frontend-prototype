@@ -1,6 +1,6 @@
 from app import app
 import re
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, make_response
 from content.recent_judgments import recent_judgments
 from content.service_wide import service
 from content.search_results import search_results
@@ -83,3 +83,18 @@ def open_justice_licence():
         'open_justice_licence.html',
         service=service,
     )
+
+@app.route('/judgment')
+def judgment_quick_route():
+    return redirect(url_for('judgment'))
+
+@app.route('/ewhc/admin/2021/3290')
+def judgment():
+    resp = make_response(render_template('judgment.html'))
+    resp.headers['Content-Security-Policy'] = "script-src 'nonce-2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRo' " \
+                                              "'strict-dynamic' " \
+                                              "'unsafe-inline' " \
+                                              "https:;" \
+                                              "object-src 'none';" \
+                                              "base-uri 'none';"
+    return resp

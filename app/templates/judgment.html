@@ -1,1 +1,10 @@
-<h1>Judgment</h1>
+{% extends "layout_judgment_html.html" %}
+
+{% block content %}
+    <article class="judgment">
+        {% include 'includes/judgment_text_header.html' %}
+        {% include 'includes/judgment_text_body.html' %}
+        {% include 'includes/judgment_text_footer.html' %}
+    </article>
+{% endblock %}
+

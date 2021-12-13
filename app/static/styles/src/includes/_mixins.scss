@@ -1,0 +1,36 @@
+@mixin three-columns {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 6px 6px;
+
+  div {
+    padding: $spacer_unit / 4;
+
+    &:first-child {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+    }
+
+    &:nth-child(2) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      text-align: center;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin: 0;
+    text-decoration: underline;
+  }
+}
+
+@mixin sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
