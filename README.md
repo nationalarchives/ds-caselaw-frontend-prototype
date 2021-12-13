@@ -6,7 +6,8 @@ Use this contents list to navigate the page.
 * [Versioning](#versioning)
 * [Development approach](#development-approach)
 * [Local development setup](#local-development)
-* User flow iterations
+* User flow and wireframe iterations
+    * [1.3](#iteration-13)
     * [1.2](#iteration-12)
     * [1.1](#iteration-11)
     * [1.0](#iteration-10)
@@ -58,11 +59,9 @@ In a _new terminal_ run these commands:
 * `npm install -g sass` will install Sass as a global dependency
 * `npm start` will kick off a Sass watch task
 
-
-
 ## Iteration 1.3
 
-Introduces a home page
+Introduces an initial proposal for the [home page design](wireframes/1%20-%20service_homepage%20-%20v0.1.png). The user flow is unchanged.
 
 ### Recent judgments display
 
