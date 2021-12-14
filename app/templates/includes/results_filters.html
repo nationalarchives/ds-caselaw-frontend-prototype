@@ -21,16 +21,6 @@
                 {% endif %}
             </label>
             <br>
-            {% for subdivision in court.subdivisions %}
-                <input type="checkbox" name="{{ subdivision.code }}" id="{{ subdivision.code }}">
-                <label for="{{ subdivision.code }}">{{ subdivision.name }}
-                    {% if subdivision.years_range_start or subdivision.years_range_end %}
-                        ({{ subdivision.years_range_start }}
-                        - {{ subdivision.years_range_end }})
-                    {% endif %}
-                </label>
-                <br>
-            {% endfor %}
         {% endfor %}
     </fieldset>
 
