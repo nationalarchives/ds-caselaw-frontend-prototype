@@ -39,6 +39,10 @@
     display: block;
     margin: auto;
     width: 50%;
+
+    &:focus {
+      @include focus-default
+    }
   }
 
   &__submit-button {
@@ -49,6 +53,10 @@
     padding: 1rem 1.3rem;
     margin-top: 1em;
     font-size: 1rem;
-  }
 
+    &:focus {
+      @include focus-default;
+      outline-offset: $spacer__unit / 8;
+    }
+  }
 }
