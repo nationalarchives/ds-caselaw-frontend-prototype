@@ -8,7 +8,11 @@
                 {% for court in courts %}
                     {% if court.years_range_start or court.years_range_end %}
                         <li class="judgment-browse-by-court__court">
-                            <span class="judgment-browse-by-court__court-name">{{ court.name }}</span>
+                            <span class="judgment-browse-by-court__court-name">
+                                <a href="#">
+                                    {{ court.name }}
+                                </a>
+                            </span>
                             <span class="judgment-browse-by-court__years">
                                 ({{ court.years_range_start }} - {{ court.years_range_end }})
                             </span>
@@ -16,7 +20,11 @@
                     {% endif %}
                     {% for subdivision in court.subdivisions %}
                         <li class="judgment-browse-by-court__court">
-                            <span class="judgment-browse-by-court__court-name">{{ subdivision.name }}</span>
+                            <span class="judgment-browse-by-court__court-name">
+                                <a href="#">
+                                    {{ subdivision.name }}
+                                </a>
+                            </span>
                             <span class="judgment-browse-by-court__years">
                                 ({{ subdivision.years_range_start }}
                                 - {{ subdivision.years_range_end }})
