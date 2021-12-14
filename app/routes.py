@@ -89,3 +89,10 @@ def judgment():
                                               "object-src 'none';" \
                                               "base-uri 'none';"
     return resp
+
+@app.route('/advanced-search')
+def advanced_search():
+    return render_template(
+        'advanced_search.html',
+        service=service
+    )
