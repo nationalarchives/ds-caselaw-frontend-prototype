@@ -1,0 +1,42 @@
+.recent-judgments {
+
+  &__container {
+    @include container
+  }
+
+  &__list {
+    border: 2px solid $color__grey;
+    padding: $spacer__unit;
+    list-style-type: none;
+  }
+
+  &__judgment {
+    display: flex;
+    justify-content: space-between;
+    padding: $spacer__unit;
+    border-bottom: 2px dashed $color__grey;
+
+    > span {
+      flex-basis: 50%;
+
+      > span {
+        padding: calc($spacer__unit / 4);
+      }
+    }
+  }
+
+  &__title {
+    display: block;
+    font-weight: bold;
+  }
+
+  &__date {
+    display: block;
+    text-align: right;
+  }
+  
+  &__court {
+    display: block;
+    text-align: right;
+  }
+}
