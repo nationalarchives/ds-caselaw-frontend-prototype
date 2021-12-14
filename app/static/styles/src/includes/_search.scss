@@ -56,7 +56,7 @@
 
     &:focus {
       @include focus-default;
-      outline-offset: $spacer__unit / 8;
+      outline-offset: calc($spacer__unit / 8);
     }
   }
 }
