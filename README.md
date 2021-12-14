@@ -61,7 +61,25 @@ In a _new terminal_ run these commands:
 
 ## Iteration 1.3
 
-Introduces an initial proposal for the [home page design](wireframes/1%20-%20service_homepage%20-%20v0.1.png). The user flow is unchanged.
+This version Introduces initial proposals for
+
+1. the [home page design](wireframes/1%20-%20service_homepage%20-%20v0.1.png) 
+2. the search page that allows users to provide a more detailed query up front. 
+
+### Using a HTML date input
+
+On the search page we have used the native HTML date input given it has:
+
+* broad support (with the exception of IE) and degrades gracefully to a text field
+* will present users with controls appropriate to their browsing context
+* it allows us to set minimum and maximum values (which correspond to the available dates)
+    
+We also think that the three text box pattern for dates within the GOV.UK design system feels less appropriate in the context of a set of filters than it does in a form. 
+
+### Flow updates
+
+* Brings the browse functionality into the home page
+* Updates the advanced search flow to reflect the possibility of no results
 
 ### Recent judgments display
 
