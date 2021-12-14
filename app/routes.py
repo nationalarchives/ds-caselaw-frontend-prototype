@@ -26,15 +26,6 @@ def search():
         search_results=search_results
     )
 
-
-@app.route('/browse')
-def browse():
-    return render_template(
-        'browse.html',
-        service=service,
-    )
-
-
 @app.route('/terms-of-use')
 def terms_of_use():
     return render_template(
