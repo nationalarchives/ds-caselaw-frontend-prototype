@@ -18,13 +18,13 @@ courts = [
         'code': 'ewca',
         'subdivisions': [
             {
-                'name': 'Court of Appeal (Civil Division)',
+                'name': 'Court of Appeal Civil Division',
                 'code': 'ewca/civ',
                 'years_range_start': 2003,
                 'years_range_end': 2021
             },
             {
-                'name': 'Court of Appeal (Criminal Division)',
+                'name': 'Court of Appeal Criminal Division',
                 'code': 'ewca/crim',
                 'years_range_start': 2003,
                 'years_range_end': 2021
@@ -36,37 +36,37 @@ courts = [
         'code': 'ewhc',
         'subdivisions': [
             {
-                'name': 'High Court (Administrative Court)',
+                'name': 'Administrative Court',
                 'code': 'ewhc/admin',
                 'years_range_start': 2003,
                 'years_range_end': 2021
             },
             {
-                'name': 'High Court (Admiralty Division)',
+                'name': 'Admiralty Court',
                 'code': 'ewhc/admlty',
                 'years_range_start': 2003,
                 'years_range_end': 2021
             },
             {
-                'name': 'High Court (Chancery Court)',
+                'name': 'Chancery Division of the High Court',
                 'code': 'ewhc/ch',
                 'years_range_start': 2003,
                 'years_range_end': 2021
             },
             {
-                'name': 'High Court (Commercial Court)',
+                'name': 'Commercial Court',
                 'code': 'ewhc/comm',
                 'years_range_start': 2003,
                 'years_range_end': 2021
             },
             {
-                'name': 'High Court (Senior Court Costs Office)',
+                'name': 'Senior Court Costs Office',
                 'code': 'ewhc/costs',
                 'years_range_start': 2003,
                 'years_range_end': 2021
             },
             {
-                'name': 'High Court (Family Division)',
+                'name': 'Family Division of the High Court',
                 'code': 'ewhc/fam',
                 'years_range_start': 2003,
                 'years_range_end': 2021
@@ -78,25 +78,25 @@ courts = [
                 'years_range_end': 2021
             },
             {
-                'name': 'High Court (Mercantile Court)',
+                'name': 'Mercantile Court',
                 'code': 'ewhc/mercantile',
                 'years_range_start': 2008,
                 'years_range_end': 2015
             },
             {
-                'name': 'High Court (Patents Court)',
+                'name': 'Patents Court',
                 'code': 'ewhc/pat',
                 'years_range_start': 2003,
                 'years_range_end': 2021
             },
             {
-                'name': 'High Court (Queen\'s Bench Division)',
+                'name': 'Queen\'s Bench Division of the High Court',
                 'code': 'ewhc/qb',
                 'years_range_start': 2003,
                 'years_range_end': 2021
             },
             {
-                'name': 'High Court (Technology and Construction Court)',
+                'name': 'Technology and Construction Court',
                 'code': 'ewhc/tcc',
                 'years_range_start': 2003,
                 'years_range_end': 2021
