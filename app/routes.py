@@ -91,7 +91,7 @@ def judgment():
     return resp
 
 @app.route('/structured-search')
-def advanced_search():
+def structured_search():
     return render_template(
         'structured_search.html',
         service=service

@@ -53,6 +53,27 @@
   }
 }
 
+@mixin call-to-action-button {
+  background-color: $color__highlight-blue;
+  font-weight: 700;
+  border: 0;
+  color: $color__white;
+  padding: 1rem 1.3rem;
+  margin-top: 1em;
+  font-size: 1rem;
+
+  &:focus {
+    @include focus-default;
+    outline-offset: 0.2rem;
+  }
+}
+
+@mixin emphasised-block {
+  padding: calc($spacer__unit * 1.5) calc($spacer__unit * 2);
+  background-color: $color__light-grey;
+  border-left: 0.5rem solid $color__highlight-blue;
+}
+
 @mixin focus-default {
   outline: 5px solid $color__focus-blue-outline;
   outline-offset: 0;

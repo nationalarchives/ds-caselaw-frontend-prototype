@@ -1,0 +1,57 @@
+.search-component {
+  margin-top: calc($spacer__unit * 2);
+
+  &__container {
+    @include container;
+  }
+
+  &__emphasised-container {
+    @include emphasised-block
+  }
+
+  &__more-options {
+    margin-top: $spacer__unit;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  input[type=submit] {
+    @include call-to-action-button;
+    padding-left: calc($spacer__unit * 3);
+    padding-right: calc($spacer__unit * 3)
+  }
+
+  &__search-term-label {
+    @include sr-only;
+  }
+
+  &__search-term-input {
+    @include text_field;
+
+    width: 80%;
+
+    @media (min-width: $grid__breakpoint-small) {
+      width: 20rem;
+    }
+
+    @media (min-width: $grid__breakpoint-medium) {
+      width: 25rem;
+    }
+
+    @media (min-width: $grid__breakpoint-extra-large) {
+      width: 35rem;
+    }
+
+
+
+  }
+
+  input[type=checkbox] {
+    &:focus {
+      @include focus-default;
+
+    }
+  }
+}
