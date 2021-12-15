@@ -3,12 +3,13 @@
     @include container
   }
 
-  &__panel {
-    background-color: $color__light-grey;
-    border-top: 0.31rem solid $color__grey;
-    padding: calc($spacer__unit * 2);
+  &__full-text-panel {
+    @include emphasised-block;
     margin-top: $spacer__unit;
     margin-bottom: $spacer__unit;
+    @media (min-width: $grid__breakpoint-medium) {
+      padding: calc($spacer__unit * 1.5) calc($spacer__unit * 2);
+    }
   }
 
   &__full-text-label {
@@ -20,22 +21,50 @@
     width: 50%;
   }
 
-  &__party-name-label {
+  &__name-label {
     font-weight: bold;
   }
 
-  &__party-name-input {
+  &__name-input {
     @include text_field;
+  }
+
+  &__specific-fields-panel {
+    padding-top: $spacer__unit;
+    border-top: 0.063rem dotted $color__dark-grey;
+    border-bottom: 0.063rem dotted $color__dark-grey;
+    margin-top: $spacer__unit;
+    margin-bottom: $spacer__unit;
+
+    @media (min-width: $grid__breakpoint-medium) {
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: $spacer__unit
+    }
+
+  }
+
+  &__name-container {
+    @include emphasised-block;
+    background-color: $color__white;
+    padding: 0 $spacer__unit;
+    margin-bottom: $spacer__unit;
+  }
+
+  &__help-text {
+    margin-bottom: calc($spacer__unit / 2);
+    color: lighten($color__almost-black, 25);
   }
 
   fieldset {
     border: none;
     padding: 0;
+    margin-top: $spacer__unit;
   }
 
   legend {
     font-weight: bold;
+    font-size: 1.2rem;
   }
-
-
 }

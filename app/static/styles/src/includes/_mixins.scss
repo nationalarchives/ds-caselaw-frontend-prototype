@@ -69,7 +69,8 @@
 }
 
 @mixin emphasised-block {
-  padding: calc($spacer__unit * 1.5) calc($spacer__unit * 2);
+  padding: $spacer__unit;
+
   background-color: $color__light-grey;
   border-left: 0.5rem solid $color__highlight-blue;
 }

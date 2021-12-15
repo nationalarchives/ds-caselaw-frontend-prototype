@@ -16,7 +16,7 @@
                 <h1>Search</h1>
                 <fieldset>
                     <legend>Search everything for</legend>
-                    <div class="structured-search__panel">
+                    <div class="structured-search__full-text-panel">
                         <label for="full_text" class="structured-search__full-text-label">Search term</label>
                         <input type="text" name="full_text" id="full_text" class="structured-search__full-text-input">
                         <div>
@@ -26,13 +26,20 @@
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>Specifically search for</legend>
-                    <div class="structured-search__panel">
-                        <div>
-                            <label for="party_name" class="structured-search__party-name-label">Party name</label>
+                    <legend>Search specific fields</legend>
+                    <div class="structured-search__specific-fields-panel">
+                        <div class="structured-search__name-container">
+                            <label for="party_name" class="structured-search__name-label">Party name</label>
+                            <p class="structured-search__help-text">For example a claimaint, defendant or prosecutor</p>
+                            <input type="text" name="party_name" id="party_name"
+                                   class="structured-search__name-input">
                         </div>
-                        <input type="text" name="party_name" id="party_name"
-                               class="structured-search__party-name-input">
+                        <div class="structured-search__name-container">
+                            <label for="judge_name" class="structured-search__name-label">Judge name</label>
+                            <p class="structured-search__help-text">For example 'Smith', 'Judge Smith' or 'Lord Justice Smith'</p>
+                            <input type="text" name="judge_name" id="judge_name"
+                                   class="structured-search__name-input">
+                        </div>
                     </div>
                 </fieldset>
             </div>
