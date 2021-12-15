@@ -7,6 +7,7 @@ Use this contents list to navigate the page.
 * [Development approach](#development-approach)
 * [Local development setup](#local-development)
 * User flow and wireframe iterations
+    * [1.4](#iteration-14)
     * [1.3](#iteration-13)
     * [1.2](#iteration-12)
     * [1.1](#iteration-11)
@@ -59,6 +60,19 @@ In a _new terminal_ run these commands:
 * `npm install -g sass` will install Sass as a global dependency
 * `npm start` will kick off a Sass watch task
 
+## Iteration 1.4
+
+This version: 
+
+* Updates [the flow](user_flows/Iterations/1.4) to
+    * merge the two search fields on the home page
+    * show the individual judgments can be reached directly from the home page
+    * merges the 'courts' and 'collections' fields to be 'courts' (this may need to change at a later date but the numbers are so small that the separation seems redundant)
+* Introduces the [version 0.2](wireframes/v0.2) of the wireframes, including: 
+    * an updated service homepage (with the two search fields combined)
+    * search page
+    * a search results page
+   
 ## Iteration 1.3
 
 This version Introduces initial proposals for
