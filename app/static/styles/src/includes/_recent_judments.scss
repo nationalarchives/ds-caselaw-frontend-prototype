@@ -11,13 +11,20 @@
   }
 
   &__judgment {
-    display: flex;
-    justify-content: space-between;
+
     padding: $spacer__unit;
     border-bottom: 2px dashed $color__grey;
 
+    @media (min-width: $grid__breakpoint-medium) {
+      display: flex;
+      justify-content: space-between;
+    }
+
     > span {
-      flex-basis: 50%;
+
+      @media (min-width: $grid__breakpoint-medium) {
+        flex-basis: 50%;
+      }
 
       > span {
         padding: calc($spacer__unit / 4);
@@ -32,11 +39,24 @@
 
   &__date {
     display: block;
-    text-align: right;
+
+    @media (max-width: $grid__breakpoint-medium) {
+      margin-top: $spacer__unit;
+    }
+
+    @media (min-width: $grid__breakpoint-medium) {
+      text-align: right;
+    }
   }
-  
+
   &__court {
     display: block;
-    text-align: right;
+    @media (min-width: $grid__breakpoint-medium) {
+      text-align: right;
+    }
+
+    @media (max-width: $grid__breakpoint-medium) {
+      margin-top: 0;
+    }
   }
 }
