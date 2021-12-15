@@ -1,0 +1,41 @@
+.structured-search {
+  &__container {
+    @include container
+  }
+
+  &__panel {
+    background-color: $color__light-grey;
+    border-top: 0.31rem solid $color__grey;
+    padding: calc($spacer__unit * 2);
+    margin-top: $spacer__unit;
+    margin-bottom: $spacer__unit;
+  }
+
+  &__full-text-label {
+    @include sr-only;
+  }
+
+  &__full-text-input {
+    @include text_field;
+    width: 50%;
+  }
+
+  &__party-name-label {
+    font-weight: bold;
+  }
+
+  &__party-name-input {
+    @include text_field;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+  }
+
+  legend {
+    font-weight: bold;
+  }
+
+
+}

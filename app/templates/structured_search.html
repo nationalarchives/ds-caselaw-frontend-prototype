@@ -1,5 +1,41 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>Structured search</h1>
+    <div class="breadcrumb">
+        <div class="breadcrumb__container">
+            <ul>
+                <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
+                <li><a href="/">Find a court judgment</a></li>
+                <li>Search</li>
+            </ul>
+        </div>
+    </div>
+    <form action="/search" role="search">
+        <div class="structured-search">
+            <div class="structured-search__container">
+                <h1>Search</h1>
+                <fieldset>
+                    <legend>Search everything for</legend>
+                    <div class="structured-search__panel">
+                        <label for="full_text" class="structured-search__full-text-label">Search term</label>
+                        <input type="text" name="full_text" id="full_text" class="structured-search__full-text-input">
+                        <div>
+                            <input type="checkbox" name="neutral_citation" id="neutral_citation">
+                            <label for="neutral_citation">I'm using a neutral citation<span>, e.g. EWCA Civ 2781</span></label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Specifically search for</legend>
+                    <div class="structured-search__panel">
+                        <div>
+                            <label for="party_name" class="structured-search__party-name-label">Party name</label>
+                        </div>
+                        <input type="text" name="party_name" id="party_name"
+                               class="structured-search__party-name-input">
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </form>
 {% endblock %}

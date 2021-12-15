@@ -34,15 +34,10 @@
   }
 
   &__search-field {
-    border: 2px solid $color__dark-grey;
-    padding: calc($spacer__unit / 2);
+    @include text_field;
     display: block;
     margin: auto;
     width: 50%;
-
-    &:focus {
-      @include focus-default
-    }
   }
 
   &__submit-button {
