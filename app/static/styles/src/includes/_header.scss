@@ -4,11 +4,14 @@
 
   &__container {
     @include container;
+    @media (max-width: $grid__breakpoint-medium) {
+      text-align: center;
+    }
   }
 
   &__logo {
-    max-width: 70%;
     height: auto;
+    margin: auto;
   }
 
   &__logo-link {
