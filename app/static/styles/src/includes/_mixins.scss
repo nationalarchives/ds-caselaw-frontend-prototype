@@ -36,10 +36,21 @@
 }
 
 @mixin container {
-  width: 77.5rem;
   padding: 0 $spacer__unit;
-  max-width: 100%;
   margin: auto;
+  max-width: 90%;
+
+  @media (min-width: $grid__breakpoint-small) {
+    max-width: 30rem;
+  }
+
+  @media (min-width: $grid__breakpoint-medium) {
+    min-width: 40rem;
+  }
+
+  @media (min-width: $grid__breakpoint-extra-large) {
+    max-width: 65rem;
+  }
 }
 
 @mixin focus-default {
