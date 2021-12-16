@@ -10,7 +10,7 @@
             </ul>
         </div>
     </div>
-    <form action="/search" role="search">
+    <form action="{{ url_for('results') }}" role="search">
         <div class="structured-search">
             <div class="structured-search__container">
                 <h1>Search</h1>
@@ -27,7 +27,7 @@
                 </fieldset>
                 <fieldset>
                     <legend>Search specific fields</legend>
-                    <div class="structured-search__specific-fields-panel">
+                    <div class="structured-search__multi-fields-panel">
                         <div class="structured-search__name-container">
                             <label for="party_name" class="structured-search__name-label">Party name</label>
                             <p class="structured-search__help-text">For example a claimaint, defendant or prosecutor</p>
@@ -36,12 +36,40 @@
                         </div>
                         <div class="structured-search__name-container">
                             <label for="judge_name" class="structured-search__name-label">Judge name</label>
-                            <p class="structured-search__help-text">For example 'Smith', 'Judge Smith' or 'Lord Justice Smith'</p>
+                            <p class="structured-search__help-text">For example 'Smith', 'Judge Smith' or 'Lord Justice
+                                Smith'</p>
                             <input type="text" name="judge_name" id="judge_name"
                                    class="structured-search__name-input">
                         </div>
                     </div>
                 </fieldset>
+                <fieldset>
+                    <legend>Only include results</legend>
+                    <div class="structured-search__multi-fields-panel">
+                        <div class="structured-search__limit-to-container">
+                            <label for="court" class="structured-search__limit-to-label">From a specific court</label>
+                            <select name="court" id="court" class="structured-search__select">
+                                <option value="all">All courts</option>
+                                {% for court in courts %}
+                                    <option value="{{ court.code }}">{{ court.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="structured-search__limit-to-container">
+                            <label for="collection" class="structured-search__limit-to-label">From a specific
+                                collection</label>
+                            <select name="collection" id="collection" class="structured-search__select">
+                                <option value="all">All collections</option>
+                                {% for court in courts %}
+                                    <option value="{{ court.code }}">{{ court.code | upper }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="structured-search__submit-container">
+                    <input type="submit" value="Search">
+                </div>
             </div>
         </div>
     </form>

@@ -94,5 +94,6 @@ def judgment():
 def structured_search():
     return render_template(
         'structured_search.html',
-        service=service
+        service=service,
+        courts=courts
     )

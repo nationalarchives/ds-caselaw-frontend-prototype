@@ -18,7 +18,15 @@
 
   &__full-text-input {
     @include text_field;
-    width: 50%;
+    width: 20rem;
+
+    @media (min-width: $grid__breakpoint-medium) {
+      width: 27rem;
+    }
+
+    @media (min-width: $grid__breakpoint-extra-large) {
+      width: 35rem;
+    }
   }
 
   &__name-label {
@@ -27,9 +35,20 @@
 
   &__name-input {
     @include text_field;
+    width: 18rem;
   }
 
-  &__specific-fields-panel {
+  &__limit-to-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: calc($spacer__unit * 1.5);
+  }
+
+  &__limit-to-input {
+    @include text_field;
+  }
+
+  &__multi-fields-panel {
     padding-top: $spacer__unit;
     border-top: 0.063rem dotted $color__dark-grey;
     border-bottom: 0.063rem dotted $color__dark-grey;
@@ -42,7 +61,6 @@
       grid-template-columns: 1fr 1fr;
       gap: $spacer__unit
     }
-
   }
 
   &__name-container {
@@ -52,9 +70,24 @@
     margin-bottom: $spacer__unit;
   }
 
+  &__limit-to-container {
+    @include emphasised-block;
+    background-color: $color__white;
+    padding: 0 $spacer__unit;
+    margin-bottom: $spacer__unit;
+  }
+
+  &__submit-container {
+    margin-bottom: calc($spacer__unit * 3);
+  }
+
   &__help-text {
     margin-bottom: calc($spacer__unit / 2);
     color: lighten($color__almost-black, 25);
+  }
+
+  &__select {
+    @include select;
   }
 
   fieldset {
@@ -67,4 +100,15 @@
     font-weight: bold;
     font-size: 1.2rem;
   }
+
+  input[type=submit] {
+    @include call-to-action-button;
+    padding-right: calc($spacer__unit * 3);
+    padding-left: calc($spacer__unit * 3);
+  }
+
+  input[type=checkbox] {
+    @include checkbox
+  }
+
 }
