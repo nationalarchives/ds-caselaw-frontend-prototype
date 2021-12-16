@@ -4,6 +4,7 @@ Use this contents list to navigate the page.
 
 * [Introduction](#introduction)
 * [Versioning](#versioning)
+* [HTML for judgment text page](#html-for-judgment-text-page)
 * [Development approach](#development-approach)
 * [Local development setup](#local-development)
 * User flow and wireframe iterations
@@ -27,6 +28,10 @@ Iterations of the flow will be described in this `README.md` file with an explan
 All of the relevant information can be found under the corresponding heading. 
 
 The Flask application and front end code will be versioned using Git only.
+
+## HTML for judgment text page
+
+This repository includes a sample HTML page with accompanying CSS that seeks to retain the desired layout while also being inclusive and making the most of what the Web has to offer. Relevant decisions and considerations are described on the [corresponding Wiki page](https://github.com/nationalarchives/ds-judgments-frontend/wiki/Recommendations-for-Judgment-text-HTML-and-CSS)
 
 ## Development approach
 
