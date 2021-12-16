@@ -17,8 +17,8 @@ def home():
     )
 
 
-@app.route('/search', methods=['GET'])
-def search():
+@app.route('/results', methods=['GET'])
+def results():
     return render_template(
         'results.html',
         service=service,
@@ -90,7 +90,7 @@ def judgment():
                                               "base-uri 'none';"
     return resp
 
-@app.route('/structured-search')
+@app.route('/search')
 def structured_search():
     return render_template(
         'structured_search.html',
