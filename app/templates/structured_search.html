@@ -67,6 +67,25 @@
                         </div>
                     </div>
                 </fieldset>
+                <fieldset>
+                    <legend>During the period</legend>
+                    <div class="structured-search__multi-fields-panel">
+                        <div class="structured-search__limit-to-container">
+                            <label for="from_date" class="structured-search__limit-to-label">From date</label>
+                            <input type="date" id="from_date" class="structured-search__date-input"
+                                   value="2003-01-01"
+                                   min="2003-01-01"
+                                   max="{{ date }}">
+                        </div>
+                        <div class="structured-search__limit-to-container">
+                            <label for="to_date" class="structured-search__limit-to-label">To date</label>
+                            <input type="date" id="to_date" class="structured-search__date-input"
+                                   value="{{ date }}"
+                                   min="2003-01-01"
+                                   max="{{ date }}">
+                        </div>
+                    </div>
+                </fieldset>
                 <div class="structured-search__submit-container">
                     <input type="submit" value="Search">
                 </div>

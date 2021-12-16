@@ -1,10 +1,12 @@
 from app import app
 import re
+import datetime
 from flask import render_template, request, redirect, url_for, make_response
 from content.recent_judgments import recent_judgments
 from content.service_wide import service
 from content.search_results import search_results
 from content.courts import courts
+
 
 
 @app.route('/')
@@ -92,8 +94,12 @@ def judgment():
 
 @app.route('/search')
 def structured_search():
+
+    now = datetime.datetime.now()
+
     return render_template(
         'structured_search.html',
         service=service,
-        courts=courts
+        courts=courts,
+        date=f"{now.year}-{now.month}-{now.day}"
     )

@@ -109,6 +109,7 @@
   padding: calc($spacer__unit / 2);
   margin-bottom: $spacer__unit;
   margin-top: calc($spacer__unit / 2);
+  background-color: $color__white;
 
   &:focus {
     @include focus-default

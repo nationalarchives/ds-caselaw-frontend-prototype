@@ -90,6 +90,10 @@
     @include select;
   }
 
+  &__date-input {
+    @include text_field;
+  }
+
   fieldset {
     border: none;
     padding: 0;
