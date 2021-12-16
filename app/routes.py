@@ -21,11 +21,15 @@ def home():
 
 @app.route('/results', methods=['GET'])
 def results():
+
+    now = datetime.datetime.now()
+
     return render_template(
         'results.html',
         service=service,
         courts=courts,
-        search_results=search_results
+        search_results=search_results,
+        date=f"{now.year}-{now.month}-{now.day}"
     )
 
 @app.route('/terms-of-use')

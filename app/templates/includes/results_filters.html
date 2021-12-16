@@ -1,43 +1,71 @@
 <h2>Results filters</h2>
 <form action="/search">
-    <div>
-        <label for="search">Search</label>
-        <input type="text" id="search" name="q" value="testing" placeholder="Search">
+    <div class="results__full-text-panel">
+        <label for="full_text" class="results__full-text-label">Search term</label>
+        <input type="text" name="full_text" id="full_text" class="results__full-text-input" value="test">
     </div>
-
-    <div>
-        <label for="party">Party:</label>
-        <input type="text" id="party" name="party" value="" placeholder="Party name">
+    <div class="results__facet-container">
+        <fieldset>
+            <legend>Search specific fields</legend>
+            <div class="results__multi-fields-panel">
+                <div class="results__name-container">
+                    <label for="party_name" class="results__name-label">Party name</label>
+                    <input type="text" name="party_name" id="party_name"
+                           class="results__name-input">
+                </div>
+                <div class="results__name-container">
+                    <label for="judge_name" class="results__name-label">Judge name</label>
+                    <input type="text" name="judge_name" id="judge_name"
+                           class="results__name-input">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Only include results</legend>
+            <div class="results__multi-fields-panel">
+                <div class="results__limit-to-container">
+                    <label for="court" class="results__limit-to-label">From a specific court</label>
+                    <select name="court" id="court" class="results__select">
+                        <option value="all">All courts</option>
+                        {% for court in courts %}
+                            <option value="{{ court.code }}">{{ court.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="results__limit-to-container">
+                    <label for="collection" class="results__limit-to-label">From a specific
+                        collection</label>
+                    <select name="collection" id="collection" class="results__select">
+                        <option value="all">All collections</option>
+                        {% for court in courts %}
+                            <option value="{{ court.code }}">{{ court.code | upper }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>During the period</legend>
+            <div class="results__multi-fields-panel">
+                <div class="results__limit-to-container">
+                    <label for="from_date" class="results__limit-to-label">From date</label>
+                    <input type="date" id="from_date" class="results__date-input"
+                           value="2003-01-01"
+                           min="2003-01-01"
+                           max="{{ date }}">
+                </div>
+                <div class="results__limit-to-container">
+                    <label for="to_date" class="results__limit-to-label">To date</label>
+                    <input type="date" id="to_date" class="results__date-input"
+                           value="{{ date }}"
+                           min="2003-01-01"
+                           max="{{ date }}">
+                </div>
+            </div>
+        </fieldset>
     </div>
-
-    <fieldset>
-        <legend>Courts</legend>
-        {% for court in courts %}
-            <input type="checkbox" name="{{ court.code }}" id="{{ court.code }}">
-            <label for="{{ court.code }}">{{ court.name }}
-                {% if court.years_range_start or court.years_range_end %}
-                    ({{ court.years_range_start }}
-                    - {{ court.years_range_end }})
-                {% endif %}
-            </label>
-            <br>
-        {% endfor %}
-    </fieldset>
-
-    <div>
-        <label for="judge">Judge:</label>
-        <input type="text" id="judge" name="judge" value="" placeholder="Judge name">
+    <div class="results__control-container">
+        <input type="submit" value="Update your search" class="results__submit-button">
+        <button class="results__toggle-control" type="button">Collapse search options</button>
     </div>
-
-    <div>
-        <label for="from_date">From date:</label>
-        <input type="text" id="from_date" name="from" value="" placeholder="Date from">
-    </div>
-
-    <div>
-        <label for="to_date">To date:</label>
-        <input type="text" id="to_date" name="to" value="" placeholder="Date to">
-    </div>
-
-    <input type="submit" value="Search">
 </form>

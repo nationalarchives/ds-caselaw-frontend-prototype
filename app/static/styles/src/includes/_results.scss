@@ -1,0 +1,132 @@
+.results {
+  &__container {
+    @include container
+  }
+
+  &__full-text-panel {
+    @include emphasised-block;
+    margin-top: $spacer__unit;
+    margin-bottom: $spacer__unit;
+    @media (min-width: $grid__breakpoint-medium) {
+      padding: calc($spacer__unit * 1.5) calc($spacer__unit * 2);
+    }
+  }
+
+  &__full-text-label {
+    @include sr-only;
+  }
+
+  &__full-text-input {
+    @include text_field;
+    width: 20rem;
+
+    @media (min-width: $grid__breakpoint-medium) {
+      width: 27rem;
+    }
+
+    @media (min-width: $grid__breakpoint-extra-large) {
+      width: 35rem;
+    }
+  }
+
+  &__facet-container {
+
+    @media (min-width: $grid__breakpoint-medium) {
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: $grid__breakpoint-extra-large) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__multi-fields-panel {
+    padding-top: $spacer__unit;
+    margin-top: $spacer__unit;
+    margin-bottom: $spacer__unit;
+  }
+
+  &__name-label {
+    font-weight: bold;
+    display: block;
+  }
+
+  &__name-input {
+    @include text_field;
+    width: 18rem;
+  }
+
+  &__limit-to-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: calc($spacer__unit / 2);
+  }
+
+  &__limit-to-input {
+    @include text_field;
+  }
+
+  &__select {
+    @include select;
+  }
+
+  &__date-input {
+    @include text_field;
+    margin-top: 0;
+    padding: 0.375rem;
+  }
+
+  &__submit-button {
+    @include call-to-action-button;
+    margin-top: 0;
+  }
+
+  &__name-container {
+    @include emphasised-block;
+    border-left-width: 0.375rem;
+    background-color: $color__white;
+    padding: 0 $spacer__unit;
+    margin-bottom: $spacer__unit;
+  }
+
+  &__limit-to-container {
+    @include emphasised-block;
+    border-left-width: 0.375rem;
+    background-color: $color__white;
+    padding: 0 $spacer__unit;
+    margin-bottom: $spacer__unit;
+  }
+
+  &__control-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__toggle-control {
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    &:focus {
+      @include focus-default;
+      text-decoration: underline;
+    }
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin-top: $spacer__unit;
+  }
+
+  legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}

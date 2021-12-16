@@ -1,9 +1,22 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>18,975 results for testing</h1>
-    {% include 'includes/results_filters.html' %}
-    {% include 'includes/result_controls.html' %}
-    {% include 'includes/results_list.html' %}
-    {% include 'includes/pagination.html' %}
+    <div class="breadcrumb">
+        <div class="breadcrumb__container">
+            <ul>
+                <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
+                <li><a href="/">Find a court judgment</a></li>
+                <li>Search results</li>
+            </ul>
+        </div>
+    </div>
+    <div class="results">
+        <div class="results__container">
+            <h1>You searched for</h1>
+            {% include 'includes/results_filters.html' %}
+            {% include 'includes/result_controls.html' %}
+            {% include 'includes/results_list.html' %}
+            {% include 'includes/pagination.html' %}
+        </div>
+    </div>
 {% endblock %}
