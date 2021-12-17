@@ -14,9 +14,15 @@
         <div class="results__container">
             <h1>You searched for</h1>
             {% include 'includes/results_filters.html' %}
-            {% include 'includes/result_controls.html' %}
-            {% include 'includes/results_list.html' %}
-            {% include 'includes/pagination.html' %}
+            <div class="results__list-layout-container">
+                <div class="results__result-controls-container">
+                    {% include 'includes/result_controls.html' %}
+                </div>
+                <div class="results__result-list-container">
+                    {% include 'includes/results_list.html' %}
+                    {% include 'includes/pagination.html' %}
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

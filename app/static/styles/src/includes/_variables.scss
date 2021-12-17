@@ -6,7 +6,7 @@ $color__white: #fff;
 $color__light-grey: #efefef;
 $color__dark-blue: #134571;
 $color__grey: #ddd;
-$color__dark-grey: #bbb;
+$color__dark-grey: #555;
 $color__black: #000;
 $color__highlight-blue: #0066cc;
 
@@ -23,3 +23,14 @@ $grid__breakpoint-large: 992px;
 $grid__breakpoint-extra-large: 1200px;
 
 $font__open-sans: 'Open Sans', sans-serif;
+
+// Paths
+$fa_path: '/static/fontawesome-svgs/';
+
+// Images
+$fa_chevron_right: '#{$fa_path}chevron-right.svg';
+$fa_chevron_right_white: '#{$fa_path}chevron-right-white.svg';
+$fa_chevron_right_disabled: '#{$fa_path}chevron-right-disabled.svg';
+$fa_chevron_left: '#{$fa_path}chevron-left.svg';
+$fa_chevron_left_white: '#{$fa_path}chevron-left-white.svg';
+$fa_chevron_left_disabled: '#{$fa_path}chevron-left-disabled.svg';

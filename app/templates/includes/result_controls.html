@@ -1,13 +1,30 @@
-<div class="results-controls">
-    <p>Page 1 of 49</p>
+<div class="result-controls">
     <form action="#">
-        <label for="order_by">Order by:</label>
-        <select id="order_by" name="order">
-            <option value="">Relevance</option>
-            <option value="date_ascending">Date (ascending)</option>
-            <option value="date_descending">Date (descending)</option>
-        </select>
-        <input type="submit" value="Change order">
+        <div>
+            <label class="result-controls__order-by-label" for="order_by">Order judgments by</label>
+            <select class="result-controls__order-by" id="order_by" name="order">
+                <option value="">Relevance</option>
+                <option value="date_ascending">Date (ascending)</option>
+                <option value="date_descending">Date (descending)</option>
+            </select>
+        </div>
     </form>
+    <h3>Adjust your criteria</h3>
+    <ul class="result-controls__removable-options">
+        <li>
+            <span class="result-controls__removable-options-key">Keywords</span>
+            <span class="result-controls__removable-options-value">
+                <span>test</span>
+                <a href="#">Remove</a>
+            </span>
+        </li>
+        <li>
+            <span class="result-controls__removable-options-key">Collection</span>
+            <span class="result-controls__removable-options-value">
+                <span>ewhc/admin</span>
+                <a href="#">Remove</a>
+            </span>
+        </li>
+    </ul>
 </div>
 
