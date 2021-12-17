@@ -8,11 +8,13 @@ Use this contents list to navigate the page.
 * [Development approach](#development-approach)
 * [Local development setup](#local-development)
 * User flow and wireframe iterations
+    * [1.5](#iteration-15)
     * [1.4](#iteration-14)
     * [1.3](#iteration-13)
     * [1.2](#iteration-12)
     * [1.1](#iteration-11)
     * [1.0](#iteration-10)
+   
 
 ## Introduction
 
@@ -66,6 +68,14 @@ In a _new terminal_ run these commands:
 
 * `npm install -g sass` will install Sass as a global dependency
 * `npm start` will kick off a Sass watch task
+
+## Iteration 1.5
+
+This iteration updates [the flow](user_flows/Iterations/1.5) to reflect that users entering a search term that matches the pattern for a neutral citation will be presented with a results page, rather than going direct to the matching judgment. The rationale for this decision is that: 
+
+* We anticipate that maintaining consistency between search 'types' will help orientate the user
+* Presenting a search result will help assure that the right result has been retrieved
+* Where an issue has occurred (for example, the neutral citation has yielded an unexpected result - for example as a result of a typo) the user will have the necessary tools on the page to change direction
 
 ## Iteration 1.4
 
