@@ -33,6 +33,8 @@ The Flask application and front end code will be versioned using Git only.
 
 This Flask application in this repository includes a sample HTML page with accompanying CSS. This implementation seeks to retain the desired layout while also being inclusive and making the most of what the Web has to offer. Relevant decisions and considerations are described on the [corresponding Wiki page](https://github.com/nationalarchives/ds-judgments-frontend/wiki/Recommendations-for-Judgment-text-HTML-and-CSS)
 
+![Representation of the judgment text page rendered in a browser](https://raw.githubusercontent.com/nationalarchives/ds-judgments-frontend/main/repo_images/judgment_text.png?token=AD2CJSYHOCNML3WLWAZU6E3BYWGAU)
+
 ## Development approach
 
 The Flask application has been developed following [The National Archives front end development guide](https://github.com/nationalarchives/front-end-development-guide) and process for the [practical application of progressive enhancement](https://github.com/nationalarchives/front-end-development-guide)
