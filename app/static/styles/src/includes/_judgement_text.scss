@@ -1,7 +1,18 @@
 .judgment {
-  max-width: 48rem;
+  max-width: 90%;
   margin: auto;
+  font-size: 1.2rem;
   line-height: 1.3;
+
+  @media (min-width: $grid__breakpoint-medium) {
+    font-size: 1.1rem;
+    max-width: 40rem;
+  }
+
+  @media (min-width: $grid__breakpoint-medium) {
+    font-size: 1rem;
+    max-width: 46rem;
+  }
 }
 
 .judgment-header {
@@ -96,8 +107,13 @@
   }
 
   &__queens-counsel {
+
     h2 {
       @include sr-only;
+    }
+
+    ul {
+      padding: 0;
     }
 
     li {
@@ -163,6 +179,6 @@
   }
 
   a:target {
-  border: 2px solid black;
-}
+    border: 2px solid black;
+  }
 }
