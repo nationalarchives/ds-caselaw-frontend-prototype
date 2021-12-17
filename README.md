@@ -18,8 +18,8 @@ Use this contents list to navigate the page.
 
 This repository:
 
-* Documents iterations of the user flow
-* Has the code for a Python [Flask](https://flask.palletsprojects.com/en/2.0.x/git) application that includes current versions of HTML and CSS for the user interface
+* Documents iterations of the user flow and wireframes
+* Has the code for a Python [Flask](https://flask.palletsprojects.com/en/2.0.x/git) application that includes current versions of HTML and CSS for the user interface. This includes the search application and an example HTML page for a judgment
 
 ## Versioning 
 
