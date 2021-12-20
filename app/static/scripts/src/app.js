@@ -37,7 +37,7 @@ import $ from 'jquery'
     $.fn.manage_filters.defaults = {
         'collapsed_text': 'Collapse search options',
         'expanded_text': 'Expand search options',
-        'initially_hidden': false
+        'initially_hidden': true
     }
 }($));
 
