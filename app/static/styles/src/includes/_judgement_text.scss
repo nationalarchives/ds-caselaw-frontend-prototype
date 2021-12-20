@@ -85,20 +85,23 @@
     }
   }
 
-  &__party {
-    @include three-columns($spacer__unit);
-    font-weight: bold;
-  }
+  @media (min-width: $grid__breakpoint-medium) {
 
-  &__and-separator {
-    text-align: center;
-    font-weight: bold;
+    &__party {
+      @include three-columns($spacer__unit);
+      font-weight: bold;
+    }
 
-    &--between {
+    &__and-separator {
       text-align: center;
       font-weight: bold;
-      margin-top: $spacer__unit;
-      margin-bottom: $spacer__unit;
+
+      &--between {
+        text-align: center;
+        font-weight: bold;
+        margin-top: $spacer__unit;
+        margin-bottom: $spacer__unit;
+      }
     }
   }
 
@@ -108,20 +111,24 @@
 
   &__queens-counsel {
 
-    h2 {
-      @include sr-only;
-    }
+    @media (min-width: $grid__breakpoint-medium) {
 
-    ul {
-      padding: 0;
-    }
 
-    li {
-      list-style: none;
-      text-align: center;
+      h2 {
+        @include sr-only;
+      }
 
-      span {
-        font-weight: bold;
+      ul {
+        padding: 0;
+      }
+
+      li {
+        list-style: none;
+        text-align: center;
+
+        span {
+          font-weight: bold;
+        }
       }
 
     }
