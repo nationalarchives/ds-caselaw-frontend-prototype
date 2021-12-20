@@ -129,17 +129,17 @@
       content: "";
       display: block;
       position: absolute;
-      top: 0px;
+      top: 0;
       bottom: 0;
-      left: 12px;
-      width: 7px;
-      height: 7px;
+      left: 0.75rem;
+      width: 0.438rem;
+      height: 0.438rem;
       margin: auto 0;
       -webkit-transform: rotate(313deg);
       -ms-transform: rotate(313deg);
       transform: rotate(313deg);
       border: solid;
-      border-width: 2px 2px 0 0;
+      border-width: 0.125rem 0.125rem 0 0;
       border-color: $color__dark-grey;
     }
   ;
@@ -149,7 +149,7 @@
         -webkit-transform: rotate(135deg);
         -ms-transform: rotate(135deg);
         transform: rotate(135deg);
-        top: 0px;
+        top: 0;
       }
     }
   }
