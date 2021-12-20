@@ -25,7 +25,7 @@ This repository:
 
 ## Versioning 
 
-Iterations of the flow will be described in this `README.md` file with an explanation of how and why it differs from its predecessor. Each flow iteration will also be available as a PDF and as an XML version that can be opened for editing on [app.diagrams.net](https://app.diagrams.net). 
+Iterations of the flow will are described under headings in this `README.md`. For each there is an explanation of how and why it differs from its predecessor. Each flow iteration is also available as a PDF and as an XML version that can be opened for editing on [app.diagrams.net](https://app.diagrams.net). Where available, wireframes in `.png` are also provided.
 
 All of the relevant information can be found under the corresponding heading. 
 
@@ -33,7 +33,7 @@ The Flask application and front end code will be versioned using Git only.
 
 ## HTML for judgment text page
 
-This Flask application in this repository includes a sample HTML page with accompanying CSS. This implementation seeks to retain the desired layout while also being inclusive and making the most of what the Web has to offer. Relevant decisions and considerations are described on the [corresponding Wiki page](https://github.com/nationalarchives/ds-judgments-frontend/wiki/Recommendations-for-Judgment-text-HTML-and-CSS)
+This Flask application in this repository includes a sample HTML page for a judgment with accompanying CSS. This implementation seeks to retain the desired layout while also being inclusive and making the most of what the Web has to offer. Relevant decisions and considerations are described on the [corresponding Wiki page](https://github.com/nationalarchives/ds-judgments-frontend/wiki/Recommendations-for-Judgment-text-HTML-and-CSS)
 
 ![Representation of the judgment text page rendered in a browser](https://raw.githubusercontent.com/nationalarchives/ds-judgments-frontend/main/repo_images/judgment_text.png?token=AD2CJSYHOCNML3WLWAZU6E3BYWGAU)
 
@@ -104,6 +104,8 @@ On the search page we have used the native HTML date input given it has:
 * broad support (with the exception of IE) and degrades gracefully to a text field
 * will present users with controls appropriate to their browsing context
 * it allows us to set minimum and maximum values (which correspond to the available dates)
+
+We recommend that the production implementation of date inputs should use either the `pattern` attribute, server-side validation and/or object detection to support user input (a bit of thought will be necessary to identify the best combination of these). 
     
 We also think that the three text box pattern for dates within the GOV.UK design system feels less appropriate in the context of a set of filters than it does in a form. 
 
