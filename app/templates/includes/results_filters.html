@@ -4,68 +4,70 @@
         <label for="full_text" class="results__full-text-label">Search term</label>
         <input type="text" name="full_text" id="full_text" class="results__full-text-input" value="test">
     </div>
-    <div class="results__facet-container">
-        <fieldset>
-            <legend>Search specific fields</legend>
-            <div class="results__multi-fields-panel">
-                <div class="results__name-container">
-                    <label for="party_name" class="results__name-label">Party name</label>
-                    <input type="text" name="party_name" id="party_name"
-                           class="results__name-input">
+    <div class="js-results-facets-wrapper">
+
+        <div class="results__facet-container js-results-facets">
+            <fieldset>
+                <legend>Search specific fields</legend>
+                <div class="results__multi-fields-panel">
+                    <div class="results__name-container">
+                        <label for="party_name" class="results__name-label">Party name</label>
+                        <input type="text" name="party_name" id="party_name"
+                               class="results__name-input">
+                    </div>
+                    <div class="results__name-container">
+                        <label for="judge_name" class="results__name-label">Judge name</label>
+                        <input type="text" name="judge_name" id="judge_name"
+                               class="results__name-input">
+                    </div>
                 </div>
-                <div class="results__name-container">
-                    <label for="judge_name" class="results__name-label">Judge name</label>
-                    <input type="text" name="judge_name" id="judge_name"
-                           class="results__name-input">
+            </fieldset>
+            <fieldset>
+                <legend>Only include results</legend>
+                <div class="results__multi-fields-panel">
+                    <div class="results__limit-to-container">
+                        <label for="court" class="results__limit-to-label">From a specific court</label>
+                        <select name="court" id="court" class="results__select">
+                            <option value="all">All courts</option>
+                            {% for court in courts %}
+                                <option value="{{ court.code }}">{{ court.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="results__limit-to-container">
+                        <label for="collection" class="results__limit-to-label">From a specific
+                            collection</label>
+                        <select name="collection" id="collection" class="results__select">
+                            <option value="all">All collections</option>
+                            {% for court in courts %}
+                                <option value="{{ court.code }}">{{ court.code | upper }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </div>
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Only include results</legend>
-            <div class="results__multi-fields-panel">
-                <div class="results__limit-to-container">
-                    <label for="court" class="results__limit-to-label">From a specific court</label>
-                    <select name="court" id="court" class="results__select">
-                        <option value="all">All courts</option>
-                        {% for court in courts %}
-                            <option value="{{ court.code }}">{{ court.name }}</option>
-                        {% endfor %}
-                    </select>
+            </fieldset>
+            <fieldset>
+                <legend>During the period</legend>
+                <div class="results__multi-fields-panel">
+                    <div class="results__limit-to-container">
+                        <label for="from_date" class="results__limit-to-label">From date</label>
+                        <input type="date" id="from_date" class="results__date-input"
+                               value="2003-01-01"
+                               min="2003-01-01"
+                               max="{{ date }}">
+                    </div>
+                    <div class="results__limit-to-container">
+                        <label for="to_date" class="results__limit-to-label">To date</label>
+                        <input type="date" id="to_date" class="results__date-input"
+                               value="{{ date }}"
+                               min="2003-01-01"
+                               max="{{ date }}">
+                    </div>
                 </div>
-                <div class="results__limit-to-container">
-                    <label for="collection" class="results__limit-to-label">From a specific
-                        collection</label>
-                    <select name="collection" id="collection" class="results__select">
-                        <option value="all">All collections</option>
-                        {% for court in courts %}
-                            <option value="{{ court.code }}">{{ court.code | upper }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>During the period</legend>
-            <div class="results__multi-fields-panel">
-                <div class="results__limit-to-container">
-                    <label for="from_date" class="results__limit-to-label">From date</label>
-                    <input type="date" id="from_date" class="results__date-input"
-                           value="2003-01-01"
-                           min="2003-01-01"
-                           max="{{ date }}">
-                </div>
-                <div class="results__limit-to-container">
-                    <label for="to_date" class="results__limit-to-label">To date</label>
-                    <input type="date" id="to_date" class="results__date-input"
-                           value="{{ date }}"
-                           min="2003-01-01"
-                           max="{{ date }}">
-                </div>
-            </div>
-        </fieldset>
-    </div>
-    <div class="results__control-container">
-        <input type="submit" value="Update your search" class="results__submit-button">
-        <button class="results__toggle-control" type="button">Collapse search options</button>
+            </fieldset>
+        </div>
+        <div class="results__control-container js-results-control-container">
+            <input type="submit" value="Update your search" class="results__submit-button">
+        </div>
     </div>
 </form>

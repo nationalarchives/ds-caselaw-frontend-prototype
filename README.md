@@ -47,7 +47,8 @@ The Flask application has been developed following [The National Archives front 
 
 Included in this repository is: 
 
-* GulpJS for compiling SASS and transpiling JavaScript
+* Webpack for transpiling JavaScript
+* Sass for compiling CSS
 
 ### Development machine configuration
 
@@ -68,6 +69,10 @@ In a _new terminal_ run these commands:
 
 * `npm install -g sass` will install Sass as a global dependency
 * `npm start` will kick off a Sass watch task
+
+_If you are working on JavaScript_, you should also run (in another new terminal):
+
+* `npm run start-scripts` will kick off a Webpack watch task
 
 ## Iteration 1.5
 

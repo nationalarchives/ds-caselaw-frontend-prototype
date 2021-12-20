@@ -112,6 +112,8 @@
     border: none;
     background-color: transparent;
     font-size: 1rem;
+    position: relative;
+    padding-left: 2rem;
 
     &:focus {
       @include focus-default;
@@ -121,6 +123,34 @@
     &:hover {
       text-decoration: underline;
       cursor: pointer;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0px;
+      bottom: 0;
+      left: 12px;
+      width: 7px;
+      height: 7px;
+      margin: auto 0;
+      -webkit-transform: rotate(313deg);
+      -ms-transform: rotate(313deg);
+      transform: rotate(313deg);
+      border: solid;
+      border-width: 2px 2px 0 0;
+      border-color: $color__dark-grey;
+    }
+  ;
+
+    &.collapsed {
+      &::after {
+        -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        transform: rotate(135deg);
+        top: 0px;
+      }
     }
   }
 
