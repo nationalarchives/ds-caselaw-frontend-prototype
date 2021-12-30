@@ -17,11 +17,12 @@
                 <fieldset>
                     <legend>Search everything for</legend>
                     <div class="structured-search__full-text-panel">
-                        <label for="full_text" class="structured-search__full-text-label">Search term</label>
-                        <input type="text" name="full_text" id="full_text" class="structured-search__full-text-input">
+                        <label for="search_term" class="structured-search__full-text-label">{{ form.search_term.label }}</label>
+                        {{ form.search_term }}
+
                         <div>
-                            <input type="checkbox" name="neutral_citation" id="neutral_citation">
-                            <label for="neutral_citation">I'm using a neutral citation<span>, e.g. EWCA Civ 2781</span></label>
+                            {{ form.neutral_citation }}
+                            {{ form.neutral_citation.label }}
                         </div>
                     </div>
                 </fieldset>
@@ -29,17 +30,14 @@
                     <legend>Search specific fields</legend>
                     <div class="structured-search__multi-fields-panel">
                         <div class="structured-search__name-container">
-                            <label for="party_name" class="structured-search__name-label">Party name</label>
-                            <p class="structured-search__help-text">For example a claimaint, defendant or prosecutor</p>
-                            <input type="text" name="party_name" id="party_name"
-                                   class="structured-search__name-input">
+                            <label for="party_name" class="structured-search__name-label">{{ form.party_name.label }}</label>
+                            <p class="structured-search__help-text">{{ form.party_name.description }}</p>
+                            {{ form.party_name }}
                         </div>
                         <div class="structured-search__name-container">
-                            <label for="judge_name" class="structured-search__name-label">Judge name</label>
-                            <p class="structured-search__help-text">For example 'Smith', 'Judge Smith' or 'Lord Justice
-                                Smith'</p>
-                            <input type="text" name="judge_name" id="judge_name"
-                                   class="structured-search__name-input">
+                            <label for="judge_name" class="structured-search__name-label">{{ form.judge_name.label }}</label>
+                            <p class="structured-search__help-text">{{ form.judge_name.description }}</p>
+                            {{ form.judge_name }}
                         </div>
                     </div>
                 </fieldset>
@@ -47,23 +45,12 @@
                     <legend>Only include results</legend>
                     <div class="structured-search__multi-fields-panel">
                         <div class="structured-search__limit-to-container">
-                            <label for="court" class="structured-search__limit-to-label">From a specific court</label>
-                            <select name="court" id="court" class="structured-search__select">
-                                <option value="all">All courts</option>
-                                {% for court in courts %}
-                                    <option value="{{ court.code }}">{{ court.name }}</option>
-                                {% endfor %}
-                            </select>
+                            <label for="court" class="structured-search__limit-to-label">{{ form.courts.label }}</label>
+                            {{ form.courts }}
                         </div>
                         <div class="structured-search__limit-to-container">
-                            <label for="collection" class="structured-search__limit-to-label">From a specific
-                                collection</label>
-                            <select name="collection" id="collection" class="structured-search__select">
-                                <option value="all">All collections</option>
-                                {% for court in courts %}
-                                    <option value="{{ court.code }}">{{ court.code | upper }}</option>
-                                {% endfor %}
-                            </select>
+                            <label for="collection" class="structured-search__limit-to-label">{{ form.collections.label }}</label>
+                            {{ form.collections }}
                         </div>
                     </div>
                 </fieldset>
@@ -71,18 +58,12 @@
                     <legend>During the period</legend>
                     <div class="structured-search__multi-fields-panel">
                         <div class="structured-search__limit-to-container">
-                            <label for="from_date" class="structured-search__limit-to-label">From date</label>
-                            <input type="date" id="from_date" class="structured-search__date-input"
-                                   value="2003-01-01"
-                                   min="2003-01-01"
-                                   max="{{ date }}">
+                            <label for="from_date" class="structured-search__limit-to-label">{{ form.from_date.label }}</label>
+                            {{ form.from_date }}
                         </div>
                         <div class="structured-search__limit-to-container">
-                            <label for="to_date" class="structured-search__limit-to-label">To date</label>
-                            <input type="date" id="to_date" class="structured-search__date-input"
-                                   value="{{ date }}"
-                                   min="2003-01-01"
-                                   max="{{ date }}">
+                            <label for="to_date" class="structured-search__limit-to-label">{{ form.to_date.label }}</label>
+                            {{ form.to_date }}
                         </div>
                     </div>
                 </fieldset>

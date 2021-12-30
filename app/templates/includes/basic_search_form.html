@@ -5,8 +5,8 @@
             <p>Explainer of how to search court judgments</p>
             <form action="{{ url_for('results') }}" role="search" aria-label="Search by keyword or neutral citation">
 
-                {{ form.search_term.label(class_="search-component__search-term-label") }}
-                {{ form.search_term(class_="search-component__search-term-input") }}
+                <label for="search_term" class="search-component__search-term-label">{{ form.search_term.label }}</label>
+                {{ form.search_term }}
 
                 <div>
                     {{ form.neutral_citation }}
