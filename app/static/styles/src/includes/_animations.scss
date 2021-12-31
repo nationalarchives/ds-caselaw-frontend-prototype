@@ -1,0 +1,21 @@
+@keyframes emphasis {
+  from {
+    background-color: lighten($color__highlight-blue, 40);
+  }
+
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes emphasis-border {
+  from {
+    background-color: lighten($color__light-grey, 30);
+    border-right: 3px solid $color__dark-grey;
+  }
+
+  to {
+    background-color: transparent;
+    border-color: transparent;
+  }
+}

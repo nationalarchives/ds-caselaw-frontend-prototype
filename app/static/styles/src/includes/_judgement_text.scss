@@ -161,6 +161,18 @@
     font-style: italic;
   }
 
+  &__number {
+    &:target {
+      animation-duration: 1.5s;
+      animation-name: emphasis-border;
+
+      + .judgment-body__text {
+        animation-duration: 1.5s;
+        animation-name: emphasis;
+      }
+    }
+  }
+
   &__section {
     display: grid;
     grid-template-columns: 1fr 15fr;
@@ -168,6 +180,7 @@
     gap: 0 $spacer__unit * 0.5;
     grid-template-areas: ". .";
   }
+
 
   &__nested-section {
     display: grid;
