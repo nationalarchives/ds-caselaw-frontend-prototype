@@ -110,6 +110,7 @@
   margin-bottom: $spacer__unit;
   margin-top: calc($spacer__unit / 2);
   background-color: $color__white;
+  width: 80%;
 
   &:focus {
     @include focus-default
@@ -123,7 +124,7 @@
   padding: 0.375rem;
   margin-top: calc($spacer__unit / 2);
   margin-bottom: $spacer__unit;
-  min-width: 20rem;
+  width: 80%;
   box-sizing: border-box;
   border: 2px solid $color__dark-grey;
   border-radius: 0;

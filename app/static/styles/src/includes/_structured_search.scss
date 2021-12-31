@@ -18,14 +18,14 @@
 
   &__full-text-input {
     @include text_field;
-    width: 20rem;
+    width: 70%;
 
     @media (min-width: $grid__breakpoint-medium) {
-      width: 27rem;
+      width: 70%;
     }
 
     @media (min-width: $grid__breakpoint-extra-large) {
-      width: 35rem;
+      width: 70%;
     }
   }
 
@@ -35,7 +35,7 @@
 
   &__name-input {
     @include text_field;
-    width: 18rem;
+    width: 70%;
   }
 
   &__limit-to-label {

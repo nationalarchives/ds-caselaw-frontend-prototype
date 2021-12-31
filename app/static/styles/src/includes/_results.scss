@@ -18,7 +18,7 @@
 
   &__full-text-input {
     @include text_field;
-    width: 20rem;
+    width: 90%;
 
     @media (min-width: $grid__breakpoint-medium) {
       width: 27rem;
@@ -44,7 +44,6 @@
   }
 
   &__multi-fields-panel {
-    padding-top: $spacer__unit;
     margin-top: $spacer__unit;
     margin-bottom: $spacer__unit;
   }
@@ -130,9 +129,9 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      left: 0.75rem;
       width: 0.438rem;
       height: 0.438rem;
+      left: 0.3rem;
       margin: auto 0;
       -webkit-transform: rotate(313deg);
       -ms-transform: rotate(313deg);
@@ -140,6 +139,10 @@
       border: solid;
       border-width: 0.125rem 0.125rem 0 0;
       border-color: $color__dark-grey;
+
+      @media (min-width: $grid__breakpoint-medium) {
+        left: 0.75rem;
+      }
     }
   ;
 
@@ -154,15 +157,20 @@
   }
 
   &__list-layout-container {
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-columns: 3fr 1fr;
-    gap: 1rem;
+    @media (min-width: $grid__breakpoint-medium) {
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-template-columns: 3fr 1fr;
+      gap: 1rem;
+    }
+
   }
 
   &__result-controls-container {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    @media (min-width: $grid__breakpoint-medium) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
   }
 
   &__result-list-container {
@@ -226,7 +234,6 @@
   fieldset {
     border: none;
     padding: 0;
-    margin-top: $spacer__unit;
   }
 
   legend {
