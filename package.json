@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Use this contents list to navigate the page.",
   "main": "index.js",
+    "engines": {
+    "npm": "16.13"
+  },
   "scripts": {
     "start": "sass --watch app/static/styles/src:app/static/styles/dist",
     "start-scripts": "npx webpack --watch",
