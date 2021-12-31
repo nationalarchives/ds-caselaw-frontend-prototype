@@ -41,7 +41,7 @@
   &__limit-to-label {
     font-weight: bold;
     display: block;
-    margin-bottom: calc($spacer__unit * 1.5);
+    margin-bottom: calc($spacer__unit / 2);
   }
 
   &__limit-to-input {

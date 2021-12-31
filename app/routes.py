@@ -1,6 +1,7 @@
 from app import app
+from app.forms.home_page_search import HomePageSearch
+from app.forms.structured_search_form import StructuredSearch
 import re
-import datetime
 from flask import render_template, request, redirect, url_for, make_response
 from content.recent_judgments import recent_judgments
 from content.service_wide import service
@@ -8,29 +9,31 @@ from content.search_results import search_results
 from content.courts import courts
 
 
-
 @app.route('/')
 def home():
+    form = HomePageSearch()
+
     return render_template(
         'home.html',
         service=service,
         recent_judgments=recent_judgments,
-        courts=courts
+        courts=courts,
+        form=form
     )
 
 
 @app.route('/results', methods=['GET'])
 def results():
 
-    now = datetime.datetime.now()
+    form = StructuredSearch()
 
     return render_template(
         'results.html',
         service=service,
-        courts=courts,
         search_results=search_results,
-        date=f"{now.year}-{now.month}-{now.day}"
+        form=form
     )
+
 
 @app.route('/terms-of-use')
 def terms_of_use():
@@ -81,9 +84,11 @@ def open_justice_licence():
         service=service,
     )
 
+
 @app.route('/judgment')
 def judgment_quick_route():
     return redirect(url_for('judgment'))
+
 
 @app.route('/ewhc/admin/2021/3290')
 def judgment():
@@ -96,14 +101,13 @@ def judgment():
                                               "base-uri 'none';"
     return resp
 
+
 @app.route('/search')
 def structured_search():
-
-    now = datetime.datetime.now()
+    form = StructuredSearch()
 
     return render_template(
         'structured_search.html',
         service=service,
-        courts=courts,
-        date=f"{now.year}-{now.month}-{now.day}"
+        form=form
     )
