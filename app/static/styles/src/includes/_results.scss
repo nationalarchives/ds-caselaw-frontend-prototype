@@ -111,7 +111,11 @@
     background-color: transparent;
     font-size: 1rem;
     position: relative;
-    padding-left: 2rem;
+    padding-right: 0;
+    @media (min-width: $grid__breakpoint-medium) {
+      padding-right: 1rem;
+      padding-left: 2rem;
+    }
 
     &:focus {
       @include focus-default;
@@ -124,27 +128,24 @@
     }
 
     &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 0.438rem;
-      height: 0.438rem;
-      left: 0.3rem;
-      margin: auto 0;
-      -webkit-transform: rotate(313deg);
-      -ms-transform: rotate(313deg);
-      transform: rotate(313deg);
-      border: solid;
-      border-width: 0.125rem 0.125rem 0 0;
-      border-color: $color__dark-grey;
-
       @media (min-width: $grid__breakpoint-medium) {
-        left: 0.75rem;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 0.438rem;
+        height: 0.438rem;
+        left: 0.5rem;
+        margin: auto 0;
+        -webkit-transform: rotate(313deg);
+        -ms-transform: rotate(313deg);
+        transform: rotate(313deg);
+        border: solid;
+        border-width: 0.125rem 0.125rem 0 0;
+        border-color: $color__dark-grey;
       }
     }
-  ;
 
     &.collapsed {
       &::after {
