@@ -1,3 +1,3 @@
 service = {
-    'name': 'Find a court judgment'
+    'name': 'Find a judgment'
 }

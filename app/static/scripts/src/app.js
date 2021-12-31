@@ -14,7 +14,7 @@ import $ from 'jquery'
                 'type': 'button',
                 'text': settings.collapsed_text,
                 'click': (e) => {
-                    $toggle_area.slideToggle(500);
+                    $toggle_area.toggle();
 
                     const $el = $(e.target);
 
@@ -35,8 +35,8 @@ import $ from 'jquery'
     };
 
     $.fn.manage_filters.defaults = {
-        'collapsed_text': 'Collapse search options',
-        'expanded_text': 'Expand search options',
+        'collapsed_text': 'Collapse options',
+        'expanded_text': 'Expand options',
         'initially_hidden': true
     }
 }($));
