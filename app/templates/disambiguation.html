@@ -1,5 +1,23 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>Disambiguation for {{ neutral_citation }}</h1>
+    <div class="breadcrumb">
+        <div class="breadcrumb__container">
+            <ul>
+                <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
+                <li><a href="/">{{ service.name }}</a></li>
+                <li>Neutral citation search results</li>
+            </ul>
+        </div>
+    </div>
+    <div class="results">
+        <div class="results__container">
+            <h1>We found 2 judgments for [2021] EWHC 341</h1>
+            <div class="results__list-layout-container">
+                <div class="results__result-list-container">
+                    {% include 'includes/disambiguation_list.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

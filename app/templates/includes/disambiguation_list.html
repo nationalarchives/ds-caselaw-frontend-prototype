@@ -1,0 +1,19 @@
+<h2>Search results</h2>
+{% if show_neutral_citation_check %}
+    {% include 'includes/neutral_citation_check.html' %}
+{% endif %}
+
+<ul class="results__results-list">
+    {% for result in search_results %}
+        <li>
+            <dl class="results__result-terms">
+                <dt class="results__result-term-sr">Title</dt>
+                <dd>
+                    <a class="results__result-title" href="/judgment">{{ result.title | safe }}</a>
+                </dd>
+                <dt class="results__result-term-sr">Neutral citation</dt>
+                <dd class="results__result-neutral-citation">{{ result.neutral_citation | safe }}</dd>
+            </dl>
+        </li>
+    {% endfor %}
+</ul>

@@ -7,6 +7,7 @@ from content.recent_judgments import recent_judgments
 from content.service_wide import service
 from content.search_results import search_results
 from content.courts import courts
+from content.disambiguation_results import disambiguation_results
 
 
 @app.route('/')
@@ -24,8 +25,28 @@ def home():
 
 @app.route('/results', methods=['GET'])
 def results():
+    form = StructuredSearch(request.args)
 
-    form = StructuredSearch()
+    search_term = request.args['search_term']
+
+    # User checked the neutral citation field
+    if form.neutral_citation.data:
+        return render_template(
+            'disambiguation.html',
+            service=service,
+            search_results=disambiguation_results,
+            form=form
+        )
+
+    # Matches the neutral citation regex
+    if re.match(r'^\[?\d{4}\]?\s\w{4,5}\s?(\d{2,4}|\w{3,4})\s?', search_term):
+        return render_template(
+            'disambiguation.html',
+            service=service,
+            search_results=disambiguation_results,
+            form=form,
+            show_neutral_citation_check=True
+        )
 
     return render_template(
         'results.html',
@@ -41,22 +62,6 @@ def terms_of_use():
         'terms_of_use.html',
         service=service,
     )
-
-
-@app.route('/neutral-citation/')
-def neutral_citation():
-    neutral_citation = request.args['neutral_citation']
-
-    if re.match(r'^\[\d{4}\]\s?\w{3,4}\s?\w{3}\s?\d{4}$', neutral_citation):
-        return render_template(
-            'judgment.html',
-            service=service
-        )
-
-    if re.match(r'(?=.*\[\d{4}\])(?=.*\w).{8,25}', neutral_citation):
-        return redirect(url_for('disambiguation', neutral_citation=neutral_citation))
-
-    return redirect(url_for('no_results', search_term=neutral_citation))
 
 
 @app.route('/disambiguation/')
