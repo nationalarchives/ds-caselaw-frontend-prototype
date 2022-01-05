@@ -16,7 +16,7 @@ class StructuredSearch(FlaskForm):
         render_kw={'class': 'search-component__search-term-input'},
         validators=[InputRequired()]
     )
-    neutral_citation = BooleanField('I\'m using a neutral citation, e.g. EWCA Civ 2781')
+    neutral_citation = BooleanField('I\'m using a neutral citation, e.g. [2021] EWCA Crim 1785')
     party_name = StringField(
         'Party name',
         description='For example a claimant, defendant or prosecutor',

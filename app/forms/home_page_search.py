@@ -11,4 +11,4 @@ class HomePageSearch(FlaskForm):
             'class': 'search-component__search-term-input'
         }
     )
-    neutral_citation = BooleanField('I\'m using a neutral citation, e.g. EWCA Civ 2781')
+    neutral_citation = BooleanField('I\'m using a neutral citation, e.g. [2021] EWCA Crim 1785')
