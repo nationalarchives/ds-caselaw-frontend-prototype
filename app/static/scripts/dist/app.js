@@ -11010,7 +11010,9 @@ __webpack_require__.r(__webpack_exports__);
   };
 })((jquery__WEBPACK_IMPORTED_MODULE_0___default()));
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-results-facets-wrapper').manage_filters();
+if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.no-toggle').length === 0) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-results-facets-wrapper').manage_filters();
+}
 })();
 
 /******/ })()

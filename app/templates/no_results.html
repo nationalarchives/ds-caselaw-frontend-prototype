@@ -1,5 +1,20 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>No results for {{ search_term }}</h1>
+    <div class="breadcrumb">
+        <div class="breadcrumb__container">
+            <ul>
+                <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
+                <li><a href="/">{{ service.name }}</a></li>
+                <li>No results for '{{ form.search_term.data }}'</li>
+            </ul>
+        </div>
+    </div>
+    <div class="results">
+        <div class="results__container">
+            <h1>There are no results for your search</h1>
+            <p>Improve your search results by removing filters, double-checking your spelling, using fewer keywords or searching for something less specific.</p>
+            {% include 'includes/results_filters.html' %}
+        </div>
+    </div>
 {% endblock %}

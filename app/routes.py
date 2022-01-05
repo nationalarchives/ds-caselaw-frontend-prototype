@@ -27,6 +27,15 @@ def home():
 def results():
     form = StructuredSearch(request.args)
 
+    # Dummy for a no results experience - search term is 'theory of everything'
+    if form.search_term.data.lower() == 'theory of everything':
+        return render_template(
+            'no_results.html',
+            service=service,
+            form=form,
+            dont_toggle_facets=True
+        )
+
     # User checked the neutral citation field
     if form.neutral_citation.data:
         return render_template(
@@ -54,11 +63,14 @@ def results():
         form=form
     )
 
+
 """
 This route exists for those users who have stipulated they want full text results only. 
 It allows the regular expression to identify search terms that look like neutral citations
 but for the user to still be able to search the full text.
 """
+
+
 @app.route('/results/full-text', methods=['GET'])
 def full_text_results():
     form = StructuredSearch(request.args)
@@ -86,15 +98,6 @@ def disambiguation():
         'disambiguation.html',
         service=service,
         neutral_citation=request.args['neutral_citation']
-    )
-
-
-@app.route('/no-results/')
-def no_results():
-    return render_template(
-        'no_results.html',
-        service=service,
-        search_term=request.args['search_term']
     )
 
 

@@ -41,4 +41,6 @@ import $ from 'jquery'
     }
 }($));
 
-$('.js-results-facets-wrapper').manage_filters();
+if ($('.no-toggle').length === 0) {
+    $('.js-results-facets-wrapper').manage_filters();
+}

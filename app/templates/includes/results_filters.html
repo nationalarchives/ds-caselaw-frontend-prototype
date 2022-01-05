@@ -1,9 +1,9 @@
 <h2 class="results__filter-heading">Results filters</h2>
-<form action="/search">
+<form action="/results">
 
     {% include 'includes/results_search_field.html' %}
 
-    <div class="js-results-facets-wrapper">
+    <div class="js-results-facets-wrapper {% if dont_toggle_facets %}no-toggle{% endif %}">
         <div class="results__facet-container js-results-facets">
             <fieldset>
                 <legend>Search specific fields</legend>
