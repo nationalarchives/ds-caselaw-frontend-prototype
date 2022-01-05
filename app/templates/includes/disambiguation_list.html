@@ -3,6 +3,10 @@
     {% include 'includes/neutral_citation_check.html' %}
 {% endif %}
 
+{% if show_option_to_extend_to_full_text %}
+    {% include 'includes/extend_to_full_text.html' %}
+{% endif %}
+
 <ul class="results__results-list">
     {% for result in search_results %}
         <li>

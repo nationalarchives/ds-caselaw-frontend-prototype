@@ -27,19 +27,18 @@ def home():
 def results():
     form = StructuredSearch(request.args)
 
-    search_term = request.args['search_term']
-
     # User checked the neutral citation field
     if form.neutral_citation.data:
         return render_template(
             'disambiguation.html',
             service=service,
             search_results=disambiguation_results,
-            form=form
+            form=form,
+            show_option_to_extend_to_full_text=True
         )
 
     # Matches the neutral citation regex
-    if re.match(r'^\[?\d{4}\]?\s\w{4,5}\s?(\d{2,4}|\w{3,4})\s?', search_term):
+    if re.match(r'^\[?\d{4}\]?\s\w{4,5}\s?(\d{2,4}|\w{3,4})\s?', form.search_term.data):
         return render_template(
             'disambiguation.html',
             service=service,
@@ -47,6 +46,23 @@ def results():
             form=form,
             show_neutral_citation_check=True
         )
+
+    return render_template(
+        'results.html',
+        service=service,
+        search_results=search_results,
+        form=form
+    )
+
+"""
+This route exists for those users who have stipulated they want full text results only. 
+It allows the regular expression to identify search terms that look like neutral citations
+but for the user to still be able to search the full text.
+"""
+@app.route('/results/full-text', methods=['GET'])
+def full_text_results():
+    form = StructuredSearch(request.args)
+    form.neutral_citation.data = False
 
     return render_template(
         'results.html',
