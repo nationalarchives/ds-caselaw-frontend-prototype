@@ -8,6 +8,7 @@ Use this contents list to navigate the page.
 * [Development approach](#development-approach)
 * [Local development setup](#local-development)
 * User flow and wireframe iterations
+    * [1.6](#iteration-16)
     * [1.5](#iteration-15)
     * [1.4](#iteration-14)
     * [1.3](#iteration-13)
@@ -73,6 +74,10 @@ In a _new terminal_ run these commands:
 _If you are working on JavaScript_, you should also run (in another new terminal):
 
 * `npm run start-scripts` will kick off a Webpack watch task
+
+## Iteration 1.6 
+
+This iteration updates [the flow](user_flows/Iterations/1.6) to allow users who have ended up on either a disambiguation page or no results page as a results of a neutral citation not having been found to expand their search to the full judgment text.
 
 ## Iteration 1.5
 
