@@ -1488,6 +1488,70 @@ a:focus {
   margin-top: 0;
 }
 
+.judgment-download {
+  background-color: #26262a;
+  padding: 0.5rem;
+  color: #fff;
+  text-align: center;
+}
+.judgment-download__container {
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .judgment-download__container {
+    max-width: 40rem;
+  }
+}
+@media (min-width: 768px) {
+  .judgment-download__container {
+    max-width: 46rem;
+  }
+}
+.judgment-download__list {
+  display: inline-block;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+.judgment-download__list li {
+  display: inline-block;
+  margin-left: 1rem;
+}
+.judgment-download__description {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.judgment-download a {
+  color: #fff;
+  text-decoration: underline;
+  background-image: url("/static/fontawesome-svgs/download.svg");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: 0.25rem 0.25rem;
+  padding: 0.3rem;
+  padding-left: 2rem;
+}
+.judgment-download a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.judgment-download a:visited {
+  color: #fff;
+}
+.judgment-download a:active {
+  color: #fff;
+}
+.judgment-download a:focus {
+  outline: 5px solid #1d70b8;
+  outline-offset: 0;
+  z-index: 999;
+  outline-color: #fff;
+}
+
 .open-justice-license {
   padding: 0 1rem;
   margin: auto;

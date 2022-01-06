@@ -202,3 +202,47 @@
     margin-top: 0;
   }
 }
+
+.judgment-download {
+  background-color: $color__almost-black;
+  padding: calc($spacer__unit / 2);
+  color: $color__white;
+  text-align: center;
+
+  &__container {
+    margin: auto;
+    @media (min-width: $grid__breakpoint-medium) {
+      max-width: 40rem;
+    }
+
+    @media (min-width: $grid__breakpoint-medium) {
+      max-width: 46rem;
+    }
+  }
+
+  &__list {
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-left: 1rem;
+    }
+  }
+
+  &__description {
+    @include sr-only
+  }
+
+  a {
+    @include link-on-dark-bg;
+    background-image: url($fa_download);
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    background-position: calc($spacer__unit / 4) calc($spacer__unit / 4);
+    padding: calc($spacer__unit * .3) ;
+    padding-left: calc($spacer__unit * 2);
+  }
+}
