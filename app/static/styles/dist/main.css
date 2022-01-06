@@ -1488,4 +1488,58 @@ a:focus {
   margin-top: 0;
 }
 
+.open-justice-license {
+  padding: 0 1rem;
+  margin: auto;
+  max-width: 90%;
+  margin-bottom: 2rem;
+}
+@media (min-width: 576px) {
+  .open-justice-license {
+    max-width: 30rem;
+  }
+}
+@media (min-width: 768px) {
+  .open-justice-license {
+    min-width: 45rem;
+  }
+}
+@media (min-width: 1200px) {
+  .open-justice-license {
+    max-width: 65rem;
+  }
+}
+.open-justice-license :not(h1, h2, h3) {
+  font-family: "Redacted", cursive;
+  color: #555;
+  line-height: 1.5rem;
+}
+
+.terms-of-use {
+  padding: 0 1rem;
+  margin: auto;
+  max-width: 90%;
+  margin-bottom: 2rem;
+}
+@media (min-width: 576px) {
+  .terms-of-use {
+    max-width: 30rem;
+  }
+}
+@media (min-width: 768px) {
+  .terms-of-use {
+    min-width: 45rem;
+  }
+}
+@media (min-width: 1200px) {
+  .terms-of-use {
+    max-width: 65rem;
+  }
+}
+.terms-of-use :not(h1) {
+  font-family: "Redacted", cursive;
+  color: #555;
+  line-height: 1.5rem;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,12 @@
+.terms-of-use {
+  @include container;
+  margin-bottom: calc($spacer__unit * 2);
+
+  // Note: the Redacted script is only for the demo site (since it contains dummy text which can be problematic when testing)
+
+  :not(h1) {
+    font-family: 'Redacted', cursive;
+    color: $color__dark-grey;
+    line-height: 1.5rem;
+  }
+}
