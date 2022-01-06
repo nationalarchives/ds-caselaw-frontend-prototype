@@ -9,22 +9,38 @@
             </select>
         </div>
     </form>
+
+    {% if form.search_term.data or (form.collections.data != 'all') or (form.courts.data != 'all') %}
     <h3>Adjust your criteria</h3>
     <ul class="result-controls__removable-options">
-        <li>
-            <span class="result-controls__removable-options-key">Keywords</span>
-            <span class="result-controls__removable-options-value">
-                <span>test</span>
-                <a href="#">Remove</a>
+        {% if form.search_term.data %}
+            <li>
+                <span class="result-controls__removable-options-key">Search term</span>
+                <span class="result-controls__removable-options-value">
+                <span>{{ form.search_term.data }}</span>
+                <a href="{{ url_for('results', search_term='', collections=form.collections.data, courts=form.courts.data) }}">Remove</a>
             </span>
-        </li>
-        <li>
-            <span class="result-controls__removable-options-key">Collection</span>
-            <span class="result-controls__removable-options-value">
-                <span>ewhc/admin</span>
-                <a href="#">Remove</a>
+            </li>
+        {% endif %}
+        {% if form.collections.data != 'all' %}
+            <li>
+                <span class="result-controls__removable-options-key">Collection</span>
+                <span class="result-controls__removable-options-value">
+                <span>{{ form.collections.data }}</span>
+                <a href="{{ url_for('results', search_term=form.search_term.data, collections='all', courts=form.courts.data) }}">Remove</a>
             </span>
-        </li>
+            </li>
+        {% endif %}
+        {% if form.courts.data != 'all' %}
+            <li>
+                <span class="result-controls__removable-options-key">Courts</span>
+                <span class="result-controls__removable-options-value">
+                <span>{{ form.courts.data }}</span>
+                <a href="{{ url_for('results', search_term=form.search_term.data, collections=form.collections.data, courts='all') }}">Remove</a>
+            </span>
+            </li>
+        {% endif %}
     </ul>
+    {% endif %}
 </div>
 

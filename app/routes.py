@@ -27,34 +27,36 @@ def home():
 def results():
     form = StructuredSearch(request.args)
 
-    # Dummy for a no results experience - search term is 'theory of everything'
-    if form.search_term.data.lower() == 'theory of everything':
-        return render_template(
-            'no_results.html',
-            service=service,
-            form=form,
-            dont_toggle_facets=True
-        )
+    if form.search_term.data:
 
-    # User checked the neutral citation field
-    if form.neutral_citation.data:
-        return render_template(
-            'disambiguation.html',
-            service=service,
-            search_results=disambiguation_results,
-            form=form,
-            show_option_to_extend_to_full_text=True
-        )
+        # Dummy for a no results experience - search term is 'theory of everything'
+        if form.search_term.data.lower() == 'theory of everything':
+            return render_template(
+                'no_results.html',
+                service=service,
+                form=form,
+                dont_toggle_facets=True
+            )
 
-    # Matches the neutral citation regex
-    if re.match(r'^\[?\d{4}\]?\s\w{4,5}\s?(\d{2,4}|\w{3,4})\s?', form.search_term.data):
-        return render_template(
-            'disambiguation.html',
-            service=service,
-            search_results=disambiguation_results,
-            form=form,
-            show_neutral_citation_check=True
-        )
+        # User checked the neutral citation field
+        if form.neutral_citation.data:
+            return render_template(
+                'disambiguation.html',
+                service=service,
+                search_results=disambiguation_results,
+                form=form,
+                show_option_to_extend_to_full_text=True
+            )
+
+        # Matches the neutral citation regex
+        if re.match(r'^\[?\d{4}\]?\s\w{4,5}\s?(\d{2,4}|\w{3,4})\s?', form.search_term.data):
+            return render_template(
+                'disambiguation.html',
+                service=service,
+                search_results=disambiguation_results,
+                form=form,
+                show_neutral_citation_check=True
+            )
 
     return render_template(
         'results.html',

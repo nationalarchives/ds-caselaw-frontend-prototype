@@ -8,7 +8,7 @@
                 {% for court in courts | sort(attribute='name') %}
                     <li class="judgment-browse-by-court__court">
                             <span class="judgment-browse-by-court__court-name">
-                                <a href="#">
+                                <a href="/results?courts={{ court.code }}">
                                     {{ court.name }}
                                 </a>
                             </span>
