@@ -77,7 +77,7 @@ _If you are working on JavaScript_, you should also run (in another new terminal
 
 ## Iteration 1.6 
 
-This iteration updates [the flow](user_flows/Iterations/1.6) to allow users who have ended up on either a disambiguation page or no results page as a results of a neutral citation not having been found to expand their search to the full judgment text.
+This iteration updates [the flow](user_flows/Iterations/1.6) to allow users who have ended up on either a disambiguation page or no results page as a results of a neutral citation not having been found to expand their search to the full judgment text. It also removes the option to set sorting within the structured search form and renames the container to 'Structured search form'.
 
 ## Iteration 1.5
 
