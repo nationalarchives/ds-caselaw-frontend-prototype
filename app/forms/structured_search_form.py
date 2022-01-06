@@ -7,6 +7,7 @@ from content.courts import courts
 
 formatted_courts = [('all', 'All courts')] + [(court['code'], court['name']) for court in courts]
 formatted_collections = [('all', 'All collections')] + [(court['code'], court['code']) for court in courts]
+order_options = [('relevance', 'Relevance'), ('date_dec', 'Date descending'), ('date_asc', 'Date ascending')]
 now = datetime.datetime.now()
 
 
@@ -59,5 +60,12 @@ class StructuredSearch(FlaskForm):
             'min': '2003-01-02',
             'max': f"{now.year}-{now.month}-{now.day}",
             'placeholder': 'YYYY-MM-DD'
+        }
+    )
+    order_by = SelectField(
+        'Order judgments by',
+        choices=order_options,
+        render_kw={
+            'class': 'result-controls__order-by'
         }
     )
