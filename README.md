@@ -8,6 +8,7 @@ Use this contents list to navigate the page.
 * [Development approach](#development-approach)
 * [Local development setup](#local-development)
 * User flow and wireframe iterations
+    * [1.7](#iteration-17)
     * [1.6](#iteration-16)
     * [1.5](#iteration-15)
     * [1.4](#iteration-14)
@@ -74,6 +75,10 @@ In a _new terminal_ run these commands:
 _If you are working on JavaScript_, you should also run (in another new terminal):
 
 * `npm run start-scripts` will kick off a Webpack watch task
+
+## Iteration 1.7
+
+This iteration updates [the flow](user_flows/Iterations/1.7) to account for users who have landed on a Judgment text page from an external search engine or web link. It shows that users can access the home page and structured search directly from the judgment text page.
 
 ## Iteration 1.6 
 
