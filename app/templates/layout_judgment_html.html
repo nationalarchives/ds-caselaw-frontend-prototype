@@ -10,15 +10,7 @@
 </head>
 <body>
 <a id="skip-to-main-content" href="#main-content">Skip to Main Content</a>
-<aside class="judgment-download">
-    <div class="judgment-download__container">
-        <span class="judgment-download__description">Download as:</span>
-        <ul class="judgment-download__list">
-            <li><a class="judgment-download__option--pdf" href="{{ url_for('static', filename='judgment.pdf') }}">PDF</a></li>
-            <li><a class="judgment-download__option--pdf" href="{{ url_for('static', filename='judgment.xml') }}">XML</a></li>
-        </ul>
-    </div>
-</aside>
+{% include 'includes/judgment_toolbar.html' %}
 <main id="main-content">
     {% block content %}
     {% endblock %}
