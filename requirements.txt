@@ -1,5 +1,5 @@
 anyascii==0.1.7
-asgiref==3.3.1
+asgiref==3.4.1
 bcrypt==3.2.0
 beautifulsoup4==4.8.2
 Brotli==1.0.9
@@ -8,11 +8,11 @@ cffi==1.15.0
 chardet==4.0.0
 click==8.0.3
 cryptography==35.0.0
-Django==3.1.5
-django-debug-toolbar==3.2
+Django==3.2.11
+django-debug-toolbar==3.2.4
 django-extensions==3.1.1
 django-filter==2.4.0
-django-modelcluster==5.1
+django-modelcluster==5.2
 django-taggit==1.3.0
 django-treebeard==4.4
 djangorestframework==3.12.2
@@ -39,7 +39,7 @@ mccabe==0.6.1
 openpyxl==3.0.6
 paramiko==2.8.0
 pathlib2==2.3.6
-Pillow==8.1.0
+Pillow==8.4.0
 pudb==2020.1
 pycodestyle==2.8.0
 pycparser==2.21
@@ -51,12 +51,13 @@ pytz==2020.5
 requests==2.25.1
 six==1.15.0
 soupsieve==2.1
-sqlparse==0.4.1
+sqlparse==0.4.2
 tablib==3.0.0
+telepath==0.2
 Unidecode==1.1.2
-urllib3==1.26.2
+urllib3==1.26.8
 urwid==2.1.2
-wagtail==2.11.3
+wagtail==2.15.1
 webencodings==0.5.1
 Werkzeug==2.0.2
 Willow==1.4
