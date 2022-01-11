@@ -22,11 +22,11 @@ body {
 .breadcrumb {
   margin-bottom: 1rem;
 }
-.breadcrumb ul {
+.breadcrumb ol {
   list-style-type: none;
   padding: 0;
 }
-.breadcrumb ul a {
+.breadcrumb ol a {
   color: #000;
 }
 .breadcrumb li {

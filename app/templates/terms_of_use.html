@@ -1,6 +1,15 @@
 {% extends "layout.html" %}
 
 {% block content %}
+    <div class="breadcrumb">
+        <nav class="breadcrumb__container" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
+                <li><a href="{{ url_for('home') }}" aria-current="page">{{ service.name }}</a></li>
+                <li><a href="{{ url_for('terms_of_use') }}" aria-current="page">Terms of use</a></li>
+            </ol>
+        </nav>
+    </div>
     <div class="terms-of-use">
         <h1>Terms of use</h1>
         <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, beatae consequuntur, delectus deleniti

@@ -2,12 +2,12 @@
 
 {% block content %}
     <div class="breadcrumb">
-        <div class="breadcrumb__container">
-            <ul>
+        <nav class="breadcrumb__container" aria-label="Breadcrumb">
+            <ol>
                 <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
-                <li>{{ service.name }}</li>
-            </ul>
-        </div>
+                <li><a href="{{ url_for('home') }}" aria-current="page">{{ service.name }}</a></li>
+            </ol>
+        </nav>
     </div>
     <div class="service-introduction">
         <div class="service-introduction__container">
