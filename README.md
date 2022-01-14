@@ -80,6 +80,8 @@ _If you are working on JavaScript_, you should also run (in another new terminal
 
 This iteration updates [the flow](user_flows/Iterations/1.7) to account for users who have landed on a Judgment text page from an external search engine or web link. It shows that users can access the home page and structured search directly from the judgment text page.
 
+Feedback to this iteration has been captured in [a Wiki page](https://github.com/nationalarchives/ds-judgments-frontend/wiki/Feedback-to-Iteration-1.7-and-design)
+
 ## Iteration 1.6 
 
 This iteration updates [the flow](user_flows/Iterations/1.6) to allow users who have ended up on either a disambiguation page or no results page as a results of a neutral citation not having been found to expand their search to the full judgment text. It also removes the option to set sorting within the structured search form and renames the container to 'Structured search form'.
