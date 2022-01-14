@@ -1,6 +1,6 @@
 <div class="recent-judgments">
     <div class="recent-judgments__container">
-        <h2 id="recently-published-judgments">Recently published judgments</h2>
+        <h2 id="recently-published-judgments">Recently published judgments and tribunal decisions</h2>
         <p>Explainer text here</p>
         <ul class="recent-judgments__list">
             {% for item in recent_judgments %}
@@ -26,6 +26,6 @@
                 </li>
             {% endfor %}
         </ul>
-        <p><a href="{{ url_for('results', order_by='date_dec') }}">See all recent judgments</a></p>
+        <p><a href="{{ url_for('results', order_by='date_dec') }}">See all recent judgments and tribunal decisions</a></p>
     </div>
 </div>
