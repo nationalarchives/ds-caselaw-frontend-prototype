@@ -63,7 +63,7 @@ class StructuredSearch(FlaskForm):
         }
     )
     order_by = SelectField(
-        'Order judgments and tribunal decisions by',
+        'Order judgments by',
         choices=order_options,
         render_kw={
             'class': 'result-controls__order-by'
