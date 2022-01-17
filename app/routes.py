@@ -8,6 +8,7 @@ from content.service_wide import service
 from content.search_results import search_results
 from content.courts import courts
 from content.disambiguation_results import disambiguation_results
+from content.sources import judgment_sources
 
 
 @app.route('/')
@@ -136,4 +137,13 @@ def structured_search():
         'structured_search.html',
         service=service,
         form=form
+    )
+
+
+@app.route('/sources')
+def sources():
+    return render_template(
+        'sources.html',
+        service=service,
+        sources=judgment_sources
     )

@@ -1,0 +1,33 @@
+.sources {
+  margin-top: calc($spacer__unit * 2);
+  margin-bottom: calc($spacer__unit * 2);
+
+  &__container {
+    @include container
+  }
+
+  &__list {
+    border: 2px solid $color__grey;
+    padding: $spacer__unit;
+    list-style-type: none;
+  }
+
+  li {
+    padding: calc($spacer__unit * 1.5);
+    padding-left: calc($spacer__unit * 5.5);
+    border-bottom: 2px dashed $color__grey;
+    background-image: url("/static/source_logo.png");
+    background-repeat: no-repeat;
+    background-position: 0 calc($spacer__unit * 0.9);
+  }
+
+  &__name {
+    font-weight: bold;
+    display: block;
+    margin-bottom: calc($spacer__unit / 2);
+  }
+
+  &__description {
+    margin-bottom: calc($spacer__unit * 2);
+  }
+}

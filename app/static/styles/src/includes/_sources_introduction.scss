@@ -1,0 +1,12 @@
+.sources-introduction {
+  margin-bottom: calc($spacer__unit * 2);
+
+  &__container {
+    @include container
+  }
+
+  &__link {
+    margin-top: $spacer__unit;
+    display: block;
+  }
+}
