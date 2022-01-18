@@ -8,6 +8,7 @@ Use this contents list to navigate the page.
 * [Development approach](#development-approach)
 * [Local development setup](#local-development)
 * User flow and wireframe iterations
+    * [1.9](#iteration-19)
     * [1.8](#iteration-18)
     * [1.7](#iteration-17)
     * [1.6](#iteration-16)
@@ -76,6 +77,10 @@ In a _new terminal_ run these commands:
 _If you are working on JavaScript_, you should also run (in another new terminal):
 
 * `npm run start-scripts` will kick off a Webpack watch task
+
+## Iteration 1.9
+
+This iterations updates [the flow](user_flows/Iterations/1.9) to reflect users ability to navigate **back to search results** where they have arrived at a judgment text page from there. 
 
 ## Iteration 1.8
 
