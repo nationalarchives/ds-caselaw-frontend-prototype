@@ -1,0 +1,43 @@
+.judgment-toolbar {
+
+  background-color: $color__dark-blue;
+  color: $color__white;
+  padding: $spacer__unit;
+
+  a {
+    color: $color__white;
+  }
+
+  &__return-link {
+    a {
+      background-image: url($fa_chevron_left_white);
+      background-repeat: no-repeat;
+      padding-left: $spacer__unit;
+    }
+  }
+
+  &__container {
+
+    margin: auto;
+
+    > div {
+      @media (max-width: $grid__breakpoint-small) {
+        text-align: center;
+        padding: $spacer__unit;
+      }
+    }
+
+    @media (min-width: $grid__breakpoint-small) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $grid__breakpoint-medium) {
+      max-width: 40rem;
+    }
+
+    @media (min-width: $grid__breakpoint-medium) {
+      max-width: 46rem;
+    }
+  }
+}

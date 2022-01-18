@@ -1554,101 +1554,42 @@ a:focus {
 }
 
 .judgment-toolbar {
-  background-color: #26262a;
+  background-color: #134571;
   color: #fff;
-  padding-top: 0.5rem;
-}
-.judgment-toolbar__introduction {
-  margin: auto;
-  padding: 0 0.5rem;
-  margin-bottom: 2rem;
-}
-.judgment-toolbar__introduction li {
-  margin-bottom: 0.5rem;
-}
-@media (min-width: 768px) {
-  .judgment-toolbar__introduction {
-    max-width: 40rem;
-  }
-}
-@media (min-width: 768px) {
-  .judgment-toolbar__introduction {
-    max-width: 46rem;
-  }
+  padding: 1rem;
 }
 .judgment-toolbar a {
   color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 1px;
 }
-.judgment-toolbar a:hover {
-  text-decoration: none;
-  color: #fff;
+.judgment-toolbar__return-link a {
+  background-image: url("/static/fontawesome-svgs/chevron-left-white.svg");
+  background-repeat: no-repeat;
+  padding-left: 1rem;
 }
-.judgment-toolbar a:visited {
-  color: #fff;
-}
-.judgment-toolbar a:active {
-  color: #fff;
-}
-.judgment-toolbar a:focus {
-  outline: 5px solid #1d70b8;
-  outline-offset: 0;
-  z-index: 999;
-  outline-color: #fff;
-}
-.judgment-toolbar__download-bar {
-  padding: 0 0.5rem;
-  text-align: right;
-  background-color: #134571;
-  border-top: 1px solid #ddd;
-}
-.judgment-toolbar__download-list-container {
+.judgment-toolbar__container {
   margin: auto;
 }
+@media (max-width: 576px) {
+  .judgment-toolbar__container > div {
+    text-align: center;
+    padding: 1rem;
+  }
+}
+@media (min-width: 576px) {
+  .judgment-toolbar__container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 @media (min-width: 768px) {
-  .judgment-toolbar__download-list-container {
+  .judgment-toolbar__container {
     max-width: 40rem;
   }
 }
 @media (min-width: 768px) {
-  .judgment-toolbar__download-list-container {
+  .judgment-toolbar__container {
     max-width: 46rem;
   }
-}
-.judgment-toolbar__download-list {
-  display: inline-block;
-  list-style: none;
-  padding: 0;
-}
-.judgment-toolbar__download-list li {
-  display: inline-block;
-}
-.judgment-toolbar__download-list a {
-  color: #fff;
-  text-decoration: underline;
-  background-image: url("/static/fontawesome-svgs/download.svg");
-  background-repeat: no-repeat;
-  background-size: 0.8rem;
-  background-position: 0.5rem 0.3333333333rem;
-  padding: 0.3rem;
-  padding-left: 1.8rem;
-}
-.judgment-toolbar__download-list a:hover {
-  text-decoration: none;
-  color: #fff;
-}
-.judgment-toolbar__download-list a:visited {
-  color: #fff;
-}
-.judgment-toolbar__download-list a:active {
-  color: #fff;
-}
-.judgment-toolbar__download-list a:focus {
-  outline: 5px solid #1d70b8;
-  outline-offset: 0;
-  z-index: 999;
-  outline-color: #fff;
 }
 
 .judgment-text-source {
@@ -1667,6 +1608,31 @@ a:focus {
 }
 @media (min-width: 768px) {
   .judgment-text-source__container {
+    max-width: 46rem;
+  }
+}
+
+.service-introduction-banner {
+  background-color: #26262a;
+  color: #fff;
+  padding: 2rem;
+}
+.service-introduction-banner p {
+  margin: 0;
+}
+.service-introduction-banner a {
+  color: #fff;
+}
+.service-introduction-banner li {
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .service-introduction-banner__container {
+    max-width: 40rem;
+  }
+}
+@media (min-width: 768px) {
+  .service-introduction-banner__container {
     max-width: 46rem;
   }
 }
