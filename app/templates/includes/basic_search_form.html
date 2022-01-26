@@ -3,7 +3,7 @@
         <div class="search-component__emphasised-container">
             <h2>Search by keyword or neutral citation</h2>
             <p>Explainer of how to search court judgments</p>
-            <form action="{{ url_for('results') }}" role="search" aria-label="Search by keyword or neutral citation">
+            <form action="{{ url_for('results') }}" role="search" aria-label="Search by keyword or neutral citation" id="analytics-basic-search">
 
                 <label for="search_term" class="search-component__search-term-label">{{ form.search_term.label }}</label>
                 {{ form.search_term }}
