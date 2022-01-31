@@ -7,8 +7,10 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename="styles/dist/main.css") }}">
     <title>United Trade Action Group Ltd (R on the application of) v Transport for London</title>
+    {% include 'includes/gtm/gtm_head.html' %}
 </head>
 <body>
+{% include 'includes/gtm/gtm_body.html' %}
 <a id="skip-to-main-content" href="#main-content">Skip to Main Content</a>
 {% if not request.args.return_link %}
     {% include 'includes/judgment_text_service_introduction_banner.html' %}
