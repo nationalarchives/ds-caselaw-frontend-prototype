@@ -1300,6 +1300,7 @@ a:focus {
   margin-bottom: 4rem;
   font-size: 1.2rem;
   line-height: 1.3;
+  font-family: serif;
 }
 @media (min-width: 768px) {
   .judgment {
