@@ -1,14 +1,24 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="breadcrumb">
-        <nav class="breadcrumb__container" aria-label="Breadcrumb">
-            <ol>
-                <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
-                <li><a href="{{ url_for('home') }}" aria-current="page">{{ service.name }}</a></li>
-            </ol>
-        </nav>
-    </div>
+    <header class="page-header">
+        <div class="page-header__breadcrumb">
+            <nav class="page-header__breadcrumb-container" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
+                    <li><a href="{{ url_for('home') }}" aria-current="page">{{ service.name }}</a></li>
+                </ol>
+            </nav>
+        </div>
+        <div class="page-header__container">
+            <a class="page-header__logo-link" href="{{ url_for('home') }}">
+                <img class="page-header__logo" src="{{ url_for('static', filename='tna_logo.svg') }}"
+                     alt="The National Archives home" width="320"
+                     height="44">
+            </a>
+        </div>
+    </header>
+
     <div class="service-introduction">
         <div class="service-introduction__container">
             <h1>{{ service.name }}</h1>
