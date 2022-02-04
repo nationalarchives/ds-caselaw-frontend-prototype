@@ -19,10 +19,15 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.service-introduction {
+  background-color: #121212;
+  padding: 0 0 2rem;
+}
 .service-introduction__container {
   padding: 0 1rem;
   margin: auto;
   max-width: 90%;
+  text-align: center;
 }
 @media (min-width: 576px) {
   .service-introduction__container {
@@ -38,6 +43,28 @@ body {
   .service-introduction__container {
     max-width: 65rem;
   }
+}
+.service-introduction__separator {
+  display: inline-block;
+  width: 20%;
+  height: 0.1rem;
+  margin: 1rem auto 0;
+  border: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0));
+}
+.service-introduction__header {
+  font-size: 2.4rem;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: #fff;
+  margin: 2rem 0 0 0;
+}
+.service-introduction__helper-text {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  color: #ffb952;
 }
 .service-introduction__further-information {
   display: inline-block;
@@ -440,7 +467,7 @@ a:focus {
 }
 .structured-search__help-text {
   margin-bottom: 0.5rem;
-  color: #63636d;
+  color: #525252;
 }
 .structured-search__select {
   font-size: 1rem;
@@ -925,7 +952,7 @@ a:focus {
 }
 
 .pagination {
-  background-color: #26262a;
+  background-color: #121212;
   margin-bottom: 2rem;
 }
 .pagination h3 {
@@ -1135,7 +1162,7 @@ a:focus {
 }
 
 .judgments-footer {
-  background-color: #26262a;
+  background-color: #121212;
   color: #fff;
   padding: 1rem;
 }
@@ -1195,7 +1222,7 @@ a:focus {
 }
 
 .page-header {
-  background-color: #26262a;
+  background-color: #121212;
   padding: 0 0 1rem;
 }
 .page-header__breadcrumb {
@@ -1493,7 +1520,7 @@ a:focus {
 }
 
 .judgment-download {
-  background-color: #26262a;
+  background-color: #121212;
   padding: 0.5rem;
   color: #fff;
   text-align: center;
@@ -1616,7 +1643,7 @@ a:focus {
 }
 
 .service-introduction-banner {
-  background-color: #26262a;
+  background-color: #121212;
   color: #fff;
   padding: 2rem;
 }

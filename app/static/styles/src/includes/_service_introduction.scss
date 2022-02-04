@@ -1,6 +1,35 @@
 .service-introduction {
+  background-color: $color__almost-black;
+  padding: 0 0 2rem;
+
   &__container {
-    @include container
+    @include container;
+    text-align: center;
+  }
+
+  &__separator {
+    display: inline-block;
+    width: 20%;
+    height: 0.1rem;
+    margin: 1rem auto 0;
+    border: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0));
+  }
+
+  &__header {
+    font-size: 2.4rem;
+    display: block;
+    font-family: $font__roboto;
+    font-weight: normal;
+    color: $color__white;
+    margin: 2rem 0 0 0;
+  }
+
+  &__helper-text {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-family: $font__roboto;
+    color: $color__yellow;
   }
 
   &__further-information {
