@@ -1,19 +1,28 @@
 .recent-judgments {
 
   &__container {
-    @include container
+    @include container;
+    padding: calc($spacer__unit * 6) 0;
+  }
+
+  &__header {
+    font-family: $font__roboto;
+    text-align: center;
+    font-weight: normal;
+    font-size: 2rem;
+    margin: 0 0 calc($spacer__unit * 3);
   }
 
   &__list {
-    border: 2px solid $color__grey;
-    padding: $spacer__unit;
+    padding: 0;
+    margin: 0 0 calc($spacer__unit * 3);
     list-style-type: none;
   }
 
   &__judgment {
 
     padding: $spacer__unit;
-    border-bottom: 2px dashed $color__grey;
+    border-bottom: 2px solid $color__grey;
 
     @media (min-width: $grid__breakpoint-medium) {
       display: flex;
@@ -34,11 +43,15 @@
 
   &__title {
     display: block;
-    font-weight: bold;
+    font-weight: normal;
+    font-size: 1.25rem;
+    font-family: $font__roboto;
   }
 
   &__date {
     display: block;
+    font-size: 0.9rem;
+    color: $color__dark-grey;
 
     @media (max-width: $grid__breakpoint-medium) {
       margin-top: $spacer__unit;
@@ -51,6 +64,9 @@
 
   &__court {
     display: block;
+    font-size: 0.9rem;
+    color: $color__dark-grey;
+
     @media (min-width: $grid__breakpoint-medium) {
       text-align: right;
     }
@@ -58,5 +74,9 @@
     @media (max-width: $grid__breakpoint-medium) {
       margin-top: 0;
     }
+  }
+
+  &__more-info {
+    text-align: center;
   }
 }

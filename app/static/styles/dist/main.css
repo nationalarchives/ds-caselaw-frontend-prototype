@@ -72,12 +72,14 @@ body {
 }
 
 .search-component {
-  margin-top: 2rem;
+  background-color: #efefef;
 }
 .search-component__container {
   padding: 0 1rem;
   margin: auto;
   max-width: 90%;
+  text-align: center;
+  padding: 2rem;
 }
 @media (min-width: 576px) {
   .search-component__container {
@@ -100,13 +102,13 @@ body {
   border-left: 0.5rem solid #0066cc;
 }
 .search-component__more-options {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .search-component h2 {
   margin: 0;
 }
 .search-component input[type=submit] {
-  background-color: #0066cc;
+  background-color: #037091;
   font-weight: 700;
   border: 0;
   color: #fff;
@@ -138,6 +140,7 @@ body {
   background-color: #fff;
   width: 80%;
   width: 80%;
+  min-height: 3rem;
 }
 .search-component__search-term-input:focus {
   outline: 5px solid #1d70b8;
@@ -169,6 +172,7 @@ body {
   padding: 0 1rem;
   margin: auto;
   max-width: 90%;
+  padding: 6rem 0;
 }
 @media (min-width: 576px) {
   .recent-judgments__container {
@@ -185,14 +189,21 @@ body {
     max-width: 65rem;
   }
 }
+.recent-judgments__header {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-weight: normal;
+  font-size: 2rem;
+  margin: 0 0 3rem;
+}
 .recent-judgments__list {
-  border: 2px solid #ddd;
-  padding: 1rem;
+  padding: 0;
+  margin: 0 0 3rem;
   list-style-type: none;
 }
 .recent-judgments__judgment {
   padding: 1rem;
-  border-bottom: 2px dashed #ddd;
+  border-bottom: 2px solid #ddd;
 }
 @media (min-width: 768px) {
   .recent-judgments__judgment {
@@ -210,10 +221,14 @@ body {
 }
 .recent-judgments__title {
   display: block;
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 1.25rem;
+  font-family: "Roboto", sans-serif;
 }
 .recent-judgments__date {
   display: block;
+  font-size: 0.9rem;
+  color: #555;
 }
 @media (max-width: 768px) {
   .recent-judgments__date {
@@ -227,6 +242,8 @@ body {
 }
 .recent-judgments__court {
   display: block;
+  font-size: 0.9rem;
+  color: #555;
 }
 @media (min-width: 768px) {
   .recent-judgments__court {
@@ -237,6 +254,9 @@ body {
   .recent-judgments__court {
     margin-top: 0;
   }
+}
+.recent-judgments__more-info {
+  text-align: center;
 }
 
 .judgment-browse-by-court__container {
@@ -526,7 +546,7 @@ a:focus {
   font-size: 1.2rem;
 }
 .structured-search input[type=submit] {
-  background-color: #0066cc;
+  background-color: #037091;
   font-weight: 700;
   border: 0;
   color: #fff;
@@ -714,7 +734,7 @@ a:focus {
   z-index: 999;
 }
 .results__submit-button {
-  background-color: #0066cc;
+  background-color: #037091;
   font-weight: 700;
   border: 0;
   color: #fff;

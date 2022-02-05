@@ -1,8 +1,10 @@
 .search-component {
-  margin-top: calc($spacer__unit * 2);
+  background-color: $color__light-grey;
 
   &__container {
     @include container;
+    text-align: center;
+    padding: calc($spacer__unit * 2);
   }
 
   &__emphasised-container {
@@ -10,7 +12,7 @@
   }
 
   &__more-options {
-    margin-top: $spacer__unit;
+    margin-top: calc($spacer__unit * 2);
   }
 
   h2 {
@@ -20,7 +22,7 @@
   input[type=submit] {
     @include call-to-action-button;
     padding-left: calc($spacer__unit * 3);
-    padding-right: calc($spacer__unit * 3)
+    padding-right: calc($spacer__unit * 3);
   }
 
   &__search-term-label {
@@ -31,6 +33,7 @@
     @include text_field;
 
     width: 80%;
+    min-height: calc($spacer__unit * 3);
 
     @media (min-width: $grid__breakpoint-small) {
       width: 20rem;
