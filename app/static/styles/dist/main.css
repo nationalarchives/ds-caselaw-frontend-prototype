@@ -279,6 +279,13 @@ body {
     max-width: 65rem;
   }
 }
+.judgment-browse-by-court__header {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-weight: normal;
+  font-size: 2rem;
+  margin: 0 0 3rem;
+}
 .judgment-browse-by-court__list {
   padding: 0;
   list-style-type: none;
@@ -293,18 +300,20 @@ body {
 }
 @media (min-width: 992px) {
   .judgment-browse-by-court__list {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media (min-width: 1200px) {
   .judgment-browse-by-court__list {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 .judgment-browse-by-court__court {
-  padding: 1rem;
+  padding: 2rem 1rem;
   border: 1px solid #ddd;
   text-align: center;
+  background-color: #ffb952;
+  font-family: "Roboto", sans-serif;
 }
 @media (max-width: 768px) {
   .judgment-browse-by-court__court {
@@ -313,8 +322,16 @@ body {
 }
 .judgment-browse-by-court__court-name {
   display: block;
-  font-weight: bold;
+  font-size: 1.25rem;
   margin-bottom: 0.3333333333rem;
+}
+.judgment-browse-by-court__court-link {
+  color: #000;
+  text-decoration: none;
+}
+.judgment-browse-by-court__court-link:hover {
+  color: #000;
+  text-decoration: underline;
 }
 
 a {
