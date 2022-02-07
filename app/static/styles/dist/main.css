@@ -636,7 +636,7 @@ a:focus {
 .results__results-intro {
   font-family: "Roboto", sans-serif;
   font-size: 1.8rem;
-  margin: 0 0 3rem;
+  margin: 0 0 1.25rem;
 }
 .results__filter-heading {
   position: absolute;
@@ -696,8 +696,8 @@ a:focus {
 
 .results-search-component {
   background-color: #efefef;
-  padding: 2.5rem 0;
-  margin: 0 0 6rem;
+  padding: 1.5rem 0 2rem;
+  margin: 0 0 3rem;
 }
 .results-search-component__container {
   padding: 0 1rem;
@@ -721,13 +721,13 @@ a:focus {
   }
 }
 .results-search-component__header {
-  font-size: 2.4rem;
+  font-size: 1.75rem;
   line-height: 3.4rem;
   display: inline-block;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   color: #121212;
-  margin: 1rem 0 0 0;
+  margin: 0 0 0 0;
 }
 .results-search-component__sub-header {
   font-size: 1rem;
@@ -747,12 +747,11 @@ a:focus {
   overflow: hidden;
 }
 .results-search-component__full-text-panel {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: calc 0.5rem 0 1rem;
 }
 @media (min-width: 768px) {
   .results-search-component__full-text-panel {
-    padding: 1.5rem 2rem;
+    padding: 0.25rem 1rem;
   }
 }
 .results-search-component__full-text-label {
@@ -963,9 +962,10 @@ a:focus {
 }
 .results-search-component__removable-options li {
   margin: 0.25rem 0.5rem;
-  padding: 0.25rem 0.75rem 0.25rem 1rem;
+  padding: 0rem 0.75rem 0rem 1rem;
   display: inline-block;
   background: #ffb952;
+  font-size: 0.85rem;
 }
 .results-search-component__removable-options-key {
   font-weight: bold;
@@ -1009,7 +1009,7 @@ a:focus {
   padding: 0.5rem 0;
   border-bottom: 0.125rem solid #ffb952;
   display: block;
-  margin: 2.5rem auto 0;
+  margin: 1.5rem auto 0;
   font-weight: bold;
 }
 @media (min-width: 768px) {
@@ -1379,6 +1379,7 @@ a:focus {
   padding: 0;
   font-family: "Roboto", sans-serif;
   display: inline-block;
+  font-size: 0.9rem;
 }
 .page-header__breadcrumb ol a {
   color: #fff;

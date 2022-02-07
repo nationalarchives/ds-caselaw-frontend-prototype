@@ -1,7 +1,7 @@
 .results-search-component {
   background-color: $color__light-grey;
-  padding: calc($spacer__unit * 2.5) 0;
-  margin: 0 0 calc($spacer__unit * 6);
+  padding: calc($spacer__unit * 1.5) 0 calc($spacer__unit * 2);
+  margin: 0 0 calc($spacer__unit * 3);
 
   &__container {
     @include container;
@@ -9,13 +9,13 @@
   }
 
   &__header {
-    font-size: 2.4rem;
+    font-size: 1.75rem;
     line-height: 3.4rem;
     display: inline-block;
     font-family: $font__roboto;
     font-weight: normal;
     color: $color__almost-black;
-    margin: calc($spacer__unit * 1) 0 0 0;
+    margin: 0 0 0 0;
   }
 
   &__sub-header {
@@ -32,10 +32,9 @@
     }
   }
   &__full-text-panel {
-    margin-top: $spacer__unit;
-    margin-bottom: $spacer__unit;
+    margin: calc ($spacer__unit / 2) 0 $spacer__unit;
     @media (min-width: $grid__breakpoint-medium) {
-      padding: calc($spacer__unit * 1.5) calc($spacer__unit * 2);
+      padding: calc($spacer__unit / 4) calc($spacer__unit * 1);
     }
   }
 
@@ -163,10 +162,10 @@
 
     li {
       margin: 0.25rem 0.5rem;
-      padding: 0.25rem 0.75rem 0.25rem 1rem;
+      padding: 0rem 0.75rem 0rem 1rem;
       display: inline-block;
       background: $color__yellow;
-
+      font-size: 0.85rem;
     }
   }
 
@@ -216,7 +215,7 @@
     padding: calc($spacer__unit / 2) 0;
     border-bottom: 0.125rem solid $color__yellow;
     display: block;
-    margin: calc($spacer__unit * 2.5) auto 0;
+    margin: calc($spacer__unit * 1.5) auto 0;
     font-weight: bold;
 
     @media (min-width: $grid__breakpoint-medium) {
