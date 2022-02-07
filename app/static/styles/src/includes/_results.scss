@@ -3,160 +3,6 @@
     @include container
   }
 
-  &__full-text-panel {
-    @include emphasised-block;
-    margin-top: $spacer__unit;
-    margin-bottom: $spacer__unit;
-    @media (min-width: $grid__breakpoint-medium) {
-      padding: calc($spacer__unit * 1.5) calc($spacer__unit * 2);
-    }
-  }
-
-  &__full-text-label {
-    @include sr-only;
-  }
-
-  &__full-text-input {
-    @include text_field;
-    width: 90%;
-
-    @media (min-width: $grid__breakpoint-medium) {
-      width: 27rem;
-    }
-
-    @media (min-width: $grid__breakpoint-extra-large) {
-      width: 35rem;
-    }
-  }
-
-  &__facet-container {
-
-    @media (min-width: $grid__breakpoint-medium) {
-      display: grid;
-      grid-auto-columns: 1fr;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    @media (min-width: $grid__breakpoint-extra-large) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-
-  &__multi-fields-panel {
-    margin-top: $spacer__unit;
-    margin-bottom: $spacer__unit;
-  }
-
-  &__name-label {
-    font-weight: bold;
-    display: block;
-  }
-
-  &__name-input {
-    @include text_field;
-    width: 18rem;
-  }
-
-  &__limit-to-label {
-    font-weight: bold;
-    display: block;
-  }
-
-  &__limit-to-input {
-    @include text_field;
-  }
-
-  &__select {
-    @include select;
-  }
-
-  &__date-input {
-    @include text_field;
-    margin-top: 0;
-    padding: 0.375rem;
-  }
-
-  &__submit-button {
-    @include call-to-action-button;
-    margin-top: 0;
-  }
-
-  &__name-container {
-    @include emphasised-block;
-    border-left-width: 0.375rem;
-    background-color: $color__white;
-    padding: 0 $spacer__unit;
-    margin-bottom: $spacer__unit;
-  }
-
-  &__limit-to-container {
-    @include emphasised-block;
-    border-left-width: 0.375rem;
-    background-color: $color__white;
-    padding: 0 $spacer__unit;
-    margin-bottom: $spacer__unit;
-  }
-
-  &__control-container {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: calc($spacer__unit * 2);
-    margin-bottom: calc($spacer__unit * 2);
-    border-bottom: 0.125rem dashed $color__dark-grey;
-  }
-
-  &__toggle-control {
-    border: none;
-    background-color: transparent;
-    font-size: 1rem;
-    position: relative;
-    padding-right: 0;
-    @media (min-width: $grid__breakpoint-medium) {
-      padding-right: 1rem;
-      padding-left: 2rem;
-    }
-
-    &:focus {
-      @include focus-default;
-      text-decoration: underline;
-    }
-
-    &:hover {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
-    &::after {
-      @media (min-width: $grid__breakpoint-medium) {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 0.438rem;
-        height: 0.438rem;
-        left: 0.5rem;
-        margin: auto 0;
-        -webkit-transform: rotate(313deg);
-        -ms-transform: rotate(313deg);
-        transform: rotate(313deg);
-        border: solid;
-        border-width: 0.125rem 0.125rem 0 0;
-        border-color: $color__dark-grey;
-      }
-    }
-
-    &.collapsed {
-      &::after {
-        -webkit-transform: rotate(135deg);
-        -ms-transform: rotate(135deg);
-        transform: rotate(135deg);
-        top: 0;
-      }
-    }
-  }
-
   &__list-layout-container {
     @media (min-width: $grid__breakpoint-medium) {
       display: grid;
@@ -185,9 +31,9 @@
   }
 
   &__results-intro {
-    font-weight: bold;
+    font-family: $font__roboto;
     font-size: 1.8rem;
-    margin: 0;
+    margin: 0 0 calc($spacer__unit * 3);
   }
 
   &__filter-heading {
@@ -199,15 +45,14 @@
     list-style-type: none;
 
     li {
-      padding: $spacer__unit;
-      padding-left: 0;
-      border-bottom: 1px dotted $color__grey;
+      padding: calc($spacer__unit * 2) calc($spacer__unit * 2) calc($spacer__unit * 2) 0;
+      border-bottom: 0.125rem solid $color__grey;
     }
   }
 
   &__result-title {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: $font__roboto;
   }
 
   &__result-term-sr {

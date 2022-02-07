@@ -1,7 +1,7 @@
 .result-controls {
   &__order-by-label {
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-family: $font__roboto;
+    font-size: 1.4rem;
     display: block;
     margin-bottom: $spacer__unit;
   }
@@ -9,28 +9,6 @@
   &__order-by {
     @include select;
     min-width: auto;
-  }
-
-  &__removable-options {
-    font-size: 0.9rem;
-    padding: 0;
-    list-style-type: none;
-
-    li {
-      margin: calc($spacer__unit / 2) 0;
-      padding: 0 0 calc($spacer__unit / 2) 0;
-      border-bottom: 0.125rem dotted $color__grey;
-    }
-  }
-
-  &__removable-options-key {
-    display: block;
-    font-weight: bold;
-  }
-
-  &__removable-options-value {
-    display: flex;
-    justify-content: space-between;
   }
 
 }
