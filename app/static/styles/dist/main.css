@@ -48,18 +48,18 @@ body {
   display: inline-block;
   width: 20%;
   height: 0.1rem;
-  margin: 1rem auto 0;
+  margin: 0 auto;
   border: 0;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0));
 }
 .service-introduction__header {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   line-height: 3.8rem;
   display: block;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   color: #fff;
-  margin: 2rem 0 0 0;
+  margin: 1rem 0 0 0;
 }
 .service-introduction__helper-text {
   display: inline-block;
@@ -173,7 +173,7 @@ body {
   padding: 0 1rem;
   margin: auto;
   max-width: 90%;
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
 @media (min-width: 576px) {
   .recent-judgments__container {
@@ -192,9 +192,8 @@ body {
 }
 .recent-judgments__header {
   font-family: "Roboto", sans-serif;
-  text-align: center;
   font-weight: normal;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0 0 3rem;
 }
 .recent-judgments__list {
@@ -282,9 +281,8 @@ body {
 }
 .judgment-browse-by-court__header {
   font-family: "Roboto", sans-serif;
-  text-align: center;
   font-weight: normal;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0 0 3rem;
 }
 .judgment-browse-by-court__list {
@@ -1368,7 +1366,7 @@ a:focus {
 
 .page-header {
   background-color: #121212;
-  padding: 0 0 1rem;
+  padding: 0 0 1.25rem;
 }
 .page-header__breadcrumb {
   background-color: #000;
@@ -1457,8 +1455,8 @@ a:focus {
   }
 }
 .page-header__logo {
-  height: 6rem;
-  margin: 1rem auto 0;
+  height: 5.5rem;
+  margin: 0.5rem auto 0;
   max-width: 80%;
 }
 .page-header__logo-link:focus {

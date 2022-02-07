@@ -1,6 +1,6 @@
 .page-header {
   background-color: $color__almost-black;
-  padding: 0 0 $spacer__unit;
+  padding: 0 0 calc($spacer__unit * 1.25);
 
   &__breadcrumb {
     background-color: $color__black;
@@ -62,8 +62,8 @@
   }
 
   &__logo {
-    height: 6rem;
-    margin: $spacer__unit auto 0;
+    height: 5.5rem;
+    margin: 0.5rem auto 0;
     max-width: 80%;
   }
 
