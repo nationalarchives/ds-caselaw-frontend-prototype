@@ -10,7 +10,7 @@ import $ from 'jquery'
             const $control_container = $('.js-results-control-container', $(this));
 
             const btn = $('<button>', {
-                'class': 'results__toggle-control',
+                'class': 'results-search-component__toggle-control',
                 'type': 'button',
                 'text': settings.collapsed_text,
                 'click': (e) => {
@@ -35,8 +35,8 @@ import $ from 'jquery'
     };
 
     $.fn.manage_filters.defaults = {
-        'collapsed_text': 'Collapse options',
-        'expanded_text': 'Expand options',
+        'collapsed_text': 'Show filter options',
+        'expanded_text': 'Hide filter options',
         'initially_hidden': true
     }
 }($));
