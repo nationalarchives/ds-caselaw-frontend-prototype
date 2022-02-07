@@ -18,10 +18,9 @@
 
     <form action="{{ url_for('results') }}" role="search" id="analytics-structured-search">
         <div class="structured-search">
-            <div class="structured-search__container">
-                <h1>Search</h1>
-                <fieldset>
-                    <legend>Search everything for</legend>
+            <div class="structured-search__main-search">
+                <div class="structured-search__container">
+                    <h1 class="structured-search__main-search-header">Search everything for</h1>
                     <div class="structured-search__full-text-panel">
                         <label for="search_term" class="structured-search__full-text-label">{{ form.search_term.label }}</label>
                         {{ form.search_term }}
@@ -31,50 +30,54 @@
                             {{ form.neutral_citation.label }}
                         </div>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Search specific fields</legend>
-                    <div class="structured-search__multi-fields-panel">
-                        <div class="structured-search__name-container">
-                            <label for="party_name" class="structured-search__name-label">{{ form.party_name.label }}</label>
-                            <p class="structured-search__help-text">{{ form.party_name.description }}</p>
-                            {{ form.party_name }}
+                </div>
+            </div>
+            <div class="structured-search__filter-options">
+                <div class="structured-search__container">
+                    <fieldset>
+                        <legend>Search specific fields</legend>
+                        <div class="structured-search__multi-fields-panel">
+                            <div class="structured-search__name-container">
+                                <label for="party_name" class="structured-search__name-label">{{ form.party_name.label }}</label>
+                                <p class="structured-search__help-text">{{ form.party_name.description }}</p>
+                                {{ form.party_name }}
+                            </div>
+                            <div class="structured-search__name-container">
+                                <label for="judge_name" class="structured-search__name-label">{{ form.judge_name.label }}</label>
+                                <p class="structured-search__help-text">{{ form.judge_name.description }}</p>
+                                {{ form.judge_name }}
+                            </div>
                         </div>
-                        <div class="structured-search__name-container">
-                            <label for="judge_name" class="structured-search__name-label">{{ form.judge_name.label }}</label>
-                            <p class="structured-search__help-text">{{ form.judge_name.description }}</p>
-                            {{ form.judge_name }}
+                    </fieldset>
+                    <fieldset>
+                        <legend>Only include results</legend>
+                        <div class="structured-search__multi-fields-panel">
+                            <div class="structured-search__limit-to-container">
+                                <label for="court" class="structured-search__limit-to-label">{{ form.courts.label }}</label>
+                                {{ form.courts }}
+                            </div>
+                            <div class="structured-search__limit-to-container">
+                                <label for="collection" class="structured-search__limit-to-label">{{ form.collections.label }}</label>
+                                {{ form.collections }}
+                            </div>
                         </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>During the period</legend>
+                        <div class="structured-search__multi-fields-panel">
+                            <div class="structured-search__limit-to-container">
+                                <label for="from_date" class="structured-search__limit-to-label">{{ form.from_date.label }}</label>
+                                {{ form.from_date }}
+                            </div>
+                            <div class="structured-search__limit-to-container">
+                                <label for="to_date" class="structured-search__limit-to-label">{{ form.to_date.label }}</label>
+                                {{ form.to_date }}
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="structured-search__submit-container">
+                        <input type="submit" value="Search">
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Only include results</legend>
-                    <div class="structured-search__multi-fields-panel">
-                        <div class="structured-search__limit-to-container">
-                            <label for="court" class="structured-search__limit-to-label">{{ form.courts.label }}</label>
-                            {{ form.courts }}
-                        </div>
-                        <div class="structured-search__limit-to-container">
-                            <label for="collection" class="structured-search__limit-to-label">{{ form.collections.label }}</label>
-                            {{ form.collections }}
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>During the period</legend>
-                    <div class="structured-search__multi-fields-panel">
-                        <div class="structured-search__limit-to-container">
-                            <label for="from_date" class="structured-search__limit-to-label">{{ form.from_date.label }}</label>
-                            {{ form.from_date }}
-                        </div>
-                        <div class="structured-search__limit-to-container">
-                            <label for="to_date" class="structured-search__limit-to-label">{{ form.to_date.label }}</label>
-                            {{ form.to_date }}
-                        </div>
-                    </div>
-                </fieldset>
-                <div class="structured-search__submit-container">
-                    <input type="submit" value="Search">
                 </div>
             </div>
         </div>

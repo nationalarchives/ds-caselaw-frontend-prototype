@@ -1,10 +1,27 @@
 .structured-search {
+
+  &__main-search {
+    background-color: $color__light-grey;
+    padding: calc($spacer__unit * 1.5) 0 calc($spacer__unit * 2);
+    margin: 0 0 calc($spacer__unit * 3);
+    text-align: center;
+  }
+
+  &__main-search-header {
+    font-size: 2.4rem;
+    line-height: 2rem;
+    display: inline-block;
+    font-family: $font__roboto;
+    font-weight: normal;
+    color: $color__almost-black;
+    margin: calc($spacer__unit * 3) 0 0 0;
+  }
+
   &__container {
-    @include container
+    @include container;
   }
 
   &__full-text-panel {
-    @include emphasised-block;
     margin-top: $spacer__unit;
     margin-bottom: $spacer__unit;
     @media (min-width: $grid__breakpoint-medium) {
@@ -29,8 +46,18 @@
     }
   }
 
+  &__filter-options {
+
+    legend {
+      font-family: $font__roboto;
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+
+  }
+
   &__name-label {
-    font-weight: bold;
+    font-size: 1.1rem;
   }
 
   &__name-input {
@@ -39,9 +66,9 @@
   }
 
   &__limit-to-label {
-    font-weight: bold;
     display: block;
     margin-bottom: calc($spacer__unit / 2);
+    font-size: 1.1rem;
   }
 
   &__limit-to-input {
@@ -50,8 +77,6 @@
 
   &__multi-fields-panel {
     padding-top: $spacer__unit;
-    border-top: 0.063rem dotted $color__dark-grey;
-    border-bottom: 0.063rem dotted $color__dark-grey;
     margin-top: $spacer__unit;
     margin-bottom: $spacer__unit;
 
@@ -64,17 +89,23 @@
   }
 
   &__name-container {
-    @include emphasised-block;
-    background-color: $color__white;
-    padding: 0 $spacer__unit;
+    background-color: $color__yellow;
+    padding: calc($spacer__unit * 2) calc($spacer__unit * 3);
     margin-bottom: $spacer__unit;
+    min-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 
   &__limit-to-container {
-    @include emphasised-block;
-    background-color: $color__white;
-    padding: 0 $spacer__unit;
+    background-color: $color__yellow;
+    padding: calc($spacer__unit * 2) calc($spacer__unit * 3);
     margin-bottom: $spacer__unit;
+    min-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 
   &__submit-container {
@@ -83,7 +114,6 @@
 
   &__help-text {
     margin-bottom: calc($spacer__unit / 2);
-    color: lighten($color__almost-black, 25);
   }
 
   &__select {
@@ -98,11 +128,6 @@
     border: none;
     padding: 0;
     margin-top: $spacer__unit;
-  }
-
-  legend {
-    font-weight: bold;
-    font-size: 1.2rem;
   }
 
   input[type=submit] {

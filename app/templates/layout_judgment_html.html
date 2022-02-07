@@ -10,16 +10,34 @@
     {% include 'includes/gtm/gtm_head.html' %}
 </head>
 <body>
-{% include 'includes/gtm/gtm_body.html' %}
 <a id="skip-to-main-content" href="#main-content">Skip to Main Content</a>
+{% include 'includes/gtm/gtm_body.html' %}
+{% include 'includes/phase_banner.html' %}
+    <header class="page-header">
+        <div class="page-header__breadcrumb">
+            <nav class="page-header__breadcrumb-container" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
+                    <li><a href="{{ url_for('home') }}">{{ service.name }}</a></li>
+                    <li><a href="{{ url_for('structured_search') }}">Start a new search</a></li>
+                </ol>
+            </nav>
+        </div>
+
+        {% include 'includes/logo.html' %}
+
+    </header>
 {% if not request.args.return_link %}
-    {% include 'includes/judgment_text_service_introduction_banner.html' %}
+
 {% endif %}
-{% include 'includes/judgment_text_toolbar.html' %}
+
 {% include 'includes/judgment_text_source.html' %}
+{% include 'includes/judgment_text_toolbar.html' %}
+
 <main id="main-content">
     {% block content %}
     {% endblock %}
 </main>
+    {% include 'includes/footer.html' %}
 </body>
 </html>

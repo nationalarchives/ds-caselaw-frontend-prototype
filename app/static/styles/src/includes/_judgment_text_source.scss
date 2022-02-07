@@ -14,5 +14,14 @@
     @media (min-width: $grid__breakpoint-medium) {
       max-width: 46rem;
     }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 2.4rem;
+      font-family: $font__roboto;
+    }
+    a {
+      display: block;
+    }
   }
 }

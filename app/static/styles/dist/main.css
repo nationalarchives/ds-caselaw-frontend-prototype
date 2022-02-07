@@ -375,6 +375,21 @@ a:focus {
   z-index: 999;
 }
 
+.structured-search__main-search {
+  background-color: #efefef;
+  padding: 1.5rem 0 2rem;
+  margin: 0 0 3rem;
+  text-align: center;
+}
+.structured-search__main-search-header {
+  font-size: 2.4rem;
+  line-height: 2rem;
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: #121212;
+  margin: 3rem 0 0 0;
+}
 .structured-search__container {
   padding: 0 1rem;
   margin: auto;
@@ -396,9 +411,6 @@ a:focus {
   }
 }
 .structured-search__full-text-panel {
-  padding: 1rem;
-  background-color: #efefef;
-  border-left: 0.5rem solid #0066cc;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -439,8 +451,13 @@ a:focus {
     width: 70%;
   }
 }
+.structured-search__filter-options legend {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
 .structured-search__name-label {
-  font-weight: bold;
+  font-size: 1.1rem;
 }
 .structured-search__name-input {
   border: 2px solid #555;
@@ -457,9 +474,9 @@ a:focus {
   z-index: 999;
 }
 .structured-search__limit-to-label {
-  font-weight: bold;
   display: block;
   margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 .structured-search__limit-to-input {
   border: 2px solid #555;
@@ -476,8 +493,6 @@ a:focus {
 }
 .structured-search__multi-fields-panel {
   padding-top: 1rem;
-  border-top: 0.063rem dotted #555;
-  border-bottom: 0.063rem dotted #555;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -490,27 +505,28 @@ a:focus {
   }
 }
 .structured-search__name-container {
-  padding: 1rem;
-  background-color: #efefef;
-  border-left: 0.5rem solid #0066cc;
-  background-color: #fff;
-  padding: 0 1rem;
+  background-color: #ffb952;
+  padding: 2rem 3rem;
   margin-bottom: 1rem;
+  min-height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .structured-search__limit-to-container {
-  padding: 1rem;
-  background-color: #efefef;
-  border-left: 0.5rem solid #0066cc;
-  background-color: #fff;
-  padding: 0 1rem;
+  background-color: #ffb952;
+  padding: 2rem 3rem;
   margin-bottom: 1rem;
+  min-height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .structured-search__submit-container {
   margin-bottom: 3rem;
 }
 .structured-search__help-text {
   margin-bottom: 0.5rem;
-  color: #525252;
 }
 .structured-search__select {
   font-size: 1rem;
@@ -564,10 +580,6 @@ a:focus {
   padding: 0;
   margin-top: 1rem;
 }
-.structured-search legend {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
 .structured-search input[type=submit] {
   background-color: #037091;
   font-weight: 700;
@@ -591,6 +603,9 @@ a:focus {
   z-index: 999;
 }
 
+.results {
+  min-height: 60rem;
+}
 .results__container {
   padding: 0 1rem;
   margin: auto;
@@ -679,6 +694,9 @@ a:focus {
 }
 .results dd {
   margin-left: 0;
+}
+.results mark {
+  background-color: #ffdeae;
 }
 .results__result-term-matching {
   margin: 1rem 0 0.5rem 0;
@@ -1266,33 +1284,16 @@ a:focus {
 }
 
 .phase-banner {
-  background-color: #fbe2bc;
-}
-.phase-banner__container {
-  padding: 0 1rem;
-  margin: auto;
-  max-width: 90%;
-}
-@media (min-width: 576px) {
-  .phase-banner__container {
-    max-width: 30rem;
-  }
-}
-@media (min-width: 768px) {
-  .phase-banner__container {
-    min-width: 45rem;
-  }
-}
-@media (min-width: 1200px) {
-  .phase-banner__container {
-    max-width: 65rem;
-  }
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  border-bottom: 1px dotted #555;
 }
 .phase-banner__notice {
   padding: 0.3em 0;
 }
 .phase-banner__notice a {
-  color: #000;
+  color: #fff;
   font-weight: bold;
 }
 .phase-banner__notice a:focus {
@@ -1301,6 +1302,7 @@ a:focus {
 }
 .phase-banner__phase {
   background-color: #fff;
+  color: #000;
   text-transform: uppercase;
   padding: 0 0.25rem;
   margin-right: 1rem;
@@ -1376,8 +1378,9 @@ a:focus {
   padding: 0 0 1.25rem;
 }
 .page-header__breadcrumb {
-  background-color: #000;
-  margin-bottom: 1rem;
+  display: block;
+  position: relative;
+  padding: 0.5rem 2rem;
 }
 .page-header__breadcrumb ol {
   list-style-type: none;
@@ -1415,26 +1418,6 @@ a:focus {
   border: solid;
   border-width: 1px 1px 0 0;
   border-color: #505a5f;
-}
-.page-header__breadcrumb-container {
-  padding: 0 1rem;
-  margin: auto;
-  max-width: 90%;
-}
-@media (min-width: 576px) {
-  .page-header__breadcrumb-container {
-    max-width: 30rem;
-  }
-}
-@media (min-width: 768px) {
-  .page-header__breadcrumb-container {
-    min-width: 45rem;
-  }
-}
-@media (min-width: 1200px) {
-  .page-header__breadcrumb-container {
-    max-width: 65rem;
-  }
 }
 .page-header__container {
   padding: 0 1rem;
@@ -1735,17 +1718,30 @@ a:focus {
 }
 
 .judgment-toolbar {
-  background-color: #134571;
-  color: #fff;
+  background-color: #efefef;
+  color: #000;
   padding: 1rem;
+  border-bottom: 1px solid #ddd;
 }
 .judgment-toolbar a {
+  background-color: #037091;
   color: #fff;
+  padding: 0.5rem 1.5rem;
+  display: inline-block;
+  text-decoration: none;
+}
+.judgment-toolbar__return-link {
+  display: inline-block;
 }
 .judgment-toolbar__return-link a {
-  background-image: url("/static/fontawesome-svgs/chevron-left-white.svg");
-  background-repeat: no-repeat;
-  padding-left: 1rem;
+  background: #037091 url("/static/fontawesome-svgs/chevron-left-white.svg") 0.8rem 0.6rem no-repeat;
+  background-size: 0.75rem;
+  padding: 0.5rem 1.5rem 0.5rem 2.5rem;
+  display: inline-block;
+  text-decoration: none;
+}
+.judgment-toolbar__download {
+  display: inline-block;
 }
 .judgment-toolbar__container {
   margin: auto;
@@ -1758,8 +1754,7 @@ a:focus {
 }
 @media (min-width: 576px) {
   .judgment-toolbar__container {
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
   }
 }
 @media (min-width: 768px) {
@@ -1792,9 +1787,17 @@ a:focus {
     max-width: 46rem;
   }
 }
+.judgment-text-source__container p {
+  font-size: 1.3rem;
+  line-height: 2.4rem;
+  font-family: "Roboto", sans-serif;
+}
+.judgment-text-source__container a {
+  display: block;
+}
 
 .service-introduction-banner {
-  background-color: #121212;
+  background-color: #000;
   color: #fff;
   padding: 2rem;
 }
