@@ -19,8 +19,9 @@
 
   &__judgment {
 
-    padding: $spacer__unit;
+    padding: $spacer__unit 0;
     border-bottom: 2px solid $color__grey;
+    line-height: 2rem;
 
     @media (min-width: $grid__breakpoint-medium) {
       display: flex;
@@ -75,6 +76,6 @@
   }
 
   &__more-info {
-    text-align: center;
+      margin: calc($spacer__unit * 2) 0;
   }
 }

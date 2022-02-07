@@ -11,14 +11,11 @@
                 </ol>
             </nav>
         </div>
-        <div class="page-header__container">
-            <a class="page-header__logo-link" href="{{ url_for('home') }}">
-                <img class="page-header__logo" src="{{ url_for('static', filename='tna_logo.svg') }}"
-                     alt="The National Archives home" width="320"
-                     height="44">
-            </a>
-        </div>
+
+        {% include 'includes/logo.html' %}
+
     </header>
+
     <div class="results">
         <div class="results__container">
             <h1>We found 2 judgments for {{ form.search_term.data }}</h1>

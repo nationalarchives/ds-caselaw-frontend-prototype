@@ -1,11 +1,11 @@
 <div class="search-component">
     <div class="search-component__container">
-        <!-- <h2 class="sr-only">Search by keyword or neutral citation</h2> -->
+        <h2 class="search-component__header--sr-only">Search by keyword or neutral citation</h2>
         <form action="{{ url_for('results') }}" role="search" aria-label="Search by keyword or neutral citation" id="analytics-basic-search">
 
             <label for="search_term" class="search-component__search-term-label">{{ form.search_term.label }}</label>
             {{ form.search_term }}
-<input type="submit" value="Search">
+            <input type="submit" value="Search">
             <div>
                 {{ form.neutral_citation }}
                 {{ form.neutral_citation.label }}
