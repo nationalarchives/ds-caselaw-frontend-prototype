@@ -1417,7 +1417,7 @@ a:focus {
   transform: rotate(45deg);
   border: solid;
   border-width: 1px 1px 0 0;
-  border-color: #505a5f;
+  border-color: #fff;
 }
 .page-header__container {
   padding: 0 1rem;
