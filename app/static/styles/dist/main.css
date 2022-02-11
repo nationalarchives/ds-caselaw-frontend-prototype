@@ -110,8 +110,8 @@ body {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .search-component__more-options {
@@ -138,8 +138,8 @@ body {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .search-component__search-term-input {
@@ -423,8 +423,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .structured-search__full-text-input {
@@ -649,8 +649,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .results__results-intro {
@@ -662,8 +662,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .results__results-list {
@@ -682,8 +682,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .results__result-neutral-citation {
@@ -765,8 +765,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .results-search-component__full-text-panel {
@@ -781,8 +781,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .results-search-component__full-text-input {
@@ -1019,8 +1019,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 
@@ -1127,8 +1127,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .pagination__list {
@@ -1171,8 +1171,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .pagination__page-chevron-next, .pagination__page-chevron-previous {
@@ -1221,8 +1221,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .pagination__page-chevron-previous {
@@ -1256,8 +1256,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .pagination__page-link-current {
@@ -1287,7 +1287,7 @@ a:focus {
   background-color: #000;
   color: #fff;
   padding: 0.5rem 2rem;
-  border-bottom: 1px dotted #555;
+  border-bottom: 0.125rem dotted #555;
 }
 .phase-banner__notice {
   padding: 0.3em 0;
@@ -1297,7 +1297,7 @@ a:focus {
   font-weight: bold;
 }
 .phase-banner__notice a:focus {
-  outline: 1px solid #000;
+  outline: 0.125rem solid #000;
   background-color: #fff;
 }
 .phase-banner__phase {
@@ -1322,8 +1322,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .judgments-footer__links {
@@ -1416,7 +1416,7 @@ a:focus {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   border: solid;
-  border-width: 1px 1px 0 0;
+  border-width: 0.125rem 0.125rem 0 0;
   border-color: #fff;
 }
 .page-header__container {
@@ -1575,8 +1575,8 @@ a:focus {
     position: absolute;
     left: -10000px;
     top: auto;
-    width: 1px;
-    height: 1px;
+    width: 0.125rem;
+    height: 0.125rem;
     overflow: hidden;
   }
   .judgment-header__queens-counsel ul {
@@ -1597,8 +1597,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .judgment-header__approved-judgment {
@@ -1609,8 +1609,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .judgment-body h3 {
@@ -1686,8 +1686,8 @@ a:focus {
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 .judgment-download a {
@@ -1721,7 +1721,7 @@ a:focus {
   background-color: #efefef;
   color: #000;
   padding: 1rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.125rem solid #ddd;
 }
 .judgment-toolbar a {
   background-color: #037091;
@@ -1771,7 +1771,7 @@ a:focus {
 .judgment-text-source {
   background-color: #efefef;
   padding: 0.5rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.125rem solid #ddd;
 }
 .judgment-text-source__container {
   margin: auto;

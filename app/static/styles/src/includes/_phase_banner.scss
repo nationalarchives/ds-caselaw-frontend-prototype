@@ -2,7 +2,7 @@
   background-color: $color__black;
   color: $color__white;
   padding: calc($spacer__unit / 2) calc($spacer__unit * 2);
-  border-bottom: 1px dotted $color__dark-grey;
+  border-bottom: 0.125rem dotted $color__dark-grey;
 
   &__notice {
     padding: 0.3em 0;
@@ -12,7 +12,7 @@
       font-weight: bold;
 
       &:focus {
-        outline: 1px solid $color__black;
+        outline: 0.125rem solid $color__black;
         background-color: $color__white;
       }
     }
