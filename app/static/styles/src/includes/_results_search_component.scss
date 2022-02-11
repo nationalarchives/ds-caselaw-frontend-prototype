@@ -32,7 +32,7 @@
     }
   }
   &__full-text-panel {
-    margin: calc ($spacer__unit / 2) 0 $spacer__unit;
+    margin: calc($spacer__unit / 2) 0 $spacer__unit;
     @media (min-width: $grid__breakpoint-medium) {
       padding: calc($spacer__unit / 4) calc($spacer__unit * 1);
     }

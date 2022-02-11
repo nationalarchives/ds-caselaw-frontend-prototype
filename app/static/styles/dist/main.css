@@ -770,7 +770,7 @@ a:focus {
   overflow: hidden;
 }
 .results-search-component__full-text-panel {
-  margin: calc 0.5rem 0 1rem;
+  margin: 0.5rem 0 1rem;
 }
 @media (min-width: 768px) {
   .results-search-component__full-text-panel {
