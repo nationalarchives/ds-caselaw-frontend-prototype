@@ -151,6 +151,7 @@ body {
   width: 80%;
   width: 80%;
   min-height: 3rem;
+  font-size: 1.2rem;
 }
 .search-component__search-term-input:focus {
   outline: 5px solid #1d70b8;
