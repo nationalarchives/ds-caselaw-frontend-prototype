@@ -10982,7 +10982,7 @@ __webpack_require__.r(__webpack_exports__);
       var $toggle_area = $('.js-results-facets', $(_this));
       var $control_container = $('.js-results-control-container', $(_this));
       var btn = $('<button>', {
-        'class': 'results__toggle-control',
+        'class': 'results-search-component__toggle-control',
         'type': 'button',
         'text': settings.collapsed_text,
         'click': function click(e) {
@@ -11004,8 +11004,8 @@ __webpack_require__.r(__webpack_exports__);
   };
 
   $.fn.manage_filters.defaults = {
-    'collapsed_text': 'Collapse options',
-    'expanded_text': 'Expand options',
+    'collapsed_text': 'Show filter options',
+    'expanded_text': 'Hide filter options',
     'initially_hidden': true
   };
 })((jquery__WEBPACK_IMPORTED_MODULE_0___default()));

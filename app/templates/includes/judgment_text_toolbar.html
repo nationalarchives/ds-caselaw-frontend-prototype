@@ -6,9 +6,8 @@
             {% endif %}
         </div>
         <div class="judgment-toolbar__download">
-            <span class="judgment-toolbar__download-intro">Download this judgment as </span>
-            <a class="judgment-download__option--pdf" href="{{ url_for('static', filename='judgment.pdf') }}">PDF</a> or
-            <a class="judgment-download__option--xml" href="{{ url_for('static', filename='judgment.xml') }}">XML</a>
+            <a class="judgment-download__option--pdf" href="{{ url_for('static', filename='judgment.pdf') }}">Download as PDF</a>
+            <a class="judgment-download__option--xml" href="{{ url_for('static', filename='judgment.xml') }}">Download as XML</a>
         </div>
     </div>
 </div>

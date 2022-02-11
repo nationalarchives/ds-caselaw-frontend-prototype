@@ -30,8 +30,8 @@
   position: absolute;
   left: -10000px;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.125rem;
+  height: 0.125rem;
   overflow: hidden;
 }
 
@@ -54,7 +54,7 @@
 }
 
 @mixin call-to-action-button {
-  background-color: $color__highlight-blue;
+  background-color: $color__aqua-blue;
   font-weight: 700;
   border: 0;
   color: $color__white;

@@ -1,14 +1,13 @@
 {% block content %}
     <div class="judgment-browse-by-court">
         <div class="judgment-browse-by-court__container">
-            <h2 id="browse-by-court">Find judgments by court</h2>
-            <p>Explainer here</p>
+            <h2 id="browse-by-court" class="judgment-browse-by-court__header">Find judgments by court</h2>
 
             <ul class="judgment-browse-by-court__list">
                 {% for court in courts | sort(attribute='name') %}
                     <li class="judgment-browse-by-court__court">
                             <span class="judgment-browse-by-court__court-name">
-                                <a href="/results?courts={{ court.code }}">
+                                <a class="judgment-browse-by-court__court-link" href="/results?courts={{ court.code }}">
                                     {{ court.name }}
                                 </a>
                             </span>

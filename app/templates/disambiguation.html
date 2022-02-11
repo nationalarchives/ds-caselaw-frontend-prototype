@@ -1,15 +1,21 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="breadcrumb">
-        <nav class="breadcrumb__container" aria-label="Breadcrumb">
-            <ol>
-                <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
-                <li><a href="/">{{ service.name }}</a></li>
-                <li><a href="{{ request.url }}" aria-current="page">Neutral citation search results</a></li>
-            </ol>
-        </nav>
-    </div>
+    <header class="page-header">
+        <div class="page-header__breadcrumb">
+            <nav class="page-header__breadcrumb-container" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
+                    <li><a href="/">{{ service.name }}</a></li>
+                    <li><a href="{{ request.url }}" aria-current="page">Neutral citation search results</a></li>
+                </ol>
+            </nav>
+        </div>
+
+        {% include 'includes/logo.html' %}
+
+    </header>
+
     <div class="results">
         <div class="results__container">
             <h1>We found 2 judgments for {{ form.search_term.data }}</h1>
