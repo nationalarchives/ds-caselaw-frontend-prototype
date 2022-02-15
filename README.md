@@ -8,6 +8,7 @@ Use this contents list to navigate the page.
 * [Development approach](#development-approach)
 * [Local development setup](#local-development)
 * User flow and wireframe iterations
+    * [1.10](#iteration-110)
     * [1.9](#iteration-19)
     * [1.8](#iteration-18)
     * [1.7](#iteration-17)
@@ -77,6 +78,10 @@ In a _new terminal_ run these commands:
 _If you are working on JavaScript_, you should also run (in another new terminal):
 
 * `npm run start-scripts` will kick off a Webpack watch task
+
+## Iteration 1.10
+
+This iteration updates [the flow](user_flows/Iterations/1.10) to reflect the removal of the disambiguation page as a separate means for showing search results. The current intention is for all users will go to a standard search results page.
 
 ## Iteration 1.9
 
