@@ -6,7 +6,6 @@ from wtforms.validators import InputRequired
 class HomePageSearch(FlaskForm):
     search_term = SearchField(
         'Search term',
-        validators=[InputRequired()],
         render_kw={
             'class': 'search-component__search-term-input'
         }
