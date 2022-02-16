@@ -7,7 +7,6 @@ from content.recent_judgments import recent_judgments
 from content.service_wide import service
 from content.search_results import search_results
 from content.courts import courts
-from content.disambiguation_results import disambiguation_results
 from content.sources import judgment_sources
 
 
@@ -37,26 +36,6 @@ def results():
                 service=service,
                 form=form,
                 dont_toggle_facets=True
-            )
-
-        # User checked the neutral citation field
-        if form.neutral_citation.data:
-            return render_template(
-                'disambiguation.html',
-                service=service,
-                search_results=disambiguation_results,
-                form=form,
-                show_option_to_extend_to_full_text=True
-            )
-
-        # Matches the neutral citation regex
-        if re.match(r'^\[?\d{4}\]?\s\w{4,5}\s?(\d{2,4}|\w{3,4})\s?', form.search_term.data):
-            return render_template(
-                'disambiguation.html',
-                service=service,
-                search_results=disambiguation_results,
-                form=form,
-                show_neutral_citation_check=True
             )
 
     return render_template(
@@ -92,15 +71,6 @@ def terms_of_use():
     return render_template(
         'terms_of_use.html',
         service=service,
-    )
-
-
-@app.route('/disambiguation/')
-def disambiguation():
-    return render_template(
-        'disambiguation.html',
-        service=service,
-        neutral_citation=request.args['neutral_citation']
     )
 
 
