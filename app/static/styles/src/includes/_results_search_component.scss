@@ -28,9 +28,10 @@
     margin: 0 calc($spacer__unit * 1.5);
 
     &--sr-only {
-       @include sr-only;
+      @include sr-only;
     }
   }
+
   &__full-text-panel {
     margin: calc($spacer__unit / 2) 0 $spacer__unit;
     @media (min-width: $grid__breakpoint-medium) {
@@ -204,58 +205,61 @@
 
 .results {
 
-  &__toggle-control {
-    border: none;
-    background-color: transparent;
-    font-size: 1rem;
-    position: relative;
-    padding: calc($spacer__unit / 2) 0;
-    border-bottom: 0.125rem solid $color__yellow;
-    display: block;
-    margin: calc($spacer__unit * 1.5) auto 0;
-    font-weight: bold;
+  &-search-component {
 
-    @media (min-width: $grid__breakpoint-medium) {
-      padding-right: 1rem;
-      padding-left: 2rem;
-    }
+    &__toggle-control {
+      border: none;
+      background-color: transparent;
+      font-size: 1rem;
+      position: relative;
+      padding: calc($spacer__unit / 2) 0;
+      border-bottom: 0.125rem solid $color__yellow;
+      display: block;
+      margin: calc($spacer__unit * 1.5) auto 0;
+      font-weight: bold;
 
-    &:focus {
-      @include focus-default;
-      text-decoration: underline;
-    }
-
-    &:hover {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
-    &::after {
       @media (min-width: $grid__breakpoint-medium) {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 0.438rem;
-        height: 0.438rem;
-        left: 0.5rem;
-        margin: auto 0;
-        -webkit-transform: rotate(313deg);
-        -ms-transform: rotate(313deg);
-        transform: rotate(313deg);
-        border: solid;
-        border-width: 0.125rem 0.125rem 0 0;
-        border-color: $color__dark-grey;
+        padding-right: 1rem;
+        padding-left: 2rem;
       }
-    }
 
-    &.collapsed {
+      &:focus {
+        @include focus-default;
+        text-decoration: underline;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
       &::after {
-        -webkit-transform: rotate(135deg);
-        -ms-transform: rotate(135deg);
-        transform: rotate(135deg);
-        top: 0;
+        @media (min-width: $grid__breakpoint-medium) {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 0.438rem;
+          height: 0.438rem;
+          left: 0.5rem;
+          margin: auto 0;
+          -webkit-transform: rotate(313deg);
+          -ms-transform: rotate(313deg);
+          transform: rotate(313deg);
+          border: solid;
+          border-width: 0.125rem 0.125rem 0 0;
+          border-color: $color__dark-grey;
+        }
+      }
+
+      &.collapsed {
+        &::after {
+          -webkit-transform: rotate(135deg);
+          -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+          top: 0;
+        }
       }
     }
   }
