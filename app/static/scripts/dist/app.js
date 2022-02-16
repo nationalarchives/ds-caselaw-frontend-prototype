@@ -10984,7 +10984,7 @@ __webpack_require__.r(__webpack_exports__);
       var btn = $('<button>', {
         'class': 'results-search-component__toggle-control',
         'type': 'button',
-        'text': settings.collapsed_text,
+        'text': settings.expanded_text,
         'click': function click(e) {
           $toggle_area.toggle();
           var $el = $(e.target);
@@ -11010,9 +11010,7 @@ __webpack_require__.r(__webpack_exports__);
   };
 })((jquery__WEBPACK_IMPORTED_MODULE_0___default()));
 
-if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.no-toggle').length === 0) {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-results-facets-wrapper').manage_filters();
-}
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-results-facets-wrapper').manage_filters();
 })();
 
 /******/ })()

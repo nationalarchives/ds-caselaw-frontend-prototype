@@ -12,7 +12,7 @@ import $ from 'jquery'
             const btn = $('<button>', {
                 'class': 'results-search-component__toggle-control',
                 'type': 'button',
-                'text': settings.collapsed_text,
+                'text': settings.expanded_text,
                 'click': (e) => {
                     $toggle_area.toggle();
 
@@ -41,6 +41,6 @@ import $ from 'jquery'
     }
 }($));
 
-if ($('.no-toggle').length === 0) {
-    $('.js-results-facets-wrapper').manage_filters();
-}
+
+$('.js-results-facets-wrapper').manage_filters();
+
