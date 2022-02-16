@@ -7,7 +7,8 @@
             <nav class="page-header__breadcrumb-container" aria-label="Breadcrumb">
                 <ol>
                     <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
-                <li><a href="{{ request.url }}" aria-current="page">Judgment sources</a></li>
+                    <li><a href="/">{{ service.name }}</a></li>
+                    <li><a href="{{ request.url }}" aria-current="page">Sources</a></li>
                 </ol>
             </nav>
         </div>
@@ -18,8 +19,8 @@
 
     <div class="sources">
         <div class="sources__container">
-            <h1>Judgment sources</h1>
-            <p>Sources for judgments provided via this system are listed below.</p>
+            <h1>Case law sources</h1>
+            <p>The sources for case law shown in this service are listed below.</p>
             <ul class="sources__list" >
                 {% for source in sources %}
                     <li id="{{ source.id }}">
