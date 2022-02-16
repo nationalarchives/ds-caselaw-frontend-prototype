@@ -2,7 +2,22 @@
 
 {% block content %}
 
-    <div class="open-justice-license">
+    <header class="page-header">
+        <div class="page-header__breadcrumb">
+            <nav class="page-header__breadcrumb-container" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
+                    <li><a href="/">{{ service.name }}</a></li>
+                    <li><a href="{{ request.url }}" aria-current="page">Open Justice Licence</a></li>
+                </ol>
+            </nav>
+        </div>
+
+        {% include 'includes/logo.html' %}
+
+    </header>
+
+    <div class="standard-text-template">
         <h1>Open Justice Licence</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam beatae eveniet facere illum impedit
             iste
@@ -41,7 +56,8 @@
         <h2>Governing Law</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
 
-        <h2>Definitions</h2>
+        <h2>Governing Law</h2>
+        <h3>Definitions</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae, blanditiis corporis deserunt
             dignissimos
             iste libero maiores, nam neque non, optio quasi sapiente sit!</p>
