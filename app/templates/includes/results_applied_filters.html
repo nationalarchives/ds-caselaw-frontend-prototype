@@ -1,4 +1,12 @@
-{% if form.collections.data != 'all' or form.party_name.data or form.judge_name.data or form.from_date.data or form.to_date.data or form.courts.data != 'all'  %}
+{%
+        if (form.collections.data and form.collections.data != 'all')
+        or form.party_name.data
+        or form.judge_name.data
+        or form.from_date.data
+        or form.to_date.data
+        or (form.courts.data and form.courts.data != 'all')
+%}
+
     <h2 class="results-search-component__sub-header">Filters include</h2>
     <ul class="results-search-component__removable-options">
         {% if form.collections.data and form.collections.data != 'all' %}
