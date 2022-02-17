@@ -46,26 +46,6 @@ def results():
     )
 
 
-"""
-This route exists for those users who have stipulated they want full text results only. 
-It allows the regular expression to identify search terms that look like neutral citations
-but for the user to still be able to search the full text.
-"""
-
-
-@app.route('/results/full-text', methods=['GET'])
-def full_text_results():
-    form = StructuredSearch(request.args)
-    form.neutral_citation.data = False
-
-    return render_template(
-        'results.html',
-        service=service,
-        search_results=search_results,
-        form=form
-    )
-
-
 @app.route('/terms-of-use')
 def terms_of_use():
     return render_template(
