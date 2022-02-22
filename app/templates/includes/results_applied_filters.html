@@ -1,146 +1,23 @@
-{%
-        if (form.collections.data and form.collections.data != 'all')
-        or form.party_name.data
-        or form.judge_name.data
-        or form.from_date.data
-        or form.to_date.data
-        or (form.courts.data and form.courts.data != 'all')
-%}
-
-    <h2 class="results-search-component__sub-header">Filters include</h2>
-    <ul class="results-search-component__removable-options">
-        {% if form.collections.data and form.collections.data != 'all' %}
+{% if filters_to_show %}
+<h2 class="results-search-component__sub-header">Filters include</h2>
+<ul class="results-search-component__removable-options">
+    {% for item in filters_to_show %}
+        {% if request.args.get(item) %}
             <li>
-                <span class="results-search-component__removable-options-key">Collection:</span>
+                <span class="results-search-component__removable-options-key">
+                    {{ translate_to_human_readable_label(item) }}:
+                </span>
                 <span class="results-search-component__removable-options-value">
-            <span class="results-search-component__removable-options-value-text">{{ form.collections.data }}</span>
-            <a class="results-search-component__removable-options-link" href="
-                    {{ url_for(
-                        'results',
-                        neutral_citation=form.neutral_citation.data,
-                        search_term=form.search_term.data,
-                        collections='all',
-                        party_name=form.party_name.data,
-                        judge_name=form.judge_name.data,
-                        from_date=form.from_date.data,
-                        to_date=form.to_date.data,
-                        courts=form.courts.data
-                        ) }}">
-                <span class="results-search-component__removable-options-sr-only">Remove</span>
-            </a>
+                    <span class="results-search-component__removable-options-value-text">
+                        {{ translate_to_human_readable_label(request.args.get(item)) }}
+                    </span>
+                <a class="results-search-component__removable-options-link"
+                   href="{{ remove_current_item_from_query_string(request.url, item) }}">
+                    <span class="results-search-component__removable-options-sr-only">Remove</span>
+                </a>
         </span>
             </li>
         {% endif %}
-        {% if form.courts.data and form.courts.data != 'all' %}
-            <li>
-                <span class="results-search-component__removable-options-key">Courts:</span>
-                <span class="results-search-component__removable-options-value">
-            <span class="results-search-component__removable-options-value-text">{{ form.courts.data }}</span>
-            <a class="results-search-component__removable-options-link" href="
-                    {{ url_for(
-                        'results',
-                        neutral_citation=form.neutral_citation.data,
-                        search_term=form.search_term.data,
-                        collections=form.collections.data,
-                        party_name=form.party_name.data,
-                        judge_name=form.judge_name.data,
-                        from_date=form.from_date.data,
-                        to_date=form.to_date.data,
-                        courts='all'
-                        ) }}">
-                <span class="results-search-component__removable-options-sr-only">Remove</span>
-            </a>
-        </span>
-            </li>
-        {% endif %}
-        {% if form.party_name.data and form.party_name.data != 'all' %}
-            <li>
-                <span class="results-search-component__removable-options-key">Party name:</span>
-                <span class="results-search-component__removable-options-value">
-            <span class="results-search-component__removable-options-value-text">{{ form.party_name.data }}</span>
-            <a class="results-search-component__removable-options-link" href="
-                    {{ url_for(
-                        'results',
-                        neutral_citation=form.neutral_citation.data,
-                        search_term=form.search_term.data,
-                        collections=form.collections.data,
-                        party_name='',
-                        judge_name=form.judge_name.data,
-                        from_date=form.from_date.data,
-                        to_date=form.to_date.data,
-                        courts=form.courts.data
-                    ) }}">
-                <span class="results-search-component__removable-options-sr-only">Remove</span>
-            </a>
-        </span>
-            </li>
-        {% endif %}
-        {% if form.judge_name.data and form.judge_name.data != 'all' %}
-            <li>
-                <span class="results-search-component__removable-options-key">Judge name:</span>
-                <span class="results-search-component__removable-options-value">
-            <span class="results-search-component__removable-options-value-text">{{ form.judge_name.data }}</span>
-            <a class="results-search-component__removable-options-link" href="
-                    {{ url_for(
-                        'results',
-                        neutral_citation=form.neutral_citation.data,
-                        search_term=form.search_term.data,
-                        collections=form.collections.data,
-                        party_name=form.party_name.data,
-                        judge_name='',
-                        from_date=form.from_date.data,
-                        to_date=form.to_date.data,
-                        courts=form.courts.data)
-                    }}">
-                <span class="results-search-component__removable-options-sr-only">Remove</span>
-            </a>
-        </span>
-            </li>
-        {% endif %}
-        {% if form.from_date.data and form.from_date.data != 'all' %}
-            <li>
-                <span class="results-search-component__removable-options-key">From date:</span>
-                <span class="results-search-component__removable-options-value">
-            <span class="results-search-component__removable-options-value-text">{{ form.from_date.data }}</span>
-            <a class="results-search-component__removable-options-link" href="
-                    {{ url_for(
-                        'results',
-                        neutral_citation=form.neutral_citation.data,
-                        search_term=form.search_term.data,
-                        collections=form.collections.data,
-                        party_name=form.party_name.data,
-                        judge_name=form.judge_name.data,
-                        from_date='',
-                        to_date=form.to_date.data,
-                        courts=form.courts.data
-                        ) }}">
-                <span class="results-search-component__removable-options-sr-only">Remove</span>
-            </a>
-        </span>
-            </li>
-        {% endif %}
-        {% if form.to_date.data and form.to_date.data != 'all' %}
-            <li>
-                <span class="results-search-component__removable-options-key">To date:</span>
-                <span class="results-search-component__removable-options-value">
-            <span class="results-search-component__removable-options-value-text">{{ form.to_date.data }}</span>
-            <a class="results-search-component__removable-options-link" href="
-                    {{ url_for(
-                        'results',
-                        neutral_citation=form.neutral_citation.data,
-                        search_term=form.search_term.data,
-                        collections=form.collections.data,
-                        party_name=form.party_name.data,
-                        judge_name=form.judge_name.data,
-                        from_date=form.from_date.data,
-                        to_date='',
-                        courts=form.courts.data
-                        ) }}">
-                <span class="results-search-component__removable-options-sr-only">Remove</span>
-            </a>
-        </span>
-            </li>
-        {% endif %}
-
-    </ul>
+    {% endfor %}
+</ul>
 {% endif %}
