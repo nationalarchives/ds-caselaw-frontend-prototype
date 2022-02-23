@@ -600,6 +600,14 @@ a:focus {
 .results {
   min-height: 60rem;
 }
+.results h1 {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 0.125rem;
+  height: 0.125rem;
+  overflow: hidden;
+}
 .results__container {
   padding: 0 1rem;
   margin: auto;
