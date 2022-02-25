@@ -24,10 +24,11 @@
             <ul class="sources__list" >
                 {% for source in sources %}
                     <li id="{{ source.id }}">
-                        <span class="sources__name">{{ source.name }}</span>
-                        <span class="sources__description">
-                            [Details of the source and information about the judgments they have provided for inclusion in the system]
-                        </span>
+                        <div class="sources__name">{{ source.name }}</div>
+                        <div class="sources__description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aliquid aspernatur deleniti excepturi labore reiciendis sunt. Beatae, delectus, vero?</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad alias atque beatae consequuntur deleniti dicta doloribus eaque earum eius error et facilis labore laboriosam mollitia neque, odit officiis porro provident quae quaerat quas quis rem reprehenderit sapiente vel velit? Ab architecto aspernatur beatae doloribus itaque laudantium magni omnis optio.</p>
+                        </div>
                     </li>
                 {% endfor %}
             </ul>
