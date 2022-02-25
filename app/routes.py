@@ -1,7 +1,7 @@
 from app import app
 from app.forms.home_page_search import HomePageSearch
 from app.forms.structured_search_form import StructuredSearch
-import re
+from app.helpers.applied_filters import remove_current_item_from_query_string, translate_to_human_readable_label, filters_to_show
 from flask import render_template, request, redirect, url_for, make_response
 from content.recent_judgments import recent_judgments
 from content.service_wide import service
@@ -35,14 +35,19 @@ def results():
                 'no_results.html',
                 service=service,
                 form=form,
-                dont_toggle_facets=True
+                remove_current_item_from_query_string=remove_current_item_from_query_string,
+                translate_to_human_readable_label=translate_to_human_readable_label,
+                filters_to_show=filters_to_show(request.args)
             )
 
     return render_template(
         'results.html',
         service=service,
         search_results=search_results,
-        form=form
+        form=form,
+        remove_current_item_from_query_string=remove_current_item_from_query_string,
+        translate_to_human_readable_label=translate_to_human_readable_label,
+        filters_to_show=filters_to_show(request.args)
     )
 
 
