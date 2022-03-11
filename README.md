@@ -38,7 +38,7 @@ The Flask application and front end code will be versioned using Git only.
 
 ## HTML for judgment text page
 
-This Flask application in this repository includes a sample HTML page for a judgment with accompanying CSS. This implementation seeks to retain the desired layout while also being inclusive and making the most of what the Web has to offer. Relevant decisions and considerations are described on the [corresponding Wiki page](https://github.com/nationalarchives/ds-judgments-frontend/wiki/Recommendations-for-Judgment-text-HTML-and-CSS)
+This Flask application in this repository includes a sample HTML page for a judgment with accompanying CSS. This implementation seeks to retain the desired layout while also being inclusive and making the most of what the Web has to offer. Relevant decisions and considerations are described on the [corresponding Wiki page](https://github.com/nationalarchives/ds-caselaw-frontend/wiki/Approach-for-Judgment-text-HTML-and-CSS)
 
 ![Representation of the judgment text page rendered in a browser](/repo_images/judgment_text.png)
 
