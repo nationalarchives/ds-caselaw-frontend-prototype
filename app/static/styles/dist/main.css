@@ -1955,4 +1955,16 @@ a:focus {
   margin-bottom: 2rem;
 }
 
+.back-to-top-link {
+  display: none;
+}
+.back-to-top-link.show {
+  padding: 0.5rem;
+  background-color: #fff;
+  display: inline-block;
+  margin: auto;
+  position: fixed;
+  top: 0;
+}
+
 /*# sourceMappingURL=main.css.map */
