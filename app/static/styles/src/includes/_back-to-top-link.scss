@@ -5,7 +5,7 @@
   display: none;
 
   &.show {
-    padding: $spacer__unit / 2;
+    padding: calc($spacer__unit / 2);
     background-color: $color__white;
     display: inline-block;
     margin: auto;
