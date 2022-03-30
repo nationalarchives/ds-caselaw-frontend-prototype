@@ -81,7 +81,11 @@ _If you are working on JavaScript_, you should also run (in another new terminal
 
 ## Iteration 1.10
 
-This iteration updates [the flow](user_flows/Iterations/1.10) to reflect the removal of the disambiguation page as a separate means for showing search results. The current intention is for all users will go to a standard search results page.
+This iteration updates [the flow](user_flows/Iterations/1.10) to reflect the removal of the disambiguation page as a separate means for showing search results. The current intention is for all users will go to a standard search results page. It also has changes that do not impact the flow, including: 
+
+* Introducing a 'back to top' link within the judgment details page
+* Moving the source block to the bottom of the judgment
+* Adding date to search results and changing their layout
 
 ## Iteration 1.9
 
