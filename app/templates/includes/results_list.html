@@ -1,13 +1,21 @@
 <h2>Results listing</h2>
-<p class="results__results-intro">We found 760 judgments</p>
+<div class="results__result-header">
+    <p class="results__results-intro">We found 760 judgments</p>
+    <div class="results__result-controls-container">
+        {% include 'includes/result_controls.html' %}
+    </div>
+</div>
 <ul class="results__results-list">
     {% for result in search_results %}
         <li>
             <dl class="results__result-terms">
                 <dt class="results__result-term-sr">Title</dt>
-                <dd>
-                    <a class="results__result-title" href="{{ url_for('judgment', origin='results', return_link=request.url) }}">{{ result.title | safe }}</a>
+                <dd class="results__title-and-date">
+                    <a class="results__result-title"
+                       href="{{ url_for('judgment', origin='results', return_link=request.url) }}">{{ result.title | safe }}</a><span
+                        class="results__result-date">Date: {{ result.date }}</span>
                 </dd>
+
                 <dt class="results__result-term-sr">Neutral citation</dt>
                 <dd class="results__result-neutral-citation">{{ result.neutral_citation }}</dd>
                 <dt class="results__result-term-matching">Matching text sample</dt>

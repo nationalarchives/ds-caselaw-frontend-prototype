@@ -75,12 +75,6 @@ def judgment_quick_route():
 @app.route('/ewhc/admin/2021/3290')
 def judgment():
     resp = make_response(render_template('judgment.html', service=service))
-    resp.headers['Content-Security-Policy'] = "script-src 'nonce-2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRo' " \
-                                              "'strict-dynamic' " \
-                                              "'unsafe-inline' " \
-                                              "https:;" \
-                                              "object-src 'none';" \
-                                              "base-uri 'none';"
     return resp
 
 

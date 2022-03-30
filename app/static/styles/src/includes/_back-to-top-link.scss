@@ -1,0 +1,15 @@
+// This is a crude implementation made at short notice for user testing the following day
+// Not production quality code
+
+.back-to-top-link {
+  display: none;
+
+  &.show {
+    padding: calc($spacer__unit / 2);
+    background-color: $color__white;
+    display: inline-block;
+    margin: auto;
+    position: fixed;
+    top: 0;
+  }
+}
