@@ -1,0 +1,59 @@
+.results {
+  min-height: 60rem;
+
+  h1 {
+    @include sr-only;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__result-header {
+    @media (min-width: $grid__breakpoint-large) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__result-list-container {
+    background-color: #fff;
+
+    h2 {
+      @include sr-only;
+    }
+  }
+
+  &__results-intro {
+    font-family: $font__roboto;
+    font-size: 1.8rem;
+    margin: calc($spacer__unit / 2) 0 0 0;
+  }
+
+
+
+  &__filter-heading {
+    @include sr-only;
+  }
+
+  mark {
+    background-color: $color__yellow;
+    font-weight: bold;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+  }
+
+  legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  &__container-extend-search-option {
+    background-color: $color__light-grey;
+    padding: $spacer__unit calc($spacer__unit * 2);
+    margin: $spacer__unit 0;
+  }
+}
