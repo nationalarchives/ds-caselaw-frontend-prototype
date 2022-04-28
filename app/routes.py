@@ -3,7 +3,6 @@ from app.forms.home_page_search import HomePageSearch
 from app.forms.structured_search_form import StructuredSearch
 from app.helpers.applied_filters import remove_current_item_from_query_string, translate_to_human_readable_label, filters_to_show
 from flask import render_template, request, redirect, url_for, make_response
-from content.recent_judgments import recent_judgments
 from content.service_wide import service
 from content.search_results import search_results
 from content.courts import courts
@@ -17,7 +16,6 @@ def home():
     return render_template(
         'home.html',
         service=service,
-        recent_judgments=recent_judgments,
         courts=courts,
         form=form
     )
