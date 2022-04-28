@@ -1,15 +1,35 @@
 <footer class="judgments-footer">
-    <div class="judgments-footer__container">
-        <h2 class="judgments-footer__heading">Footer</h2>
-        <ul class="judgments-footer__links">
-            <li>All content is available under the
-                <a class="judgments-footer__link" href="{{ url_for('open_justice_licence') }}">Open Justice Licence</a>,
-                except where otherwise stated.
-            </li>
-            <li>
-                <a class="judgments-footer__link" href="{{ url_for('terms_of_use') }}">Terms of use</a>
-            </li>
+  <div class="judgments-footer__container">
+    <h2 class="judgments-footer__heading">Footer</h2>
+    <div class="judgments-footer__links-container">
+      <div>
+        <h3>Websites</h3>
+        <ul>
+          <li><a href="https://www.legislation.gov.uk/">Legislation</a></li>
+          <li><a href="https://www.thegazette.co.uk/">The Gazette</a></li>
+          <li><a href="https://www.judiciary.uk">Judiciary</a></li>
         </ul>
+      </div>
+      <div>
+        <h3>Site help</h3>
+        <ul>
+          <li><a href="/accessibility-statement">Accessibility statement</a></li>
+          <li><a href="https://www.nationalarchives.gov.uk/contact-us/">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/terms-of-use">Terms of use</a></li>
+          <li><a href="https://www.nationalarchives.gov.uk/legal/cookies/">Cookies</a></li>
+          <li><a href="https://www.nationalarchives.gov.uk/legal/privacy-policy/">Privacy</a></li>
+        </ul>
+      </div>
     </div>
+    <p>All content is available under the
+      <a class="judgments-footer__link" href="/open-justice-licence">Open Justice Licence</a>,
+      except where otherwise stated.
+    </p>
+  </div>
 </footer>
 
