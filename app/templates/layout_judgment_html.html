@@ -16,9 +16,12 @@
 <header class="page-header">
     <div class="page-header__breadcrumb">
         <nav class="page-header__breadcrumb-container" aria-label="Breadcrumb">
+            <span class="page-header__breadcrumb-you-are-in">You are in: </span>
             <ol>
-                <li><a href="{{ url_for('home') }}">{{ service.name }}</a></li>
-                <li><a href="{{ url_for('structured_search') }}">Start a new search</a></li>
+                <li><a href="/">Find case law</a></li>
+
+                <li><a href="/ewhc/comm/2022/957" aria-current="page">UNICREDIT BANK A.G. v EURONAV N.V.</a></li>
+
             </ol>
         </nav>
     </div>
@@ -35,9 +38,8 @@
 <main id="main-content">
     {% block content %}
     {% endblock %}
-    {% include 'includes/judgment_text_source.html' %}
 </main>
-    {% include 'includes/footer.html' %}
-     <script src="{{ url_for('static', filename='scripts/dist/back_to_top.js') }}"></script>
+{% include 'includes/footer.html' %}
+<script src="{{ url_for('static', filename='scripts/dist/back_to_top.js') }}"></script>
 </body>
 </html>
