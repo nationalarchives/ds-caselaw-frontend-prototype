@@ -94,3 +94,10 @@ def sources():
         service=service,
         sources=judgment_sources
     )
+
+@app.route('/what_to_expect')
+def what_to_expect():
+    return render_template(
+        'what_to_expact.html',
+        service=service
+    )
