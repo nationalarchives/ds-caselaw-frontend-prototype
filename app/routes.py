@@ -1,7 +1,8 @@
 from app import app
 from app.forms.home_page_search import HomePageSearch
 from app.forms.structured_search_form import StructuredSearch
-from app.helpers.applied_filters import remove_current_item_from_query_string, translate_to_human_readable_label, filters_to_show
+from app.helpers.applied_filters import remove_current_item_from_query_string, translate_to_human_readable_label, \
+    filters_to_show
 from flask import render_template, request, redirect, url_for, make_response
 from content.service_wide import service
 from content.search_results import search_results
@@ -95,9 +96,18 @@ def sources():
         sources=judgment_sources
     )
 
+
 @app.route('/what_to_expect')
 def what_to_expect():
     return render_template(
         'what_to_expact.html',
+        service=service
+    )
+
+
+@app.route('/accessibility-statement')
+def accessibility_statement():
+    return render_template(
+        'accessibility_statement.html',
         service=service
     )
