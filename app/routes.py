@@ -71,7 +71,7 @@ def judgment_quick_route():
     return redirect(url_for('judgment'))
 
 
-@app.route('/ewhc/admin/2021/3290')
+@app.route('/ewhc/comm/2022/957')
 def judgment():
     resp = make_response(render_template('judgment.html', service=service))
     return resp
