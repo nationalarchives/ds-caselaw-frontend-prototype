@@ -1,100 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Jazztel Plc (As Test Claimant for Glo Issues 9a,9b And 10) v Revenue And Customs</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+{% extends "layout_judgment_html.html" %}
+
+{% block content %}
     <style>
-        :root {
-            --color: lavender;
-            --font: 'Open Sans', sans-serif
-        }
-
-        body {
-            margin: 0
-        }
-
-        body > header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            padding: 0 1in 12pt 1in;
-            background-color: var(--color);
-            font-family: var(--font)
-        }
-
-        body > header > div {
-            display: flex;
-            width: calc(100% - 2in);
-            justify-content: space-between;
-            align-items: baseline
-        }
-
-        body > header h1 {
-            margin-bottom: 0.25em
-        }
-
-        #search-form, #lookup-form {
-            margin-bottom: 0
-        }
 
         #search-form > input[name='q'] {
             width: 40ch
-        }
-
-        #middle-header {
-            width: 50%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis
         }
 
         #lookup-form > input[name='cite'] {
             width: 30ch
         }
 
-        body > #content {
-            margin-top: 128px;
-            padding: 0 1in 12pt 1in
-        }
-
-        #left-column {
-            font-family: var(--font)
-        }
-
-        #middle-column {
-            padding-left: 2em;
-            font-family: var(--font)
-        }
-
-        #right-column {
-            padding-left: 2em;
-            flex: 1;
-            font-family: var(--font)
-        }
-
         #left-column > h2, #middle-column > h2, #right-column > h2 {
             margin-top: 0
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none
-        }
-
-        a:hover {
-            text-decoration: underline
-        }
-
-        body > header > div > h1 > a:hover {
-            text-decoration: none
-        }
-
-        ul.collections, ul.years, ul.judgments {
-            padding: 0;
-            list-style-type: none
         }
 
         .collections > li > a, .years > li > a {
@@ -111,35 +29,8 @@
             padding: 3pt 6pt
         }
 
-        .collections > li:hover, .years > li:hover, .judgments > li:hover {
-            background-color: var(--color)
-        }
-
-        .collections > li.highlight, .years > li.highlight, .judgments > li.highlight {
-            background-color: var(--color)
-        }
-
         .collections > li > a:hover, .years > li > a:hover, .judgments > li > a:hover {
             text-decoration: none
-        }
-
-        .total {
-            margin-top: 2em;
-            margin-left: 6pt;
-            font-size: smaller
-        }
-
-        .pills {
-            margin-top: 6pt
-        }
-
-        .pill {
-            margin-left: 1ch;
-            margin-right: 1ch;
-            border-radius: 25px;
-            padding: 3pt 9pt;
-            background-color: var(--color);
-            font-size: smaller
         }
 
         .pill > span, .pill > a {
@@ -157,11 +48,6 @@
             background-color: var(--color)
         }
 
-        ul.snippets {
-            margin-top: 3pt;
-            margin-bottom: 9pt
-        }
-
         mark {
             background-color: var(--color)
         }
@@ -170,6 +56,7 @@
             margin-top: 1in
         }
 
+
         #judgment {
             font-family: 'Times New Roman';
             font-size: 12pt;
@@ -177,12 +64,6 @@
 
         #judgment .Normal {
             font-size: 12pt;
-        }
-
-        #judgment .Heading1 {
-            font-weight: bold;
-            font-family: Arial;
-            font-size: 16pt;
         }
 
         #judgment .Heading3 {
@@ -241,7 +122,7 @@
 
         #judgment .ParaLevel5 {
             text-align: justify;
-            margin-left: 1.58in;
+            margin-left: 2.46in;
             font-size: 12pt;
         }
 
@@ -309,46 +190,44 @@
 
         #judgment .ListParagraph {
             margin-left: 0.50in;
+            font-family: Calibri, sans-serif;
             font-size: 11pt;
         }
 
-        #judgment .BalloonText {
-            font-family: 'Segoe UI';
-            font-size: 9pt;
+        #judgment .CommentText {
+            font-size: 10pt;
         }
 
-        #judgment .Heading1Char {
+        #judgment .CommentSubject {
             font-weight: bold;
-            font-size: 16pt;
+            font-size: 10pt;
         }
 
-        #judgment .Heading3Char {
-            font-weight: bold;
+        #judgment .Revision {
+            font-size: 12pt;
+        }
+
+        #judgment .Heading2Char {
+            font-family: 'Calibri Light';
             font-size: 13pt;
+            color: #2F5496;
         }
 
-        #judgment .QuoteChar {
-            font-style: italic;
-            font-size: 12pt;
-            color: #404040;
+        #judgment .CommentReference {
+            font-size: 8pt;
         }
 
-        #judgment .HeaderChar {
-            font-size: 12pt;
-        }
-
-        #judgment .FooterChar {
-            font-size: 12pt;
-        }
-
-        #judgment .TitleChar {
+        #judgment .CommentSubjectChar {
             font-weight: bold;
-            font-size: 16pt;
         }
 
-        #judgment .BalloonTextChar {
-            font-family: 'Segoe UI';
-            font-size: 9pt;
+        #judgment .Strong {
+            font-weight: bold;
+        }
+
+        #judgment .SubtleEmphasis {
+            font-style: italic;
+            color: #404040;
         }
 
         #judgment .tab {
@@ -409,674 +288,1551 @@
         #judgment .restriction {
             color: red
         }
+
+
     </style>
-</head>
-<body>
-<div id="content">
-    <article id="judgment">
+    <div id="content">
+        <article id="judgment">
+            <div class="header">
+                <p style="text-align:center"><img
+                        src="https://judgment-images.s3.eu-west-2.amazonaws.com/ewhc/comm/2022/564/image1.png"
+                        style="width:1.0597222222222222in;height:1.05in;"></p>
+                <p class="CoverText" style="text-align:left">Neutral Citation Number: <span class="neutralCitation">[2022] EWHC 564 (Comm)</span>
+                </p>
+                <p class="CoverText">Case No: CL 2021-000020</p>
+                <p class="CoverMain"><span class="courtType">IN THE HIGH COURT OF JUSTICE</span></p>
+                <p><span class="courtType"
+                         style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">BUSINESS AND PROPERTY COURTS OF ENGLAND AND WALES</span>
+                </p>
+                <p><span class="courtType"
+                         style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">COMMERCIAL COURT (QBD)</span>
+                </p>
+                <p class="CoverText">Rolls Building</p>
+                <p class="CoverText">Fetter Lane</p>
+                <p class="CoverText">London</p>
+                <p class="CoverText">EC4A 1NL</p>
+                <p class="CoverText">Date: <span class="docDate">15/03/2022</span></p>
+                <p style="text-align:center"><span style="font-weight:bold">Before</span>:</p>
+                <p class="CoverMain" style="text-align:center"><span class="judge">MRS JUSTICE MOULDER</span></p>
+                <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+                <p style="text-align:center"><span style="font-weight:bold">Between:</span></p>
+                <table>
+                    <colgroup>
+                        <col style="width:1.23in">
+                        <col style="width:3.87in">
+                        <col style="width:1.24in">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <p></p>
+                        </td>
+                        <td>
+                            <p style="text-align:center"><span class="party"
+                                                               style="font-weight:bold">UNICREDIT BANK A.G.</span></p>
+                        </td>
+                        <td>
+                            <p class="CoverMain" style="text-align:right"><span class="role">Claimant</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p></p>
+                        </td>
+                        <td>
+                            <p style="text-align:center"><span style="font-weight:bold">- and -</span></p>
+                        </td>
+                        <td>
+                            <p class="CoverMain" style="text-align:right"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p></p>
+                        </td>
+                        <td>
+                            <p style="text-align:center"><span class="party"
+                                                               style="font-weight:bold">EURONAV N.V.</span>
+                            </p>
+                        </td>
+                        <td>
+                            <p class="CoverMain" style="text-align:right"><span class="role">Defendant</span></p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+                <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+                <p style="text-align:center"><span
+                        style="font-weight:bold">JOHN RUSSELL QC, GEMMA MORGAN AND JOE GOURGEY </span>(instructed
+                    by<span
+                            style="font-weight:bold"> HFW</span>) for the <span style="font-weight:bold">CLAIMANT</span>
+                </p>
+                <p style="text-align:center"><span style="font-weight:bold">ROBERT THOMAS QC AND PAUL TOMS</span>
+                    (instructed by <span style="font-weight:bold">PRESTON TURNBULL</span>) for the <span
+                            style="font-weight:bold">DEFENDANT</span></p>
+                <p style="text-align:center">Hearing date: 4 March 2022</p>
+                <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+                <p class="CoverDesc">Approved Judgment</p>
+                <p style="text-align:center">I direct that pursuant to CPR PD 39A para 6.1 no official shorthand note
+                    shall
+                    be taken of this Judgment and that copies of this version as handed down may be treated as
+                    authentic.</p>
+                <p style="text-align:center">.............................</p>
+                <p style="text-align:center"><span style="font-weight:bold">THE HON. MRS JUSTICE MOULDER</span></p>
+                <p style="text-align:center"><span style="font-size:11.5pt">This judgment was handed down by the judge remotely by circulation to the parties’ representatives by email and release to Bailii. The date and time for hand-down is deemed to be 10:00am on 15</span><span
+                        style="vertical-align:super;font-size:11.5pt">th </span>March 2022.</p>
+            </div>
+            <div class="body judgment-body">
 
-        <div class="header">
-            <p class="CoverText" style="text-align:left">
-                Neutral Citation Number:
-                <span class="neutralCitation" style="text-decoration-line:none">[2018] EWHC 1830 (Ch)</span>
-            </p>
-            <p class="CoverText">
-                Case No:
-                <span class="docketNumber">HC-2013-000527</span>
-            </p>
-            <p class="CoverMain">IN THE HIGH COURT OF JUSTICE</p>
-            <p>
-                <span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">CHANCERY DIVISION</span>
-            </p>
-            <p>
-                <span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">REVENUE LIST</span>
-            </p>
-            <p class="CoverText">Royal Courts of Justice</p>
-            <p class="CoverText">Rolls Building, Fetter Lane, London, EC4A 1NL</p>
-            <p class="CoverText">
-                Date:
-                <span class="docDate">17/07/2018</span>
-            </p>
-            <p style="text-align:center">
-                <span style="font-weight:bold">Before</span>
-                :
-            </p>
-            <p class="CoverMain" style="text-align:center">
-                <span class="judge">THE HONOURABLE MR JUSTICE ROTH</span>
-            </p>
-            <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
-            <p style="text-align:center">
-                <span style="font-weight:bold">Between :</span>
-            </p>
-            <table>
-                <colgroup>
-                    <col style="width:1.23in">
-                    <col style="width:3.87in">
-                    <col style="width:1.24in">
-                </colgroup>
-                <tbody>
-                <tr>
-                    <td>
-                        <p></p>
-                    </td>
-                    <td>
-                        <p style="text-align:center">
-                            <span class="party" style="font-weight:bold">Jazztel PLC (as Test Claimant for GLO Issues 9A,9B and 10)</span>
-                        </p>
-                    </td>
-                    <td>
-                        <p class="CoverMain" style="text-align:right">
-                            <span class="role">Applicant</span>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p></p>
-                    </td>
-                    <td>
-                        <p style="text-align:center">
-                            <span style="font-weight:bold">- and -</span>
-                        </p>
-                    </td>
-                    <td>
-                        <p class="CoverMain" style="text-align:right"></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p></p>
-                    </td>
-                    <td>
-                        <p style="text-align:center">
-                            <span class="party" style="font-weight:bold">The Commissioners for Her Majesty’s Revenue and Customs</span>
-                        </p>
-                    </td>
-                    <td>
-                        <p class="CoverMain" style="text-align:right">
-                            <span class="role">Respondents</span>
-                        </p>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
-            <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
-            <p style="text-align:center">
-                <span style="font-weight:bold">Michael Jones </span>
-                (instructed by
-                <span style="font-weight:bold"> PricewaterhouseCoopers LLP</span>
-                ) for the
-                <span style="font-weight:bold">Applicant</span>
-            </p>
-            <p style="text-align:center">
-                <span style="font-weight:bold">Rupert Baldry QC</span>
-                (instructed by
-                <span style="font-weight:bold">the General Counsel and Solicitors for HMRC</span>
-                ) for the
-                <span style="font-weight:bold">Respondents</span>
-            </p>
-            <p style="text-align:center">
-                Hearing date: 2
-                <span style="vertical-align:super;font-size:smaller">nd</span>
-                July 2018
-            </p>
-            <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
-        </div>
-        <div class="body">
+                <section class="level">
+                    <p><span style="font-weight:bold">Mrs Justice Moulder:</span></p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span style="font-weight:bold">INTRODUCTION</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">1.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">This is the court’s judgment on the issue raised by
+                        the
+                        Defendant, Euronav N.V. (“Euronav”), as to whether it may make certain amendments to its Defence
+                        on
+                        the basis that such amendments fall within the scope of a Consent Order approved by Butcher J
+                        dated
+                        14 January 2022 (the “14 January Consent Order”).</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">2.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">If the proposed amendments are found not to fall
+                        within
+                        the scope of the 14 January Consent Order, Euronav seeks, in the alternative, permission to make
+                        the
+                        proposed amendments now. </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">3.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">The Claimant, UniCredit Bank A.G. (“UniCredit”),
+                        resists the proposed amendments; it contends that the amendments are not within the scope of the
+                        14 January Consent Order and that permission should not now be given at this “late” stage.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">4.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">The trial in this case is due to commence on 28
+                        March
+                        2022.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">5.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">This issue was the subject of a full day of
+                        submissions
+                        at the Pre-Trial Review, heard remotely (via Microsoft Teams) on 4 March 2022. </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">6.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">The Pre-Trial Review was originally listed to take
+                        place on 25 February 2022 but was subsequently relisted for 4 March 2022 because both parties
+                        ultimately accepted, on the day before the original hearing (after skeletons had been
+                        exchanged),
+                        that a half-day listing would be insufficient given the scope of what was in issue. </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span style="font-weight:bold">BACKGROUND</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">7.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">I set out below a brief summary of the background
+                        to
+                        the claim. (This is not intended to be a comprehensive summary of all the issues raised in the
+                        pleadings.)</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">8.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">By way of a letter of credit on or about 1 April
+                        2020,
+                        UniCredit financed the purchase of part of a cargo of low sulphur fuel oil (the “Cargo”) by Gulf
+                        Petroleum FZC (“Gulf”) from BP Oil International Ltd (“BP”). </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">9.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Euronav was at all material times the owner of the
+                        vessel “Mt Sienna”, which BP had originally chartered in relation to the carriage of the
+                        Cargo. </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">10.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">UniCredit alleges that Euronav delivered the Cargo
+                        to
+                        someone other than the lawful holder of the relevant Bill of Lading, or without authorisation of
+                        the
+                        lawful holder of the Bill of Lading.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">11.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Euronav contends in response that the lawful holder
+                        of
+                        the Bill of Lading at the time of discharge of the Cargo was either BP or Gulf, and that
+                        delivery/discharge was authorised by BP, alternatively Gulf. </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">12.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Euronav further alleges that <span
+                            style="font-style:italic">if </span>UniCredit was the lawful holder of the Bill of Lading at
+                        the
+                        time of delivery/discharge, UniCredit authorised Gulf to request and obtain discharge/delivery
+                        without production of the Bill of Lading and/or has waived (or is estopped from exercising) any
+                        right that it might have had for delivery or discharge to be made only against production of the
+                        Bill of Lading.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">13.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">UniCredit accepts that it had – vis-à-vis Gulf –
+                        authorised delivery of the Cargo to six identified sub-buyers (the “Sub-Buyers”, also called the
+                        “Off-Takers”) on payment terms that required those Sub-Buyers to pay UniCredit directly, 90 days
+                        after delivery. However, UniCredit says that the Cargo was in fact discharged from the Mt Sienna
+                        to
+                        two other vessels without production of the Bill of Lading. UniCredit says that it does not know
+                        to
+                        whom the Cargo was actually delivered. </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">14.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">UniCredit’s claim against Euronav was originally
+                        quantified by UniCredit at US$26,367,200, which was said to be the market value of the Cargo at
+                        the
+                        time of the alleged misdelivery. This figure was then amended by UniCredit, by way of its
+                        Amended
+                        Particulars of Claim, to US$14,358,400. Euronav contends that the value of the Cargo at the time
+                        of
+                        the alleged misdelivery, and therefore the correct quantification of UniCredit’s claim, is
+                        US$13,185,011.24.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">15.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">However, UniCredit now claims that it is entitled
+                        to
+                        damages reflecting the value of the Cargo on a later date, which is said to be the date that the
+                        Cargo would have been sold in a counterfactual scenario (i.e., the earliest date upon which
+                        UniCredit could have reasonably mitigated its loss by taking delivery of the Cargo from Euronav
+                        and
+                        selling the Cargo into the available market). The value of the Cargo in that counterfactual
+                        scenario
+                        is alleged to be between US$24,280,800 – US$24,701,600.</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span style="font-weight:bold">EVIDENCE</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">16.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">The court had the following evidence in relation to
+                        the
+                        issue now before the court:</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">i)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">for Euronav, the Third Witness Statement of Andrew
+                        James Preston of Preston Turnbull LLP (“Preston Turnbull”); and</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">ii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">for UniCredit, the First Witness Statement of
+                        Caroline
+                        Frances West of Holman Fenwick Willan Switzerland LLP (“HFW”).</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span style="font-weight:bold">CHRONOLOGY</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">17.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">So far as is material, the chronology of relevant
+                        events is as follows:</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">i)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">on 22 November 2021, UniCredit circulated draft
+                        Amended
+                        Particulars of Claim to Euronav, with proposed amendments to its case on quantum;</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">ii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">on 23 November 2021, Preston Turnbull responded on
+                        behalf of Euronav, consenting to the proposed amendments save for those at paragraph 29 of the
+                        draft
+                        Amended Particulars of Claim which related to the counterfactual scenario referred to at [15]
+                        above;</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">iii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.01in">on 15 December 2021, Butcher J
+                        approved a Consent Order (the “15 December Consent Order”) granting UniCredit permission to
+                        amend
+                        its Particulars of Claim in the manner proposed, save for the amendments to paragraph 29
+                        concerning
+                        the counterfactual scenario (as referred to above); </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">iv)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">in early November 2021, Euronav sought disclosure
+                        from
+                        UniCredit of documents which had not previously been disclosed and which were produced by, or
+                        exchanged with, investigatory agents appointed by UniCredit (the “Off-Taker Documents”);</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">v)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">UniCredit initially sought to invoke privilege over
+                        the
+                        Off-Taker Documents;</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">vi)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">in late December 2021, the parties reached
+                        agreement on
+                        both these matters: Euronav consented to the amendments to the Particulars of Claim relating to
+                        the
+                        counterfactual scenario referred to above; and UniCredit agreed to provide disclosure of the
+                        Off-Taker Documents. This agreement is the subject of without prejudice <span
+                                style="font-style:italic">inter partes </span>correspondence which, for reasons
+                        discussed
+                        below, the court has not considered;</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">vii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.01in">on 14 January 2022, Butcher J
+                        approved the 14 January Consent Order which directed, among other things, that:</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-size:12pt;margin-left:1.48in;text-indent:-0.49in">a)</span>
+                </h2>
+                    <p class="ParaLevel3" style="margin-left:1.48in">UniCredit should serve its Amended Particulars of
+                        Claim, to include the amendments relating to the counterfactual scenario, by 14 January
+                        2022; </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-size:12pt;margin-left:1.48in;text-indent:-0.49in">b)</span>
+                </h2>
+                    <p class="ParaLevel3" style="margin-left:1.48in">Euronav should serve its Amended Defence by 18
+                        February
+                        2022 (which constituted an extension of the original deadline that had been stipulated in the 15
+                        December Consent Order referred to above); and </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-size:12pt;margin-left:1.48in;text-indent:-0.49in">c)</span>
+                </h2>
+                    <p class="ParaLevel3" style="margin-left:1.48in">UniCredit should disclose the Off-Taker Documents
+                        in
+                        two tranches, on 10 January 2022 and 21 January 2022;</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">viii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.13in">on 18 February 2022, Euronav
+                        served
+                        a draft Amended Defence, which included amendments said to have arisen out of the disclosure
+                        provided by UniCredit in compliance with the 14 January 2022 Consent Order; and</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">ix)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">on 22 February 2022, UniCredit objected to the
+                        amendments at paragraphs 33, 66, 71.3, 77.2 and 81 of the draft Amended Defence on the basis
+                        that
+                        they are not consequential on the amendments made to the Particulars of Claim.</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span style="font-weight:bold">THE PROPOSED AMENDMENTS</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">18.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Euronav characterised the proposed amendments
+                        (paragraphs 22-24 of Mr Preston’s witness statement) as falling within one of two
+                        categories:</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">i)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">amendments relating to the relationship between
+                        Gulf
+                        and the Sub-Buyers (those at paragraph 33); and </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">ii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">amendments which refer to the connection between
+                        Gulf
+                        and the Sub Buyers and its impact as to whether there was a misdelivery and/or whether the
+                        Claimant
+                        suffered any loss as a result of the manner in which the Cargo was delivered (those at
+                        paragraphs
+                        66, 71.3 and 81). </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">19.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">By way of its supplemental skeleton submissions
+                        filed
+                        ahead of the Pre-Trial Review, Euronav confirmed that it was no longer pursuing certain
+                        amendments
+                        it had proposed to make to paragraph 77.2 of its Defence.</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span
+                            style="font-style:italic">Relationship between Gulf and the Sub-Buyers</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">20.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Paragraphs 31 to 33 of Euronav’s draft Amended
+                        Defence
+                        read as follows (with the proposed amendments <span
+                                style="text-decoration-line:underline;text-decoration-style:solid">underlined</span>):
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span
+                            style="font-size:11pt">“31.</span><span
+                            style="font-weight:bold;font-size:11pt"> </span><span
+                            style="font-size:11pt">By email dated 15 April 2020, Mukul Agarwal provided Diana Bodnya with the details of the six buyers </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">(“the sub-buyers”)</span><span
+                            style="font-size:11pt"> who would be purchasing the Financed Cargo and sent unsigned copies of the sale contracts and “credit endorsements”. The email confirmed that the Financed Cargo was still on board the Vessel. Payment under those sub-sale contracts was said to be 90 days from delivery date (in accordance with the previous advice) and the security for each sale was said to be “credit insured”. Gulf advised that it would “revert with sales invoices and BL copies once cargo is delivered”.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span
+                            style="font-size:11pt">32.</span><span style="font-weight:bold;font-size:11pt"> </span><span
+                            style="font-size:11pt">On the same day, Diana Bodnya confirmed by email that the sub-buyers were acceptable to the Claimant but asked Gulf to confirm that none were related parties to Gulf. The Claimant also asked Gulf to confirm that these were not new sub-buyers and that Gulf had a positive track record with them. Since the contracts that had been sent to the Claimant were not signed, the Claimant asked for a deal recap/email trade confirmation and an updated insurance policy since the one the Claimant had was said to have expired in February 2020 “though endorsements are up to date”. The Claimant also requested a “cash collateral” of 10% corresponding to US$2,723,338 to be paid by Gulf prior to release of the Financed Cargo to the sub-buyers.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">33. On the same day, Mukul Agarwal confirmed to the Claimant that the sub-buyers were unrelated to Gulf, that they were not new and Gulf had been dealing with them for the past five plus years. </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">Based on disclosure that has recently been made by the Claimant, the Defendant now understands that the statement that the sub-buyers were unrelated to Gulf was false with the possible exception of one of the sub-buyers, namely Iora International Pte Ltd (as to which no admissions are made). The Defendant further understands that it is the Claimant’s position that it did not identify the links between the sub-buyers and Gulf despite allegedly performing certain routine due diligence checks concerning the sub-buyers</span><span
+                            style="font-size:11pt">. It said that “with each release, will transfer the CM. Currently cargo is on vessel itself and has not been delivered yet”. Mukul Agarwal also promised to “share the updated insurance policy by tomorrow (Expected copy of the same from Insurers)”. The Claimant is required in due course to disclose a copy of the insurance policy referred to.</span>”
+                        [Emphasis added]</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span
+                            style="font-style:italic">Connection between Gulf and the Sub-Buyers and its impact on misdelivery</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">21.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Paragraphs 66, 71.3, 77.3 and 81 of Euronav’s draft
+                        Amended Defence read as follows (again with the proposed amendments underlined):</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span style="font-size:11pt">66. The Defendant delivered/discharged the quantity of 75,517.86 mt (in air) and 26,133.68 mt (in air) to Gulf on to the MT Kutch Bay and MT Prestigious respectively without production of any Bill of Lading at the request, and in accordance with the instructions, of Gulf. The Defendant, thereby, delivered/discharged the Cargo to Gulf or to its order. </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">In the circumstances of the case, and in particular, the scale of the fraud, the senior roles of those likely to have been perpetrating it, the fact that five of the six named off-takers were in fact GP / GP-related companies and the fact that only one of the off-takers has denied the existence of the relevant contract, it is to be inferred that delivery/discharge was to the order of the other five off-takers and/or to GP as their agent</span><span
+                            style="font-size:11pt">.</span></p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span
+                            style="font-size:11pt">…</span></p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">71.3 If, which is denied, the Claimant was at the time of delivery/discharge the lawful holder of the Bill of Lading, the Claimant expressly authorised Gulf to request and obtain discharge/delivery of the Cargo from the Defendant without production of the Bill of Lading. In the premises, delivery/discharge to Gulf (or to its order) was authorised by the lawful Bill of Lading holder and was not, therefore, a breach of contract and/or of any duties whether in bailment or otherwise. </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">Further or alternatively, as set out at paragraph 66 above, delivery/discharge was to the order of at least five of the six off-takers and/or to GP as their agent</span><span
+                            style="font-size:11pt">.</span></p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span
+                            style="font-size:11pt">…</span></p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">77.2 Any loss or damage was caused by the Claimant authorising and/or approving and/or requesting and/or permitting Gulf to arrange delivery/discharge of the Financed Cargo by the Defendant without production of the Bill of Lading by the lawful holder of the Bill of Lading.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span
+                            style="font-size:11pt">77.3 </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">The Defendant relies upon the matters set out below at paragraph 81</span><span
+                            style="font-size:11pt">.</span></p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span
+                            style="font-size:11pt">…</span></p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">81. As a matter of law, the Claimant is entitled only to damages to put it in the position it would have been in if the B/L Contract of Carriage had been performed in accordance with its terms. Since as at late April 2020 the Claimant required the Cargo to be discharged without the production of the Bill of Lading, the Claimant is required to particularise what it says the Defendant ought to have done (but did not do) in performance of its obligations under the B/L Contract of Carriage at the time of, or prior to, complying with the Claimant’s request to discharge the Cargo without the production of the Bill of Lading. The Claimant is, thereby, put to proof that it would not have suffered the alleged loss and damage it claims to have suffered in any event, namely even if there had been no breaches as alleged. </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">Further or alternatively, the Defendant avers that the Claimant has caused its own loss and damage and/or the loss and damage that is claimed would have been incurred in any event even had the Defendant acted in accordance with the B/L Contract of Carriage and/or its duties:</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:1.17in;text-indent:-0.50in"><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">(1) As set out above, the Defendant now understands that the sub-buyers were, with the possible exception of Iora International Pte Ltd, related companies to Gulf. </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:1.18in;text-indent:-0.50in"><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">(2) In circumstances where the Claimant had authorised discharge/delivery to be made to the sub-buyers without the production of the Bill of Lading, had the Defendant discharged or delivered the Financed Cargo to the sub-buyers (or to their order) whether with or without the production of the Bill of Lading, the Claimant would not have been paid by the sub-buyers and/or by Gulf in circumstances where it is to be inferred that the identification and/or involvement of the sub-buyers was an intrinsic part of the fraud that Gulf perpetrated on the Claimant. In the premises, even had the Defendant complied with its obligations under the B/L Contract of Carriage and/or its duties and/or as authorised by the Claimant, the Financed Cargo would not have been delivered or discharged to the Claimant and the Claimant would not have been repaid the sums lent by it to Gulf in respect of the Financed Cargo and, as such, the Claimant would have suffered the loss it claims in these proceedings. </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:1.18in;text-indent:-0.50in"><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">(3) Further or alternatively, it is to be inferred that even had the Claimant been the lawful holder of the Bill of Lading and/or in possession of the same as at 26 April 2020, it would have authorised Gulf to arrange the discharge or delivery of the Financed Cargo (including authorising it to present the Bill of Lading) and, as a result, the loss and damage that it has suffered would have been suffered in any event</span><span
+                            style="font-size:11pt">.</span>”</p>
+                </section>
+                <section class="level">
+                    <p class="Heading3"><span style="font-family:'Times New Roman';font-size:12pt">ARE THE PROPOSED AMENDMENTS PERMITTED UNDER THE 14</span><span
+                            style="font-family:'Times New Roman'"> </span><span
+                            style="font-family:'Times New Roman';font-size:12pt">JANUARY CONSENT ORDER? </span></p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">22.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">The 14 January Consent Order provided as
+                        follows:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in">“<span style="font-size:11pt">1. Paragraph 10 (2) of the 14 July Order shall be amended so that the expert reports may concern the market value of the Cargo in date range 26 April to 26 October 2020.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in"><span style="font-size:11pt">2. Paragraph 1 of the 15 December Order shall be amended so that the “save for the proposed wording set out in the first three sentences of paragraph 29 of the draft Amended Particulars of Claim” be removed and the deadline for service of amended particulars of claim extended to 4:30pm (London time) on Friday 14 January 2022. </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in"><span style="font-size:11pt">3. Paragraph 2 of the 15 December Order shall be amended so that the Defendant shall serve an Amended Defence by 4:30pm on Friday 18 February 2022.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in"><span style="font-size:11pt">4. The Defendant shall serve witness evidence in response to the counterfactual scenario by 4:30pm (London time) on Friday 28 January 2022. </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in"><span style="font-size:11pt">5. The Defendant shall serve expert evidence (if any) in relation to banking practice in response to the counterfactual scenario by 4:30pm (London time) on Friday 18 February 2022. </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in"><span style="font-size:11pt">6. The Claimant shall serve witness evidence (if any) in response to those statements and reports served by the Defendant on 28 January and 18 February 2022 by 4:30pm (London time) on Friday 4 March 2022.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in"><span style="font-size:11pt">7. The Defendant shall serve an expert report (if any) on market value of Cargo in response to counterfactual scenario by 4:30pm (London time) on Friday 21 January 2022.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in"><span style="font-size:11pt">8. Paragraph 6 of the 15 December Order shall be amended so that the deadline for the experts in relation to market value of the Cargo to hold discussions shall be Monday 31 January 2022.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in"><span style="font-size:11pt">9. Paragraph 7 of the 15 December Order shall be amended so that the deadline for the experts in relation to market value of the Cargo to prepare and file a joint memorandum shall be extended to 4:30pm (London time) on Monday 14 February 2022.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in"><span style="font-size:11pt">10. Paragraph 8 of the 15 December 2021 Order shall be amended so that the deadline for the experts in relation to market value of the Cargo to simultaneously exchange short supplemental expert reports shall be extended to 4:30pm (London time) on Monday 28 February 2022.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in"><span style="font-size:11pt">11. The Claimant shall disclose by email un-redacted documents as set out at paragraphs 7(g)(i) - (iii) within the date range of 18 December 2019 to 13 August 2020 as set out in an email from Preston Turnbull to HFW dated 23 December 2021 (15:21) by 4:30pm (London time) on Monday 10 January 2022.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel2" style="margin-left:0.79in;text-indent:-0.49in"><span style="font-size:11pt">12. The Claimant shall disclose by email documents as set out at paragraphs 7(g)(i) - (iii) within the date range of 14 August to 31 December 2020 as set out in an email from Preston Turnbull to HFW dated 23 December 2021 (15:21) as early as practicable but, in any event, by 4:30pm (London time) on Friday 21 January 2022</span>.”
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">23.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">It is thus clear that the 14 January Consent Order
+                        referred back to the 15 December Consent Order, which in turn provided (so far as material):</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span style="font-size:11pt">1. The Claimant is permitted to serve an Amended Particulars of Claim on the basis set out in the draft Amended Particulars of Claim circulated by email on 22 November 2021 by 4:30pm on Friday 17 December 2021 save for the proposed wording set out in the first three sentences of paragraph 29 of the draft Amended Particulars of Claim</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">2. The Defendant is permitted to serve an Amended Defence by 4:30pm on 7 January 2022</span>.”
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">24.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">It was submitted for Euronav that once it had
+                        “<span
+                                style="font-style:italic">glimpsed</span>” the evidence that was disclosed by UniCredit
+                        in
+                        October 2021 – the key document being an (internal) email from Martin Borchert dated 6 August
+                        2020 –
+                        Preston Turnbull had promptly written to HFW (in early November 2021) seeking certain follow-up
+                        disclosure. </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">25.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">This follow-up disclosure was to include, among
+                        other
+                        things, disclosure of documents relating to the source of a particular statement made by Mr
+                        Borchert
+                        in the 6 August 2020 email. That statement noted, referring to the Off-Takers, that:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span style="font-size:11pt">5 of which linked to GP/GP people, likely fraudulent (one offtaker declined the existence of contracts)…</span>”
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">26.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">However, in respect of the relevant follow-up
+                        disclosure, HFW responded in early December that:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span
+                            style="font-style:italic;font-size:11pt">Investigation agents were instructed with the dominant purpose of litigation in mind. Our client therefore maintains that these </span><span
+                            style="font-style:italic;text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">documents are covered by litigation privilege</span><span
+                            style="font-style:italic;text-decoration-line:underline;text-decoration-style:solid">.</span>”
+                        [Emphasis added]</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">27.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Preston Turnbull challenged this assertion of
+                        privilege. According to the evidence of Mr Preston (in his Third Witness Statement): </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span style="font-size:11pt">18. Further discussions took place between the parties during December on a Without Prejudice basis. </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">The culmination of these discussions was an agreement by the Defendants that they would consent to the Counterfactual Amendments and an agreement by the Claimants to provide the Off-taker Documents. </span><span
+                            style="font-size:11pt">The agreements in relation to the Counterfactual Amendment and the disclosure of the Off-taker Documents were enshrined within the 14 January Order.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">19. It is important to note </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">the 14 January Order was part of a wider agreement pursuant to which disclosure of the Off-taker Documents was provided.</span><span
+                            style="font-size:11pt"> The reference in paragraph 3 of the 14 January Order should, I submit, be seen in this light:</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:1.18in;text-indent:-0.50in"><span style="font-size:11pt">‘…the Defendant shall serve an Amended Defence by 4:30pm on Friday 18 February 2022.</span>’”
+                        [Emphasis added]</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">28.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Euronav received the additional disclosure referred
+                        to
+                        above, which included reports dated 5 August 2020 and 28 October 2020 prepared by investigation
+                        agents ‘Athena Intelligence’ on UniCredit’s instructions (the “Athena Reports”), in two
+                        tranches, on
+                        10 and 21 January 2022. </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">29.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">At the hearing of this issue, Euronav objected to
+                        any
+                        without prejudice documents being placed before the court but relied on the evidence of Mr
+                        Preston
+                        that, in effect, the agreement regarding the counterfactual amendments and the agreement to
+                        disclose
+                        the additional documents were inter-conditional. Euronav also relied on a letter from Preston
+                        Turnbull of 13 December 2021 in which Preston Turnbull had opposed UniCredit’s proposed
+                        counterfactual amendments but stated that Euronav would be making an application for specific
+                        disclosure (a reference to the earlier refusal by UniCredit to give additional disclosure), and
+                        if
+                        UniCredit refused to withdraw its counterfactual amendment then both issues would need to be
+                        “heard
+                        together”. </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">30.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">It was further submitted for Euronav that:</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">i)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">the 14 January Consent Order should be construed
+                        against the factual background: the context for the Amended Defence was that it was understood
+                        that
+                        the additional disclosure was “<span style="font-style:italic">likely to lead to a revision of its case</span>”;
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">ii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">in the language of the 14 January Consent Order
+                        there
+                        was no limit on the amendments which could be made, and this was because if information came to
+                        light amendments to the pleadings were likely to be made and this was a “<span
+                                style="font-style:italic">real possibility</span>”; the defendant had fought a “<span
+                                style="font-style:italic">hard won battle</span>” on disclosure and it was unrealistic
+                        that
+                        it simply “<span
+                                style="font-style:italic">gave away the amendments on quantum for nothing</span>”;
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">iii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.01in">it was unrealistic to say that
+                        the
+                        14 January Consent Order did not allow for such amendments: if it had been intended to limit the
+                        amendments to consequential amendments then this should have been spelt out;</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">iv)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">it was unlikely that the parties had agreed that a
+                        further application for permission to amend the Defence would need to be made, and there was no
+                        justification for rewriting the order in a “<span
+                                style="font-style:italic">one sided fashion</span>”;
+                        and</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">v)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">the fact that the deadline for the service of the
+                        Amended Defence was pushed back to 18 February 2022 in the 14 January Consent Order, from the
+                        original deadline of 7 January 2022 in the 15 December Consent Order, reflects the fact that it
+                        was
+                        understood that Euronav would have the opportunity to respond to disclosure of the Off-Taker
+                        Documents.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">31.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">In its submissions UniCredit accepted that (by the
+                        14
+                        January Consent Order) it agreed that Euronav could have permission to make amendments that were
+                        consequential to its own quantum amendments. However it was submitted for UniCredit that:</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">i)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">the existing consent was limited to amendments
+                        consequential on the quantum amendments; liability amendments are not within scope of Euronav’s
+                        existing permission to amend;</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">ii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">generally the court will not grant permission for
+                        amendments unless it has a draft of the proposed amendments before it; permission for
+                        consequential
+                        amendments is an exception to this principle;</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">iii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.01in">the principle which lies behind
+                        the
+                        approach is underlined by <span
+                                style="font-style:italic">Geodesign Barriers v Environmental Agency </span>[2015] EWHC
+                        1121
+                        (TCC) per Coulson J at [48], it would be a mistake for the court to grant permission to amend
+                        without the actual amendments being before the court:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel3" style="margin-left:1.38in;text-indent:-0.49in">“<span style="font-size:11pt">48.  The claimant originally sought permission to amend in the future, following the specific disclosure process. However, as I pointed out during the course of argument, that is entirely premature. Amendments must be dealt with in the normal way; save for permission to make consequential amendments to a defence or a reply, it is almost always a mistake for a court to grant permission to amend without the actual amendments being before the court</span>”;
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel3" style="margin-left:1.48in;text-indent:-0.49in">and</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">iv)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">without prejudice correspondence between solicitors
+                        is
+                        admissible for the purpose of construing a consent order: <span style="font-style:italic">Admiral Management Services v Para-Protect Europe</span>
+                        [2002] 1 WLR 2722 in particular at [72], as noted in Matthews &amp; Malek in <span
+                                style="font-style:italic">Disclosure</span> (5th Ed) at §14.15(i) and fn 71.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">32.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">The court was not taken to any authorities on
+                        construction of a court Order and I note that the relevant Order here was a Consent Order and
+                        not
+                        one made following any hearing before the judge. However, it appeared to be common ground that
+                        as
+                        with a contract, the court’s task is to ascertain the objective meaning of the language; and in
+                        order to do this, the court must consider the language used and ascertain what a reasonable
+                        person –
+                        that is, a person who has all the background knowledge – would have understood the parties/court
+                        to
+                        have meant. Where the language is capable of more than one meaning the court has to balance the
+                        language used and the factual context, including having regard to commercial common sense.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">33.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Nothing in the language used in clause 3 of the 14
+                        January Consent Order would suggest that additional amendments arising out of disclosure were
+                        contemplated.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">34.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Taken in the context of the overall Order, the 14
+                        January Consent Order is not confined to the amendments to the pleadings and the disclosure but
+                        also
+                        deals with expert evidence and witness evidence in response to the counterfactual scenario.
+                        There is
+                        no express or obvious link on the face of the Order between the amendments permitted by clause 3
+                        of
+                        the Amended Defence and the disclosure ordered by clause 12 of the Order.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">35.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Euronav submitted that it should be implied that
+                        amendments arising out of disclosure were permitted and that if the parties had intended to
+                        limit
+                        the scope of the Order to consequential amendments they would have said so. In my view, the
+                        contrary
+                        is more likely to apply, in that if lawyers draw up a consent order, they can be expected to
+                        spell
+                        out what is agreed; and if it is silent on a matter, it is doubtful that they intended to imply
+                        other amendments (other than the normal practice in relation to consequential amendments).</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">36.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">The fact that the deadline for the service of the
+                        Amended Defence was pushed back to 18 February 2022 in the 14 January Consent Order does not in
+                        my
+                        view show that it was understood that Euronav would have the opportunity to respond to
+                        disclosure of
+                        the Off-Taker Documents. Rather it is consistent with an extension being granted from the
+                        earlier
+                        deadline to allow Euronav to respond to the new counterfactual case and the date of that
+                        extended
+                        deadline appears to be linked to the date by which Euronav had to provide its expert evidence in
+                        response to the new counterfactual case.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">37.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Euronav seeks to rely on the evidence of what was
+                        said
+                        to be a “wider agreement”. In his Third Witness Statement Mr Preston does not go so far as to
+                        say an
+                        agreement was reached that amendments arising out of the disclosure were permitted within the
+                        scope
+                        of the Consent Order, or that the agreement on the two issues were “interconditional”: he merely
+                        stated that paragraph 3 of the 14 January Consent Order should be read in light of that
+                        agreement.
+                        In submissions, counsel for Euronav referred to correspondence which said that if the issues
+                        were
+                        not agreed, both matters would have to go before the court. The actual letter did not refer to
+                        any
+                        substantive linkage between the two issues – it merely indicated in my view that as a matter of
+                        convenience the two matters could be listed together. The relevant passage stated:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span
+                            style="font-size:11pt">“</span><span style="font-style:italic;font-size:11pt">We will be applying for specific disclosure and so, if you do wish to run the proposed contested amendment, it would be sensible for us to liaise on fixing a hearing date to ensure that both issues are heard together early in the New Year.</span><span
+                            style="font-size:11pt">”</span></p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">38.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">The evidence falls far short of establishing that
+                        the
+                        parties had agreed that the 14 January Consent Order should permit any amendments arising out of
+                        the
+                        disclosure. On this basis it seems unnecessary to go further and consider the without prejudice
+                        correspondence (and the question of whether it is admissible), which in any event is relied upon
+                        by
+                        UniCredit and not Euronav.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">39.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Similarly, submissions by counsel on behalf of
+                        Euronav
+                        that amendments were likely to be made (or were a real possibility) as a result of the
+                        additional
+                        disclosure do not establish that it was agreed that amendments could be made without any further
+                        agreement being required between the parties (or permission from the court). Counsel for Euronav
+                        was
+                        obliged to accept that he could not (and did not) submit that the scope of future amendments was
+                        entirely open by virtue of the absence of wording in the 14 January Consent Order limiting the
+                        future amendments to consequential amendments but sought to imply a limitation which allowed
+                        amendments arising out of the additional disclosure. <span
+                                style="font-style:italic">Geodesign</span> (cited above) supports the proposition that
+                        it is
+                        unlikely that the parties agreed that (contrary to the usual approach) unspecified amendments
+                        which
+                        advanced a new or different case and which were not merely consequential on matters which had
+                        already been pleaded were permitted. There is no reason to infer that the parties had in mind
+                        any
+                        particular delay which might be occasioned by an application to amend as a reason for agreeing
+                        to a
+                        broader set of permitted amendments.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">40.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">It was submitted for Euronav that there is no
+                        justification for rewriting the words in a “one sided fashion”, but in the absence of evidence
+                        that
+                        links the two issues as (in substance) “inter-conditional”, in my view there is no justification
+                        for
+                        rewriting the words in the 14 January Consent Order as Euronav contend: the language makes no
+                        provision for additional amendments arising out of disclosure and the factual context does not
+                        establish a contrary interpretation.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">41.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Given the formal nature of the document and the
+                        fact
+                        that both parties were represented by competent solicitors this supports a conclusion that the
+                        wording of the document reflected what the parties intended and bears the usual meaning that
+                        only
+                        consequential amendments were permitted.</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span
+                            style="font-style:italic">Conclusion</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">42.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">For these reasons, I find that the 14 January
+                        Consent
+                        Order does not permit the liability amendments sought by Euronav. </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span style="font-weight:bold">LATE APPLICATION TO AMEND</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span
+                            style="font-style:italic">Principles</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">43.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">The principles which apply to late applications to
+                        amend are dealt with in a number of authorities and should be common ground. They are generally
+                        acknowledged to be as summarised by Coulson J in <span style="font-style:italic">CIP Properties (AIPT) Ltd v Galliford Try Infrastructure Ltd </span>[2015]
+                        EWHC 1345 (TCC) at [19]:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span style="font-size:11pt">(a) The lateness by which an amendment is produced is a relative concept (</span><span
+                            style="font-style:italic;font-size:11pt">Hague Plant</span><span style="font-size:11pt">). An amendment is late if it could have been advanced earlier, or involves the duplication of cost and effort, or if it requires the resisting party to revisit any of the significant steps in the litigation (such as disclosure or the provision of witness statements and expert’s reports) which have been completed by the time of the amendment. </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">(b) An amendment can be regarded as ‘very late’ if permission to amend threatens the trial date (</span><span
+                            style="font-style:italic;font-size:11pt">Swain-Mason</span><span style="font-size:11pt">), even if the application is made some months before the trial is due to start. Parties have a legitimate expectation that trial dates will be met and not adjourned without good reason (</span><span
+                            style="font-style:italic;font-size:11pt">Brown</span><span style="font-size:11pt">). </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">(c) The history of the amendment, together with an explanation for its lateness, is a matter for the amending party and is an important factor in the necessary balancing exercise (</span><span
+                            style="font-style:italic;font-size:11pt">Brown; Wani</span><span style="font-size:11pt">). In essence, there must be a good reason for the delay (</span><span
+                            style="font-style:italic;font-size:11pt">Brown</span><span style="font-size:11pt">). </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">(d) The particularity and/or clarity of the proposed amendment then has to be considered, because different considerations may well apply to amendments which are not tightly-drawn or focused (</span><span
+                            style="font-style:italic;font-size:11pt">Swain-Mason; Hague Plant; Wani</span><span
+                            style="font-size:11pt">). </span></p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">(e) The prejudice to the resisting parties if the amendments are allowed will incorporate, at one end of the spectrum, the simple fact of being ‘mucked around’ (</span><span
+                            style="font-style:italic;font-size:11pt">Worldwide</span><span style="font-size:11pt">), to the disruption of and additional pressure on their lawyers in the run-up to trial (</span><span
+                            style="font-style:italic;font-size:11pt">Bourke</span><span style="font-size:11pt">), and the duplication of cost and effort (</span><span
+                            style="font-style:italic;font-size:11pt">Hague Plant</span><span style="font-size:11pt">) at the other. If allowing the amendments would necessitate the adjournment of the trial, that may be an overwhelming reason to refuse the amendments (</span><span
+                            style="font-style:italic;font-size:11pt">Swain-Mason</span><span
+                            style="font-size:11pt">). </span></p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">(f) Prejudice to the amending party if the amendments are not allowed will, obviously, include its inability to advance its amended case, but that is just one factor to be considered (</span><span
+                            style="font-style:italic;font-size:11pt">Swain-Mason</span><span style="font-size:11pt">). Moreover, if that prejudice has come about by the amending party’s own conduct, then it is a much less important element of the balancing exercise (</span><span
+                            style="font-style:italic;font-size:11pt">Archlane</span><span
+                            style="font-size:11pt">).</span>”
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">44.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">UniCredit also relied on the Court of Appeal’s
+                        decision
+                        in <span style="font-style:italic">Nesbit v Acasta</span> [2018] EWCA Civ 268 and the first
+                        instance
+                        decision in <span style="font-style:italic">Rose v Creativity</span> [2019] EWHC 1043 (Ch).</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">45.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">In seeking to distinguish these cases, counsel for
+                        Euronav stressed that <span style="font-style:italic">Nesbit</span> dealt with a (late)
+                        application
+                        to amend before an appeal hearing, and that <span style="font-style:italic">Rose</span> involved
+                        substantial amendments which raised significant new issues. </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">46.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">To the extent that counsel for Euronav sought to
+                        limit
+                        <span style="font-style:italic">Nesbit</span> to its facts I do not accept that it materially
+                        affects or alters the principles for a late amendment, which were clearly stated at [41] of that
+                        judgment as follows:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span style="font-size:11pt">The principles relating to the grant of permission to amend are set out in </span><span
+                            style="font-style:italic;font-size:11pt">Swain-Mason</span><span style="font-size:11pt"> and in a series of recent authorities. The parties referred particularly to Mrs Justice Carr’s summary in </span><span
+                            style="font-style:italic;font-size:11pt">Quah Su-Ling v. Goldman Sachs International</span><span
+                            style="font-size:11pt"> [2015] EWHC 759 (Comm) at paragraphs 36-38 of her judgment. </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">In essence, the court must, taking account of the overriding objective, balance the injustice to the party seeking to amend if it is refused permission, against the need for finality in litigation and the injustice to the other parties and other litigants, if the amendment is permitted. There is a heavy burden on the party seeking a late amendment to justify the lateness of the application and to show the strength of the new case and why justice requires him to be able to pursue it</span><span
+                            style="font-size:11pt">. These principles apply with even greater rigour to an amendment made after the trial and in the course of an appeal</span>.”
+                        [emphasis added]</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">47.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Whilst I accept that in that particular case the
+                        court
+                        was concerned with applying the test to an amendment made in the course of an appeal (and in my
+                        view
+                        the reference in the passage above to the “need for finality in litigation” should be read in
+                        that
+                        light), the general proposition stands that there is a heavy burden on the party seeking a late
+                        amendment to justify the lateness of the application, to show the strength of the new case and
+                        why
+                        justice requires him to be able to pursue it.</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span
+                            style="font-style:italic">Application of the principles to the proposed amendments</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">48.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Turning to the application of those principles,
+                        Euronav
+                        seeks to justify its proposed individual amendments in turn. In my view, the proposed amendments
+                        now
+                        sought to be advanced are linked and the matter should be considered in the round.</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span
+                            style="font-style:italic">Submissions for Euronav</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">49.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">It was submitted for Euronav (in summary) that:</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">i)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">The amendments were proposed in response to
+                        disclosure
+                        which had only recently been given and should have been given earlier. It was submitted that
+                        there
+                        is no evidence that the dominant purpose of the Athena Reports was for their use in litigation –
+                        in
+                        fact, their true purpose was to locate the Cargo.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">ii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">The disclosure went to an Agreed Issue in the case
+                        and
+                        an agreed issue for the purposes of disclosure (namely, Issue 4 as set out in section 1B of the
+                        Disclosure Review Document) and was within the scope of the relevant Model C request. There was
+                        no
+                        express agreement as to the date range for this request; in any event, the first report fell
+                        within
+                        the date range suggested by UniCredit (although the 2<span
+                                style="vertical-align:super;font-size:smaller">nd</span> report did not).</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">iii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.01in">The Athena Reports recommended
+                        further enquiries and it is UniCredit’s fault if no such further enquiries were made;
+                        alternatively,
+                        the absence of any such further enquiries having been made, suggests that even if the amendments
+                        were permitted, UniCredit would not want to make further enquiries.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">iv)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">The proposed amendments have a reasonable prospect
+                        of
+                        success. </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span
+                            style="font-style:italic">Submissions for UniCredit</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">50.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">It was submitted for UniCredit that:</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">i)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">There was disclosure of the link between Gulf and
+                        the
+                        Sub-Buyers in October 2021, when the email dated 6 August 2020 from Martin Borchert of UniCredit
+                        was
+                        disclosed; and the application to amend could have been made at that time; Euronav have failed
+                        to
+                        address in its evidence why the amendments could not have been made earlier.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">ii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">The Athena report states that the Cargo was not
+                        sold to
+                        the sub-buyers and thus the only way Euronav can plead its case is to seek an “inference”
+                        parasitic
+                        on the links.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">iii)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.01in">UniCredit had not been obliged
+                        to
+                        disclose the Athena Reports as they were privileged; if the issue of delivery to the sub buyers
+                        was
+                        significant Euronav could have carried out their own investigations.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;font-size:12pt;margin-left:0.98in;text-indent:-0.49in">iv)</span>
+                </h2>
+                    <p class="ParaLevel2" style="margin-left:0.98in">There would be prejudice to UniCredit if the
+                        amendments
+                        were permitted at this late stage. The evidence of Ms West is that had Euronav advanced a case
+                        in
+                        July 2021 (when the RFI referred to below was made) that the Cargo was delivered to the sub
+                        buyers,
+                        UniCredit would have taken further steps to establish what is in the Athena report and that less
+                        than a month before the start of trial, it is too late for UniCredit to instruct a new forensic
+                        investigator to conduct an investigation into whether the Sub-buyers received the Cargo. Further
+                        Ms
+                        West states that the fact that the current documentary evidence does not support an inference
+                        that
+                        the Cargo was delivered to the Sub-buyers does not mean that UniCredit would not have sought
+                        further
+                        evidence if it had known the allegation as to be part of the case it had to meet.</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span
+                            style="font-style:italic">Discussion</span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">51.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">As is clear from the authorities, there is a heavy
+                        burden on the party seeking a late amendment: (i) to justify the lateness of the application;
+                        (ii)
+                        to demonstrate the strength of the new case; and (iii) to explain why justice requires him to be
+                        able to pursue it.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">52.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Counsel for Euronav submitted that the amendments
+                        were
+                        addressing a “<span style="font-style:italic">key issue</span>” in the case and was only a
+                        “<span
+                                style="font-style:italic">refinement of its case given that the fate of the Cargo and causative loss was already in issue</span>.”
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">53.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Whilst I accept that causation was already in issue
+                        (as
+                        with any contract case) that does not mean that any amendment to the case on causation is
+                        permitted
+                        on the basis that “causation” is in issue.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">54.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">I accept that the “<span style="font-style:italic">fate of the Cargo</span>”
+                        was an issue in the sense that one of the issues in the case, as identified in the Agreed List
+                        of
+                        Issues, was the question of to whom the Cargo was delivered (see issue 4(i): “Did delivery take
+                        place to the approved sub-buyers?”); and that this was also one of the Issues for Disclosure
+                        identified in the Disclosure Review Document, in relation to which the following was sought by
+                        Euronav:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span style="font-size:11pt">Any documents containing or evidencing investigations or enquiries made by or on behalf of the Claimant relating to the delivery of the Cargo and/or to whom the Cargo was delivered, in what amount, and/or the location at which the Cargo was delivered and the location of the Cargo after delivery.</span>”
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">55.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">However, when asked a series of questions by
+                        UniCredit
+                        (posed by way of an RFI dated 6 July 2021) as to whether (in substance) it advanced a positive
+                        case
+                        that the Cargo was delivered to the Sub-Buyers, Euronav declined in its response (dated 27 July
+                        2021) to state that it was advancing a case that the Cargo was delivered to the Sub-Buyers.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">56.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">UniCredit’s RFI had posed the following questions
+                        in
+                        this respect:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span style="font-size:11pt">3. Please confirm to whom it is said that the Defendant delivered the Financed Cargo when it discharged the Financed Cargo onto the MT Kutch Bay and/or the MT Prestigious from the Vessel.</span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">4. Please clarify whether it is the Defendant’s case that the Financed Cargo was delivered from the Vessel onto the MT Kutch Bay and/or the MT Prestigious to (a) Gulf; (b) the approved sub-buyers; (c) another identifiable party; or (d) a party or parties unknown? </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span
+                            style="font-size:11pt">5</span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">. Please clarify whether or not it is the Defendant’s case that the Financed Cargo was delivered from the MT Kutch Bay and/or the MT Prestigious to the approved sub-buyers</span><span
+                            style="font-size:11pt">.</span></p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">6. If it is not the Defendant’s case that the Financed Cargo was delivered from the MT Kutch Bay and/or the MT Prestigious to the approved sub-buyers, does the Defendant assert a positive case as to whom the Financed Cargo was delivered from the MT Kutch Bay and/or the MT Prestigious?</span>”
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">57.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Euronav’s replies were as follows:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span
+                            style="font-size:11pt">3. </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">The Defendant’s case is that the Financed Cargo was delivered to Gulf or to Gulf’s order. </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">4. Reply 3 above is repeated. </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">The Defendant does not presently know whether the Financed Cargo was in fact delivered to the approved sub-buyers. </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">5. Reply 4 above is repeated. </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in"><span style="font-size:11pt">6. Replies 3 and 4 above are repeated</span>.”
+                        [emphasis added]</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">58.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">It is not correct in my view to characterise the
+                        proposed amendments as not a “<span style="font-style:italic">new</span>” case or merely a
+                        “<span
+                                style="font-style:italic">refinement</span>” of Euronav’s existing case. In my view,
+                        counsel
+                        for Euronav accurately submitted that “<span style="font-style:italic">Euronav (now) wants to advance a case that the Sub-Buyers were involved in the fraud</span>”,
+                        thereby implicitly recognising that this is a different case from that previously advanced.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">59.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">As to why Euronav has only now decided to advance
+                        the
+                        positive case, Mr Preston’s evidence (paragraph 26 of his witness statement) is that the
+                        amendments
+                        “<span style="font-style:italic">stem fro</span>m” the documents disclosed in January 2022 and
+                        “<span style="font-style:italic">are the conclusions of [UniCredit’s] own investigators</span>”.
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">60.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">I accept that the email of 6 August 2020 that was
+                        disclosed in October 2021 made a brief reference to the Sub Buyers being “<span
+                                style="font-style:italic">linked</span>” to Gulf and that they were “<span
+                                style="font-style:italic">fraudulent</span>”. Euronav then sought to follow that up by
+                        requesting further information in November 2021 and when litigation privilege was claimed it
+                        sought
+                        to challenge this. Ultimately the claimant agreed to disclose the Athena Reports and did so in
+                        January 2022.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">61.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">It is unclear why Mr Preston says that the
+                        amendments
+                        are the “<span style="font-style:italic">conclusions of UniCredit’s investigators</span>” as the
+                        Athena reports do not appear to conclude that the Cargo was delivered to the Sub Buyers. </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">62.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">I note that in his skeleton submissions (at
+                        paragraph
+                        33(3)) counsel for Euronav describes the documents which had not been disclosed (and were thus
+                        sought) as being documents which “<span style="font-style:italic">principally concerned the relationship of the sub-buyers to Gulf</span>”
+                        and not, as one might imagine given that the focus of the amendment is the alleged delivery to
+                        the
+                        Sub-Buyers, that the documents went to delivery to the Sub-Buyers.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">63.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">I further note that Mr Preston in his Third Witness
+                        Statement stated as follows:</p>
+                </section>
+                <section class="level">
+                    <p style="margin-left:0.79in">“<span style="font-size:11pt">26. Whilst a matter for submissions at the hearing, I would make the following brief points: </span>
+                    </p>
+                </section>
+                <section class="level">
+                    <p style="margin-left:1.18in"><span style="font-size:11pt">…</span></p>
+                </section>
+                <section class="level">
+                    <p style="margin-left:1.18in"><span style="font-size:11pt">26.3 Finally, </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">the Off Taker Documents</span><span
+                            style="font-size:11pt"> </span><span
+                            style="text-decoration-line:underline;text-decoration-style:solid;font-size:11pt">go directly to the issue of whether, in fact, there was a misdelivery at all</span><span
+                            style="font-size:11pt"> and/or whether the loss claimed by the Claimant would have been sustained in any event i.e. whether or not there was a breach on the part of the Defendant as alleged by the Claimant. The evidence is highly relevant, and the Court is entitled to draw the necessary inferences from those documents to find in favour of the Defendant. I believe the pleaded points set out in the Amendments have a good prospect of success</span><span
+                            style="font-style:italic">.</span>” [Emphasis added]</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">64.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Whilst I accept that the Athena Reports address the
+                        issue of where the Cargo was delivered, and to that extent may be said to be “relevant”, it is
+                        wholly unclear on what basis Mr Preston then seeks to draw an inference from that
+                        disclosure.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">65.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Even if I were wrong on the conclusions of the
+                        Athena
+                        reports (and Euronav submitted that the court should make no findings on the additional
+                        disclosure
+                        at this interlocutory stage) the proposed amendments do not rely on the conclusions of the
+                        Athena
+                        reports to assert a case that delivery was to the Sub Buyers but (as set out in paragraph 66 of
+                        the
+                        proposed Amended Defence) merely invite the Court to draw an inference that delivery was to the
+                        order of five (of the six) Off-Takers: Euronav seek to plead that such an inference should be
+                        drawn
+                        based on:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span style="font-size:11pt">the circumstances of the case, and in particular, the scale of the fraud, the senior roles of those likely to have been perpetrating it, the fact that five of the six named off-takers were in fact GP / GP-related companies and the fact that only one of the off-takers has denied the existence of the relevant contract</span>…”
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">66.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">The court was not taken to any evidence recently
+                        disclosed in January 2022 which went to the factors (other than the “links”) now relied upon in
+                        seeking such an inference: “the scale of the fraud” or “the senior roles of those likely to have
+                        been perpetrating it”, nor was it explained how these factors were supported by or explained by
+                        anything in the recent disclosure. </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">67.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">By contrast in oral submissions counsel for Euronav
+                        was
+                        keen to stress to the court the awareness of the general background of the litigation concerning
+                        frauds committed by Gulf (also referred to at paragraph 7 of his skeleton submissions) and it
+                        was
+                        not suggested that the recent disclosure had revealed anything material as to the “scale” of the
+                        fraud. I note that Mr Preston referred in his Third Witness Statement (at paragraph 13) to “a
+                        wide-scale fraud that was discovered in the early summer of 2020”:</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.79in;text-indent:-0.50in">“<span style="font-size:11pt">13. The reference to GP here is a reference to Gulf Petrochem FZC (“Gulf”), the Charterers of the SIENNA at the relevant time and the architects of a wide-scale fraud that was discovered in the early summer of 2020</span>.”
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">68.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">In my view, therefore, whilst the recent disclosure
+                        may
+                        have caused Euronav to revisit its case, I am not satisfied that Euronav has justified the
+                        lateness
+                        of its application and in particular Euronav has not shown that this amended case, which in
+                        substance now alleged a positive case that (it should be inferred that) the Cargo was delivered
+                        to
+                        the Sub-Buyers, arises out of the recent disclosure and could not have been advanced
+                        earlier.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">69.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">In light of my findings above, the issue of whether
+                        litigation privilege was properly claimed for the Athena Reports is irrelevant to the assessment
+                        of
+                        whether Euronav have justified the lateness of the application.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">70.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Secondly Euronav has to demonstrate the strength of
+                        its
+                        new case. I propose to assume that Euronav has met the relatively low bar of showing that the
+                        proposed amendments have a reasonable prospect of success (noting as set out above that the
+                        proposed
+                        amendments are not expressed to rely directly on the conclusions of the Athena Reports).</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">71.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">There were conflicting submissions on whether the
+                        issue
+                        of delivery was an essential element of the case advanced by UniCredit. It seems to be
+                        unnecessary
+                        to resolve that legal issue. If Euronav is right in its analysis then UniCredit will need to
+                        establish this issue as part of its case at trial but I cannot see that it would follow that
+                        Euronav
+                        should be allowed to plead a new and different case on delivery and a new case on causation.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">72.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Thirdly the court has to weigh the prejudice to
+                        UniCredit in allowing such amendments at this stage against the prejudice to Euronav if it is
+                        not
+                        allowed to run this amended case.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">73.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">It was submitted for Euronav that “<span
+                            style="font-style:italic">justice requires</span>” that Euronav should be able to rely on
+                        the
+                        same evidence (i.e. the recent disclosure); and that since UniCredit sought to draw inferences
+                        from
+                        that evidence, so Euronav should be entitled to invite the court to draw inferences from the
+                        same
+                        evidence.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">74.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">The fallacy in this submission is that there is no
+                        issue about the admissibility of the evidence that is the Athena Reports and the other material
+                        disclosed in January 2022 (although Euronav stresses that it relies on the totality of the
+                        evidence). Euronav will be entitled to rely on the recent disclosure to support its existing
+                        case;
+                        the issue is whether it should be allowed to advance a new case at this stage, albeit one that
+                        relies on the same evidence.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">75.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">This is a late amendment: it is only some 3 weeks
+                        to
+                        trial. Even if the matter had been heard when originally listed it would have been approximately
+                        a
+                        month to trial.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">76.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">I have to consider the potential prejudice to
+                        UniCredit
+                        at this stage. UniCredit has not prepared for trial to meet this new case. In my view, there was
+                        no
+                        reason why UniCredit should have anticipated needing to do so; Euronav’s response to its RFI
+                        dated 6
+                        July 2021 did not suggest that UniCredit would be required to do so. UniCredit has not therefore
+                        made any further enquiries beyond the investigations carried out by Athena because there was no
+                        reason for it to do so.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">77.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">In my view, therefore, UniCredit cannot be
+                        criticised
+                        for not having made any further enquires in relation to a case that was not being advanced and
+                        indeed – given the response to the RFI – it could reasonably assume was not being advanced. If
+                        the
+                        proposed amendments were permitted, I accept that UniCredit may well want to revisit the
+                        evidence,
+                        and there is insufficient time for it to make additional investigations. It was submitted for
+                        Euronav that UniCredit has not justified the need for a fresh investigation or what new
+                        investigations would have been carried out. This submission in my view ignores that the burden
+                        lies
+                        on Euronav to establish why a late amendment should be allowed.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">78.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Further, at this late stage, I do not ignore the
+                        prejudice to UniCredit if it now has to alter its trial preparations to meet this additional new
+                        case. Even if Euronav are correct that any new investigations into delivery would not affect the
+                        case on causation, UniCredit will still have to respond to such a case and there is prejudice to
+                        their trial preparations.</p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">79.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">Whilst I accept that there is a prejudice to
+                        Euronav if
+                        it is not allowed to advance this new case, in my view Euronav has not discharged the heavy
+                        burden
+                        on it to justify the late amendment and the balance of justice lies in not permitting the
+                        proposed
+                        amendments.</p>
+                </section>
+                <section class="level">
+                    <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in"><span
+                            style="font-style:italic">Conclusion on late amendment </span>
+                    </p>
+                </section>
+                <section class="paragraph"><h2 class="floating"><span class="num"
+                                                                      style="font-style:normal;font-weight:normal;text-decoration-line:none;font-size:12pt;margin-left:0.50in;text-indent:-0.50in">80.</span>
+                </h2>
+                    <p class="ParaLevel1" style="margin-left:0.50in">For the reasons discussed above, the application
+                        for
+                        permission to amend is refused. </p>
+                </section>
 
-            <section class="level">
-                <p class="CoverDesc">Judgment Approved</p>
-            </section>
-            <section class="level">
-                <p>
-                    <span style="font-weight:bold">Mr Justice Roth:</span>
-                </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">1.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">This application raises a short point but it is one of
-                    some importance having regard to the incidence of the group litigation procedure in claims for
-                    restitution of taxes unlawfully levied. In circumstances where claims for recovery of monies paid by
-                    way of tax are covered by a group litigation order (“GLO”), once judgment is given on issues in the
-                    test case such that the test claimant receives repayments, but that judgment is under appeal, are
-                    the other claims within the GLO entitled to seek judgment or payment, having regard to section 234
-                    of the Finance Act 2013?</p>
-            </section>
-            <section class="level">
-                <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in">
-                    <span style="font-weight:bold">Background</span>
-                </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">2.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">The background to the litigation lies in the
-                    determinations, following rulings of the Court of Justice of the European Union (“CJEU”), that the
-                    imposition of stamp duty reserve tax (“SDRT”) at the higher rate of 1.5% on the issue of shares into
-                    a clearance service or to a depositary receipts issuer was incompatible with EU law. A subsequent
-                    ruling of the CJEU meant that the imposition of stamp duty at that rate on the transfer of shares
-                    into a clearance service in certain circumstances was similarly incompatible with EU law. A large
-                    number of claims were then brought against the Commissioners for HM Revenue &amp; Customs (“HMRC”)
-                    for recovery of duties as money paid by reason of a mistake of law and/or damages. </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">3.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">In consequence, on 21 October 2010, the Chief Chancery
-                    Master made a GLO covering all such claims (the “Stamp Taxes GLO”), with a procedure for identifying
-                    test claims that could proceed on the various specified common or related issues (“GLO issues”)
-                    while the other claims were stayed. The Stamp Taxes GLO was subsequently amended by order of
-                    Proudman J on 26 November 2014, staying some of the GLO issues and replacing the text of some of the
-                    others. In particular, GLO issues 9A, 9B and 10 were there defined as follows:</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">“9A In cases where the relevant SDRT or stamp duty at the
-                    rate of 1.5% was paid before 8 September 2003 (but after 8 September 1997) and more than 6 years
-                    before the claim was issued, whether the Defendants can rely on s 320 of the Finance Act 2004
-                    [“section 320”], such that s 32(1)(c) of the Limitation Act 1980 does not apply to claims for
-                    restitution and/or damages in respect of each cause of action relied upon by a claimant, having
-                    regard also to the requirements of EU Law.</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">This shall be referred to as “the pre 8 September 2003
-                    limitation issue”.</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">9B In cases where the relevant SDRT or stamp duty at the
-                    rate of 1.5% was paid on or after 8 September 2003 and more than 6 years before the claim was
-                    issued, whether the Defendants can rely on s 320 of the Finance Act 2004, such that s 32(1)(c) of
-                    the Limitation Act 1980 does not apply to claims for restitution and/or damages in respect of each
-                    cause of action relied upon by a Claimant, having regard also to the requirements of EU law.</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">This shall be referred to as “the post 8 September 2003
-                    limitation issue”.</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">10 Whether the Defendant is entitled to raise ‘change of
-                    position’ as a Defence to a claim by way of restitution made by the Claimants in respect of charges
-                    to SDRT and/or stamp duty which were levied in breach of the requirements of EU law.</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">This shall be referred to as “the change of position
-                    issue”.</p>
-            </section>
-            <section class="level">
-                <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in">Further, the present Applicant
-                    (“Jazztel”) was appointed as the test claimant for determination of those issues.</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">4.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">Jazztel’s claim involving those issues, and concerning
-                    only SDRT, accordingly came on for trial before Marcus Smith J, who gave judgment on 3 April 2017:
-                    [2017] EWHC 677 (Ch). On the three GLO issues, the judge held:</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;font-family:'Times New Roman';font-size:12pt;margin-left:0.98in;text-indent:-0.49in">i)</span>
-                </h2>
-                <p class="ParaLevel2" style="margin-left:0.98in">
-                    <span style="text-decoration-line:underline;text-decoration-style:solid">Issue 9A</span>
-                    : HMRC cannot rely on section 320 as a defence to repayment of tax paid before 8 September 2003 and
-                    more than six years before the claim was issued;
-                </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;font-family:'Times New Roman';font-size:12pt;margin-left:0.98in;text-indent:-0.49in">ii)</span>
-                </h2>
-                <p class="ParaLevel2" style="margin-left:0.98in">
-                    <span style="text-decoration-line:underline;text-decoration-style:solid">Issue 9B:</span>
-                    HMRC can rely on section 320 as a defence to repayment of tax paid on or after 8 September 2003 and
-                    more than six years before the claim was issued;
-                </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;font-family:'Times New Roman';font-size:12pt;margin-left:0.98in;text-indent:-0.49in">iii)</span>
-                </h2>
-                <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.01in">
-                    <span style="text-decoration-line:underline;text-decoration-style:solid">Issue 10:</span>
-                    The change of position issue was formally left unresolved, on the basis that HMRC accepted that the
-                    question of law had been decided in Jazztel’s favour by the Court of Appeal in
-                    <span style="font-style:italic">Test Claimants in the FII Group Litigation v HMRC </span>
-                    [2016] EWCA Civ 1180 (“
-                    <span style="font-style:italic">FII CA No 2</span>
-                    ”) but a petition to appeal to the Supreme Court against that decision was pending. However, on that
-                    issue the judge made factual findings on the evidence in favour of Jazztel. He stated, at [113]:
-                </p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">“If and to the extent that the Supreme Court gives HMRC
-                    permission to appeal on change of position, and the law, as presently stated, is changed, then the
-                    question of the change of position defence will have to be revisited, on the basis of the facts that
-                    I have found and subject to any further factual determinations it is necessary to make.”</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">5.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">Further, the judge found that the various amounts of
-                    SDRT in issue had been paid by or on behalf of Jazztel; and that Jazztel had made those payments in
-                    the mistaken belief that the relevant statutory provisions were lawful.</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">6.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">Marcus Smith J concluded his judgment as follows, at
-                    [114]:</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">“At the hearing, it was agreed by the parties that to the
-                    extent that Jazztel was successful, the fact that the change of position defence remained
-                    undetermined in these proceedings should not preclude restitution of the Payments that I have found
-                    Jazztel is entitled to recover, subject to a condition subsequent that Jazztel will repay these
-                    monies should HMRC ultimately establish a change of position defence.”</p>
-            </section>
-            <section class="level">
-                <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in">The order made following the
-                    judgment included provision accordingly for conditional repayment of the sums to be made by
-                    HMRC. </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">7.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">
-                    The time for application for permission to appeal was extended by reference to the proceedings in
-                    <span style="font-style:italic">FII CA No 2</span>
-                    . The current position is that both sides have submitted applications for permission to appeal,
-                    respectively on Issues 9A and 9B, i.e. the pre- and post 8 September 2003 limitation issues, but the
-                    determination of those applications has been stayed pending the decision of the Supreme Court as
-                    regards permission to appeal in
-                    <span style="font-style:italic">FII CA No 2.  </span>
-                    That in turn appears to await the judgment of the Supreme Court in the appeal against the Court of
-                    Appeal decision in another tax repayment case,
-                    <span style="font-style:italic">Prudential Assurance Co Ltd v HMRC </span>
-                    [2016] EWCA Civ 376, which was argued in February and raises a number of common issues with
-                    <span style="font-style:italic">FII CA No 2</span>
-                    . It is anticipated that once the Supreme Court gives judgment in the
-                    <span style="font-style:italic">Prudential </span>
-                    case, it will move to consider the permission application in
-                    <span style="font-style:italic">FII CA No 2</span>
-                    .
-                </p>
-            </section>
-            <section class="level">
-                <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in">
-                    <span style="font-weight:bold">The Application</span>
-                </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">8.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">That is the background to the present application. It
-                    has the unusual feature that it is brought by Jazztel, although the relief sought is not for Jazztel
-                    but for other claimants within the GLO. It seems that it is brought by Jazztel because the other
-                    claims are stayed. I was told that there are now some 27 other claimants covered by the GLO (the
-                    number of individual claims is higher since some claimants filed more than one claim) and that this
-                    application covers 25 other claimants. The remaining claimants have had their tax repaid, since they
-                    submitted their claims within six years of payment so that no limitation issue arose.</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">9.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">In these circumstances, the order sought by the present
-                    application is that in relation to those claimants in the GLO other than Jazztel whose claims raise
-                    GLO Issues 9A and/or 10 (described as an “Affected Claimant”):</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">“1. Subject to an Affected Claimant being entitled to
-                    restitution from HMRC of the SDRT it has claimed in the proceedings to which the GLO relates, an
-                    Affected Claimant shall be entitled upon request to payment by HMRC of the principal amounts of SDRT
-                    claimed and simple interest thereon, on the same terms as those agreed between HMRC and Jazztel Plc
-                    following the trial of the Test Claim and recorded in paragraphs 4 and 5 of the Order of Marcus
-                    Smith J dated 25 April 2017, namely that:</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-family:'Times New Roman';font-size:12pt;margin-left:1.25in;text-indent:-0.25in">a.</span>
-                </h2>
-                <p class="Quote" style="margin-left:1.25in">Payment, shall be made together with simple interest at the
-                    per annum rate of 1% above the Bank of England base rate the for the period up to 5 February 2009
-                    and at the per annum rate of 2% above the Bank of England base rate thereafter, such interest to run
-                    from the date of each respective payment of SDRT until the date of payment by HMRC to a
-                    Claimant.</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-family:'Times New Roman';font-size:12pt;margin-left:1.25in;text-indent:-0.25in">b.</span>
-                </h2>
-                <p class="Quote" style="margin-left:1.25in">In the event that:</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-family:'Times New Roman';font-size:12pt;margin-left:1.50in;text-indent:-0.25in">i.</span>
-                </h2>
-                <p class="Quote" style="margin-left:1.50in">
-                    The Supreme Court grants HMRC permission to appeal in relation to its change of position defence in
-                    <span style="font-style:italic;text-decoration-line:underline;text-decoration-style:solid">FII CA (No 2)</span>
-                    ;
-                </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-family:'Times New Roman';font-size:12pt;margin-left:1.75in;text-indent:-0.50in">ii.</span>
-                </h2>
-                <p class="Quote" style="margin-left:1.75in">The Supreme Court allows that appeal in terms such that, on
-                    the facts as found in the Test Claim, HMRC have (or arguably have) a change in position defence;
-                    and </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-family:'Times New Roman';font-size:12pt;margin-left:1.75in;text-indent:-0.50in">iii.</span>
-                </h2>
-                <p class="Quote" style="margin-left:1.75in">The validity of such a defence is either agreed by the
-                    Affected Claimant or upheld at a future hearing.</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.58in">any Affected Claimant who has received a payment pursuant to
-                    the terms of this Order shall repay those sums to HMRC.”</p>
-            </section>
-            <section class="level">
-                <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in">And in the event that an Affected
-                    Claimant does not receive such payment following its request, it shall be entitled to serve a notice
-                    which will have the effect of lifting the stay on the determination of those issues. Thus, if it is
-                    not paid on request, any Affected Claimant will be able to pursue its individual claim to seek a
-                    judgment and order in the same terms as were obtained by Jazztel.</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">10.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">The opposition to the application is not concerned with
-                    the fact that it is made by Jazztel for the benefit not of itself but of others in the GLO, but is
-                    based on section 234 of the Finance Act 2013 (“section 234”), of which the material parts are as
-                    follows:</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">
-                    “
-                    <span style="font-weight:bold">Restrictions on interim payments in proceedings relating to taxation matters</span>
-                </p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">(1) This section applies to an application for an interim
-                    remedy (however described), made in any court proceedings relating to a taxation matter, if the
-                    application is founded (wholly or in part) on a point of law which has yet to be finally determined
-                    in the proceedings.</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">(2) Any power of a court to grant an interim remedy (however
-                    described) requiring the Commissioners for Her Majesty’s Revenue and Customs, or an officer of
-                    Revenue and Customs, to pay any sum to any claimant (however described) in the proceedings is
-                    restricted as follows.</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">(3) The court may grant the interim remedy only if it is
-                    shown to the satisfaction of the court—</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.18in">(a) that, taking account of all sources of funding
-                    (including borrowing) reasonably likely to be available to fund the proceedings, the payment of the
-                    sum is necessary to enable the proceedings to continue, or</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.18in">(b) that the circumstances of the claimant are exceptional
-                    and such that the granting of the remedy is necessary in the interests of justice.</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">…</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">(9) For the purposes of this section, proceedings on appeal
-                    are to be treated as part of the original proceedings from which the appeal lies.”</p>
-            </section>
-            <section class="level">
-                <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in">
-                    <span style="font-weight:bold">Submissions</span>
-                </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">11.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">For the applicant, Mr Michael Jones submitted that the
-                    purpose of the application was simply to achieve parity of treatment for the other members of the
-                    GLO with the test claimant. In that regard, he relied on CPR rule 19.12(1) which provides:</p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">“Where a judgment or order is given or made in a claim on
-                    the group register in relation to one or more GLO issues –</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-family:'Times New Roman';font-size:12pt;margin-left:1.48in;text-indent:-0.49in">a)</span>
-                </h2>
-                <p class="ParaLevel3" style="margin-left:1.48in">that judgment or order is binding on the parties to all
-                    other claims that are on the group register at the time the judgment is given or the order is made
-                    unless the court orders otherwise;…”</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">12.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">Here, there had been no suggestion that a contrary
-                    order should be made so the judgment of Marcus Smith J on GLO Issues 9A and 10 binds all the claims.
-                    It follows that for each Affected Claimant all that remains to be determined is (i) the sums of duty
-                    that it in fact paid, and (ii) whether that payment was made under a mistake of law. As regards (i),
-                    the evidence filed for HMRC states that verifying this might require about a day’s work for a case
-                    officer, which was not an excessive burden in view of the sums involved. As regards (ii), Mr Mark
-                    Whitehouse of PricewaterhouseCoopers LLP, who has been involved in handling other such restitution
-                    claims governed by a GLO, states that in his experience HMRC have been content to accept
-                    confirmation in a witness statement from an employee of the relevant claimant that no relevant
-                    individuals within the claimant company were aware that the relevant rules breached EU law at the
-                    time when the disputed tax was paid. But in any event, the order proposed incorporates a mechanism
-                    such that if a real dispute emerged on either (i) or (ii), the stay would be lifted and the
-                    individual Affected Claimant would then be entitled to seek to prove its entitlement.</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">13.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">
-                    For the applicant, it was pointed out that it was now over a year since the judgment in the test
-                    claim and all the Affected Claimants were being kept waiting for their money. I was referred to some
-                    of the objectives of the GLO procedure set out in Lord Woolf’s final
-                    <span style="font-style:italic">Access to Justice </span>
-                    report, as helpfully set out by Henderson J in
-                    <span style="font-style:italic">Europcar UK Ltd v Revenue and Customs Commrs </span>
-                    [2008] EWHC 1363 Civ (Ch) at [231]:
-                </p>
-            </section>
-            <section class="level">
-                <p class="Quote" style="margin-left:1.00in">“b) to provide expeditious, effective and proportionate
-                    methods of resolving cases, where individual damages are large enough to justify individual action
-                    but where the number of claimants and the nature of the issues involved mean that the cases cannot
-                    be managed satisfactorily in accordance with normal procedure; and (c) to achieve a balance between
-                    normal rights of claimants and defendants, to pursue and defend cases individually, and the
-                    interests of a group of parties to litigate the action as a whole in an effective manner.”</p>
-            </section>
-            <section class="level">
-                <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in">In his skeleton argument, Mr Jones
-                    submitted that “rather than using the GLO as a means to resolve the other claims, HMRC appear to
-                    seek to use it to seek to stymie them and to delay meeting their obligations to repay taxes which
-                    they now accept were unlawfully levied.”</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">14.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">Mr Jones submitted that section 234 was not engaged by
-                    the present application since it was not seeking any form of interim remedy but a final order, which
-                    was subject to a condition subsequent depending on possible development of the change of position
-                    defence. In the alternative, if section 234 did apply, he argued that the circumstances here were
-                    “exceptional” within s. 234(3)(b) since there had been a trial of a test claim under a GLO which had
-                    resolved the relevant legal issues in favour of the test claimant, and the other claimants were now
-                    being asked to wait a long time for any relief.</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">15.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">For HMRC, Mr Rupert Baldry QC submitted that section
-                    234 clearly applied to the present application. “Interim remedy” is given a broad not a technical
-                    meaning in the statute, as shown by the express clarification “(however described)”. The points of
-                    law concerning GLO issues 9A and 10 had not been finally determined since for the former there was a
-                    pending application for permission to appeal and for the latter the judge expressly stated that the
-                    issue remained open and undetermined. Therefore, however the applicant chose to formulate the terms
-                    of the order, the remedy sought was of an interim nature on claims where the facts had not yet been
-                    found. Jazztel was in a different position since it had been through a trial, and it therefore could
-                    enjoy the benefit from having been the test claimant.</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">16.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">
-                    Mr Baldry argued that, as a matter of principle, there could be no justification for lifting the
-                    stay. It is inherent in the procedure of a GLO that while the test claim is proceeding through to
-                    final determination, which includes determination of any appeal, the other claims in the GLO remain
-                    stayed to await the outcome. That is shown by the position regarding summary judgment. If the stay
-                    were lifted, an Affected Claimant would not be able to obtain summary judgment against HMRC: see
-                    <span style="font-style:italic">Six Continents Ltd v Revenue Commissioners </span>
-                    [2015] EWHC 2844 (Ch) at [27]-[35], where Henderson J held that summary judgment could not be
-                    granted if permission to appeal had been given in a parallel case where HMRC raised the same point.
-                    The grant of permission to appeal meant that the appeal had a real prospect of success, which was
-                    effectively the same test as for refusal of summary judgment. If an Affected Claimant could not
-                    obtain summary judgment, then it could only either seek an interim payment, which section 234
-                    clearly precluded (subject to the exceptions in s. 234(3)); or seek to take its case to trial, which
-                    was entirely contrary to the objective of a GLO.
-                </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">17.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">HMRC had offered to agree to an interim order in favour
-                    of an Affected Claimant that could bring itself within s. 234(3)(a). But the matters relied on did
-                    not engage s. 234(3)(b), which looks to the circumstances of the particular claimant. Section 234
-                    had been introduced into the Finance Act 2013 precisely to protect HMRC from having to pay out
-                    potentially very large sums in such group claims while a test claim was under appeal, that would
-                    then have to be paid back if the appeal succeeded.</p>
-            </section>
-            <section class="level">
-                <p class="ParaLevel1" style="margin-left:0.50in;text-indent:-0.50in">
-                    <span style="font-weight:bold">Discussion</span>
-                </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">18.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">
-                    In my judgment, the order now sought is clearly an interim remedy within the scope of section 234.
-                    There has not been a trial of the claims of the Affected Claimants. Nor can it be said that this a
-                    technical or formalistic approach on the basis that if the stay were to be lifted the Affected
-                    Claimants could recover summary judgment. I consider that summary judgment would be inappropriate,
-                    even assuming that any factual issues concerning the sums paid and mistake made could be resolved,
-                    for the reasons given by Mr Baldry. Although the
-                    <span style="font-style:italic">Six Continents </span>
-                    case was one where the claim lay outside a GLO and permission to appeal on the point of law had
-                    already been given, I do not see that it can make a difference here that the question of permission
-                    to appeal has not yet been decided. There has been a hiatus in resolving the permission application
-                    because of the particular sequence of events before the Supreme Court. But no one could pretend that
-                    the points regarding section 320 and its interaction with principles of EU law are straightforward.
-                    That is highlighted by the fact that both sides are seeking to challenge the judge’s decision
-                    regarding section 320, conversely on Issue 9A and Issue 9B. I was indeed told that in another case
-                    concerning the application of section 320, the Chancellor has deferred giving judgment until the
-                    outcome of the applications for permission in the present case have been determined.
-                </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">19.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">In this regard, s. 234(9) is significant. The statute
-                    specially provides that proceedings on appeal are to be treated as part of the original proceedings.
-                    As already mentioned, I consider that proceedings for which a permission to appeal application is
-                    pending cannot be in a different position from proceedings where permission has been granted. Thus,
-                    for the purpose of this application, the order sought for the Affected Claimants in the GLO is
-                    founded on points of law which have not been finally resolved in those GLO proceedings. I do not see
-                    that there is scope for some middle form of remedy between an interim remedy and a final remedy;
-                    since what is being sought is therefore not a final remedy it must be an interim remedy within the
-                    scope of that expression in section 234, even though it would not constitute an interim payment
-                    under CPR Part 25.</p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">20.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">
-                    It follows that the court may not make the order sought unless either of the two conditions under s.
-                    234(3) is satisfied. In that regard, the applicant seeks to rely on the second condition, which
-                    itself has two elements: that the circumstances of the claimant are exceptional and that the remedy
-                    is necessary in the interests of justice. I can see force in the argument that the second element is
-                    satisfied since the order would prevent the other Affected Claimants being in a less favourable
-                    position than the test claimant. But I am wholly unpersuaded that the first element is satisfied.
-                    That requires exceptional circumstances
-                    <span style="font-style:italic">of the claimant</span>
-                    . The relevant claimant for this purpose is accordingly the claimant seeking a remedy, i.e. here,
-                    the Affected Claimants. The mere fact of being in a GLO relating to a taxation claim cannot in my
-                    judgment be regarded as exceptional, and the fact that the test claimant under the GLO has succeeded
-                    at trial and been paid is not in my view a circumstance of the Affected Claimants. As for the delay
-                    experienced by the Affected Claimants in recovering their money, that seems to me an inescapable
-                    consequence of treating proceedings as not final until an appeal has been resolved, as specified by
-                    s. 234(9).  I do not regard it as giving rise to exceptional circumstances, in particular where the
-                    Affected Claimants should recover interest if they are successful at the end of the day (and indeed
-                    they are seeking to claim compound interest).
-                </p>
-            </section>
-            <section class="paragraph">
-                <h2 class="floating">
-                    <span class="num"
-                          style="font-style:normal;font-weight:normal;text-decoration-line:none;font-family:'Times New Roman';font-size:12pt;margin-left:0.50in;text-indent:-0.50in">21.</span>
-                </h2>
-                <p class="ParaLevel1" style="margin-left:0.50in">In consequence, this application is dismissed.</p>
-            </section>
-
-        </div>
-    </article>
-</div>
-</body>
-</html>
-
+            </div>
+        </article>
+    </div>
+{% endblock %}

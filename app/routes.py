@@ -78,13 +78,13 @@ def judgment_quick_route_to_formatted_from_print():
 
 @app.route('/ewhc/comm/2022/957')
 def judgment():
-    resp = make_response(render_template('judgment.html', service=service))
+    resp = make_response(render_template('judgment.html', service=service, print_format=False))
     return resp
 
 
 @app.route('/ewhc/comm/2022/957/formatted_from_print')
 def judgment_formatted_from_print():
-    resp = make_response(render_template('judgment_formatted_from_print.html', service=service))
+    resp = make_response(render_template('judgment_formatted_from_print.html', service=service, print_format=True))
     return resp
 
 
