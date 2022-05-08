@@ -1,0 +1,43 @@
+.judgment_view_toggle ul {
+
+  
+
+    li {
+      list-style:none;
+      float:right;
+      padding: 0rem 1rem;
+      margin-bottom: 1rem;
+      border-left: 1px solid #000000;
+      font-family: $font__roboto;
+      text-align: right;
+
+    
+      a {
+        color: $color__link-blue;
+        font-family: $font__roboto;
+        font-weight: normal;
+        font-size: 1em;
+        text-decoration: underline;
+      
+        &:hover {
+          color: $color__link-blue-hover;
+          text-decoration: none;
+        }
+      
+        &:active {
+          color: $color__link-blue-active;
+        }
+      
+        &:focus {
+          @include focus-default;
+        }
+      }
+    }
+    
+    li:last-child {
+      border-left: none;
+    }
+  }
+
+
+

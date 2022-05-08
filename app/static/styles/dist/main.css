@@ -2222,4 +2222,36 @@ a:focus {
   font-size: 1.8rem;
 }
 
+.judgment_view_toggle ul li {
+  list-style: none;
+  float: right;
+  padding: 0rem 1rem;
+  margin-bottom: 1rem;
+  border-left: 1px solid #000000;
+  font-family: "Roboto", sans-serif;
+  text-align: right;
+}
+.judgment_view_toggle ul li a {
+  color: #1d70b8;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  text-decoration: underline;
+}
+.judgment_view_toggle ul li a:hover {
+  color: #003078;
+  text-decoration: none;
+}
+.judgment_view_toggle ul li a:active {
+  color: #1e1e2a;
+}
+.judgment_view_toggle ul li a:focus {
+  outline: 5px solid #1d70b8;
+  outline-offset: 0;
+  z-index: 999;
+}
+.judgment_view_toggle ul li:last-child {
+  border-left: none;
+}
+
 /*# sourceMappingURL=main.css.map */
