@@ -2256,17 +2256,4 @@ a .judgment-view-toggle__option:focus {
   }
 }
 
-.judgment-text-format-options {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.judgment-text-format-options__context-messages {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 0.125rem;
-  height: 0.125rem;
-  overflow: hidden;
-}
-
 /*# sourceMappingURL=main.css.map */

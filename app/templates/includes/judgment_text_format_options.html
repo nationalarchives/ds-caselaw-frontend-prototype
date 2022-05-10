@@ -1,9 +1,0 @@
-<div class="judgment-text-format-options">
-    <p>
-        <span class="judgment-text-format-options__context-messages">Choose your presentation option:</span>
-        {% if print_format %}<a href="{{ url_for('judgment') }}">{% endif %}Web presentation{% if print_format %}</a>{% endif %}
-        <span class="judgment-text-format-options__context-messages">or</span>
-        <span aria-hidden="true"> / </span>
-        {% if not print_format %}<a href="{{ url_for('judgment_formatted_from_print') }}">{% endif %}printed document formatting{% if not print_format %}</a>{% endif %}
-    </p>
-</div>

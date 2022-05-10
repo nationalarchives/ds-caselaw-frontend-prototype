@@ -1,8 +1,0 @@
-.judgment-text-format-options {
-  text-align: center;
-  margin-bottom: calc($spacer__unit * 2);
-
-  &__context-messages {
-    @include sr-only;
-  }
-}
