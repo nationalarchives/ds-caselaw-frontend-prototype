@@ -2222,36 +2222,35 @@ a:focus {
   font-size: 1.8rem;
 }
 
-.judgment_view_toggle ul li {
+.judgment-view-toggle__list {
+  text-align: center;
+  padding: 0;
+}
+.judgment-view-toggle__option {
   list-style: none;
-  float: right;
-  padding: 0rem 1rem;
-  margin-bottom: 1rem;
-  border-left: 1px solid #000000;
   font-family: "Roboto", sans-serif;
-  text-align: right;
+  line-height: 2rem;
 }
-.judgment_view_toggle ul li a {
-  color: #1d70b8;
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  font-size: 1em;
-  text-decoration: underline;
-}
-.judgment_view_toggle ul li a:hover {
-  color: #003078;
-  text-decoration: none;
-}
-.judgment_view_toggle ul li a:active {
-  color: #1e1e2a;
-}
-.judgment_view_toggle ul li a:focus {
+a .judgment-view-toggle__option:focus {
   outline: 5px solid #1d70b8;
   outline-offset: 0;
   z-index: 999;
 }
-.judgment_view_toggle ul li:last-child {
-  border-left: none;
+
+@media only screen and (min-width: 576px) {
+  .judgment-view-toggle__list {
+    text-align: right;
+    margin-right: 1.4rem;
+  }
+  .judgment-view-toggle__option {
+    padding: 0rem 1rem;
+    border-right: 1px solid #000;
+    display: inline;
+  }
+  .judgment-view-toggle__option:last-child {
+    border-right: none;
+    padding-left: 0.8rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
