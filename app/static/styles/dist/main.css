@@ -1452,6 +1452,17 @@ a:focus {
   z-index: 999;
   outline-color: #fff;
 }
+.judgments-footer__base-paragraph {
+  text-align: left;
+  margin: 2.25rem 0 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.75rem;
+}
+@media (min-width: 1200px) {
+  .judgments-footer__base-paragraph {
+    text-align: center;
+  }
+}
 
 .page-header {
   background-color: #121212;
