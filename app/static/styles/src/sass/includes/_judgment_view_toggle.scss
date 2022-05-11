@@ -1,0 +1,36 @@
+.judgment-view-toggle {
+  &__list {
+    text-align: center;
+    padding: 0;
+  }
+
+  &__option {
+    list-style: none;
+    font-family: $font__roboto;
+    line-height: 2rem;
+
+    a &:focus {
+      @include focus-default;
+    }
+  }
+}
+
+.judgment-view-toggle {
+  @media only screen and (min-width: 576px) {
+    &__list {
+      text-align: right;
+      margin-right: 1.4rem;
+    }
+
+    &__option {
+      padding: 0rem 1rem;
+      border-right: 1px solid $color__black;
+      display: inline;
+
+      &:last-child {
+        border-right: none;
+        padding-left: 0.8rem;
+      }
+    }
+  }
+}

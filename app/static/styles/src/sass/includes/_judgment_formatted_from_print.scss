@@ -1,0 +1,15 @@
+.judgment-layout {
+  #main-content {
+    max-width: 90%;
+    margin: auto;
+    margin-bottom: calc($spacer__unit * 4);
+
+    @media (min-width: $grid__breakpoint-medium) {
+      max-width: 40rem;
+    }
+
+    @media (min-width: $grid__breakpoint-medium) {
+      max-width: 46rem;
+    }
+  }
+}

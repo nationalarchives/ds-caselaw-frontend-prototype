@@ -1,0 +1,6 @@
+<div class="judgment-view-toggle">
+    <ul class="judgment-view-toggle__list">
+        <li class="judgment-view-toggle__option">{% if not print_format %}<a href="{{ url_for('judgment_formatted_from_print') }}">{% endif %}Original view{% if not print_format %}</a>{% endif %}</li>
+        <li class="judgment-view-toggle__option">{% if print_format %}<a href="{{ url_for('judgment') }}">{% endif %}Web view{% if print_format %}</a>{% endif %}</li>
+    </ul>
+</div>

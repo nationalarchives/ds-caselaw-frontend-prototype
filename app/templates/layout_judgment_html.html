@@ -9,7 +9,7 @@
     <title>United Trade Action Group Ltd (R on the application of) v Transport for London</title>
     {% include 'includes/gtm/gtm_head.html' %}
 </head>
-<body>
+<body class="judgment-layout">
 <a id="skip-to-main-content" href="#main-content">Skip to Main Content</a>
 {% include 'includes/gtm/gtm_body.html' %}
 {% include 'includes/phase_banner.html' %}
@@ -34,11 +34,15 @@
 {% endif %}
 
 {% include 'includes/judgment_text_toolbar.html' %}
+{% include 'includes/judgment_view_toggle.html' %}
 
 <main id="main-content">
     {% block content %}
     {% endblock %}
 </main>
+<div class="back-to-top-link" id="js-back-to-top-link">
+    <a href="#js-phase-banner">Back to top</a>
+</div>
 {% include 'includes/footer.html' %}
 <script src="{{ url_for('static', filename='scripts/dist/back_to_top.js') }}"></script>
 </body>
