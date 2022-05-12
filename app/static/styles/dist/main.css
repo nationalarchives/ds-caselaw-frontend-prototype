@@ -261,7 +261,6 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-size: 1.8rem;
-  margin: 0 0 3rem;
 }
 .recent-judgments__more-info {
   margin: 2rem 0;
@@ -288,11 +287,23 @@ body {
     max-width: 65rem;
   }
 }
+.judgment-browse__header {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
 .judgment-browse__by-type {
   border-top: 5px solid #ffb952;
 }
 .judgment-browse__by-type:first-child {
   border-bottom: 5px solid #ffb952;
+}
+.judgment-browse__sub-header {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem;
 }
 .judgment-browse__list {
   list-style: none;

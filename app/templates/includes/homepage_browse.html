@@ -1,8 +1,8 @@
 {% block content %}
     <div class="judgment-browse">
-        <h2>Find judgments</h2>
+        <h2 class="judgment-browse__header">Find judgments</h2>
         <div class="judgment-browse__by-type">
-            <h3 id="browse-by-court" class="judgment-browse-by-court__header">By court</h3>
+            <h3 id="browse-by-court" class="judgment-browse__sub-header">By court</h3>
             <ul class="judgment-browse__list">
                 {% for court in courts %}
                     <li class="judgment-browse__list-item">
@@ -13,7 +13,7 @@
             </ul>
         </div>
         <div class="judgment-browse__by-type">
-            <h3 id="browse-by-tribunal" class="judgment-browse-by-tribunal__header">By tribunal</h3>
+            <h3 id="browse-by-tribunal" class="judgment-browse__sub-header">By tribunal</h3>
             <ul class="judgment-browse__list">
                 {% for tribunal in tribunals %}
                     <li class="judgment-browse__list-item">
