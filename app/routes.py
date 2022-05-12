@@ -8,6 +8,7 @@ from content.service_wide import service
 from content.search_results import search_results
 from content.courts import courts
 from content.sources import judgment_sources
+from content.tribunals import tribunals
 
 
 @app.route('/')
@@ -17,6 +18,7 @@ def home():
     return render_template(
         'home.html',
         service=service,
+        tribunals=tribunals,
         courts=courts,
         form=form
     )
