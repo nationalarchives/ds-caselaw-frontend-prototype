@@ -6,7 +6,7 @@
             <ul class="judgment-browse__list">
                 {% for court in courts %}
                     <li class="judgment-browse__list-item">
-                        <a class="judgment-browse__link" href="/{{ court.code }}">{{ court.name }} {{ court.years }}</a>
+                        <a class="judgment-browse__link" href="/{{ court.code }}">{{ court.name }} {{ court.years | safe }}</a>
 
                     </li>
                 {% endfor %}
@@ -17,7 +17,7 @@
             <ul class="judgment-browse__list">
                 {% for tribunal in tribunals %}
                     <li class="judgment-browse__list-item">
-                        <a class="judgment-browse__link" href="/">{{ tribunal.name }}</a>
+                        <a class="judgment-browse__link" href="/">{{ tribunal.name | safe }}</a>
 
                     </li>
                 {% endfor %}
