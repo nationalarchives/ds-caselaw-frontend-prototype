@@ -9,10 +9,8 @@
   }
 
   &__header {
-    font-family: $font__roboto;
-    font-weight: normal;
+    @include heading_text;
     font-size: 1.8rem;
-    margin: 0 0 calc($spacer__unit * 3);
   }
 
   &__more-info {

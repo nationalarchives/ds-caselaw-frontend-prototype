@@ -261,7 +261,6 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-size: 1.8rem;
-  margin: 0 0 3rem;
 }
 .recent-judgments__more-info {
   margin: 2rem 0;
@@ -288,11 +287,23 @@ body {
     max-width: 65rem;
   }
 }
+.judgment-browse__header {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
 .judgment-browse__by-type {
   border-top: 5px solid #ffb952;
 }
 .judgment-browse__by-type:first-child {
   border-bottom: 5px solid #ffb952;
+}
+.judgment-browse__sub-header {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem;
 }
 .judgment-browse__list {
   list-style: none;
@@ -306,8 +317,7 @@ body {
   }
 }
 .judgment-browse__list-item {
-  padding: 0.5rem;
-  border-top: 1px dotted #555;
+  padding: 0.5rem 0;
 }
 
 a {
@@ -1425,7 +1435,7 @@ a:focus {
 }
 .judgments-footer__base-paragraph {
   text-align: left;
-  margin: 2.25rem 0 1.25rem;
+  margin: 2rem 0 3rem;
   font-size: 0.9rem;
   line-height: 1.75rem;
 }
