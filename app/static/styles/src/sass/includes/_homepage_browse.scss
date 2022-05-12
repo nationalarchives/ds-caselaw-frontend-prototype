@@ -36,8 +36,7 @@
   }
 
   &__list-item {
-    padding: calc($spacer__unit / 2);
-    border-top: 1px dotted $color__dark-grey;
+    padding: calc($spacer__unit / 2) 0;
   }
 
   padding-bottom: calc($spacer__unit * 2);

@@ -317,8 +317,7 @@ body {
   }
 }
 .judgment-browse__list-item {
-  padding: 0.5rem;
-  border-top: 1px dotted #555;
+  padding: 0.5rem 0;
 }
 
 a {
