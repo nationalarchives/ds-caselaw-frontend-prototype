@@ -12,21 +12,18 @@
     display: inline-block;
     text-decoration: none;
     outline-offset: 3px;
-    &:first-child {
-      margin-right: $spacer__unit;
-    }
+    margin: $spacer__unit;
   }
 
-  &__download {
-  }
+  &__download {}
 
   &__container {
     margin: auto;
 
-    > div {
+    >div {
       @media (max-width: $grid__breakpoint-small) {
         text-align: center;
-        padding: $spacer__unit;
+  
       }
     }
 
