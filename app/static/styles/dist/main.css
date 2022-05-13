@@ -1842,9 +1842,7 @@ a:focus {
   display: inline-block;
   text-decoration: none;
   outline-offset: 3px;
-}
-.judgment-toolbar a:first-child {
-  margin-right: 1rem;
+  margin: 1rem;
 }
 .judgment-toolbar__container {
   margin: auto;
@@ -1852,7 +1850,6 @@ a:focus {
 @media (max-width: 576px) {
   .judgment-toolbar__container > div {
     text-align: center;
-    padding: 1rem;
   }
 }
 @media (min-width: 576px) {
