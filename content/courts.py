@@ -1,106 +1,87 @@
 courts = [
-    {
-        'name': 'United Kingdom Supreme Court',
-        'code': 'uksc',
-        'years_range_start': 2021,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Privy Council',
-        'code': 'ukpc',
-        'years_range_start': 2021,
-        'years_range_end': 2021
-    },
-
-    {
-        'name': 'Court of Appeal Civil Division',
-        'code': 'ewca/civ',
-        'years_range_start': 2003,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Court of Appeal Criminal Division',
-        'code': 'ewca/crim',
-        'years_range_start': 2003,
-        'years_range_end': 2021
-    },
-
-    {
-        'name': 'Administrative Court',
-        'code': 'ewhc/admin',
-        'years_range_start': 2003,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Admiralty Court',
-        'code': 'ewhc/admlty',
-        'years_range_start': 2003,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Chancery Division of the High Court',
-        'code': 'ewhc/ch',
-        'years_range_start': 2003,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Commercial Court',
-        'code': 'ewhc/comm',
-        'years_range_start': 2003,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Senior Court Costs Office',
-        'code': 'ewhc/costs',
-        'years_range_start': 2003,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Family Division of the High Court',
-        'code': 'ewhc/fam',
-        'years_range_start': 2003,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Intellectual Property Enterprise Court',
-        'code': 'ewhc/ipec',
-        'years_range_start': 2013,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Mercantile Court',
-        'code': 'ewhc/mercantile',
-        'years_range_start': 2008,
-        'years_range_end': 2015
-    },
-    {
-        'name': 'Patents Court',
-        'code': 'ewhc/pat',
-        'years_range_start': 2003,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Queen\'s Bench Division of the High Court',
-        'code': 'ewhc/qb',
-        'years_range_start': 2003,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Technology and Construction Court',
-        'code': 'ewhc/tcc',
-        'years_range_start': 2003,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Court of Protection',
-        'code': 'ewcop',
-        'years_range_start': 2009,
-        'years_range_end': 2021
-    },
-    {
-        'name': 'Family Court',
-        'code': 'ewfc',
-        'years_range_start': 2014,
-        'years_range_end': 2021
-    }
+  {
+    "name": "United Kingdom Supreme Court",
+    "code": "uksc",
+    "years": "(2021 &ndash; 2021)"
+  },
+  {
+    "name": "Privy Council",
+    "code": "ukpc",
+    "years": "(2021 &ndash; 2021)"
+  },
+  {
+    "name": "Court of Appeal Civil Division",
+    "code": "civ",
+    "years": "(2003 &ndash; 2021)"
+  },
+  {
+    "name": "Court of Appeal Criminal Division",
+    "code": "crim",
+    "years": "(2003 &ndash; 2021)"
+  },
+  {
+    "name": "Administrative Court",
+    "code": "admin",
+    "years": "(2003 &ndash; 2021)"
+  },
+  {
+    "name": "Admiralty Court",
+    "code": "admlty",
+    "years": "(2003 &ndash; 2021)"
+  },
+  {
+    "name": "Chancery Division of the High Court",
+    "code": "ch",
+    "years": "(2003 &ndash; 2021)"
+  },
+  {
+    "name": "Commercial Court",
+    "code": "comm",
+    "years": "(2003 &ndash; 2021)"
+  },
+  {
+    "name": "Senior Court Costs Office",
+    "code": "costs",
+    "years": "(2003 &ndash; 2021)"
+  },
+  {
+    "name": "Family Division of the High Court",
+    "code": "fam",
+    "years": "(2003 &ndash; 2021)"
+  },
+  {
+    "name": "Intellectual Property Enterprise Court",
+    "code": "ipec",
+    "years": "(2013 &ndash; 2021)"
+  },
+  {
+    "name": "Mercantile Court",
+    "code": "mercantile",
+    "years": "(2008 &ndash; 2015)"
+  },
+  {
+    "name": "Patents Court",
+    "code": "pat",
+    "years": "(2003 &ndash; 2021)"
+  },
+  {
+    "name": "Queen's Bench Division of the High Court",
+    "code": "qb",
+    "years": "(2003 &ndash; 2021)"
+  },
+  {
+    "name": "Technology and Construction Court",
+    "code": "tcc",
+    "years": "(2003 &ndash; 2021)"
+  },
+  {
+    "name": "Court of Protection",
+    "code": "ewcop",
+    "years": "(2009 &ndash; 2021)"
+  },
+  {
+    "name": "Family Court",
+    "code": "ewfc",
+    "years": "(2014 &ndash; 2021)"
+  }
 ]

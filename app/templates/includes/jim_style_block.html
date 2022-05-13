@@ -1,0 +1,288 @@
+<style>
+
+    #search-form > input[name='q'] {
+        width: 40ch
+    }
+
+    #lookup-form > input[name='cite'] {
+        width: 30ch
+    }
+
+    #left-column > h2, #middle-column > h2, #right-column > h2 {
+        margin-top: 0
+    }
+
+    .collections > li > a, .years > li > a {
+        display: inline-block;
+        padding: 2pt 6pt
+    }
+
+    .years > li {
+        text-align: center
+    }
+
+    .judgments > li > a {
+        display: inline-block;
+        padding: 3pt 6pt
+    }
+
+    .collections > li > a:hover, .years > li > a:hover, .judgments > li > a:hover {
+        text-decoration: none
+    }
+
+    .pill > span, .pill > a {
+        display: inline-block;
+        margin-left: 3pt
+    }
+
+    .search-result > div > a {
+        display: inline-block;
+        padding: 3pt 6pt
+    }
+
+    .search-result > div > a:hover {
+        text-decoration: none;
+        background-color: var(--color)
+    }
+
+    mark {
+        background-color: var(--color)
+    }
+
+    article + article {
+        margin-top: 1in
+    }
+
+
+    #judgment {
+        font-family: 'Times New Roman';
+        font-size: 12pt;
+    }
+
+    #judgment .Normal {
+        font-size: 12pt;
+    }
+
+    #judgment .Heading3 {
+        font-weight: bold;
+        font-family: Arial;
+        font-size: 13pt;
+    }
+
+    #judgment .CoverDesc {
+        text-align: center;
+        font-weight: bold;
+        font-size: 18pt;
+    }
+
+    #judgment .CoverMain {
+        font-weight: bold;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        font-size: 12pt;
+    }
+
+    #judgment .CoverText {
+        text-align: right;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        font-size: 12pt;
+    }
+
+    #judgment .ParaHeading {
+        font-size: 12pt;
+    }
+
+    #judgment .ParaLevel1 {
+        text-align: justify;
+        margin-left: 0.50in;
+        font-size: 12pt;
+    }
+
+    #judgment .ParaLevel2 {
+        text-align: justify;
+        margin-left: 0.98in;
+        font-size: 12pt;
+    }
+
+    #judgment .ParaLevel3 {
+        text-align: justify;
+        margin-left: 1.48in;
+        font-size: 12pt;
+    }
+
+    #judgment .ParaLevel4 {
+        text-align: justify;
+        margin-left: 1.97in;
+        font-size: 12pt;
+    }
+
+    #judgment .ParaLevel5 {
+        text-align: justify;
+        margin-left: 2.46in;
+        font-size: 12pt;
+    }
+
+    #judgment .ParaLevel6 {
+        text-align: justify;
+        margin-left: 2.95in;
+        font-size: 12pt;
+    }
+
+    #judgment .ParaLevel7 {
+        text-align: justify;
+        margin-left: 3.45in;
+        font-size: 12pt;
+    }
+
+    #judgment .ParaLevel8 {
+        text-align: justify;
+        margin-left: 3.94in;
+        font-size: 12pt;
+    }
+
+    #judgment .ParaLevel9 {
+        text-align: justify;
+        margin-left: 4.43in;
+        font-size: 12pt;
+    }
+
+    #judgment .ParaNoNumber {
+        text-align: justify;
+        font-size: 12pt;
+    }
+
+    #judgment .Quote {
+        text-align: justify;
+        margin-left: 1.00in;
+        margin-right: 1.00in;
+        font-size: 12pt;
+    }
+
+    #judgment .Header {
+        font-family: Univers;
+        font-size: 12pt;
+    }
+
+    #judgment .Footer {
+        font-family: Univers;
+        font-size: 12pt;
+    }
+
+    #judgment .Heading {
+        font-size: 12pt;
+    }
+
+    #judgment .Title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 10pt;
+    }
+
+    #judgment .eMailBlock {
+        text-align: center;
+        font-weight: bold;
+        font-size: 13pt;
+    }
+
+    #judgment .ListParagraph {
+        margin-left: 0.50in;
+        font-family: Calibri, sans-serif;
+        font-size: 11pt;
+    }
+
+    #judgment .CommentText {
+        font-size: 10pt;
+    }
+
+    #judgment .CommentSubject {
+        font-weight: bold;
+        font-size: 10pt;
+    }
+
+    #judgment .Revision {
+        font-size: 12pt;
+    }
+
+    #judgment .Heading2Char {
+        font-family: 'Calibri Light';
+        font-size: 13pt;
+        color: #2F5496;
+    }
+
+    #judgment .CommentReference {
+        font-size: 8pt;
+    }
+
+    #judgment .CommentSubjectChar {
+        font-weight: bold;
+    }
+
+    #judgment .Strong {
+        font-weight: bold;
+    }
+
+    #judgment .SubtleEmphasis {
+        font-style: italic;
+        color: #404040;
+    }
+
+    #judgment .tab {
+        display: inline-block;
+        width: 0.25in
+    }
+
+    #judgment section {
+        position: relative
+    }
+
+    #judgment h2 {
+        font-size: inherit;
+        font-weight: normal
+    }
+
+    #judgment h2.floating {
+        position: absolute;
+        margin-top: 0
+    }
+
+    #judgment .num {
+        display: inline-block;
+        padding-right: 1em
+    }
+
+    #judgment td {
+        position: relative;
+        min-width: 2em;
+        padding-left: 1em;
+        padding-right: 1em
+    }
+
+    #judgment td > .num {
+        left: -2em
+    }
+
+    #judgment table {
+        margin: 0 auto;
+        width: 100%;
+        border-collapse: collapse
+    }
+
+    #judgment .header table {
+        table-layout: fixed
+    }
+
+    #judgment .fn {
+        vertical-align: super;
+        font-size: small
+    }
+
+    #judgment .footnote > p > .marker {
+        vertical-align: super;
+        font-size: small
+    }
+
+    #judgment .restriction {
+        color: red
+    }
+</style>
