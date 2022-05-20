@@ -34,7 +34,7 @@
 
     &__base-paragraph {
       text-align: left;
-      margin: 2.25rem 0 1.25rem;
+      margin: calc($spacer__unit * 2) 0 calc($spacer__unit * 3);
       font-size: 0.9rem;
       line-height: 1.75rem;
 

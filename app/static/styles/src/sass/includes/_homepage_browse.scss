@@ -1,0 +1,43 @@
+.judgment-browse {
+  @include container;
+
+  @media only screen and (min-width: $grid__breakpoint-medium) {
+  }
+
+  &__header {
+    @include heading_text;
+    font-size: 1.8rem;
+    margin-bottom: $spacer__unit;
+  }
+
+  &__by-type {
+    border-top: 5px solid $color__yellow;
+
+    &:first-child {
+      border-bottom: 5px solid $color__yellow;
+    }
+  }
+
+  &__sub-header {
+    @include heading_text;
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    @media (min-width: $grid__breakpoint-medium) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: $spacer__unit;
+    }
+  }
+
+  &__list-item {
+    padding: calc($spacer__unit / 2) 0;
+  }
+
+  padding-bottom: calc($spacer__unit * 2);
+}
