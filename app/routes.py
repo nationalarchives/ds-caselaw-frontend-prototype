@@ -124,3 +124,11 @@ def accessibility_statement():
         'accessibility_statement.html',
         service=service
     )
+
+@app.route('/transactional-licence-form')
+def transactional_licence_form():
+    return render_template(
+        'transactional_licence_form.html',
+        service=service,
+    )
+
