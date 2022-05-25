@@ -17,7 +17,7 @@
             <ul class="judgment-browse__list">
                 {% for tribunal in tribunals %}
                     <li class="judgment-browse__list-item">
-                        <a class="judgment-browse__link" href="/">{{ tribunal.name | safe }}</a><span class="judgment-browse__year-range">{{ tribunal.years | safe }}</span>
+                        <a class="judgment-browse__link" href="{{ tribunal.href }}">{{ tribunal.name | safe }}</a><span class="judgment-browse__year-range">{{ tribunal.years | safe }}</span>
                     </li>
                 {% endfor %}
             </ul>
