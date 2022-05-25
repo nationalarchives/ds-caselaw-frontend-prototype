@@ -6,19 +6,18 @@
             <ul class="judgment-browse__list">
                 {% for court in courts %}
                     <li class="judgment-browse__list-item">
-                        <a class="judgment-browse__link" href="/{{ court.code }}">{{ court.name }} {{ court.years | safe }}</a>
-
+                        <a class="judgment-browse__link" href="/{{ court.code }}">{{ court.name }}</a><span class="judgment-browse__year-range">{{ court.years | safe }}</span>
                     </li>
                 {% endfor %}
             </ul>
         </div>
         <div class="judgment-browse__by-type">
             <h3 id="browse-by-tribunal" class="judgment-browse__sub-header">By tribunal</h3>
+            <p class="judgment-browse__information-box">We have a limited number of tribunal decisions available as part of our alpha service.</p>
             <ul class="judgment-browse__list">
                 {% for tribunal in tribunals %}
                     <li class="judgment-browse__list-item">
-                        <a class="judgment-browse__link" href="/">{{ tribunal.name | safe }}</a>
-
+                        <a class="judgment-browse__link" href="/">{{ tribunal.name | safe }}</a><span class="judgment-browse__year-range">{{ tribunal.years | safe }}</span>
                     </li>
                 {% endfor %}
             </ul>
