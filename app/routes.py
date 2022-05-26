@@ -78,7 +78,7 @@ def judgment_quick_route_to_formatted_from_print():
     return redirect(url_for('judgment_formatted_from_print'))
 
 
-@app.route('/ewhc/comm/2022/957')
+@app.route('/ewhc/comm/2022/935')
 def judgment():
     resp = make_response(render_template('judgment.html', service=service, print_format=False))
     return resp
