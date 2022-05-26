@@ -1,6 +1,96 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./app/static/scripts/src/modules/back_to_top.js":
+/*!*******************************************************!*\
+  !*** ./app/static/scripts/src/modules/back_to_top.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "manage_back_to_top_link": () => (/* binding */ manage_back_to_top_link)
+/* harmony export */ });
+var manage_back_to_top_link = function manage_back_to_top_link() {
+  var handler = function handler(entries) {
+    manage_class(entries[0].isIntersecting);
+  };
+
+  var createObserver = function createObserver(element) {
+    var options = {
+      root: null,
+      rootMargin: "0px"
+    };
+    var observer = new IntersectionObserver(handler, options);
+    observer.observe(element);
+  };
+
+  var manage_class = function manage_class(intersecting) {
+    var button = document.getElementById('js-back-to-top-link');
+
+    if (intersecting) {
+      button.classList.add('show');
+    } else {
+      button.classList.remove('show');
+    }
+  };
+
+  createObserver(document.querySelector('.judgment-body'));
+};
+
+/***/ }),
+
+/***/ "./app/static/scripts/src/modules/manage_filters.js":
+/*!**********************************************************!*\
+  !*** ./app/static/scripts/src/modules/manage_filters.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+
+(jquery__WEBPACK_IMPORTED_MODULE_0___default().fn.manage_filters) = function (options) {
+  var _this = this;
+
+  var settings = jquery__WEBPACK_IMPORTED_MODULE_0___default().extend({}, (jquery__WEBPACK_IMPORTED_MODULE_0___default().fn.manage_filters.defaults), options);
+  return this.each(function () {
+    var $toggle_area = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-results-facets', jquery__WEBPACK_IMPORTED_MODULE_0___default()(_this));
+    var $control_container = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-results-control-container', jquery__WEBPACK_IMPORTED_MODULE_0___default()(_this));
+    var btn = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<button>', {
+      'class': 'results-search-component__toggle-control',
+      'type': 'button',
+      'text': settings.expanded_text,
+      'click': function click(e) {
+        $toggle_area.toggle();
+        var $el = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target);
+        $el.toggleClass('collapsed');
+        $el.text(function () {
+          return $el.text() === settings.collapsed_text ? settings.expanded_text : settings.collapsed_text;
+        });
+      }
+    });
+
+    if (settings.initially_hidden) {
+      btn.trigger('click');
+    }
+
+    $control_container.append(btn);
+  });
+};
+
+(jquery__WEBPACK_IMPORTED_MODULE_0___default().fn.manage_filters.defaults) = {
+  'collapsed_text': 'Show filter options',
+  'expanded_text': 'Hide filter options',
+  'initially_hidden': true
+};
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-results-facets-wrapper').manage_filters();
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -10965,52 +11055,15 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!***************************************!*\
-  !*** ./app/static/scripts/src/app.js ***!
-  \***************************************/
+/*!*******************************************************!*\
+  !*** ./app/static/scripts/src/application_scripts.js ***!
+  \*******************************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_back_to_top__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/back_to_top */ "./app/static/scripts/src/modules/back_to_top.js");
+/* harmony import */ var _modules_manage_filters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/manage_filters */ "./app/static/scripts/src/modules/manage_filters.js");
 
 
-(function ($) {
-  $.fn.manage_filters = function (options) {
-    var _this = this;
-
-    var settings = $.extend({}, $.fn.manage_filters.defaults, options);
-    return this.each(function () {
-      var $toggle_area = $('.js-results-facets', $(_this));
-      var $control_container = $('.js-results-control-container', $(_this));
-      var btn = $('<button>', {
-        'class': 'results-search-component__toggle-control',
-        'type': 'button',
-        'text': settings.expanded_text,
-        'click': function click(e) {
-          $toggle_area.toggle();
-          var $el = $(e.target);
-          $el.toggleClass('collapsed');
-          $el.text(function () {
-            return $el.text() === settings.collapsed_text ? settings.expanded_text : settings.collapsed_text;
-          });
-        }
-      });
-
-      if (settings.initially_hidden) {
-        btn.trigger('click');
-      }
-
-      $control_container.append(btn);
-    });
-  };
-
-  $.fn.manage_filters.defaults = {
-    'collapsed_text': 'Show filter options',
-    'expanded_text': 'Hide filter options',
-    'initially_hidden': true
-  };
-})((jquery__WEBPACK_IMPORTED_MODULE_0___default()));
-
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-results-facets-wrapper').manage_filters();
+(0,_modules_back_to_top__WEBPACK_IMPORTED_MODULE_0__.manage_back_to_top_link)();
 })();
 
 /******/ })()

@@ -4,8 +4,8 @@ module.exports = {
   mode: 'development',
   devtool: false,
   entry: {
-    app: './app/static/scripts/src/app.js',
-    back_to_top: './app/static/scripts/src/back_to_top.js'
+    judgment_scripts: './app/static/scripts/src/judgment_scripts.js',
+    application_scripts: './app/static/scripts/src/application_scripts.js'
   },
   output: {
     filename: '[name].js',
