@@ -18,18 +18,25 @@
 
 <div class="standard-text-template">
     <h1>How to use the Find Case Law service</h1>
-    <p><small>Last updated on 20th May 2022</small></p>
+    <p><small>Last updated on <time datetime="27-05-2022">27th May 2022</time></small></p>
 
-    <h2>What is case law</h2>
+    <h3>Information on this page:</h3>
+
+    {% include 'includes/using_this_service_anchor_links.html' %}
+
+
+    <h2 id="section-about">What is case law</h2>
 
     <p>Case law is the law which is created through court judgments and tribunal decisions. This is sometimes known as
         common law. Judges will follow the 'precedent' or the principles used in previous judgments and decisions when
         deciding on a case. Case law can be used to clarify legislation if it is unclear how it applies in a particular
         context.</p>
     <p>Legislation is law written by Members of Parliament (MPs) and is sometimes known as statutory law or the
-        statute. <a href="https://www.legislation.gov.uk"> Visit the government legislation website to find out more</a>.</p>
 
-    <h2>We do not provide legal advice</h2>
+        statute. Visit the <a href="https://www.legislation.gov.uk">legislation.gov.uk website</a> to find out more.</p>
+
+    <h2 id="section-no-advice">We do not provide legal advice</h2>
+
     <p>This service is designed to help you find court judgments or tribunal decisions. The National Archives does not
         provide legal advice, interpretation or support. You can find guidance and support at the following
         organisations:</p>
@@ -40,27 +47,28 @@
         <li><a href="https://www.weareadvocate.org.uk">Advocate</a></li>
     </ul>
 
-    <h2>Find a judgment or decision</h2>
+
+    <h2 id="section-find">Find a judgment or decision</h2>
     <p>You can search the full text of every judgment and decision. You can also search and browse judgments by neutral
-        citation, court, party, judge and within a date range. These options can be combined on the <a href="/search">More search options</a> page.</p>
+        citation, court, party, judge and within a date range. These options can be combined on the <a
+            href="/search">More search options</a> page.</p>
+
     <p>The latest published judgments and decisions are listed on the <a href="/">Find case law</a> page.
         Alternatively, you can browse
         by court and filter results.</p>
 
     <h3>Search the text of every judgment and decision</h3>
     <p>The search box on the <a href="/">Find case law</a> page lets you search using any search term including
-        a neutral citation,
-        name(s) and keyword(s). This will search the full text of every judgment or decision we have.
-    </p>
+        a neutral citation, name(s) and keyword(s). This will search the full text of every judgment or decision we
+        have.</p>
     <p>You do not need to do a Boolean search &ndash; spaces in between words will act as an 'and'. Results where the
-        words
-        are closest together will appear as the most relevant at the top of the search results.</p>
+        words are closest together will appear as the most relevant at the top of the search results.</p>
 
     <h3>Search specific fields</h3>
-    <p>Alternatively, you can search using one or more specific search terms on the <a
-            href="/search">More search options</a> page. You can
-        use multiple search fields at the same time to narrow down your results. The search boxes search particular
-        fields. With the exception of keyword, these boxes do not search the full text of judgments and decisions.</p>
+    <p>Alternatively, you can search using one or more specific search terms on the <a href="/search">More search
+            options</a> page. You can use multiple search fields at the same time to narrow down your results. The
+        search boxes search particular fields. With the exception of keyword, these boxes do not search the full text of
+        judgments and decisions.</p>
 
     <h4>Neutral citation</h4>
     <p>The courts allocate a 'neutral citation' to judgments and decisions. This is a unique number and reference. The
@@ -97,8 +105,10 @@
     <p>You can also use neutral citations allocated by the British and Irish Legal Information Institute (BAILII) for
         judgments and decisions that do not have neutral citations allocated by the courts.</p>
     <p>If you are confident that the neutral citation is correct but are struggling to find it, it may be that we don't
-        have that judgment within our collection.</p> 
-        <p>Find out more about our limited coverage of judgments and decisions on our <a href="what_to_expect#section-coverage">What to expect from this new service</a> page.</p>
+        have that judgment within our collection.</p>
+    <p>Find out more about our limited coverage of judgments and decisions on our <a
+            href="what_to_expect#section-coverage">What to expect from this service</a> page.</p>
+
 
     <h4>Party name</h4>
     <p>This is the name of someone involved in the case, such as the claimant or defendant. There are often multiple
@@ -120,8 +130,8 @@
     <h4>Judge's name</h4>
     <p>The judge(s) who decided a case will appear at the top of the judgment or decision.</p>
     <p>You can search by the name of the judge who has decided a case by using the 'Judge's name' box on the <a
-            href="/search">More search options</a> page. This means that it will only search for judges
-        that have given a judgment or decision on a case
+            href="/search">More search options</a> page. This means that it will only search for judges that have given
+        a judgment or decision on a case
         instead of searching every reference to the name of the judge within the full text of every judgment or
         decision.</p>
     <p>You can use a part of the name, the whole name, or the whole name and judicial titles.</p>
@@ -150,29 +160,40 @@
     <p>You can filter results by date range, courts/chamber, party name and judge’s name.</p>
 
 
-    <h2>Understanding a judgment or decision</h2>
-    <p>A judgment is the decision a court has made after hearing a case. Written judgments are also known as handed down
-        judgments and can be very long.</p>
-    <p>The National Archives does not provide summaries, interpretation or advice on any judgments or decisions.</p>
-    <p>Every judgment or decision will start with a 'header' or title page which contains the important information
-        about the judgment or decision, such as:</p>
-    <ul>
-        <li>Neutral citation</li>
-        <li>Case number</li>
-        <li>Court/chamber</li>
-        <li>Judge's name(s)</li>
-        <li>Party names</li>
-    </ul>
-    <p>The way the text of each judgment or decision is written is up to the judge. Typically, judgments will summarise
-        'the facts' of the case, the law that applies to those facts, the arguments presented in court, the decision the
-        court has given and the reasons for the decision. The decision made by the judge normally appears towards the
-        end of the judgment or decision.</p>
-    <p>You may find that some judgments and decisions have reporting restrictions. In these cases the relevant parts of
-        the judgment will be obscured.</p>
+    <h2 id="section-understanding">Understanding a judgment or decision</h2>
+       
+        <p>A judgment is the decision a court has made after hearing a case. Written judgments are also known as handed
+            down
+            judgments and can be very long.</p>
+        <p>The National Archives does not provide summaries, interpretation or advice on any judgments or decisions.</p>
+        <p>Every judgment or decision will start with a 'header' or title page which contains the important information
+            about the judgment or decision, such as:</p>
+        <ul>
+            <li>Neutral citation</li>
+            <li>Case number</li>
+            <li>Court/chamber</li>
+            <li>Judge's name(s)</li>
+            <li>Party names</li>
+        </ul>
+        <p>The way the text of each judgment or decision is written is up to the judge. Typically, judgments will
+            summarise
+            'the facts' of the case, the law that applies to those facts, the arguments presented in court, the decision
+            the
+            court has given and the reasons for the decision. The decision made by the judge normally appears towards
+            the
+            end of the judgment or decision.</p>
+        <p>You may find that some judgments and decisions have reporting restrictions. In these cases the relevant parts
+            of
+            the judgment will be obscured.</p>
 
 
-    <h2>Contact us</h2>
-    <p>You can get in touch by emailing <a
-            href="mailto:caselaw@nationalarchives.gov.uk">caselaw@nationalarchives.gov.uk</a>.</p>
+        <h2 id="section-contact">How to contact us</h2>
+            <p>You can get in touch by emailing <a href="mailto:caselaw@nationalarchives.gov.uk">caselaw@nationalarchives.gov.uk</a>.</p>
 </div>
-{% endblock %}
+
+<div class="back-to-top-link show" id="js-back-to-top-link">
+    <a href="#js-phase-banner">Back to top</a>
+</div>
+
+
+    {% endblock %}

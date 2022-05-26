@@ -2245,4 +2245,18 @@ a .judgment-view-toggle__option:focus {
   }
 }
 
+.anchor-links__list {
+  text-align: left;
+  padding: 0;
+  list-style: none;
+}
+.anchor-links__list__option {
+  font-family: "Roboto", sans-serif;
+  padding-block: 0 1rem;
+}
+.anchor-links__list__option:first-child {
+  padding-block: 1.5rem 0 0;
+  border-top: 5px solid #ffb952;
+}
+
 /*# sourceMappingURL=main.css.map */

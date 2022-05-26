@@ -126,12 +126,14 @@ def accessibility_statement():
     )
 
 
+
 @app.route('/transactional-licence')
 def transactional_licence_form():
     return render_template(
         'transactional_licence.html',
         service=service,
     )
+
 
 @app.route('/how-to-use-this-service')
 def how_to_use_this_service():

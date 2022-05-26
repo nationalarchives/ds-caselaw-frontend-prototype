@@ -18,7 +18,8 @@
 
 <div class="standard-text-template">
     <h1>What to expect from this new service</h1>
-    <p><small>Last updated on 20th May 2022</small></p>
+
+    <p><small>Last updated on <time datetime="27-05-2022">27th May 2022</time></small></p>
 
     <h2>Information on this page:</h2>
 
@@ -118,7 +119,9 @@
         <li>First-tier Tribunal (General Regulatory Chamber)</li>
         <li>United Kingdom Employment Appeal Tribunal</li>
     </ul>
+
     <h2 id="section-data">Judgments and decisions as data</h2>
+
     <p>We have made judgments and decisions available as data in order to facilitate transparency of the administration
         of justice and enable innovation. We have adopted the international standard legal document mark-up language
         (LegalDocML).</p>
@@ -164,19 +167,20 @@
     <p>The LegalDocML data for the judgments is available through the API.</p>
     <h4>Accessing feeds</h4>
     <p>You can monitor a list of recently published or recently updated judgments using the Atom feeds available in our
-        public API. An OpenAPI specification is available at <a
-            href="https://github.com/nationalarchives/ds-caselaw-public-access-service/blob/main/doc/openapi/public_api.yml">https://github.com/nationalarchives/ds-caselaw-public-access-service/blob/main/doc/openapi/public_api.yml</a>.
-    </p>
+        Updated upstream public API. An OpenAPI specification is available on our <a
+            href="https://github.com/nationalarchives/ds-caselaw-public-access-service/blob/main/doc/openapi/public_api.yml">
+            Case Law service GitHub project</a> page.</p>
     <p>Example root feed URL: <a
             href="https://caselaw.nationalarchives.gov.uk/atom.xml">https://caselaw.nationalarchives.gov.uk/atom.xml</a>.
     </p>
     <h4>Detecting changes</h4>
-    <p>At present, any update to a judgment will result in it being shown in the recently updated list &ndash; this could be a
-        minor metadata change, an enrichment with extra links, or a new version from the original submitter, with a
-        material change to the judgment.</p>
-    <p>The judgment XML contains a content hash which will only change with material changes; you can use this to detect
-        whether or not you need to re-import the DOCX for an updated judgment. In the near future, we hope to provide a
-        feed that only shows material changes, so you will not need to keep a list of hashes.</p>
+
+    <p>At present, any update to a judgment will result in it being shown in the recently updated list &ndash; this
+        could be a minor metadata change, an enrichment with extra links, or a new version from the original submitter,
+        with a material change to the judgment.</p>
+    <p>The judgment XML contains a content hash which will only change with material changes; you can use this to
+        detect whether or not you need to re-import the DOCX for an updated judgment. In the near future, we hope to
+        provide a feed that only shows material changes, so you will not need to keep a list of hashes.</p>
     <p>An example update detection workflow:</p>
     <ol>
         <li>Poll the recently-updated feed.</li>
@@ -190,54 +194,68 @@
     <p>By licensing court judgments and tribunal decisions for re-use we aim to facilitate open justice and enable
         innovation, while protecting the proper administration of justice.</p>
     <h4>The Open Government Licence does not apply</h4>
-    <p>Judgments and decisions contain personal data. This means the Open Government Licence cannot apply as it excludes
+    <p>Judgments and decisions contain personal data. This means the Open Government Licence cannot apply as it
+        excludes
         personal data.</p>
-    <p>The National Archives has been working in consultation with the Ministry of Justice and the Judicial Executive
+    <p>The National Archives has been working in consultation with the Ministry of Justice and the Judicial
+        Executive
         Board (chaired by the Lord Chief Justice) to develop two licences that permit the re-use of judgments and
         decisions. Both licences are free to use:</p>
     <ul>
-        <li><a href="/open-justice-licence">The Open Justice Licence</a> that permits re-use but
-            excludes computational analysis. You do not need to apply for this licence.</li>
-        <li>A transactional licence that permits re-use including computational analysis. You will need to apply for
-            this licence.</li>
+        <li><a href="/open-justice-licence">The Open Justice Licence</a> that permits re-use but excludes computational
+            analysis. You do not need to apply for this licence.</li>
+        <li>A transactional licence that permits re-use including computational analysis. You will need to apply
+            for this licence.</li>
     </ul>
-    <p>The personal information within judgments varies but it can be very extensive and contain distressing content.
+    <p>The personal information within judgments varies but it can be very extensive and contain distressing
+        content.
     </p>
     <p>It is for the court to decide whether reporting restrictions should apply. It is therefore possible for these
-        decisions to be overruled in court and retrospective reporting restrictions be applied. It is important you are
+        decisions to be overruled in court and retrospective reporting restrictions be applied. It is important you
+        are
         aware of your obligations and are compliant with the licence terms when re-using the data to avoid being in
         contempt of court.</p>
     <h3>Personal data and GDPR</h3>
     <p>Judgments and decisions contain personal data.</p>
     <p>Neither type of licence is a data sharing agreement or a processing agreement for personal data. Re-users are
         recipients of the judgments and decisions published by The National Archives. As a Data Controller, re-users
-        will need to satisfy themselves that they have a legal basis and valid purpose for processing personal data. The
+        will need to satisfy themselves that they have a legal basis and valid purpose for processing personal data.
+        The
         licences and application process has been carefully designed so as not to create a Data Controller/Data
-        Processor arrangement between The National Archives and the re-users (unlike the commercial licences we issue
+        Processor arrangement between The National Archives and the re-users (unlike the commercial licences we
+        issue
         for digital surrogates of paper records).</p>
     <p>The courts are not subject to data protection regulation when acting in their judicial capacity. The National
-        Archives is subject to data protection regulation. The Public Records Act 1958 provides the legal basis for our
+        Archives is subject to data protection regulation. The Public Records Act 1958 provides the legal basis for
+        our
         processing of personal data in judgments under UK GDPR.</p>
-    <p>It is important that you are aware of the legal obligations and that your re-use of the data is consistent with
+    <p>It is important that you are aware of the legal obligations and that your re-use of the data is consistent
+        with
         the administration of justice.</p>
     <h3>Open Justice Licence</h3>
-    <p>You can use this licence to re-publish judgments or decisions on your own website. For example, in a blog post.
+    <p>You can use this licence to re-publish judgments or decisions on your own website. For example, in a blog
+        post.
         Computational analysis of judgments including basic search indexing is not permitted under this licence.</p>
     <p>You do not need to apply for this licence, however you should be aware of the responsibilities you have. <a
             href="/open-justice-licence">Find out more about the terms of the Open Justice Licence</a>.</p>
+
     <p>If you are unsure that you are within the terms of the Open Justice Licence, please <a
             href="/transactional-licence">apply for the transactional licence</a>.</p>
+
     <h3>Transactional licence</h3>
-    <p>You need to apply for this licence if you intend to use court judgments and tribunal decisions in a way that is
-        outside the terms of the Open Justice Licence. For example, to run computational analysis across judgments and
+    <p>You need to apply for this licence if you intend to use court judgments and tribunal decisions in a way
+        that is
+        outside the terms of the Open Justice Licence. For example, to run computational analysis across
+        judgments and
         decisions including basic search indexing.</p>
     <p>You can <a href="/transactional-licence">apply for the licence</a> at no cost by completing and submitting an <a
             href="https://caselaw.nationalarchives.gov.uk/static/documents/application_form_for_licence_to_re-use.docx">application
-            form</a>.</p>
-    <p>The application form allows you to explain your purpose, including how you intend to re-use the data in a way
+            form</a>.
+    </p>
+    <p>The application form allows you to explain your purpose, including how you intend to re-use
+        the data in a way
         that is consistent with the administration of justice.</p>
-    <p>We are assessing applications using the <a href="https://en.wikipedia.org/wiki/Five_safes">'five safes'
-            framework</a>:</p>
+    <p>We are assessing applications using the <a href="https://en.wikipedia.org/wiki/Five_safes">'five safes' framework</a>:</p>
     <ol>
         <li>Safe people</li>
         <li>Safe projects</li>
@@ -245,56 +263,82 @@
         <li>Safe settings</li>
         <li>Safe outputs</li>
     </ol>
-    <p>We work in accordance with <a href="https://www.legislation.gov.uk/uksi/2015/1415/contents">The Re-use of Public
-            Sector Information Regulation 2015</a>. We will respond to your application within 20 working days <a
-            href="https://www.legislation.gov.uk/uksi/2015/1415/regulation/8">(Section 8)</a>.</p>
+    <p>We work in accordance with <a href="https://www.legislation.gov.uk/uksi/2015/1415/contents">The
+            Re-use of Public
+            Sector Information Regulation 2015</a>. We will respond to your application within 20
+        working days <a href="https://www.legislation.gov.uk/uksi/2015/1415/regulation/8">(Section
+            8)</a>.</p>
     <p>We do not discriminate against applicants <a
-            href="https://www.legislation.gov.uk/uksi/2015/1415/regulation/13">(Section 13)</a>. Therefore if we have
-        already granted a licence for the same purpose as described in your application, then it will be granted within
+            href="https://www.legislation.gov.uk/uksi/2015/1415/regulation/13">(Section 13)</a>.
+        Therefore if we have
+        already granted a licence for the same purpose as described in your application, then it
+        will be granted within
         20 working days.</p>
-    <p>However, if your application describes an intended re-use that we have not previously considered, this may take
-        longer. Where we are uncertain that an application is consistent with the administration of justice, we will ask
+    <p>However, if your application describes an intended re-use that we have not previously
+        considered, this may take
+        longer. Where we are uncertain that an application is consistent with the administration of
+        justice, we will ask
         for clarification from the Ministry of Justice and the Judiciary.</p>
-    <p>Once your licence is granted you can be confident that your re-use of the data is consistent with the proper
-        administration of justice. The term of the licence is one calendar year from the date the licence has been
+    <p>Once your licence is granted you can be confident that your re-use of the data is consistent
+        with the proper
+        administration of justice. The term of the licence is one calendar year from the date the
+        licence has been
         granted.</p>
     <p>If you are unsure, please apply.</p>
     <p>If your application is unsuccessful, you can <a
             href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/complaints-about-re-use/">make
             a complaint against re-use of public sector information</a>.</p>
-    <h2 id="section-transfer">Transferring judgments and decisions from the courts to The National Archives</h2>
-    <p>The National Archives receives a publication version of the judgment or decision. This means that any redactions
+    <h2 id="section-transfer">Transferring judgments and decisions from the courts to The National
+        Archives</h2>
+    <p>The National Archives receives a publication version of the judgment or decision. This means
+        that any redactions
         or anonymization needed for publication should already have been made by the court.</p>
-    <p>The judges and clerks send judgments and decisions to The National Archives as Word documents using a service
+    <p>The judges and clerks send judgments and decisions to The National Archives as Word documents
+        using a service
         called Transfer Digital Records (TDR). Only registered users can use this service.</p>
-    <p>If you are a judge or clerk looking for information about how to transfer digital records, please email <a
-            href="mailto:caselaw@nationalarchives.gov.uk">caselaw@nationalarchives.gov.uk</a>.</p>
+    <p>If you are a judge or clerk looking for information about how to transfer digital records,
+        please email <a href="mailto:caselaw@nationalarchives.gov.uk">caselaw@nationalarchives.gov.uk</a>.
+    </p>
     <h2 id="section-publishing">How we publish judgments and decisions</h2>
-    <p>It is important that court judgments and tribunal decisions are published, unless the courts decide there is a
+    <p>It is important that court judgments and tribunal decisions are published, unless the courts
+        decide there is a
         strong reason to withhold a judgment or decision from the public.</p>
-    <p>Judgments and decisions are sent to The National Archives ready for publication. We will never change a judgment
-        or decision. Each judgment is published as a single web page. The styling of the original record is retained in
+    <p>Judgments and decisions are sent to The National Archives ready for publication. We will
+        never change a judgment
+        or decision. Each judgment is published as a single web page. The styling of the original
+        record is retained in
         the web page version, as much as possible.</p>
     <h3>Revisions</h3>
-    <p>Over time we may receive several publication versions of the same judgment from the court. We will keep the
-        digital record of all the versions, but only publish the latest version authorised by the court. Changes,
-        refinements or corrections to the text of the currently published judgment can only be made by the court by
+    <p>Over time we may receive several publication versions of the same judgment from the court. We
+        will keep the
+        digital record of all the versions, but only publish the latest version authorised by the
+        court. Changes,
+        refinements or corrections to the text of the currently published judgment can only be made
+        by the court by
         sending a replacement version of the judgment through the TDR service.</p>
     <h3>Our due diligence</h3>
-    <p>We have a dedicated team experienced with legal information who check every judgment and decision before we
+    <p>We have a dedicated team experienced with legal information who check every judgment and
+        decision before we
         publish them on the Find Case Law service.</p>
-    <p>We know that speedy publication is important for many of our users, so for most judgments and decisions this
+    <p>We know that speedy publication is important for many of our users, so for most judgments and
+        decisions this
         means they will be published within one hour of us receiving them.</p>
-    <p>For judgments and decisions that contain highly sensitive information, publication may take up to 24 hours. Very
-        occasionally we may need to double-check the judgment or decision with the judge. In these cases publication may
-        take longer while we wait for confirmation that we have received the correct publication version of the judgment
-        or decision. We will not make any amendments to a judgment or decision on the court's behalf.</p>
+    <p>For judgments and decisions that contain highly sensitive information, publication may take
+        up to 24 hours. Very
+        occasionally we may need to double-check the judgment or decision with the judge. In these
+        cases publication may
+        take longer while we wait for confirmation that we have received the correct publication
+        version of the judgment
+        or decision. We will not make any amendments to a judgment or decision on the court's
+        behalf.</p>
     <p>If you spot an error within a judgment or decision, you can email <a
             href="mailto:caselaw@nationalarchives.gov.uk">caselaw@nationalarchives.gov.uk</a>.</p>
     <h3>Take down requests</h3>
-    <p>Once a judgment has been published, we will only withdraw it from publication if we are instructed to do so by
+    <p>Once a judgment has been published, we will only withdraw it from publication if we are
+        instructed to do so by
         the judge or court.</p>
-    <p>We have developed this publishing policy in consultation with the Judicial Data Working group that is advising
+    <p>We have developed this publishing policy in consultation with the Judicial Data Working group
+        that is advising
         us.</p>
     <p>For more information on our publishing policy, please email <a
             href="mailto:caselaw@nationalarchives.gov.uk">caselaw@nationalarchives.gov.uk</a>.</p>

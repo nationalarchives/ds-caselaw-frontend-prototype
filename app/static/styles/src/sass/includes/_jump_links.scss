@@ -1,0 +1,17 @@
+.anchor-links {
+  &__list {
+    text-align: left;
+    padding: 0;
+    list-style: none;
+
+    &__option {
+      font-family: $font__roboto;
+      padding-block: 0 1rem;
+    }
+
+    &__option:first-child {
+      padding-block: 1.5rem 0 0;
+      border-top: 5px solid #ffb952;
+    }
+  }
+}
