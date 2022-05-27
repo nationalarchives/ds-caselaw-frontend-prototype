@@ -1946,7 +1946,13 @@ a:focus {
 }
 .standard-text-template h3 {
   font-size: 1.5rem;
-  margin: 0 0 1.25rem;
+  margin: 0;
+  padding: 1.25rem 0 0;
+}
+.standard-text-template h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
   padding: 1.25rem 0 0;
 }
 
@@ -2245,18 +2251,26 @@ a .judgment-view-toggle__option:focus {
   }
 }
 
+.anchor-links h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 5px solid #ffb952;
+}
 .anchor-links__list {
-  text-align: left;
   padding: 0;
   list-style: none;
+  margin-bottom: 2rem;
+  padding-block: 1rem;
 }
-.anchor-links__list__option {
+.anchor-links__list-option {
   font-family: "Roboto", sans-serif;
   padding-block: 0 1rem;
 }
-.anchor-links__list__option:first-child {
-  padding-block: 1.5rem 0 0;
-  border-top: 5px solid #ffb952;
-}
+
+/* STARTs _ Terry
+Reason for the h2 above is that I could not get enough specificity
+to kick the yellow border bottom away from what was the '&__header'
+ENDs */
 
 /*# sourceMappingURL=main.css.map */
