@@ -24,6 +24,7 @@
 
     {% include 'includes/what_to_expect_anchor_links.html' %}
 
+    <h2 id="section-about">About the Find Case Law service</h2>
 
     <p>The Find Case Law service provides public access to court judgments and tribunal decisions.</p>
     <p>From April 2022, court judgments from the England and Wales High Court, the Court of Appeal, the Supreme Court
@@ -31,7 +32,7 @@
         available to the public.</p>
     <p>The service only contains judgments and decisions that have been handed down and made public. It does not include
         settlements made outside of court.</p>
-    <h2 id="section-about">About the Find Case Law service</h2>
+
     <h3>Alpha service</h3>
     <p>The Find Case Law service is in the very early stages of development, referred to as the ‘Alpha’ phase. This
         means that this is the first version of the service, which will develop and improve over the next few months and
@@ -76,7 +77,7 @@
         collection.</p>
     <p>Initially only judgments and decisions with neutral citations will be available. We are working to assign
         identifiers to judgments and decisions without neutral citations.</p>
-    <p><a href="#sub-section-uri">Find out more about our Uniform Resource Identifier (URI)</a>.</p>
+    <p><a href="#sub-section-uri">Find out more about our Uniform Resource Identifier (URI)</a></p>
 
     <h3>Date ranges for our coverage of courts and tribunals:</h3>
     <ul>
@@ -348,7 +349,8 @@
             href="mailto:caselaw@nationalarchives.gov.uk">caselaw@nationalarchives.gov.uk</a>.</p>
 </div>
 
-<div class="back-to-top-link show" id="js-back-to-top-link">
-    <a href="#js-phase-banner">Back to top</a>
-</div>
+{% include 'includes/back_to_top.html' %}
+
 {% endblock %}
+
+

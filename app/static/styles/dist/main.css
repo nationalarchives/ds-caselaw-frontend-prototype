@@ -2260,7 +2260,7 @@ a .judgment-view-toggle__option:focus {
 .anchor-links__list {
   padding: 0;
   list-style: none;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   padding-block: 1rem;
 }
 .anchor-links__list-option {

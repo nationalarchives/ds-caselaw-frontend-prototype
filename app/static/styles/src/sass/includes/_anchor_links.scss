@@ -9,7 +9,7 @@
   &__list {
     padding: 0;
     list-style: none;
-    margin-bottom: calc($spacer__unit * 2);
+    margin-bottom: calc($spacer__unit / 2);
     padding-block: $spacer__unit;
   }
 
@@ -17,7 +17,7 @@
     font-family: $font__roboto;
     padding-block: 0 $spacer__unit;
   }
-}
+} 
 
 
 /* STARTs _ Terry
