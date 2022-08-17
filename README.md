@@ -85,9 +85,9 @@ _If you are working on JavaScript_, you should also run (in another new terminal
 ## Iteration 2.0
 This iteration updates [the flow](user_flows/Iterations/2.0) to reflect the current live site.
 
-* Intrducing interactive links to enable viewers to seethe live site vai the diagram.
-* Adding high high level page content headlines to show what's on each page.
-* Refelcting the current state of the Case law public website.
+* Introducing interactive links to enable viewers to see the live site via the diagram.
+* Adding high level page content headlines to show what's on each page.
+* Reflecting the current state of the Case law public website.
 
 ## Iteration 1.10
 
