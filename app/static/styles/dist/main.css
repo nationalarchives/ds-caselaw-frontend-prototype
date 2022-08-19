@@ -385,6 +385,23 @@ a:focus {
   z-index: 999;
 }
 
+.anchor-links h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.313rem solid #ffb952;
+}
+.anchor-links__list {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0.5rem;
+  padding-block: 1rem;
+}
+.anchor-links__list-option {
+  font-family: "Roboto", sans-serif;
+  padding-block: 0 1rem;
+}
+
 .structured-search__main-search {
   background-color: #efefef;
   padding: 1.5rem 0 2rem;
