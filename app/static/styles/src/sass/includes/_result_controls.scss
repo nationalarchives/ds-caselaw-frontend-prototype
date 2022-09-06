@@ -1,7 +1,7 @@
 .result-controls {
   text-align: left;
   display: inline-block;
-  margin: 1rem 0 0;
+  margin: $spacer__unit 0 0;
 
   @media (min-width: $grid__breakpoint-extra-large) {
     text-align: right;
@@ -22,13 +22,12 @@
     display: inline-block;
   }
 
-
   &__button {
     z-index: 999;
-    color: #fff;
+    color: $color__white;
     font-weight: normal;
-    background-color: #000;
-    outline-color: #134571;
+    background-color: $color__black;
+    outline-color: $color__dark-blue;
     border: 0;
     padding: 0.625rem;
     text-decoration: none;
