@@ -23,22 +23,16 @@
 
         <div class="results__container">
             <div class="results__list-layout-container">
-                <div class="results__result-controls-container">
-                    <div class="result-controls">
-                        <form action="#" id="analytics-result-controls">
-                            <div>
-                                <label class="result-controls__order-by-label" for="order_by"></label>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
                 <div class="results__result-list-container">
 
                     <h2>Results listing</h2>
-                    <div class="results__result-header">
-                        <p class="results__results-intro">We found 24185 judgments</p>
+                    <div class="results__results-controls-container">
+                        <div class="results__result-header">
+                            <p class="results__results-intro">We found 24185 judgments</p>
+                        </div>
+                        {% include 'includes/result_controls.html' %}
                     </div>
+
                     <ul class="judgment-listing__list">
 
                         <li>

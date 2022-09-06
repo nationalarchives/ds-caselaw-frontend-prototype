@@ -24,6 +24,16 @@
     }
   }
 
+  &__results-controls-container {
+    border-bottom: 1px solid #ffb952;
+
+    @media (min-width: $grid__breakpoint-extra-large) {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
   &__results-intro {
     font-family: $font__roboto;
     font-size: 1.8rem;
@@ -56,4 +66,5 @@
     padding: $spacer__unit calc($spacer__unit * 2);
     margin: $spacer__unit 0;
   }
+
 }

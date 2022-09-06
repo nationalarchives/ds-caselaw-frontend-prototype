@@ -1,14 +1,38 @@
 .result-controls {
+  text-align: left;
+  display: inline-block;
+  margin: 1rem 0 0;
+
+  @media (min-width: $grid__breakpoint-extra-large) {
+    text-align: right;
+    margin: 0;
+  }
+
 
   &__order-by-label {
     font-family: $font__roboto;
-    font-size: 1.4rem;
+    font-size: 1rem;
+    margin-bottom: $spacer__unit / 2;
     display: block;
-    margin-bottom: $spacer__unit;
   }
 
   &__order-by {
     @include select;
     min-width: auto;
+    display: inline-block;
+  }
+
+
+  &__button {
+    z-index: 999;
+    color: #fff;
+    font-weight: normal;
+    background-color: #000;
+    outline-color: #134571;
+    border: 0;
+    padding: 0.625rem;
+    text-decoration: none;
+    vertical-align: 1px;
+    display: inline-block;
   }
 }
