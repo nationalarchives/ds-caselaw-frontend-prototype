@@ -2334,13 +2334,13 @@ a .judgment-view-toggle__option:focus {
 .announcement-banner {
   background-color: #000;
   color: #fff;
-  padding: 2rem;
+  padding: 1rem;
 }
 .announcement-banner__notice {
   padding: 0.3em 0;
   font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
-  text-align: left;
+  text-align: center;
 }
 @media (min-width: 992px) {
   .announcement-banner__notice {
@@ -2377,8 +2377,15 @@ a .judgment-view-toggle__option:focus {
 .announcement-banner__message {
   margin: 0;
   display: block;
-  margin-bottom: 1rem;
   line-height: 1.8rem;
+  font-size: 1.6rem;
+  padding: 1rem;
+  font-weight: bold;
+}
+.announcement-banner__sub-message {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: normal;
 }
 
 /*# sourceMappingURL=main.css.map */
