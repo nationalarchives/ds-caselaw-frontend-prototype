@@ -2332,23 +2332,20 @@ a .judgment-view-toggle__option:focus {
 }
 
 .announcement-banner {
-  background-color: #121212;
-  color: #fff;
-  padding: 0.5rem 0 0;
-}
-.announcement-banner__container {
   background-color: #000;
-  padding: 0.75rem 2rem;
+  color: #fff;
+  padding: 2rem;
 }
 .announcement-banner__notice {
   padding: 0.3em 0;
   font-family: "Roboto", sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   text-align: left;
 }
 @media (min-width: 992px) {
   .announcement-banner__notice {
     text-align: center;
+    font-size: 1.2rem;
   }
 }
 .announcement-banner__notice a {
@@ -2358,16 +2355,15 @@ a .judgment-view-toggle__option:focus {
   display: inline-block;
   font-weight: bold;
   text-decoration: none;
-  font-size: 1.1rem;
   font-family: "Roboto", sans-serif;
 }
 .announcement-banner__notice a:focus {
   outline: 0.3rem solid #ffb952;
-  background-color: #000;
+  background-color: #134571;
   color: #fff;
 }
 .announcement-banner__notice a:hover {
-  background-color: #000;
+  background-color: #134571;
   color: #fff;
 }
 .announcement-banner__phase {

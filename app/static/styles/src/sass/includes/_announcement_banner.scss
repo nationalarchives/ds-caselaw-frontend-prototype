@@ -1,21 +1,20 @@
 .announcement-banner {
-  background-color: $color__almost-black;
+  background-color: $color__black;
   color: $color__white;
-  padding: calc($spacer__unit / 2) 0 0;
+  padding: calc($spacer__unit * 2);
 
   &__container {
-      background-color: $color__black;
-      padding: 0.75rem 2rem;
   }
 
   &__notice {
     padding: 0.3em 0;
     font-family: "Roboto", sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     text-align: left;
 
     @media (min-width: $grid__breakpoint-large) {
        text-align: center;
+       font-size: 1.2rem;
     }
 
     a {
@@ -25,17 +24,16 @@
       display: inline-block;
       font-weight: bold;
       text-decoration: none;
-      font-size: 1.1rem;
       font-family: "Roboto", sans-serif;
 
       &:focus {
         outline: 0.3rem solid $color__yellow;
-        background-color: $color__black;
+        background-color: $color__dark-blue;
         color: $color__white;
       }
 
       &:hover {
-        background-color: $color__black;
+        background-color: $color__dark-blue;
         color: $color__white;
       }
     }
