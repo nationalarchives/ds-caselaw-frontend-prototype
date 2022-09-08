@@ -2331,4 +2331,54 @@ a .judgment-view-toggle__option:focus {
   }
 }
 
+.announcement-banner {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem;
+}
+.announcement-banner__notice {
+  padding: 0.3em 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  text-align: left;
+}
+@media (min-width: 992px) {
+  .announcement-banner__notice {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+.announcement-banner__notice a {
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  color: #000;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+.announcement-banner__notice a:focus {
+  outline: 0.3rem solid #ffb952;
+  background-color: #134571;
+  color: #fff;
+}
+.announcement-banner__notice a:hover {
+  background-color: #134571;
+  color: #fff;
+}
+.announcement-banner__phase {
+  background-color: #fff;
+  color: #000;
+  text-transform: uppercase;
+  padding: 0 0.25rem;
+  margin-right: 1rem;
+  font-weight: 700;
+}
+.announcement-banner__message {
+  margin: 0;
+  display: block;
+  margin-bottom: 1rem;
+  line-height: 1.8rem;
+}
+
 /*# sourceMappingURL=main.css.map */
