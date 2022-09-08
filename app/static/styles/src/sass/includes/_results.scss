@@ -17,10 +17,20 @@
   }
 
   &__result-list-container {
-    background-color: #fff;
+    background-color: $color__white;
 
     h2 {
       @include sr-only;
+    }
+  }
+
+  &__results-controls-container {
+    border-bottom: 1px solid $color__yellow;
+
+    @media (min-width: $grid__breakpoint-extra-large) {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
     }
   }
 
@@ -29,8 +39,6 @@
     font-size: 1.8rem;
     margin: calc($spacer__unit / 2) 0 0 0;
   }
-
-
 
   &__filter-heading {
     @include sr-only;
@@ -56,4 +64,5 @@
     padding: $spacer__unit calc($spacer__unit * 2);
     margin: $spacer__unit 0;
   }
+
 }

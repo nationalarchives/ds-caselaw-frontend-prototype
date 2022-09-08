@@ -701,6 +701,16 @@ a:focus {
   height: 0.125rem;
   overflow: hidden;
 }
+.results__results-controls-container {
+  border-bottom: 1px solid #ffb952;
+}
+@media (min-width: 1200px) {
+  .results__results-controls-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
 .results__results-intro {
   font-family: "Roboto", sans-serif;
   font-size: 1.8rem;
@@ -1109,11 +1119,22 @@ a:focus {
   top: 0;
 }
 
+.result-controls {
+  text-align: left;
+  display: inline-block;
+  margin: 1rem 0 0;
+}
+@media (min-width: 1200px) {
+  .result-controls {
+    text-align: right;
+    margin: 0;
+  }
+}
 .result-controls__order-by-label {
   font-family: "Roboto", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
   display: block;
-  margin-bottom: 1rem;
 }
 .result-controls__order-by {
   font-size: 1rem;
@@ -1135,6 +1156,7 @@ a:focus {
   background-position: right 0.7rem top 50%, 0 0;
   background-size: 0.65rem auto, 100%;
   min-width: auto;
+  display: inline-block;
 }
 .result-controls__order-by::-ms-expand {
   display: none;
@@ -1149,6 +1171,18 @@ a:focus {
 }
 .result-controls__order-by option {
   font-weight: normal;
+}
+.result-controls__button {
+  z-index: 999;
+  color: #fff;
+  font-weight: normal;
+  background-color: #000;
+  outline-color: #134571;
+  border: 0;
+  padding: 0.625rem;
+  text-decoration: none;
+  vertical-align: 1px;
+  display: inline-block;
 }
 
 .judgment-listing__list {
