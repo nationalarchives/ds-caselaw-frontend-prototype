@@ -81,7 +81,17 @@ _If you are working on JavaScript_, you should also run (in another new terminal
 
 * `npm run start-scripts` will kick off a Webpack watch task
 
+## Iteration 2.10
+This iteration updates [the flow](user_flows/Iterations/2.1) to reflect the current live site.
 
+* Imrpvemnets to Judgment screens.
+   - Increased profile of the 'Download as PDF' button; while reducing the profile of less used download options to the bottom of the page.
+   - Made the party names section at the top of each judgment so the alignmnet better reflects the judgment document.
+   - Added 'Skip to bottom' link to allow users to quickly refer to the end of the judgment to where the conclusion and other appendix material.
+   - Added a divider at the end of the judgement text to imform the user this is where the judgment ends. This also acts as a visual seperator to non-judgment text content near the bottom. 
+
+* Adding high level page content headlines to show what's on each page.
+* Reflecting the current state of the Case law public website.
 
 ## Iteration 2.0
 This iteration updates [the flow](user_flows/Iterations/2.0) to reflect the current live site.
