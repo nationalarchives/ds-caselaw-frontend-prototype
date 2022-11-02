@@ -92,8 +92,10 @@ This iteration updates [the flow](user_flows/Iterations/2.1) to reflect the curr
    - Further refinements and improvements to judgemnet indentation to better match the document. 
 
 * Structured search page.
-* –
-* Reflecting the current state of the Case law public website.
+   – The general UI of this screen is nowmuch more space efficient - resulting in the user having to scroll much less.
+   – The Example help text now sits under each text field so that it does not breal the user journey - but is visiubel for those that need help.
+   – The courts are now in a checkbox format, which is much mroe usable that a dropdown.
+   - Two First-tier tribunals have been added to teh court list.
 
 ## Iteration 2.0
 This iteration updates [the flow](user_flows/Iterations/2.0) to reflect the current live site.
