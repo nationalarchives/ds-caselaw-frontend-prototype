@@ -81,7 +81,7 @@ _If you are working on JavaScript_, you should also run (in another new terminal
 
 * `npm run start-scripts` will kick off a Webpack watch task
 
-## Iteration 2.10
+## Iteration 2.1
 This iteration updates [the flow](user_flows/Iterations/2.1) to reflect the current live site.
 
 * Improvements to Judgment screens.
